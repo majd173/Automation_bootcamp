@@ -2,7 +2,6 @@ import argparse
 import logging  # Error handling and recording adding/editing/removing a book.
 from flask import Flask, render_template, request, redirect, url_for
 from Personal_Library_Manager import MyLibrary, Book
-#
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 app = Flask(__name__)
