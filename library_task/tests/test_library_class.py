@@ -15,6 +15,7 @@ class TestLibraryClass(unittest.TestCase):
         if os.path.exists(self.library_file_path):
             os.remove(self.library_file_path)
 
+# this function checks if a book does not exist in the library
     def test_book_exist(self):
         book = Book("majd", 555, "bader", "drama", 8888, "aaaa")
         loaded_library = MyLibrary.load_library(self.library_file_path)
