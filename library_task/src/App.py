@@ -9,8 +9,8 @@ library_file_path = 'library.json'
 library = MyLibrary.load_library(library_file_path)
 
 
-Validation functions for argument parsing to ensure prices are positive floats
-and years are positive integers.
+#Validation functions for argument parsing to ensure prices are positive floats
+#and years are positive integers.
 def check_positive_float(value):
     try:
         float_value = float(value)
