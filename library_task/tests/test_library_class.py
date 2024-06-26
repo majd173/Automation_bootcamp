@@ -15,11 +15,19 @@ class TestLibraryClass(unittest.TestCase):
         if os.path.exists(self.library_file_path):
             os.remove(self.library_file_path)
 
-# this function checks if a book does not exist in the library
+    # this function checks if a book does not exist in the library
     def test_book_exist(self):
         book = Book("majd", 555, "bader", "drama", 8888, "aaaa")
         loaded_library = MyLibrary.load_library(self.library_file_path)
         self.assertIn(book.__dict__, [b.__dict__ for b in loaded_library.books], "Not found")
+
+    def test_title_exist(self):
+        book = Book("hello")
+        loaded_library = MyLibrary.load_library(self.library_file_path)
+        exist_book = self.library.find_book(
+            ["Relativity - The Special and General Theory", "Hacker Crackdown", "Dracula", "A Tale of Two Cities"])
+
+        self.assertEqual(book, exist_book, "book is not in books list")
 
 
 if __name__ == '__main__':
