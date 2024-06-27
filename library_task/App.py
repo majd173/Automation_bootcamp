@@ -2,7 +2,6 @@ import argparse
 import logging  # Error handling and recording adding/editing/removing a book.
 from flask import Flask, render_template, request, redirect, url_for
 from Personal_Library_Manager import MyLibrary, Book
-#
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 app = Flask(__name__)
@@ -10,8 +9,8 @@ library_file_path = 'library.json'
 library = MyLibrary.load_library(library_file_path)
 
 
-# Validation functions for argument parsing to ensure prices are positive floats
-# and years are positive integers.
+#Validation functions for argument parsing to ensure prices are positive floats
+#and years are positive integers.
 def check_positive_float(value):
     try:
         float_value = float(value)

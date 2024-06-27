@@ -1,10 +1,7 @@
 from Personal_Library_Manager import MyLibrary, Book
 
-
 def bye():
     print("Good bye! You can visit us anytime you want!")
-
-
 
 def add_book(library):
     book_add = input("Insert the name of your book: ")
