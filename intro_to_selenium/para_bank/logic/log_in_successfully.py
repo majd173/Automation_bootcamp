@@ -20,6 +20,7 @@ class LogInSuccessfully(BasePage):
     def confirm_table(self):
         if self._table_apperance.is_displayed():
             logging.info("you are logged in")
+            return True
         else:
             logging.info("you have inserted wrong details, please try again")
 

@@ -20,5 +20,6 @@ class RegisterSuccessfully(BasePage):
     def confirm_message(self):
         if self._message.is_displayed():
             logging.info('Your account was created successfully and you are now logged in.')
+            return True
         else:
             logging.info('The success message is not displayed.')

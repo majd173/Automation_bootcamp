@@ -21,5 +21,6 @@ class LogInUnsuccessfully(BasePage):
     def log_in_failed(self):
         if self._error_message.is_displayed():
             logging.info("you have inserted wrong details, please try again")
+            return True
         else:
             logging.info("error")

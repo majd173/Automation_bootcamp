@@ -27,6 +27,7 @@ class TestRegister(unittest.TestCase):
         register.valid_register_flow()
         confirm = RegisterSuccessfully(self.driver)
         confirm.confirm_message()
+        self.assertTrue(confirm.confirm_message())
         time.sleep(2)
         print("-------------------------------------")
 
@@ -37,6 +38,7 @@ class TestRegister(unittest.TestCase):
         register.invalid_register_flow()
         confirm = RegisterUsuccessfully(self.driver)
         confirm.register_failed()
+        self.assertTrue(confirm.register_failed())
         time.sleep(2)
         print("-------------------------------------")
 

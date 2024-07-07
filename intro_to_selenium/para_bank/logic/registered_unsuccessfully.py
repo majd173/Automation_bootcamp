@@ -21,5 +21,6 @@ class RegisterUsuccessfully(BasePage):
     def register_failed(self):
         if self._error_message.is_displayed():
             logging.info("please insert valid username")
+            return True
         else:
             logging.info("eror")
