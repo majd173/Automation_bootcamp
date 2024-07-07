@@ -15,7 +15,7 @@ class LogInSuccessfully(BasePage):
             self._table_apperance = self._driver.find_element(By.XPATH, self.TABLE_APPERANCE)
         except NoSuchElementException as e:
             logging.error(f'ELEMENT NOT FOUND: {e}')
-
+        # an exception of not found element
 
     def confirm_table(self):
         if self._table_apperance.is_displayed():
@@ -23,4 +23,4 @@ class LogInSuccessfully(BasePage):
             return True
         else:
             logging.info("you have inserted wrong details, please try again")
-
+        # confirming function for valid log in

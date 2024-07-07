@@ -5,7 +5,10 @@ class BasePage:
         self._driver = driver
 
     def return_page(self):
-        self._driver.reload()
+        self._driver.refresh()
+
+    def get_current_url(self):
+        return self._driver.current_url
 
     def get_title(self):
         return self._driver.title()

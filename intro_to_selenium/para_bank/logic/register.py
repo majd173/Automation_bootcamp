@@ -36,7 +36,7 @@ class Register(BasePage):
             self._register_btn = self._driver.find_element(By.XPATH, self.REGISTER_BTN)
         except NoSuchElementException as e:
             logging.error(f'ELEMENT NOT FOUND: {e}')
-
+        # an exception of not found element
 
     def insert_first_name(self):
         self._first_name.send_keys(Utils.generate_random_string(5))
@@ -88,7 +88,7 @@ class Register(BasePage):
         self.insert_password(password)
         self.insert_password_confirm(password)
         self.click_register_btn()
-
+        # valid registration process
     def invalid_register_flow(self):
         password = Utils.generate_random_string(7)
         self.insert_last_name()

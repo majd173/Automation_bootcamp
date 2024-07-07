@@ -16,7 +16,7 @@ class LogInUnsuccessfully(BasePage):
             self._error_message = self._driver.find_element(By.XPATH, self.ERROR_MESSAGE)
         except NoSuchElementException:
             logging.error(f'ELEMENT NOT FOUND: {e}')
-
+        # an exception of not found element
 
     def log_in_failed(self):
         if self._error_message.is_displayed():
@@ -24,3 +24,4 @@ class LogInUnsuccessfully(BasePage):
             return True
         else:
             logging.info("error")
+        # confirming function for invalid log in

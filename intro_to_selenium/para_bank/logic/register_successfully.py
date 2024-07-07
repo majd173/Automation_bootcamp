@@ -16,10 +16,11 @@ class RegisterSuccessfully(BasePage):
             self._message = self._driver.find_element(By.XPATH, self.SUCCESSFULLY_MESSAGE)
         except NoSuchElementException as e:
             logging.error(f'ELEMENT NOT FOUND: {e}')
-
+        # an exception of not found element
     def confirm_message(self):
         if self._message.is_displayed():
             logging.info('Your account was created successfully and you are now logged in.')
             return True
         else:
             logging.info('The success message is not displayed.')
+        # confirming function for valid register

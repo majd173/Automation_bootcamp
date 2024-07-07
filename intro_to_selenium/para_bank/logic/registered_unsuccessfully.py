@@ -16,11 +16,12 @@ class RegisterUsuccessfully(BasePage):
             self._error_message = self._driver.find_element(By.XPATH, self.ERROR_MESSAGE)
         except NoSuchElementException:
             logging.error(f'ELEMENT NOT FOUND: {e}')
-
+        # an exception of not found element
 
     def register_failed(self):
         if self._error_message.is_displayed():
             logging.info("please insert valid username")
             return True
         else:
-            logging.info("eror")
+            logging.info("error")
+        # confirming function for invalid register

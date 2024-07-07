@@ -10,15 +10,17 @@ from intro_to_selenium.para_bank.logic.register_successfully import RegisterSucc
 from intro_to_selenium.para_bank.logic.registered_unsuccessfully import RegisterUsuccessfully
 
 class TestRegister(unittest.TestCase):
-
+    # testing register process class
 
     def setUp(self):
         self.config = ConfigProvider.load_from_file('../config.json')
         self.driver = BrowserWrapper().get_driver(self.config["base_url"])
         self.home_page = HomePage(self.driver)
+    # opening the homepage before all tests
 
     def tearDown(self):
         self.driver.quit()
+    # closing the web browser after every test
 
     def test_valid_register(self):
         print("valid register testing began...")
@@ -30,7 +32,7 @@ class TestRegister(unittest.TestCase):
         self.assertTrue(confirm.confirm_message())
         time.sleep(2)
         print("-------------------------------------")
-
+    # testing registering with valid details
 
     def test_invalid_register(self):
         self.home_page.go_to_register()
@@ -41,6 +43,7 @@ class TestRegister(unittest.TestCase):
         self.assertTrue(confirm.register_failed())
         time.sleep(2)
         print("-------------------------------------")
+    # testing registering with invalid username but valid details
 
 
 

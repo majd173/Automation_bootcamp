@@ -4,12 +4,11 @@ from selenium import webdriver
 from intro_to_selenium.saucedemo_website.pom.infra .config_provider import ConfigProvider
 
 
-class BrowserWrapper: # managing a browser
-
+class BrowserWrapper:
+    # a class for managing a browser
     def __init__(self):
         self._driver = None # because I still don't know which driver to choose
         self.config = ConfigProvider.load_from_file('../config.json')
-        # print("Test Start")
 
     # in this function we determine which browser to open and also opens it
     def get_driver(self, url):

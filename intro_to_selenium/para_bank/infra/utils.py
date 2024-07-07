@@ -10,8 +10,8 @@ class Utils:
 
     @staticmethod
     def generate_random_number(length):
-        letters = string.digits
-        return ''.join((random.choice(letters) for i in range(length)))
+        numbers = string.digits
+        return ''.join((random.choice(numbers) for i in range(length)))
 
 
 

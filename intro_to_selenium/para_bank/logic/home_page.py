@@ -21,7 +21,7 @@ class HomePage(BasePage):
             self._log_in_btn = self._driver.find_element(By.XPATH, self.LOG_IN_BTN)
         except NoSuchElementException as e:
             logging.error(f'ELEMENT NOT FOUND: {e}')
-
+        # an exception of not found element
     def insert_username(self, username):
         self._username_input.send_keys(username)
 
@@ -34,14 +34,14 @@ class HomePage(BasePage):
     def go_to_register(self):
         self._register.click()
 
-
-
     def valid_login_flow(self, username, password):
         self.insert_username(username)
         self.insert_password(password)
         self.click_log_in_btn()
+    # full valid login process
 
     def invalid_log_in_flow(self):
         self.insert_username(" ")
         self.insert_password(Utils.generate_random_string(7))
         self.click_log_in_btn()
+    # full invalid log in process
