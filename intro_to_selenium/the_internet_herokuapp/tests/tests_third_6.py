@@ -51,7 +51,7 @@ class TestSite(unittest.TestCase):
         driver.get(infinite_scroll_url)
         infinite_scroll = InfiniteScroll(driver)
         time.sleep(1)
-        infinite_scroll.scroll_down()
+        infinite_scroll.infinite_scroll()
         time.sleep(2)
         print("---------------------------------")
         driver.quit()

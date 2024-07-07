@@ -2,6 +2,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from intro_to_selenium.the_internet_herokuapp.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 
@@ -27,9 +30,9 @@ class DynamicContent(BasePage):
         third_con = WebDriverWait(self._driver, 5).until(
             EC.visibility_of_element_located((By.XPATH, self.THIRD_CONT)))
 
-        print(first_con.is_displayed())
-        print(second_con.is_displayed())
-        print(third_con.is_displayed())
+        logging.info(first_con.is_displayed())
+        logging.info(second_con.is_displayed())
+        logging.info(third_con.is_displayed())
 
 
 

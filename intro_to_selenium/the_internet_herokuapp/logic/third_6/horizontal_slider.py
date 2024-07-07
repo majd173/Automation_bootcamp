@@ -26,7 +26,6 @@ class HorizontalSlider(BasePage):
         exp_value = WebDriverWait(self._driver, 5).until(
             EC.visibility_of_element_located((By.XPATH, self.EXP_VALUE)))
         exp_value_text = exp_value.text
-
         if exp_value.is_displayed():
             print(f'{exp_value.is_displayed()}, value changed successfully to {exp_value_text}')
         else:

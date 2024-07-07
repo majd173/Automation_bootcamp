@@ -4,7 +4,11 @@ from selenium.webdriver.support import expected_conditions as EC
 
 from intro_to_selenium.the_internet_herokuapp.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+
 
 
 
@@ -29,17 +33,17 @@ class DynamicControls(BasePage):
         disable_btn = WebDriverWait(self._driver, 5).until(
             EC.element_to_be_clickable((By.XPATH, self.DISABLE_BTN)))
         if disable_btn.is_enabled():
-            print("disable btn is enabled")
+            logging.info("disable btn is enabled")
         else:
-            print("disable btn is not enabled")
+            logging.info("disable btn is not enabled")
 
         text_bar = WebDriverWait(self._driver, 5).until(
             EC.visibility_of_element_located((By.XPATH, self.TEXT_BAR)))
         if text_bar.is_enabled():
-            print("Text bar is enabled")
+            logging.info("Text bar is enabled")
             text_bar.send_keys("positive")
         else:
-            print("Text bar is not enabled")
+            logging.info("Text bar is not enabled")
 
         disable_btn.click()
         print("disable btn was clicked")

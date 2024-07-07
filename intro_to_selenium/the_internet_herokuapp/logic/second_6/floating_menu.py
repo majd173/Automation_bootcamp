@@ -2,7 +2,11 @@ from selenium.webdriver.common.action_chains import ActionChains as AC
 from intro_to_selenium.the_internet_herokuapp.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-from selenium import webdriver
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+
 
 
 class FloatingMen(BasePage):
@@ -19,6 +23,6 @@ class FloatingMen(BasePage):
         actions = AC(self._driver)
         actions.send_keys(Keys.PAGE_DOWN).perform()
         if self._home.is_displayed():
-            print("home still appear")
+            logging.info("home still appear")
         else:
-            print("home does not appear")
+            logging.info("home does not appear")

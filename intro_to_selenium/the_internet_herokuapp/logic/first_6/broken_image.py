@@ -1,5 +1,8 @@
 from intro_to_selenium.the_internet_herokuapp.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 class BrokenImage(BasePage):
@@ -14,7 +17,7 @@ class BrokenImage(BasePage):
         self._img_three = self._driver.find_element(By.XPATH, self.IMG_THREE)
 
     def check_picture_display(self):
-        print(self._img_one.is_displayed())
-        print(self._img_two.is_displayed())
-        print(self._img_three.is_displayed())
+        logging.info(self._img_one.is_displayed())
+        logging.info(self._img_two.is_displayed())
+        logging.info(self._img_three.is_displayed())
 

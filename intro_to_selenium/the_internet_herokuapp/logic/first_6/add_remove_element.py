@@ -1,9 +1,13 @@
+from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium import webdriver
 from selenium.common import TimeoutException
 from selenium.webdriver.support.wait import WebDriverWait
 from intro_to_selenium.the_internet_herokuapp.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+import logging
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 class AddRemoveElement(BasePage):
@@ -20,13 +24,13 @@ class AddRemoveElement(BasePage):
             delete_element = WebDriverWait(self._driver, 5).until(
                 EC.presence_of_element_located((By.XPATH, self.DELETE_ELEMENT)))
             if delete_element.is_displayed():
-                print("Delete button is displayed")
+                logging.info("Delete button is displayed")
                 delete_element.click()
-                print("Delete button was clicked")
+                logging.info("Delete button was clicked")
             else:
-                print("Delete button is not displayed")
+                logging.info("Delete button is not displayed")
         except TimeoutException:
-            print("Timed out waiting for delete button to appear")
+            logging.info("Timed out waiting for delete button to appear")
 
     # def delete_element(self):
     #     self._delete_element.click()

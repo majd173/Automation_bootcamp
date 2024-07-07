@@ -1,6 +1,8 @@
 from intro_to_selenium.the_internet_herokuapp.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
+import logging
 
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class CheckBoxes(BasePage):
     BOX_ONE = "//*[@id='checkboxes']/input[1]"
@@ -17,21 +19,21 @@ class CheckBoxes(BasePage):
     def select_box_one(self):
         if not self._box_one.is_selected():
             self._box_one.click()
-            print("checkbox one was filled")
+            logging.info("checkbox one was filled")
 
     def select_box_two(self):
         if not self._box_two.is_selected():
             self._box_two.click()
-            print("checkbox two was filled")
+            logging.info("checkbox two was filled")
 
 
     def disable_box_one(self):
         if self._box_one.is_selected():
             self._box_one.click()
-            print("checkbox one was disabled")
+            logging.info("checkbox one was disabled")
 
 
     def disable_box_two(self):
         if self._box_two.is_selected():
             self._box_two.click()
-            print("checkbox two was disabled")
+            logging.info("checkbox two was disabled")
