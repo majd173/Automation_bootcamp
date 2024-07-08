@@ -1,0 +1,10 @@
+
+{
+    "base_url": "https://www.youtube.com/",
+    "browser" : "Chrome",
+    "username": "example",
+    "correct password": "correct password",
+    "incorrect password": "incorrect password"
+
+
+}

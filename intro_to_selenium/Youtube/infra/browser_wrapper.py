@@ -11,7 +11,7 @@ class BrowserWrapper:
         self.config = ConfigProvider.load_from_file('../config.json')
 
     # in this function we determine which browser to open and also opens it
-    def get_driver(self):
+    def get_driver(self, url):
         url = self.config.get("base_url")
         if not url:
             raise ValueError("URL not found in the configuration.")

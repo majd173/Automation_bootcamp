@@ -5,7 +5,7 @@ class Utils:
 
     @staticmethod
     def generate_random_string(length) -> str:
-        letters = string.ascii_letters
+        letters = string.ascii_letters + string.digits + string.punctuation
         return ''.join((random.choice(letters) for i in range(length)))
 
     @staticmethod

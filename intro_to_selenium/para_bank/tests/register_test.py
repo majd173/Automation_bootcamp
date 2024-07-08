@@ -14,20 +14,20 @@ class TestRegister(unittest.TestCase):
 
     def setUp(self):
         self.config = ConfigProvider.load_from_file('../config.json')
-        self.driver = BrowserWrapper().get_driver(self.config["base_url"])
-        self.home_page = HomePage(self.driver)
+        self._driver = BrowserWrapper().get_driver()
+        self.home_page = HomePage(self._driver)
     # opening the homepage before all tests
 
     def tearDown(self):
-        self.driver.quit()
+        self._driver.quit()
     # closing the web browser after every test
 
     def test_valid_register(self):
         print("valid register testing began...")
         self.home_page.go_to_register()
-        register = Register(self.driver)
+        register = Register(self._driver)
         register.valid_register_flow()
-        confirm = RegisterSuccessfully(self.driver)
+        confirm = RegisterSuccessfully(self._driver)
         confirm.confirm_message()
         self.assertTrue(confirm.confirm_message())
         time.sleep(2)
@@ -36,9 +36,9 @@ class TestRegister(unittest.TestCase):
 
     def test_invalid_register(self):
         self.home_page.go_to_register()
-        register = Register(self.driver)
+        register = Register(self._driver)
         register.invalid_register_flow()
-        confirm = RegisterUsuccessfully(self.driver)
+        confirm = RegisterUsuccessfully(self._driver)
         confirm.register_failed()
         self.assertTrue(confirm.register_failed())
         time.sleep(2)
