@@ -26,7 +26,6 @@ class TestLanguagesList(unittest.TestCase):
         print("Checking languages list display test began...")
         self.home_page.open_languages_list()
         languages_list = LanguageList(self._driver)
-        languages_list.confirm_languages_pop_up_window()
         self.assertEqual(languages_list.confirm_languages_pop_up_window(), True)
         time.sleep(3) # In order to confirm display of languages list.
         print("--------------------------------------------")

@@ -14,6 +14,16 @@ class Utils:
         return ''.join((random.choice(numbers) for i in range(length)))
 
 
+    @staticmethod
+    def waiting_fun(action, expected, time, retries):
+        result = action
+        while action != expected and retries > 0:
+            return action
+            retries = retries - 1
+            time.sleep(time)
+        return result
+
+
 
 
 

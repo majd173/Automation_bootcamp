@@ -25,7 +25,6 @@ class TestKeyboardShortcuts(unittest.TestCase):
         print("Checking keyboard shortcuts display test began...")
         self.home_page.open_keyboard_shortcuts()
         pop_up_windows = KeyboardShortcutsConfirm(self._driver)
-        pop_up_windows.confirm_keyboard_shortcuts_pop_up_window()
         self.assertTrue(pop_up_windows.confirm_keyboard_shortcuts_pop_up_window())
         time.sleep(3) # In order to confirm the display of keyboard shortcuts pop up windows
         print("--------------------------------------------")

@@ -28,7 +28,6 @@ class TestSignIn(unittest.TestCase):
         sign_in = SignIn(self._driver)
         sign_in.sign_in_flow()
         message = InvalidLogIn(self._driver)
-        message.error_return()
         self.assertTrue(message.error_return())
         time.sleep(3) # In order to see the needed "Invalid sign in".
         print("--------------------------------------------")

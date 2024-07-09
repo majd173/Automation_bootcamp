@@ -1,7 +1,7 @@
 from intro_to_selenium.para_bank.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.expected_conditions import *
-from intro_to_selenium.Youtube.infra.utils import Utils
+from intro_to_selenium.Youtube.logic.utils import Utils
 import logging
 logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
