@@ -12,7 +12,7 @@ class TestLanguagesList(unittest.TestCase):
 
 
     def setUp(self):
-        self.config = ConfigProvider.load_from_file('../config.json')
+        self.config = ConfigProvider.load_from_file('../../solarsystemscope/config.json')
         self._driver = BrowserWrapper().get_driver()
         self.home_page = HomePage(self._driver)
 

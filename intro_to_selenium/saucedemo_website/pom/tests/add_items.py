@@ -21,7 +21,7 @@ class TestAddItems(unittest.TestCase):
     def test_login_successfully(self):
         config = ConfigProvider.load_from_file('../config.json')
         driver = BrowserWrapper().get_driver(config["base_url"])
-        print("logging in test")
+        print("log in test")
         # driver.maximize_window()
         driver.implicitly_wait(12)
         # self.driver.get('https://www.saucedemo.com/inventory.html')

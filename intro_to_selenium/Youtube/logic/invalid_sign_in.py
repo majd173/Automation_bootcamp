@@ -15,10 +15,7 @@ class InvalidLogIn(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-        # try:
-        #     self._error_message = self._driver.find_element(By.XPATH, self.ERROR_MESSAGE)
-        # except NoSuchElementException:
-        #     logging.error("Element is not found.")
+
 
     def error_return(self):
         self._error_sign = WebDriverWait(self._driver, 10).until(
