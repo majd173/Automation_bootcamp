@@ -4,11 +4,9 @@ from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrap
 # tests ---------------------------------logic----------------------------------------files
 from intro_to_selenium.solarsystemscope.logic.home_page import HomePage
 from intro_to_selenium.solarsystemscope.logic.astronomy_places import AstronomyPlaces
-from intro_to_selenium.solarsystemscope.logic.eretz_museum_page import EretzMuseumPage
-from intro_to_selenium.solarsystemscope.logic.astronomy_places import AstronomyPlaces
 
 
-class TestGooglePlayFunction(unittest.TestCase):
+class TestDistantPlacesList(unittest.TestCase):
 
 
 
@@ -25,8 +23,8 @@ class TestGooglePlayFunction(unittest.TestCase):
         self._driver.close()
     # closing the website after all tests
 
-    def test_add_to_wish_list(self):
-        print("ADDING TO WISH LIST AT GOOGLE PLAY TESTING BEGAN...")
+    def test_open_distant_places_list(self):
+        print("OPEN DISTANT PLACES LIST TESTING BEGAN...")
         self.home_page.click_on_explore()
         self.home_page.click_on_astronomy_places()
         astronomy_places = AstronomyPlaces(self._driver)
