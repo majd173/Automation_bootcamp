@@ -1,16 +1,17 @@
 import logging
 import time
+from intro_to_selenium.solarsystemscope.infra.utils import Utils
 from selenium.webdriver.support import expected_conditions as EC
 from intro_to_selenium.solarsystemscope.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import *
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
+
 logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 class HomePage(BasePage):
-
     ACCOUNT_BUTTON = "(//a[@href='/login'])[1]"
     EMAIL_INPUT = "//input[@placeholder='Your e-mail']"
     PASSWORD_INPUT = "//input[@placeholder='Your password']"
@@ -27,43 +28,48 @@ class HomePage(BasePage):
     ERROR_LOGIN_MESSAGE = "//div[contains(text(), 'Error:Email or password does not exist.')]"
     MERCHANDISE_BUTTON = "(//a[@href='https://shop.spreadshirt.com/solarsystemscope/'])[1]"
     EMBEDDING_BUTTON = "(//a[@href='/embed'])[2]"
-    START_BUTTON = "//a[@class='model-btn-start btn-type-8-turquoise']"
-
+    LIKE_BUTTON = "//span[contains(text(),'i like it!')]"
 
     def __init__(self, driver):
         super().__init__(driver)
         self._config = ConfigProvider.load_from_file("../config.json")
         try:
             self._account_button = self._driver.find_element(By.XPATH, self.ACCOUNT_BUTTON)
-            self._start_button = self._driver.find_element(By.XPATH, self.START_BUTTON)
         except NoSuchElementException:
             logging.error("ACCOUNT ELEMENT CAN NOT BE FOUND")
-        # try:
-        #     self._start_button = self._driver.find_element(By.XPATH, self.START_BUTTON)
-        # except NoSuchElementException:
-        #     logging.error("START ELEMENT CAN NOT BE FOUND")
 
+        try:
+            self._like_button = self._driver.find_element(By.XPATH, self.LIKE_BUTTON)
+        except NoSuchElementException:
+            logging.error("LIKE ELEMENT CAN NOT BE FOUND")
+
+    # ------------------------------------------------------------------------------------------------------------
 
     def click_account_button(self):
         self._account_button.click()
 
+    # ------------------------------------------------------------------------------------------------------------
 
     def insert_email(self, input):
         self._email_input = WebDriverWait(self._driver, 7).until(
             EC.visibility_of_element_located((By.XPATH, self.EMAIL_INPUT)))
         self._email_input.send_keys(input)
 
+    # ------------------------------------------------------------------------------------------------------------
+
     def insert_password(self, input):
         self._password_input = WebDriverWait(self._driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, self.PASSWORD_INPUT)))
         self._password_input.send_keys(input)
 
+    # ------------------------------------------------------------------------------------------------------------
 
     def click_log_in_button(self):
         self._click_login_button = WebDriverWait(self._driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, self.LOGIN_BUTTON)))
         self._click_login_button.click()
 
+    # ------------------------------------------------------------------------------------------------------------
 
     def valid_log_in_flow(self):
         self.click_account_button()
@@ -73,13 +79,17 @@ class HomePage(BasePage):
         self.click_log_in_button()
         time.sleep(4)
 
+    # ------------------------------------------------------------------------------------------------------------
+
     def invalid_log_in_flow(self):
         self.click_account_button()
         time.sleep(2)
         self.insert_email(self._config["invalid_email"])
-        self.insert_password(self._config["invalid_password"])
+        self.insert_password(Utils.generate_random_number(7))
         self.click_log_in_button()
+        time.sleep(2)
 
+    # ------------------------------------------------------------------------------------------------------------
 
     def logout_button_display(self):
         self._logout_button = WebDriverWait(self._driver, 10).until(
@@ -89,6 +99,7 @@ class HomePage(BasePage):
         else:
             logging.error("YOU ARE STILL NOT LOGGED IN.")
 
+    # ------------------------------------------------------------------------------------------------------------
 
     def error_login_message_display(self):
         self._error_message = WebDriverWait(self._driver, 10).until(
@@ -99,6 +110,7 @@ class HomePage(BasePage):
         else:
             logging.error("AN ERROR OCCUERRED, ERROR MESSAGE SHOULD APPEAR.")
 
+    # ------------------------------------------------------------------------------------------------------------
 
     def click_on_logout_button(self):
         try:
@@ -108,7 +120,7 @@ class HomePage(BasePage):
         except NoSuchElementException:
             logging.error("LOGOUT ELEMENT CAN NOT BE FOUND.")
 
-
+    # ------------------------------------------------------------------------------------------------------------
 
     def logout_confirmation(self):
         if self._account_button:
@@ -116,7 +128,7 @@ class HomePage(BasePage):
             return True
         logging.error("YOU ARE STILL LOGGEN IN.")
 
-
+    # ------------------------------------------------------------------------------------------------------------
 
     def click_on_download_app(self):
         try:
@@ -125,6 +137,8 @@ class HomePage(BasePage):
             self._download_app.click()
         except NoSuchElementException:
             logging.info("DOWNLOAD ELEMENT CAN NOT BE FOUND.")
+
+    # ------------------------------------------------------------------------------------------------------------
 
     def click_on_explore(self):
         try:
@@ -135,6 +149,8 @@ class HomePage(BasePage):
             logging.info("EXPLORE ELEMENT CAN NOT BE FOUND")
         time.sleep(2)
 
+    # ------------------------------------------------------------------------------------------------------------
+
     def click_on_astronomy_places(self):
         try:
             self._astronomy_places = WebDriverWait(self._driver, 10).until(
@@ -144,31 +160,7 @@ class HomePage(BasePage):
         except NoSuchElementException:
             logging.error("ASTRONOMY PLACES ELEMENT IS NOT FOUND.")
 
-    def click_on_facebook(self):
-        try:
-            self._facebook_button = WebDriverWait(self._driver, 10).until(
-                EC.element_to_be_clickable((By.XPATH, self.FACEBOOK_BUTTON)))
-            self._facebook_button.click()
-            time.sleep(2)
-        except NoSuchElementException:
-            logging.info("FACEBOOK ELEMENT CAN NOT BE FOUND.")
-
-    def click_on_german_page_button(self):
-        try:
-            self._german_page_button = WebDriverWait(self._driver, 10).until(
-                EC.element_to_be_clickable((By.XPATH, self.GERMAN_PAGE_BUTTON)))
-            self._german_page_button.click()
-        except NoSuchElementException:
-            logging.error("GERMAN PAGE ELEMENT CAN NOT BE FOUND.")
-
-    def click_on_youtube_button(self):
-        try:
-            self._youtube_page_button = WebDriverWait(self._driver, 10).until(
-                EC.element_to_be_clickable((By.XPATH, self.YOUTUBE_PAGE_BUTTON)))
-            self._youtube_page_button.click()
-        except NoSuchElementException:
-            logging.error("YOUTUBE PAGE ELEMENT CAN NOT BE FOUND.")
-            time.sleep(2)
+    # ------------------------------------------------------------------------------------------------------------
 
     def click_on_google_play_button(self):
         try:
@@ -179,6 +171,8 @@ class HomePage(BasePage):
             logging.error("GOOGLE PLAY PAGE ELEMENT CAN NOT BE FOUND.")
             time.sleep(4)
 
+    # ------------------------------------------------------------------------------------------------------------
+
     def click_on_online_apps_button(self):
         try:
             self._online_apps = WebDriverWait(self._driver, 10).until(
@@ -188,33 +182,19 @@ class HomePage(BasePage):
         except NoSuchElementException:
             logging.error("ONLINE APPS ELEMENT CAN NOT FOUND.")
 
+    # ------------------------------------------------------------------------------------------------------------
 
+    def click_on_like_button(self):
+        self._like_button.click()
+        time.sleep(5)
 
-    # def click_on_merchandise_button(self):
-    #     try:
-    #         self._merchandise_button = WebDriverWait(self._driver, 10).until(
-    #             EC.element_to_be_clickable((By.XPATH, self.MERCHANDISE_BUTTON)))
-    #         self._merchandise_button.click()
-    #         time.sleep(2)
-    #     except NoSuchElementException:
-    #         logging.error("MERCHANDISE ELEMENT CAN NOT FOUND.")
-    #
-    # def click_on_embedding_button(self):
-    #     try:
-    #         self._embedding_button = WebDriverWait(self._driver, 10).until(
-    #             EC.element_to_be_clickable((By.XPATH, self.EMBEDDING_BUTTON)))
-    #         self._embedding_button.click()
-    #         time.sleep(2)
-    #     except NoSuchElementException:
-    #         logging.error("EMBEDDING ELEMENT CAN NOT FOUND.")
+    #------------------------------------------------------------------------------------------------------------
 
-    # def click_on_start_button(self):
-    #     time.sleep(5)
-    #     self._start_button.click()
-    #     time.sleep(20)
-    #
-    # def space_screen_display(self):
-    #     if self._start_button.is_selected():
-    #         logging.info("SPACE SCREEN IS DISPLAYED.")
-    #         return True
-    #     logging.error("SPACE SCREEN IS NOT DISPLAYED.")
+    def check_like_button_activity(self):
+        try:
+            self._like_button.click()
+        except WebDriverException:
+            print("ELEMENT IS NOT CLICKABLE.")
+            return True
+
+#------------------------------------------------------------------------------------------------------------

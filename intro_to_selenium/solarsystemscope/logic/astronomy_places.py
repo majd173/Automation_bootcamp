@@ -1,10 +1,11 @@
 import logging
 import time
+
+from selenium.common import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 from intro_to_selenium.solarsystemscope.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.action_chains import ActionChains as AC
 from selenium.webdriver.support.expected_conditions import *
 logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -51,11 +52,11 @@ class AstronomyPlacesPage(BasePage):
 
     def click_on_eretz_museum_button(self):
         try:
-            time.sleep(5)
             self._eretz_museum_button = WebDriverWait(self._driver, 20).until(
                 EC.element_to_be_clickable((By.XPATH, self.ERETZ_MUSEUM_BUTTON)))
-            # self._driver.execute_script("arguments[0].scrollIntoView();", self._eretz_museum_button)
             self._eretz_museum_button.click()
+        except TimeoutException:
+            print("ERETZ MUSEUM BUTTON CAN NOT BE FOUND OR PAGE DID NOT LOAD IN TIME.")
         except NoSuchElementException:
             print("ERETZ MUSEUM BUTTON CAN NOT BE FOUND.")
 
