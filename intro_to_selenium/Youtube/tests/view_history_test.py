@@ -1,8 +1,8 @@
 import logging
 import unittest
 import time
-from intro_to_selenium.para_bank.infra.config_provider import ConfigProvider
-from intro_to_selenium.para_bank.infra.browser_wrapper import BrowserWrapper
+from intro_to_selenium.Youtube.infra.config_provider import ConfigProvider
+from intro_to_selenium.Youtube.infra.browser_wrapper import BrowserWrapper
 # tests ---------------------------------logic----------------------------------------files
 from intro_to_selenium.Youtube.logic.home_page import HomePage
 from intro_to_selenium.Youtube.logic.view_history import ViewHistoryAsCustomer
@@ -11,7 +11,7 @@ from intro_to_selenium.Youtube.logic.view_history import ViewHistoryAsCustomer
 class TestViewHistory(unittest.TestCase):
 
     def setUp(self):
-        self.config = ConfigProvider.load_from_file('../../solarsystemscope/config.json')
+        self.config = ConfigProvider.load_from_file('../config.json')
         self._driver = BrowserWrapper().get_driver()
         self.home_page = HomePage(self._driver)
 

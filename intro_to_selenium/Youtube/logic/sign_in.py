@@ -1,4 +1,4 @@
-from intro_to_selenium.para_bank.infra.base_page import BasePage
+from intro_to_selenium.Youtube.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.expected_conditions import *
 from intro_to_selenium.Youtube.logic.utils import Utils

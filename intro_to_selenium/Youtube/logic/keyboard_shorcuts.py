@@ -1,6 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from intro_to_selenium.para_bank.infra.base_page import BasePage
+from intro_to_selenium.Youtube.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
 import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
