@@ -22,6 +22,10 @@ class HomePage(BasePage):
     GERMAN_PAGE_BUTTON = "(//a[@href='https://solarsystemscope.de/'])[1]"
     YOUTUBE_PAGE_BUTTON = "(//a[@href='https://youtu.be/0pYMy1XsvFY'])[1]"
     GOOGLE_PLAY_PAGE = "(//a[@href='https://play.google.com/store/apps/details?id=air.com.eu.inove.sss2'])[2]"
+    ONLINE_APPS_BUTTON = "(//a[@href='/models'])[1]"
+    LOGOUT_BUTTON = "//a[@class='button account-logout']"
+    ERROR_LOGIN_MESSAGE = "//div[contains(text(), 'Error:Email or password does not exist.')]"
+    MERCHANDISE_BUTTON = "(//a[@href='https://shop.spreadshirt.com/solarsystemscope/'])[1]"
 
 
     def __init__(self, driver):
@@ -69,6 +73,27 @@ class HomePage(BasePage):
         self.click_log_in_button()
 
 
+    def logout_button_display(self):
+        self._logout_button = WebDriverWait(self._driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, self.LOGOUT_BUTTON)))
+        if self._logout_button.is_displayed():
+            logging.info("YOU ARE LOGGED IN.")
+            return True
+        else:
+            logging.error("YOU ARE STILL NOT LOGGED IN.")
+
+
+    def error_login_message_display(self):
+        self._error_message = WebDriverWait(self._driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, self.ERROR_LOGIN_MESSAGE)))
+        if self._error_message.is_displayed():
+            logging.info("INVALID LOGIN DETAILS WERE INSERTED.")
+            return self._error_message.text
+        else:
+            logging.error("AN ERROR OCCUERRED, ERROR MESSAGE SHOULD APPEAR.")
+
+
+
     def click_on_download_app(self):
         try:
             self._download_app = WebDriverWait(self._driver, 15).until(
@@ -110,7 +135,7 @@ class HomePage(BasePage):
                 EC.element_to_be_clickable((By.XPATH, self.GERMAN_PAGE_BUTTON)))
             self._german_page_button.click()
         except NoSuchElementException:
-            logging.error("GERMAN PAGE BUTTON CAN NOT BE FOUND.")
+            logging.error("GERMAN PAGE ELEMENT CAN NOT BE FOUND.")
 
     def click_on_youtube_button(self):
         try:
@@ -118,7 +143,7 @@ class HomePage(BasePage):
                 EC.element_to_be_clickable((By.XPATH, self.YOUTUBE_PAGE_BUTTON)))
             self._youtube_page_button.click()
         except NoSuchElementException:
-            logging.error("YOUTUBE PAGE BUTTON CAN NOT BE FOUND.")
+            logging.error("YOUTUBE PAGE ELEMENT CAN NOT BE FOUND.")
             time.sleep(2)
 
     def click_on_google_play_button(self):
@@ -127,5 +152,23 @@ class HomePage(BasePage):
                 EC.element_to_be_clickable((By.XPATH, self.GOOGLE_PLAY_PAGE)))
             self._google_play_page_button.click()
         except NoSuchElementException:
-            logging.error("GOOGLE PLAY PAGE BUTTON CAN NOT BE FOUND.")
+            logging.error("GOOGLE PLAY PAGE ELEMENT CAN NOT BE FOUND.")
             time.sleep(4)
+
+    def click_on_online_apps_button(self):
+        try:
+            self._online_apps = WebDriverWait(self._driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, self.ONLINE_APPS_BUTTON)))
+            self._online_apps.click()
+            time.sleep(2)
+        except NoSuchElementException:
+            logging.error("ONLINE APPS ELEMENT CAN NOT FOUND.")
+
+    def click_on_merchandise_button(self):
+        try:
+            self._merchandise_button = WebDriverWait(self._driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, self.MERCHANDISE_BUTTON)))
+            self._merchandise_button.click()
+            time.sleep(2)
+        except NoSuchElementException:
+            logging.error("MERCHANDISE ELEMENT CAN NOT FOUND.")

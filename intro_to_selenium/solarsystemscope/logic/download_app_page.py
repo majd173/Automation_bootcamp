@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-class DownloadApp(BasePage):
+class DownloadAppPage(BasePage):
 
     PREVIEW_BUTTON = "//a[@class='feature f-graphics pswp-link']"
     EARTH_IMAGE = "(//img[@src='/images/screenshots/sss3_screenshot_05.jpg'])[2]"

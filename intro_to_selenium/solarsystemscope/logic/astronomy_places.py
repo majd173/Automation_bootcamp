@@ -9,7 +9,7 @@ from selenium.webdriver.support.expected_conditions import *
 logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-class AstronomyPlaces(BasePage):
+class AstronomyPlacesPage(BasePage):
 
     MAP = "//div[@id='map']"
     LOAD_PLACES_BUTTON = "(//div[@class='btn-load-more-places-holder'])[1]"

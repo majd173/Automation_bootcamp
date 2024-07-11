@@ -13,7 +13,7 @@ class TestAppFeaturesPreview(unittest.TestCase):
         self.config = ConfigProvider.load_from_file('../config.json')
         self._driver = BrowserWrapper().get_driver()
         self.home_page = HomePage(self._driver)
-        self.home_page.valid_log_in_flow()
+        # self.home_page.valid_log_in_flow()
 
 
     #opening the homepage before all tests
@@ -28,5 +28,5 @@ class TestAppFeaturesPreview(unittest.TestCase):
         self.home_page.click_on_download_app()
         download = DownloadApp(self._driver)
         download.click_preview_button()
-        self.assertTrue(download.earth_image_display(),"APP FEATURES ERROR DISPLAY.")
+        self.assertTrue(download.earth_image_display(),"APP FEATURES DISPLAY ERROR.")
         print("--------------------------------------------")

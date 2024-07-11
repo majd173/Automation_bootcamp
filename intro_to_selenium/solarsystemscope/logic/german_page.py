@@ -15,4 +15,5 @@ class GermanPage(BasePage):
 
 
     def website_title_match(self, driver):
+        time.sleep(3)
         return driver.title
