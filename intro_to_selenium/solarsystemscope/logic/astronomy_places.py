@@ -14,6 +14,7 @@ class AstronomyPlacesPage(BasePage):
     MAP = "//div[@id='map']"
     LOAD_PLACES_BUTTON = "(//div[@class='btn-load-more-places-holder'])[1]"
     ADDED_BOX = "(//div[@class='place-box'])[6]"
+    ERETZ_MUSEUM_BUTTON = "//a[@href='http://www.eretzmuseum.org.il/e/']"
 
 
     def __init__(self, driver):
@@ -47,3 +48,15 @@ class AstronomyPlacesPage(BasePage):
             print("ADDED BOX IS NOT DISPLAYED.")
         except NoSuchElementException:
             print("ADDED BOX ELEMENT CAN NOT BE FOUND.")
+
+    def click_on_eretz_museum_button(self):
+        try:
+            time.sleep(5)
+            self._eretz_museum_button = WebDriverWait(self._driver, 20).until(
+                EC.element_to_be_clickable((By.XPATH, self.ERETZ_MUSEUM_BUTTON)))
+            # self._driver.execute_script("arguments[0].scrollIntoView();", self._eretz_museum_button)
+            self._eretz_museum_button.click()
+        except NoSuchElementException:
+            print("ERETZ MUSEUM BUTTON CAN NOT BE FOUND.")
+
+

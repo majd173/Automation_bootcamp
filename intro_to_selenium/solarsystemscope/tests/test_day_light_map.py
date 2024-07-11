@@ -34,4 +34,5 @@ class TestDayLightMap(unittest.TestCase):
                       "ADOBE REQUEST IS NOT DISPLAYED.")
         print("--------------------------------------------")
 
-
+if __name__ == '__main__':
+    unittest.main()

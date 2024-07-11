@@ -34,3 +34,6 @@ class LogInTest(unittest.TestCase):
         self.assertEqual("Error:Email or password does not exist.", self.home_page.error_login_message_display(), "WRONG LOGIN MESSAGE.")
         print("--------------------------------------------")
         # Testing invalid login - invalid username and invalid password.
+
+if __name__ == '__main__':
+    unittest.main()

@@ -30,3 +30,6 @@ class TestAppFeaturesPreview(unittest.TestCase):
         download.click_preview_button()
         self.assertTrue(download.earth_image_display(),"APP FEATURES DISPLAY ERROR.")
         print("--------------------------------------------")
+
+if __name__ == '__main__':
+    unittest.main()

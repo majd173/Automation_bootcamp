@@ -14,6 +14,6 @@ class GermanPage(BasePage):
         super().__init__(driver)
 
 
-    def website_title_match(self, driver):
+    def get_page_title(self, driver):
         time.sleep(3)
         return driver.title

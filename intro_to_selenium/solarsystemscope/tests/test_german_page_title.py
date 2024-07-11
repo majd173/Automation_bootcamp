@@ -27,5 +27,9 @@ class TestGermanPage(unittest.TestCase):
         print("GERMAN WEBSITE ACTIVITY TESTING BEGAN...")
         self.home_page.click_on_german_page_button()
         german = GermanPage(self._driver)
-        self.assertNotIn('Sonnensystem', german.website_title_match(self._driver), "TITLES ARE THE SAME.")
+        self.assertNotIn('Sonnensystem', german.get_page_title(self._driver), "ERROR, TITLES ARE THE SAME.")
         print("--------------------------------------------")
+
+
+if __name__ == '__main__':
+    unittest.main()

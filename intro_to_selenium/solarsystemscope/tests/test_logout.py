@@ -3,17 +3,16 @@ from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvi
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 # tests ---------------------------------logic----------------------------------------files
 from intro_to_selenium.solarsystemscope.logic.home_page import HomePage
-from intro_to_selenium.solarsystemscope.logic.astronomy_places import AstronomyPlacesPage
 
 
-class TestAstronomyPlacesMap(unittest.TestCase):
+class TestLogout(unittest.TestCase):
 
 
     def setUp(self):
         self.config = ConfigProvider.load_from_file('../config.json')
         self._driver = BrowserWrapper().get_driver()
         self.home_page = HomePage(self._driver)
-        # self.home_page.valid_log_in_flow()
+        self.home_page.valid_log_in_flow()
 
     #opening the homepage before all tests
 
@@ -23,12 +22,10 @@ class TestAstronomyPlacesMap(unittest.TestCase):
     # closing the website after all tests
 
 
-    def test_astronomy_places_map_display(self):
-        print("ASTRONOMY PLACES MAP DISPLAY TESTING BEGAN...")
-        self.home_page.click_on_explore()
-        self.home_page.click_on_astronomy_places()
-        map = AstronomyPlacesPage(self._driver)
-        self.assertTrue(map.map_display(), "ASTRONOMY PLACES MAP DISPLAY ERROR.")
+    def test_logout_successfully(self):
+        print("LOGOUT SUCCESSFULLY TESTING BEGAN...")
+        self.home_page.click_on_logout_button()
+        self.assertTrue(self.home_page.logout_confirmation())
         print("--------------------------------------------")
 
 

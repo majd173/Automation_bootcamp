@@ -9,24 +9,16 @@ from selenium.webdriver.support.expected_conditions import *
 logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
-class OrganicProductsPage(BasePage):
+class EretzMuseumPage(BasePage):
 
-
-    HEADER_TITLE = "//h1[contains(text(), 'Men - Organic Products')]"
-
+    HEADER_TITLE = "(//a[@href='https://www.eretzmuseum.org.il/en/'])[1]"
 
     def __init__(self, driver):
         super().__init__(driver)
-        try:
-            self._header_title = self._driver.find_element(By.XPATH, self.HEADER_TITLE)
-        except NoSuchElementException:
-            logging.error("HEADER TITLE ELEMENT CAN NOT BE FOUND.")
 
-    def header_title_display(self):
-        if self._header_title.is_displayed():
-            logging.info("HEADER TITLE IS DISPLAYED.")
-            return self._header_title.text
-        logging.error("HEADER TITLE IS NOT DISPLAED.")
+    def get_page_title(self, driver):
+        time.sleep(3)
+        return driver.title
 
 
 

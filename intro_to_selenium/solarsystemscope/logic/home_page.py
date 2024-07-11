@@ -26,6 +26,8 @@ class HomePage(BasePage):
     LOGOUT_BUTTON = "//a[@class='button account-logout']"
     ERROR_LOGIN_MESSAGE = "//div[contains(text(), 'Error:Email or password does not exist.')]"
     MERCHANDISE_BUTTON = "(//a[@href='https://shop.spreadshirt.com/solarsystemscope/'])[1]"
+    EMBEDDING_BUTTON = "(//a[@href='/embed'])[2]"
+    START_BUTTON = "//a[@class='model-btn-start btn-type-8-turquoise']"
 
 
     def __init__(self, driver):
@@ -33,8 +35,13 @@ class HomePage(BasePage):
         self._config = ConfigProvider.load_from_file("../config.json")
         try:
             self._account_button = self._driver.find_element(By.XPATH, self.ACCOUNT_BUTTON)
+            self._start_button = self._driver.find_element(By.XPATH, self.START_BUTTON)
         except NoSuchElementException:
             logging.error("ACCOUNT ELEMENT CAN NOT BE FOUND")
+        # try:
+        #     self._start_button = self._driver.find_element(By.XPATH, self.START_BUTTON)
+        # except NoSuchElementException:
+        #     logging.error("START ELEMENT CAN NOT BE FOUND")
 
 
     def click_account_button(self):
@@ -50,6 +57,7 @@ class HomePage(BasePage):
         self._password_input = WebDriverWait(self._driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, self.PASSWORD_INPUT)))
         self._password_input.send_keys(input)
+
 
     def click_log_in_button(self):
         self._click_login_button = WebDriverWait(self._driver, 10).until(
@@ -77,7 +85,6 @@ class HomePage(BasePage):
         self._logout_button = WebDriverWait(self._driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, self.LOGOUT_BUTTON)))
         if self._logout_button.is_displayed():
-            logging.info("YOU ARE LOGGED IN.")
             return True
         else:
             logging.error("YOU ARE STILL NOT LOGGED IN.")
@@ -93,22 +100,39 @@ class HomePage(BasePage):
             logging.error("AN ERROR OCCUERRED, ERROR MESSAGE SHOULD APPEAR.")
 
 
+    def click_on_logout_button(self):
+        try:
+            self._logout_button = WebDriverWait(self._driver, 10).until(
+                EC.visibility_of_element_located((By.XPATH, self.LOGOUT_BUTTON)))
+            self._logout_button.click()
+        except NoSuchElementException:
+            logging.error("LOGOUT ELEMENT CAN NOT BE FOUND.")
+
+
+
+    def logout_confirmation(self):
+        if self._account_button:
+            logging.info("YOU HAVE LOGGED OUT SUCCESSFULLY.")
+            return True
+        logging.error("YOU ARE STILL LOGGEN IN.")
+
+
 
     def click_on_download_app(self):
         try:
             self._download_app = WebDriverWait(self._driver, 15).until(
                 EC.element_to_be_clickable((By.XPATH, self.DOWNLOAD_APP)))
             self._download_app.click()
-        except StaleElementReferenceException as e:
-            logging.info("DOWNLOAD ELEMENT CAN NOT BE FOUND.", e)
+        except NoSuchElementException:
+            logging.info("DOWNLOAD ELEMENT CAN NOT BE FOUND.")
 
     def click_on_explore(self):
         try:
             self._explore = WebDriverWait(self._driver, 15).until(
                 EC.element_to_be_clickable((By.XPATH, self.EXPLORE_BUTTON)))
             self._explore.click()
-        except StaleElementReferenceException as e:
-            logging.info("EXPLORE ELEMENT CAN NOT BE FOUND", e)
+        except NoSuchElementException:
+            logging.info("EXPLORE ELEMENT CAN NOT BE FOUND")
         time.sleep(2)
 
     def click_on_astronomy_places(self):
@@ -126,8 +150,8 @@ class HomePage(BasePage):
                 EC.element_to_be_clickable((By.XPATH, self.FACEBOOK_BUTTON)))
             self._facebook_button.click()
             time.sleep(2)
-        except StaleElementReferenceException as e:
-            logging.info("FACEBOOK ELEMENT CAN NOT BE FOUND.", e)
+        except NoSuchElementException:
+            logging.info("FACEBOOK ELEMENT CAN NOT BE FOUND.")
 
     def click_on_german_page_button(self):
         try:
@@ -164,11 +188,33 @@ class HomePage(BasePage):
         except NoSuchElementException:
             logging.error("ONLINE APPS ELEMENT CAN NOT FOUND.")
 
-    def click_on_merchandise_button(self):
-        try:
-            self._merchandise_button = WebDriverWait(self._driver, 10).until(
-                EC.element_to_be_clickable((By.XPATH, self.MERCHANDISE_BUTTON)))
-            self._merchandise_button.click()
-            time.sleep(2)
-        except NoSuchElementException:
-            logging.error("MERCHANDISE ELEMENT CAN NOT FOUND.")
+
+
+    # def click_on_merchandise_button(self):
+    #     try:
+    #         self._merchandise_button = WebDriverWait(self._driver, 10).until(
+    #             EC.element_to_be_clickable((By.XPATH, self.MERCHANDISE_BUTTON)))
+    #         self._merchandise_button.click()
+    #         time.sleep(2)
+    #     except NoSuchElementException:
+    #         logging.error("MERCHANDISE ELEMENT CAN NOT FOUND.")
+    #
+    # def click_on_embedding_button(self):
+    #     try:
+    #         self._embedding_button = WebDriverWait(self._driver, 10).until(
+    #             EC.element_to_be_clickable((By.XPATH, self.EMBEDDING_BUTTON)))
+    #         self._embedding_button.click()
+    #         time.sleep(2)
+    #     except NoSuchElementException:
+    #         logging.error("EMBEDDING ELEMENT CAN NOT FOUND.")
+
+    # def click_on_start_button(self):
+    #     time.sleep(5)
+    #     self._start_button.click()
+    #     time.sleep(20)
+    #
+    # def space_screen_display(self):
+    #     if self._start_button.is_selected():
+    #         logging.info("SPACE SCREEN IS DISPLAYED.")
+    #         return True
+    #     logging.error("SPACE SCREEN IS NOT DISPLAYED.")

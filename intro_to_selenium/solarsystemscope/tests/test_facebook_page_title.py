@@ -28,5 +28,8 @@ class TestFacebookIntegration(unittest.TestCase):
         print("FACEBOOK WEBSITE INTEGRATION TESTING BEGAN...")
         self.home_page.click_on_facebook()
         facebook = FcebookPage(self._driver)
-        self.assertEqual(facebook.website_title_match(self._driver), "Solar System Scope - Online Model of Solar System and Night Sky", "TITLE IS NOT CORRECT.")
+        self.assertEqual(facebook.get_page_title(self._driver), "Solar System Scope - Online Model of Solar System and Night Sky", "TITLE IS NOT CORRECT.")
         print("--------------------------------------------")
+
+if __name__ == '__main__':
+    unittest.main()
