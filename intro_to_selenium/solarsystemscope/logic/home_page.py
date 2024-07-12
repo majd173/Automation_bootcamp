@@ -28,7 +28,7 @@ class HomePage(BasePage):
     ERROR_LOGIN_MESSAGE = "//div[contains(text(), 'Error:Email or password does not exist.')]"
     MERCHANDISE_BUTTON = "(//a[@href='https://shop.spreadshirt.com/solarsystemscope/'])[1]"
     EMBEDDING_BUTTON = "(//a[@href='/embed'])[2]"
-    LIKE_BUTTON = "//span[contains(text(),'i like it!')]"
+    LIKE_BUTTON = "//a[@class='panel-type-10-semi-black-bg like']"
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -117,6 +117,7 @@ class HomePage(BasePage):
             self._logout_button = WebDriverWait(self._driver, 10).until(
                 EC.visibility_of_element_located((By.XPATH, self.LOGOUT_BUTTON)))
             self._logout_button.click()
+            time.sleep(2)
         except NoSuchElementException:
             logging.error("LOGOUT ELEMENT CAN NOT BE FOUND.")
 
@@ -185,16 +186,19 @@ class HomePage(BasePage):
     # ------------------------------------------------------------------------------------------------------------
 
     def click_on_like_button(self):
+        time.sleep(3)
         self._like_button.click()
-        time.sleep(5)
+        time.sleep(3)
 
     #------------------------------------------------------------------------------------------------------------
 
     def check_like_button_activity(self):
         try:
             self._like_button.click()
+            WebDriverWait(self._driver, 5).until_not(EC.element_to_be_clickable(self._like_button))
+            return True
         except WebDriverException:
             print("ELEMENT IS NOT CLICKABLE.")
             return True
 
-#------------------------------------------------------------------------------------------------------------
+    #------------------------------------------------------------------------------------------------------------

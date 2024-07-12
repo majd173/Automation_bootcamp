@@ -3,7 +3,7 @@ from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvi
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 # tests ---------------------------------logic----------------------------------------files
 from intro_to_selenium.solarsystemscope.logic.home_page import HomePage
-from intro_to_selenium.solarsystemscope.logic.download_app_page import DownloadApp
+from intro_to_selenium.solarsystemscope.logic.download_app_page import DownloadAppPage
 
 
 
@@ -26,7 +26,7 @@ class TestAppFeaturesPreview(unittest.TestCase):
     def test_app_fueature_preview(self):
         print("APP FEATURES PREVIEW TESTING BEGAN...")
         self.home_page.click_on_download_app()
-        download = DownloadApp(self._driver)
+        download = DownloadAppPage(self._driver)
         download.click_preview_button()
         self.assertTrue(download.earth_image_display(),"APP FEATURES DISPLAY ERROR.")
         print("--------------------------------------------")

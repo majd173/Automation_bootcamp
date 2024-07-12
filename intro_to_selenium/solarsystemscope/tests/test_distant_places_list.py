@@ -3,7 +3,7 @@ from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvi
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 # tests ---------------------------------logic----------------------------------------files
 from intro_to_selenium.solarsystemscope.logic.home_page import HomePage
-from intro_to_selenium.solarsystemscope.logic.astronomy_places import AstronomyPlaces
+from intro_to_selenium.solarsystemscope.logic.astronomy_places import AstronomyPlacesPage
 
 
 class TestDistantPlacesList(unittest.TestCase):
@@ -27,7 +27,7 @@ class TestDistantPlacesList(unittest.TestCase):
         print("OPEN DISTANT PLACES LIST TESTING BEGAN...")
         self.home_page.click_on_explore()
         self.home_page.click_on_astronomy_places()
-        astronomy_places = AstronomyPlaces(self._driver)
+        astronomy_places = AstronomyPlacesPage(self._driver)
         astronomy_places.click_on_load_places()
         self.assertTrue(astronomy_places.display_added_box(), "ADDED BOX CAN NOT BE DISPLAYED.")
         print("--------------------------------------------")

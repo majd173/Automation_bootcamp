@@ -1,5 +1,6 @@
 import logging
 import time
+from selenium.webdriver.common.action_chains import ActionChains as AC
 from selenium.common import NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -40,14 +41,16 @@ class DownloadAppPage(BasePage):
         logging.error("FEATURES VIEW IS NOT DISPLAYED")
 
     def click_on_show_button(self):
+        time.sleep(5)
         self._show_button.click()
 
     def purchase_steps_opening(self):
-        self._purchase_steps = WebDriverWait(self._driver, 10).until(
+        self._purchase_steps = WebDriverWait(self._driver, 30).until(
             EC.visibility_of_element_located((By.XPATH, self.OPENED_STEPS)))
         if self._purchase_steps.is_displayed():
+            time.sleep(3)
             print("PURCHASE STEPS ARE OPENED.")
-            time.sleep(2)
+            # time.sleep(2)
             return True
         print("PURCHASE STEPS ARE NOT OPENED.")
 
