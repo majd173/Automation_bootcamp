@@ -10,17 +10,21 @@ from intro_to_selenium.solarsystemscope.logic.eretz_museum_page import EretzMuse
 
 class TestEretzMuseumPage(unittest.TestCase):
 
+    # ------------------------------------------------------------------------------------------------------------
+    # This function opens the homepage before all tests.
+
     def setUp(self):
         self.config = ConfigProvider.load_from_file('../config.json')
         self._driver = BrowserWrapper().get_driver()
         self.home_page = HomePage(self._driver)
         # self.home_page.valid_log_in_flow()
-    #opening the homepage before all tests
 
+    # ------------------------------------------------------------------------------------------------------------
+    # This function closes the website after all tests.
     def tearDown(self):
         self._driver.close()
-    # closing the website after all tests
 
+    # ------------------------------------------------------------------------------------------------------------
 
     def test_eretz_museum_page(self):
         print("ORGANIC PRODUCTS PAGE DISPLAY TESTING BEGAN...")
@@ -29,8 +33,8 @@ class TestEretzMuseumPage(unittest.TestCase):
         astronomy_places = AstronomyPlacesPage(self._driver)
         astronomy_places.click_on_load_places()
         astronomy_places.click_on_eretz_museum_button()
-        eretz_museum = EretzMuseumPage(self._driver)
-        self.assertEqual(eretz_museum.get_page_url(), "https://www.eretzmuseum.org.il/en/")
+        astronomy_places = EretzMuseumPage(self._driver)
+        self.assertEqual(astronomy_places.get_page_url(), "https://www.eretzmuseum.org.il/en/")
         print("--------------------------------------------")
 
 

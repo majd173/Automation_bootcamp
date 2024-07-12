@@ -9,21 +9,22 @@ from intro_to_selenium.solarsystemscope.logic.download_app_page import DownloadA
 
 class TestAppFeaturesPreview(unittest.TestCase):
 
+    # ------------------------------------------------------------------------------------------------------------
+    # This function opens the homepage before all tests.
     def setUp(self):
         self.config = ConfigProvider.load_from_file('../config.json')
         self._driver = BrowserWrapper().get_driver()
         self.home_page = HomePage(self._driver)
         # self.home_page.valid_log_in_flow()
 
-
-    #opening the homepage before all tests
-
+    # ------------------------------------------------------------------------------------------------------------
+    # This function closes the website after all tests.
     def tearDown(self):
         self._driver.close()
-    # closing the website after all tests
 
+    # ------------------------------------------------------------------------------------------------------------
 
-    def test_app_fueature_preview(self):
+    def test_app_features_preview(self):
         print("APP FEATURES PREVIEW TESTING BEGAN...")
         self.home_page.click_on_download_app()
         download = DownloadAppPage(self._driver)

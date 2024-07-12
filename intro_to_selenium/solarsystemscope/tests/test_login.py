@@ -8,32 +8,36 @@ from intro_to_selenium.solarsystemscope.logic.home_page import HomePage
 
 class LogInTest(unittest.TestCase):
 
-
+    # ------------------------------------------------------------------------------------------------------------
+    # This function opens the homepage before all tests.
     def setUp(self):
         self.config = ConfigProvider.load_from_file('../config.json')
         self._driver = BrowserWrapper().get_driver()
         self.home_page = HomePage(self._driver)
 
-    #opening the homepage before all tests
-
+    # ------------------------------------------------------------------------------------------------------------
+    # This function closes the website after all tests.
     def tearDown(self):
         self._driver.close()
-    # closing the website after all tests
+
+    # ------------------------------------------------------------------------------------------------------------
+    # Testing valid login - valid username and valid password.
 
     def test_valid_login(self):
         print("VALID LOGIN TESTING BEGAN...")
         self.home_page.valid_log_in_flow()
         self.assertEqual(True, self.home_page.logout_button_display(), "WRONG LOGIN PROCESS.")
         print("--------------------------------------------")
-        # Testing valid login - valid username and valid password.
 
+    # ------------------------------------------------------------------------------------------------------------
+    # Testing invalid login - invalid username and invalid password.
 
     def test_invalid_login(self):
         print("INVALID LOGIN TESTING BEGAN...")
         self.home_page.invalid_log_in_flow()
         self.assertEqual("Error:Email or password does not exist.", self.home_page.error_login_message_display(), "WRONG LOGIN MESSAGE.")
         print("--------------------------------------------")
-        # Testing invalid login - invalid username and invalid password.
+    # ------------------------------------------------------------------------------------------------------------
 
 if __name__ == '__main__':
     unittest.main()

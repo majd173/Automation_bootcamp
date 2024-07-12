@@ -8,6 +8,8 @@ from intro_to_selenium.solarsystemscope.logic.astronomy_places import AstronomyP
 
 class TestAstronomyPlacesMap(unittest.TestCase):
 
+    # ------------------------------------------------------------------------------------------------------------
+    # This function opens the homepage before all tests.
 
     def setUp(self):
         self.config = ConfigProvider.load_from_file('../config.json')
@@ -15,13 +17,12 @@ class TestAstronomyPlacesMap(unittest.TestCase):
         self.home_page = HomePage(self._driver)
         # self.home_page.valid_log_in_flow()
 
-    #opening the homepage before all tests
+    # ------------------------------------------------------------------------------------------------------------
+    # This function closes the website after all tests.
 
     def tearDown(self):
         self._driver.close()
-
-    # closing the website after all tests
-
+    # ------------------------------------------------------------------------------------------------------------
 
     def test_astronomy_places_map_display(self):
         print("ASTRONOMY PLACES MAP DISPLAY TESTING BEGAN...")

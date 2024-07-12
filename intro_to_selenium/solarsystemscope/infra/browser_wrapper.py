@@ -4,12 +4,12 @@ from intro_to_selenium.saucedemo_website.pom.infra.config_provider import Config
 
 
 class BrowserWrapper:
-    # a class for managing a browser.
+    # This class manages choosing a browser.
     def __init__(self):
         self._driver = None # because I still don't know which driver to choose.
         self.config = ConfigProvider.load_from_file('../config.json')
-
-    # in this function we determine which browser to open and also opens it.
+    # ------------------------------------------------------------------------------------------------------------
+    # This function determines which browser to open and also opens it.
     def get_driver(self):
         url = self.config.get("base_url")
         if not url:
