@@ -1,0 +1,13 @@
+
+{
+    "base_url": "https://www.solarsystemscope.com/",
+    "browser" : "FireFox",
+    "valid_email" : "majdbader753@gmail.com",
+    "valid_password" : "123majd456",
+    "invalid_email" : "positive@gmail.com",
+    "invalid_password" : "123456789"
+
+
+
+
+}
