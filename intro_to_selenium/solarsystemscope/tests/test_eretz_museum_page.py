@@ -1,4 +1,5 @@
 import unittest
+import logging
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 # tests ---------------------------------logic----------------------------------------files
@@ -27,7 +28,7 @@ class TestEretzMuseumPage(unittest.TestCase):
     # ------------------------------------------------------------------------------------------------------------
 
     def test_eretz_museum_page(self):
-        print("ORGANIC PRODUCTS PAGE DISPLAY TESTING BEGAN...")
+        logging.info("ERETZ MUSEUM URL MATCH TESTING BEGAN...")
         self.home_page.click_on_explore()
         self.home_page.click_on_astronomy_places()
         astronomy_places = AstronomyPlacesPage(self._driver)

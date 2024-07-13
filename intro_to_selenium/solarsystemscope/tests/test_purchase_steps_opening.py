@@ -1,3 +1,4 @@
+import logging
 import unittest
 import unittest
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
@@ -26,7 +27,7 @@ class TestPurchaseStepsOpening(unittest.TestCase):
     # ------------------------------------------------------------------------------------------------------------
 
     def test_purchase_steps_opening(self):
-        print("PURCHASE STEPS OPENING TESTING BEGAN...")
+        logging.info("PURCHASE STEPS OPENING TESTING BEGAN...")
         self.home_page.click_on_download_app()
         download = DownloadAppPage(self._driver)
         download.click_on_show_button()

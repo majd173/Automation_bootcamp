@@ -1,8 +1,4 @@
-import logging
-import time
-
 from intro_to_selenium.solarsystemscope.infra.base_page import BasePage
-logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 class EretzMuseumPage(BasePage):
@@ -16,5 +12,4 @@ class EretzMuseumPage(BasePage):
 
     # This function returns the website's URL.
     def get_page_url(self):
-        time.sleep(10)
         return self._driver.current_url

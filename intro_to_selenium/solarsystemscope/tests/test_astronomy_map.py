@@ -1,4 +1,5 @@
 import unittest
+import logging
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 # tests ---------------------------------logic----------------------------------------files
@@ -25,7 +26,7 @@ class TestAstronomyPlacesMap(unittest.TestCase):
     # ------------------------------------------------------------------------------------------------------------
 
     def test_astronomy_places_map_display(self):
-        print("ASTRONOMY PLACES MAP DISPLAY TESTING BEGAN...")
+        logging.info("ASTRONOMY PLACES MAP DISPLAY TESTING BEGAN...")
         self.home_page.click_on_explore()
         self.home_page.click_on_astronomy_places()
         map = AstronomyPlacesPage(self._driver)

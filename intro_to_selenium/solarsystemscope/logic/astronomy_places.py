@@ -1,6 +1,4 @@
 import logging
-import time
-
 from selenium.common import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
@@ -8,7 +6,6 @@ from intro_to_selenium.solarsystemscope.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.expected_conditions import *
 
-logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 class AstronomyPlacesPage(BasePage):
@@ -34,7 +31,9 @@ class AstronomyPlacesPage(BasePage):
     # This function returns if the map is displayed.
     def map_display(self):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._map)
-        time.sleep(2)
+        WebDriverWait(self._driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, self.MAP)))
+        self._driver.execute_script("arguments[0].scrollIntoView();", self._map)
         if self._map.is_displayed():
             logging.info("MAP IS DISPLAYED.")
             return True
@@ -53,13 +52,12 @@ class AstronomyPlacesPage(BasePage):
             self._added_box = WebDriverWait(self._driver, 20).until(
                 EC.visibility_of_element_located((By.XPATH, self.ADDED_BOX)))
             self._driver.execute_script("arguments[0].scrollIntoView();", self._added_box)
-            time.sleep(2)
             if self._added_box.is_displayed():
                 logging.info("ADDED BOX IS DISPLAYED.")
                 return True
-            print("ADDED BOX IS NOT DISPLAYED.")
+            logging.info("ADDED BOX IS NOT DISPLAYED.")
         except NoSuchElementException:
-            print("ADDED BOX ELEMENT CAN NOT BE FOUND.")
+            logging.info("ADDED BOX ELEMENT CAN NOT BE FOUND.")
 
     #------------------------------------------------------------------------------------------------------------
     # This function clicks on the link of "Eretz Museum" and transfers to an external website.
@@ -68,11 +66,9 @@ class AstronomyPlacesPage(BasePage):
             self._eretz_museum_button = WebDriverWait(self._driver, 20).until(
                 EC.element_to_be_clickable((By.XPATH, self.ERETZ_MUSEUM_BUTTON)))
             self._driver.execute_script("arguments[0].scrollIntoView();", self._eretz_museum_button)
-            time.sleep(3)
             self._eretz_museum_button.click()
-            time.sleep(3)
         except TimeoutException:
-            print("ERETZ MUSEUM BUTTON CAN NOT BE FOUND OR PAGE DID NOT LOAD IN TIME.")
+            logging.error("ERETZ MUSEUM BUTTON CAN NOT BE FOUND OR PAGE DID NOT LOAD IN TIME.")
         except NoSuchElementException:
-            print("ERETZ MUSEUM BUTTON CAN NOT BE FOUND.")
+            logging.error("ERETZ MUSEUM BUTTON CAN NOT BE FOUND.")
     #------------------------------------------------------------------------------------------------------------

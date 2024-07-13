@@ -1,3 +1,4 @@
+import logging
 import unittest
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
@@ -25,7 +26,7 @@ class TestAppFeaturesPreview(unittest.TestCase):
     # ------------------------------------------------------------------------------------------------------------
 
     def test_app_features_preview(self):
-        print("APP FEATURES PREVIEW TESTING BEGAN...")
+        logging.info("APP FEATURES PREVIEW TESTING BEGAN...")
         self.home_page.click_on_download_app()
         download = DownloadAppPage(self._driver)
         download.click_preview_button()

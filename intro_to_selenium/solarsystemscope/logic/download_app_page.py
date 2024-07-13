@@ -1,12 +1,10 @@
 import logging
-import time
 from selenium.common import NoSuchElementException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from intro_to_selenium.solarsystemscope.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
 
-logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 class DownloadAppPage(BasePage):
@@ -39,7 +37,6 @@ class DownloadAppPage(BasePage):
         self._earth_image = WebDriverWait(self._driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, self.EARTH_IMAGE)))
         if self._earth_image.is_displayed():
-            time.sleep(2)
             logging.info("FEATURES VIEW IS DISPLAYED.")
             return True
         logging.error("FEATURES VIEW IS NOT DISPLAYED")
@@ -49,16 +46,15 @@ class DownloadAppPage(BasePage):
     def click_on_show_button(self):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._show_button)
         self._show_button.click()
-        time.sleep(3)
 
     #------------------------------------------------------------------------------------------------------------
     # This function returns if the "Purchases steps tab" opens.
     def purchase_steps_opening(self):
         self._purchase_steps = WebDriverWait(self._driver, 30).until(
             EC.visibility_of_element_located((By.XPATH, self.OPENED_STEPS)))
+        self._driver.execute_script("arguments[0].scrollIntoView();", self._purchase_steps)
         if self._purchase_steps.is_displayed():
-            time.sleep(3)
-            print("PURCHASE STEPS ARE OPENED.")
+            logging.info("PURCHASE STEPS ARE OPENED.")
             return True
-        print("PURCHASE STEPS ARE NOT OPENED.")
+        logging.info("PURCHASE STEPS ARE NOT OPENED.")
     #------------------------------------------------------------------------------------------------------------

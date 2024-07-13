@@ -1,3 +1,4 @@
+import logging
 import unittest
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
@@ -25,7 +26,7 @@ class TestDistantPlacesList(unittest.TestCase):
     # ------------------------------------------------------------------------------------------------------------
 
     def test_open_distant_places_list(self):
-        print("OPEN DISTANT PLACES LIST TESTING BEGAN...")
+        logging.info("OPEN DISTANT PLACES LIST TESTING BEGAN...")
         self.home_page.click_on_explore()
         self.home_page.click_on_astronomy_places()
         astronomy_places = AstronomyPlacesPage(self._driver)

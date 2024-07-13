@@ -1,10 +1,10 @@
 import logging
-import time
 from selenium.common import NoSuchElementException
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from intro_to_selenium.solarsystemscope.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
 
-logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 class DayLightMapPage(BasePage):
@@ -23,9 +23,10 @@ class DayLightMapPage(BasePage):
     #------------------------------------------------------------------------------------------------------------
     # This function returns if the "Adobe Flash" request message is displayed.
     def adobe_request_message_display(self):
-        time.sleep(3)
+        WebDriverWait(self._driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, self.ADOBE_REQUEST_MESSAGE)))
         if self._adobe_request_message.is_displayed():
-            logging.info("ERROR MESSAGE IS DISPLAYED.")
+            logging.info("REQUEST MESSAGE IS DISPLAYED.")
             return self._adobe_request_message.text
-        logging.error("ERROR MESSAGE IS NOT DISPLAYED.")
+        logging.error("REQUEST MESSAGE IS NOT DISPLAYED.")
     #------------------------------------------------------------------------------------------------------------

@@ -1,3 +1,4 @@
+import logging
 import unittest
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
@@ -24,7 +25,7 @@ class TestLogout(unittest.TestCase):
     # ------------------------------------------------------------------------------------------------------------
 
     def test_logout_successfully(self):
-        print("LOGOUT SUCCESSFULLY TESTING BEGAN...")
+        logging.info("LOGOUT SUCCESSFULLY TESTING BEGAN...")
         self.home_page.click_on_logout_button()
         self.assertTrue(self.home_page.logout_confirmation())
         print("--------------------------------------------")

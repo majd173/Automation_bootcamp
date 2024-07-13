@@ -1,4 +1,4 @@
-import logging
+
 import time
 from intro_to_selenium.solarsystemscope.infra.utils import Utils
 from selenium.webdriver.support import expected_conditions as EC
@@ -7,8 +7,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import *
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
-
-logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
+import logging
+# logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 class HomePage(BasePage):
@@ -78,22 +78,23 @@ class HomePage(BasePage):
     # ------------------------------------------------------------------------------------------------------------
     # This function submits a full valid login process.
     def valid_log_in_flow(self):
-        self.click_account_button()
-        time.sleep(2)
+        WebDriverWait(self._driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, self.ACCOUNT_BUTTON)))
+        self._account_button.click()
         self.insert_email(self._config["valid_email"])
         self.insert_password(self._config["valid_password"])
         self.click_log_in_button()
-        time.sleep(4)
 
     # ------------------------------------------------------------------------------------------------------------
     # This function submits a full invalid "Login" process.
     def invalid_log_in_flow(self):
-        self.click_account_button()
-        time.sleep(2)
+        WebDriverWait(self._driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, self.ACCOUNT_BUTTON)))
+        self._account_button.click()
         self.insert_email(self._config["invalid_email"])
         self.insert_password(Utils.generate_random_number(7))
         self.click_log_in_button()
-        time.sleep(2)
+        # time.sleep(2)
 
     # ------------------------------------------------------------------------------------------------------------
     # This function returns if the "Logout" button is displayed.
@@ -101,6 +102,7 @@ class HomePage(BasePage):
         self._logout_button = WebDriverWait(self._driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, self.LOGOUT_BUTTON)))
         if self._logout_button.is_displayed():
+            logging.info("YOU ARE LOGGED IN.")
             return True
         else:
             logging.error("YOU ARE STILL NOT LOGGED IN.")
@@ -114,7 +116,7 @@ class HomePage(BasePage):
             logging.info("INVALID LOGIN DETAILS WERE INSERTED.")
             return self._error_message.text
         else:
-            logging.error("AN ERROR OCCUERRED, ERROR MESSAGE SHOULD APPEAR.")
+            logging.error("AN ERROR OCCUERRED, INVALID ERROR MESSAGE MUST APPEAR.")
 
     # ------------------------------------------------------------------------------------------------------------
     # This function clicks on the "Logout" button.
@@ -123,7 +125,7 @@ class HomePage(BasePage):
             self._logout_button = WebDriverWait(self._driver, 10).until(
                 EC.visibility_of_element_located((By.XPATH, self.LOGOUT_BUTTON)))
             self._logout_button.click()
-            time.sleep(2)
+            # time.sleep(2)
         except NoSuchElementException:
             logging.error("LOGOUT ELEMENT CAN NOT BE FOUND.")
 
@@ -131,6 +133,8 @@ class HomePage(BasePage):
     # This function returns if the "Logout" button was clicked by displaying the
     #"Account" button.
     def logout_confirmation(self):
+        WebDriverWait(self._driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, self.ACCOUNT_BUTTON)))
         if self._account_button:
             logging.info("YOU HAVE LOGGED OUT SUCCESSFULLY.")
             return True
@@ -153,7 +157,6 @@ class HomePage(BasePage):
             self._astronomy_places = WebDriverWait(self._driver, 10).until(
                 EC.element_to_be_clickable((By.XPATH, self.ASTRONOMY_PLACES_BUTTON)))
             self._astronomy_places.click()
-            time.sleep(2)
         except NoSuchElementException:
             logging.error("ASTRONOMY PLACES ELEMENT IS NOT FOUND.")
 
@@ -164,14 +167,12 @@ class HomePage(BasePage):
             self._online_apps = WebDriverWait(self._driver, 10).until(
                 EC.element_to_be_clickable((By.XPATH, self.ONLINE_APPS_BUTTON)))
             self._online_apps.click()
-            time.sleep(2)
         except NoSuchElementException:
             logging.error("ONLINE APPS ELEMENT CAN NOT FOUND.")
 
     # ------------------------------------------------------------------------------------------------------------
     # This function clicks on the "Like" button.
     def click_on_like_button(self):
-        time.sleep(5)
         self._driver.execute_script("arguments[0].scrollIntoView();", self._like_button)
         self._like_button.click()
 
@@ -180,7 +181,6 @@ class HomePage(BasePage):
     # by returning if it is can be clicked after being clicked.
     def check_like_button_activity(self):
         try:
-            time.sleep(3)
             self._like_count_box = WebDriverWait(self._driver, 10).until(
                 EC.visibility_of_element_located((By.XPATH, self.LIKE_COUNT_BOX)))
             if self._like_count_box.is_displayed():

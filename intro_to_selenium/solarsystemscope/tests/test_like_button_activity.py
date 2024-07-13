@@ -1,3 +1,4 @@
+import logging
 import unittest
 import unittest
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
@@ -24,7 +25,7 @@ class TestLikeButtonActivity(unittest.TestCase):
     # ------------------------------------------------------------------------------------------------------------
 
     def test_like_button_activity(self):
-        print("LIKE BUTTON ACTIVITY TESTING BEGAN...")
+        logging.info("LIKE BUTTON ACTIVITY TESTING BEGAN...")
         self.home_page.click_on_like_button()
         self.assertTrue(self.home_page.check_like_button_activity())
 
