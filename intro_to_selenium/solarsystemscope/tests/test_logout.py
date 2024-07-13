@@ -28,6 +28,7 @@ class TestLogout(unittest.TestCase):
         logging.info("LOGOUT SUCCESSFULLY TESTING BEGAN...")
         self.home_page.click_on_logout_button()
         self.assertTrue(self.home_page.logout_confirmation())
+        self._driver.save_screenshot('After clicking logut button.png')
         print("--------------------------------------------")
 
     # ------------------------------------------------------------------------------------------------------------

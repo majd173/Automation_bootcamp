@@ -31,6 +31,8 @@ class TestPurchaseStepsOpening(unittest.TestCase):
         download = DownloadAppPage(self._driver)
         download.click_on_show_button()
         self.assertTrue(download.purchase_steps_opening(), "PURCHASE STEPS IS NOT OPENED.")
+        print("--------------------------------------------")
+
 
     # ------------------------------------------------------------------------------------------------------------
 

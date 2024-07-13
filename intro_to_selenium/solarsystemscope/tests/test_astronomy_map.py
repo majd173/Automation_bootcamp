@@ -6,6 +6,10 @@ from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrap
 from intro_to_selenium.solarsystemscope.logic.home_page import HomePage
 from intro_to_selenium.solarsystemscope.logic.astronomy_places import AstronomyPlacesPage
 
+logging.basicConfig(
+    filename="..//solar_logfile.log", level=logging.INFO,
+    format='%(asctime)s: %(levelname)s: %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+
 
 class TestAstronomyPlacesMap(unittest.TestCase):
 

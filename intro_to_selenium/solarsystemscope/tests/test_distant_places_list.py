@@ -33,6 +33,5 @@ class TestDistantPlacesList(unittest.TestCase):
         self.assertTrue(astronomy_places.display_added_box(), "ADDED BOX CAN NOT BE DISPLAYED.")
         print("--------------------------------------------")
 
-
 if __name__ == '__main__':
     unittest.main()

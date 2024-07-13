@@ -6,6 +6,9 @@ from intro_to_selenium.solarsystemscope.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.expected_conditions import *
 
+logging.basicConfig(
+    filename="solar_logfile.log",
+    format='%(asctime)s: %(levelname)s: %(message)s', datefmt='%d-%b-%y %H:%M:%S', filemode='w')
 
 
 class AstronomyPlacesPage(BasePage):
@@ -36,6 +39,7 @@ class AstronomyPlacesPage(BasePage):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._map)
         if self._map.is_displayed():
             logging.info("MAP IS DISPLAYED.")
+            self._driver.save_screenshot('Astronomy places map display.png')
             return True
         logging.error("MAP IS NOT DISPLAYED.")
 
@@ -43,6 +47,7 @@ class AstronomyPlacesPage(BasePage):
     # This function click on "load Places" button.
     def click_on_load_places(self):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._load_places)
+        self._driver.save_screenshot('Before opening Distant places list.png')
         self._load_places.click()
 
     #------------------------------------------------------------------------------------------------------------
@@ -54,6 +59,7 @@ class AstronomyPlacesPage(BasePage):
             self._driver.execute_script("arguments[0].scrollIntoView();", self._added_box)
             if self._added_box.is_displayed():
                 logging.info("ADDED BOX IS DISPLAYED.")
+                self._driver.save_screenshot('After opening Distant places list.png')
                 return True
             logging.info("ADDED BOX IS NOT DISPLAYED.")
         except NoSuchElementException:

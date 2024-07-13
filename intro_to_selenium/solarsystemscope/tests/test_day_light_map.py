@@ -33,6 +33,7 @@ class TestDayLightMap(unittest.TestCase):
         day_light_map_page = DayLightMapPage(self._driver)
         self.assertEqual("Adobe Flash", day_light_map_page.adobe_request_message_display(),
                       "ADOBE REQUEST IS NOT DISPLAYED.")
+        self._driver.save_screenshot('Adobe request message.png')
         print("--------------------------------------------")
 
 if __name__ == '__main__':

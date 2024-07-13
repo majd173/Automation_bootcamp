@@ -38,6 +38,7 @@ class DownloadAppPage(BasePage):
             EC.visibility_of_element_located((By.XPATH, self.EARTH_IMAGE)))
         if self._earth_image.is_displayed():
             logging.info("FEATURES VIEW IS DISPLAYED.")
+            self._driver.save_screenshot('Features view display.png')
             return True
         logging.error("FEATURES VIEW IS NOT DISPLAYED")
 
@@ -45,6 +46,7 @@ class DownloadAppPage(BasePage):
     # This function clicks on the "Show" button in the home page.
     def click_on_show_button(self):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._show_button)
+        self._driver.save_screenshot('Before clicking Show button.png')
         self._show_button.click()
 
     #------------------------------------------------------------------------------------------------------------
@@ -55,6 +57,7 @@ class DownloadAppPage(BasePage):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._purchase_steps)
         if self._purchase_steps.is_displayed():
             logging.info("PURCHASE STEPS ARE OPENED.")
+            self._driver.save_screenshot('After opening Purchase steps list.png')
             return True
         logging.info("PURCHASE STEPS ARE NOT OPENED.")
     #------------------------------------------------------------------------------------------------------------

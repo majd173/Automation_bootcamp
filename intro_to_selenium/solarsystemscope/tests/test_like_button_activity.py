@@ -27,6 +27,9 @@ class TestLikeButtonActivity(unittest.TestCase):
         logging.info("LIKE BUTTON ACTIVITY TESTING BEGAN...")
         self.home_page.click_on_like_button()
         self.assertTrue(self.home_page.check_like_button_activity())
+        print("--------------------------------------------")
+
+    # ------------------------------------------------------------------------------------------------------------
 
 
 if __name__ == '__main__':
