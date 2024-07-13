@@ -1,5 +1,6 @@
 import unittest
 import logging
+# tests ---------------------------------infra----------------------------------------files
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 from intro_to_selenium.solarsystemscope.infra.logging_setup import LoggingSetup
@@ -38,9 +39,9 @@ class LogInTest(unittest.TestCase):
         logging.info("INVALID LOGIN TESTING BEGAN...")
         self.home_page.invalid_log_in_flow()
         self.assertEqual("Error:Email or password does not exist.", self.home_page.error_login_message_display(), "WRONG LOGIN MESSAGE.")
-        print("--------------------------------------------")
+        print("---------------------- TEST DONE -----------------------")
+        logging.info("--------------------------------------------------------------")
 
-    # ------------------------------------------------------------------------------------------------------------
 
 if __name__ == '__main__':
     unittest.main()

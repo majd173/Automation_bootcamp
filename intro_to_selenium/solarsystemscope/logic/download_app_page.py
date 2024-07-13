@@ -48,6 +48,7 @@ class DownloadAppPage(BasePage):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._show_button)
         self._driver.save_screenshot('Before clicking Show button.png')
         self._show_button.click()
+        logging.info("SHOW BUTTON WAS CLICKED.")
 
     #------------------------------------------------------------------------------------------------------------
     # This function returns if the "Purchases steps tab" opens.
@@ -56,8 +57,8 @@ class DownloadAppPage(BasePage):
             EC.visibility_of_element_located((By.XPATH, self.OPENED_STEPS)))
         self._driver.execute_script("arguments[0].scrollIntoView();", self._purchase_steps)
         if self._purchase_steps.is_displayed():
-            logging.info("PURCHASE STEPS ARE OPENED.")
+            logging.info("PURCHASE STEPS WERE OPENED.")
             self._driver.save_screenshot('After opening Purchase steps list.png')
             return True
-        logging.info("PURCHASE STEPS ARE NOT OPENED.")
+        logging.info("PURCHASE STEPS WERE NOT OPENED.")
     #------------------------------------------------------------------------------------------------------------

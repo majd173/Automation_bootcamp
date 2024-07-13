@@ -1,5 +1,6 @@
 import logging
 import unittest
+# tests ---------------------------------infra----------------------------------------files
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 from intro_to_selenium.solarsystemscope.infra.logging_setup import LoggingSetup
@@ -32,7 +33,9 @@ class TestDistantPlacesList(unittest.TestCase):
         astronomy_places = AstronomyPlacesPage(self._driver)
         astronomy_places.click_on_load_places()
         self.assertTrue(astronomy_places.display_added_box(), "ADDED BOX CAN NOT BE DISPLAYED.")
-        print("--------------------------------------------")
+        print("---------------------- TEST DONE -----------------------")
+        logging.info("--------------------------------------------------------------")
+
 
 if __name__ == '__main__':
     unittest.main()

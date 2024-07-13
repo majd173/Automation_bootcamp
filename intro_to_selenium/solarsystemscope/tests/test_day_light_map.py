@@ -1,4 +1,6 @@
 import unittest
+import logging
+# tests ---------------------------------infra----------------------------------------files
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 from intro_to_selenium.solarsystemscope.infra.logging_setup import LoggingSetup
@@ -35,7 +37,9 @@ class TestDayLightMap(unittest.TestCase):
         self.assertEqual("Adobe Flash", day_light_map_page.adobe_request_message_display(),
                       "ADOBE REQUEST IS NOT DISPLAYED.")
         self._driver.save_screenshot('Adobe request message.png')
-        print("--------------------------------------------")
+        print("---------------------- TEST DONE -----------------------")
+        logging.info("--------------------------------------------------------------")
+
 
 if __name__ == '__main__':
     unittest.main()

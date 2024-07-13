@@ -24,3 +24,4 @@ class OnlineAppsPage(BasePage):
             EC.element_to_be_clickable((By.XPATH, self.DAYLIGHT_MAP_BUTTON)))
         self._driver.execute_script("arguments[0].scrollIntoView();", self._day_light_map)
         self._day_light_map.click()
+        logging.info("DAY LIGHT MAP BUTTON WAS CLICKED.")

@@ -48,6 +48,7 @@ class AstronomyPlacesPage(BasePage):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._load_places)
         self._driver.save_screenshot('Before opening Distant places list.png')
         self._load_places.click()
+        logging.info("LOAD PLACES BUTTON WAS CLICKED.")
 
     #------------------------------------------------------------------------------------------------------------
     # This function returns if the new distant places were have been added after running the previous function.
@@ -62,7 +63,7 @@ class AstronomyPlacesPage(BasePage):
                 return True
             logging.info("ADDED BOX IS NOT DISPLAYED.")
         except NoSuchElementException:
-            logging.info("ADDED BOX ELEMENT CAN NOT BE FOUND.")
+            logging.error("ADDED BOX ELEMENT CAN NOT BE FOUND.")
 
     #------------------------------------------------------------------------------------------------------------
     # This function clicks on the link of "Eretz Museum" and transfers to an external website.
@@ -71,7 +72,9 @@ class AstronomyPlacesPage(BasePage):
             self._eretz_museum_button = WebDriverWait(self._driver, 20).until(
                 EC.element_to_be_clickable((By.XPATH, self.ERETZ_MUSEUM_BUTTON)))
             self._driver.execute_script("arguments[0].scrollIntoView();", self._eretz_museum_button)
+            self._driver.save_screenshot('Before clicking on Eretz Museum button.png')
             self._eretz_museum_button.click()
+            logging.info("ERETZ MUSEUM BUTTON WAS CLICKED.")
         except TimeoutException:
             logging.error("ERETZ MUSEUM BUTTON CAN NOT BE FOUND OR PAGE DID NOT LOAD IN TIME.")
         except NoSuchElementException:

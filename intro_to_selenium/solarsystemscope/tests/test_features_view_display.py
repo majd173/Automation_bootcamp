@@ -1,5 +1,6 @@
 import logging
 import unittest
+# tests ---------------------------------infra----------------------------------------files
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 from intro_to_selenium.solarsystemscope.infra.logging_setup import LoggingSetup
@@ -31,7 +32,9 @@ class TestAppFeaturesPreview(unittest.TestCase):
         download = DownloadAppPage(self._driver)
         download.click_preview_button()
         self.assertTrue(download.earth_image_display(),"APP FEATURES DISPLAY ERROR.")
-        print("--------------------------------------------")
+        print("---------------------- TEST DONE -----------------------")
+        logging.info("--------------------------------------------------------------")
+
 
 if __name__ == '__main__':
     unittest.main()

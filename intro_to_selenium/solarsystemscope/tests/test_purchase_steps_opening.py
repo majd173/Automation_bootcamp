@@ -1,6 +1,6 @@
 import logging
 import unittest
-import unittest
+# tests ---------------------------------infra----------------------------------------files
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 from intro_to_selenium.solarsystemscope.infra.logging_setup import LoggingSetup
@@ -32,10 +32,9 @@ class TestPurchaseStepsOpening(unittest.TestCase):
         download = DownloadAppPage(self._driver)
         download.click_on_show_button()
         self.assertTrue(download.purchase_steps_opening(), "PURCHASE STEPS IS NOT OPENED.")
-        print("--------------------------------------------")
+        print("---------------------- TEST DONE -----------------------")
+        logging.info("--------------------------------------------------------------")
 
-
-    # ------------------------------------------------------------------------------------------------------------
 
 
 if __name__ == '__main__':

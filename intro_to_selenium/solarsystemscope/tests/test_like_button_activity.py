@@ -1,6 +1,6 @@
 import logging
 import unittest
-import unittest
+# tests ---------------------------------infra----------------------------------------files
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 from intro_to_selenium.solarsystemscope.infra.logging_setup import LoggingSetup
@@ -28,9 +28,9 @@ class TestLikeButtonActivity(unittest.TestCase):
         logging.info("LIKE BUTTON ACTIVITY TESTING BEGAN...")
         self.home_page.click_on_like_button()
         self.assertTrue(self.home_page.check_like_button_activity())
-        print("--------------------------------------------")
+        print("---------------------- TEST DONE -----------------------")
+        logging.info("--------------------------------------------------------------")
 
-    # ------------------------------------------------------------------------------------------------------------
 
 
 if __name__ == '__main__':

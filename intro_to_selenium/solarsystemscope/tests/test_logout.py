@@ -1,5 +1,6 @@
 import logging
 import unittest
+# tests ---------------------------------infra----------------------------------------files
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 from intro_to_selenium.solarsystemscope.infra.logging_setup import LoggingSetup
@@ -30,9 +31,8 @@ class TestLogout(unittest.TestCase):
         self.home_page.click_on_logout_button()
         self.assertTrue(self.home_page.logout_confirmation())
         self._driver.save_screenshot('After clicking logut button.png')
-        print("--------------------------------------------")
-
-    # ------------------------------------------------------------------------------------------------------------
+        print("---------------------- TEST DONE -----------------------")
+        logging.info("--------------------------------------------------------------")
 
 
 if __name__ == '__main__':

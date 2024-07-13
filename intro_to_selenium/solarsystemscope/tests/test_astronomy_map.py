@@ -1,5 +1,6 @@
 import unittest
 import logging
+# tests ---------------------------------infra----------------------------------------files
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 from intro_to_selenium.solarsystemscope.infra.logging_setup import LoggingSetup
@@ -31,8 +32,8 @@ class TestAstronomyPlacesMap(unittest.TestCase):
         self.home_page.click_on_astronomy_places()
         map = AstronomyPlacesPage(self._driver)
         self.assertTrue(map.map_display(), "ASTRONOMY PLACES MAP DISPLAY ERROR.")
-        print("--------------------------------------------")
-
+        print("---------------------- TEST DONE -----------------------")
+        logging.info("--------------------------------------------------------------")
 
 if __name__ == '__main__':
     unittest.main()
