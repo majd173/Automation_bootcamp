@@ -1,5 +1,6 @@
 import logging
 import unittest
+from intro_to_selenium.solarsystemscope.infra.logging_setup import LoggingSetup
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
 # tests ---------------------------------logic----------------------------------------files

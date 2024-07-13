@@ -1,5 +1,4 @@
 
-import time
 from intro_to_selenium.solarsystemscope.infra.utils import Utils
 from selenium.webdriver.support import expected_conditions as EC
 from intro_to_selenium.solarsystemscope.infra.base_page import BasePage
@@ -8,7 +7,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.expected_conditions import *
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 import logging
-# logging.basicConfig(level=logging.ERROR, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 class HomePage(BasePage):

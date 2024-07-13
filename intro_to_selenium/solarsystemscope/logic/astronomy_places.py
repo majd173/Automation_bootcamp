@@ -6,9 +6,9 @@ from intro_to_selenium.solarsystemscope.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.expected_conditions import *
 
-logging.basicConfig(
-    filename="solar_logfile.log",
-    format='%(asctime)s: %(levelname)s: %(message)s', datefmt='%d-%b-%y %H:%M:%S', filemode='w')
+# logging.basicConfig(
+#     filename="solar_logfile.log",
+#     format='%(asctime)s: %(levelname)s: %(message)s', datefmt='%d-%b-%y %H:%M:%S', filemode='w')
 
 
 class AstronomyPlacesPage(BasePage):
@@ -33,7 +33,6 @@ class AstronomyPlacesPage(BasePage):
 
     # This function returns if the map is displayed.
     def map_display(self):
-        self._driver.execute_script("arguments[0].scrollIntoView();", self._map)
         WebDriverWait(self._driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, self.MAP)))
         self._driver.execute_script("arguments[0].scrollIntoView();", self._map)
