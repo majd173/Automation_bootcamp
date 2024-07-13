@@ -1,22 +1,22 @@
 import logging
 import logging.config
+class Logging:
+    # Create and configure logger
+    logging.basicConfig(
+        filename="/intro_to_selenium/solarsystemscope/solar_logfile.log",
+        format='%(asctime)s: %(levelname)s: %(message)s', filemode='w')
 
-# Create and configure logger
-logging.basicConfig(
-    filename="C://Users//Admin//Desktop//Automation_bootcamp//intro_to_selenium//solarsystemscope//logfile.log",
-    format='%(asctime)s: %(levelname)s: %(message)s', filemode='w')
+    # Creating an object
+    logger = logging.getLogger(__name__)
 
-# Creating an object
-logger = logging.getLogger(__name__)
+    # Setting the threshold of logger to DEBUG
+    logger.setLevel(logging.DEBUG)
 
-# Setting the threshold of logger to DEBUG
-logger.setLevel(logging.DEBUG)
-
-logging.debug('THIS IS A DEBUG MESSAGE: ')
-logging.info('THIS IS AN INFO MESSAGE: ')
-logging.warning('THIS IS A WARNING MESSAGE: ')
-logging.error('THIS IS AN ERROR MESSAGE: ')
-logging.critical('THIS IS A CRITICAL MESSAGE: ')
+    logger.debug('THIS IS A DEBUG MESSAGE: ')
+    logger.info('THIS IS AN INFO MESSAGE: ')
+    logger.warning('THIS IS A WARNING MESSAGE: ')
+    logger.error('THIS IS AN ERROR MESSAGE: ')
+    logger.critical('THIS IS A CRITICAL MESSAGE: ')
 
 #--------------------------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------------------------
@@ -27,7 +27,7 @@ logging.critical('THIS IS A CRITICAL MESSAGE: ')
 #     logger = logging.getLogger(__name__)
 #
 #     # FileHandler() method takes location and path of log file
-#     fileHandler = logging.FileHandler('C://Users//Admin//Desktop//Automation_bootcamp//intro_to_selenium//solarsystemscope//logfile.log')
+#     fileHandler = logging.FileHandler('C://Users//Admin//Desktop//Automation_bootcamp//intro_to_selenium//solarsystemscope//solar_logfile.log')
 #     # Formatter() method takes care of the log file formatting
 #     formatter = logging.Formatter("%(asctime)s :%(levelname)s :%(name)s :%(message)s")
 #     fileHandler.setFormatter(formatter)
@@ -51,7 +51,7 @@ logging.critical('THIS IS A CRITICAL MESSAGE: ')
 #
 #     logger.setLevel(logging.DEBUG)
 #
-#     handler = logging.FileHandler("C://Users//Admin//Desktop//Automation_bootcamp//intro_to_selenium//solarsystemscope//logfile.log")
+#     handler = logging.FileHandler("C://Users//Admin//Desktop//Automation_bootcamp//intro_to_selenium//solarsystemscope//solar_logfile.log")
 #     logger.addHandler(handler)
 #
 #     logging.getLogger('selenium.webdriver.remote').setLevel(logging.WARN)
@@ -66,5 +66,5 @@ logging.critical('THIS IS A CRITICAL MESSAGE: ')
 #     logger.critical('THIS IS A CRITICAL MESSAGE: ')
 #     logger.info('THIS IS AN INFO MESSAGE: ')
 #
-#     with open("C://Users//Admin//Desktop//Automation_bootcamp//intro_to_selenium//solarsystemscope//logfile.log", 'r') as fp:
+#     with open("C://Users//Admin//Desktop//Automation_bootcamp//intro_to_selenium//solarsystemscope//solar_logfile.log", 'r') as fp:
 #         assert len(fp.readlines()) == 3

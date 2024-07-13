@@ -13,7 +13,7 @@ class TestAstronomyPlacesMap(unittest.TestCase):
     # This function opens the homepage before all tests.
 
     def setUp(self):
-        self.config = ConfigProvider.load_from_file('../config.json')
+        self.config = ConfigProvider.load_from_file('../solar_config.json')
         self._driver = BrowserWrapper().get_driver()
         self.home_page = HomePage(self._driver)
         # self.home_page.valid_log_in_flow()

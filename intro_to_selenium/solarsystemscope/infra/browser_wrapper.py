@@ -7,7 +7,7 @@ class BrowserWrapper:
     # This class manages choosing a browser.
     def __init__(self):
         self._driver = None # because I still don't know which driver to choose.
-        self.config = ConfigProvider.load_from_file('../config.json')
+        self.config = ConfigProvider.load_from_file('../solar_config.json')
     # ------------------------------------------------------------------------------------------------------------
     # This function determines which browser to open and also opens it.
     def get_driver(self):

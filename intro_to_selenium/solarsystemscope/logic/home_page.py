@@ -29,7 +29,7 @@ class HomePage(BasePage):
 
     def __init__(self, driver):
         super().__init__(driver)
-        self._config = ConfigProvider.load_from_file("../config.json")
+        self._config = ConfigProvider.load_from_file("../solar_config.json")
         try:
             self._account_button = self._driver.find_element(By.XPATH, self.ACCOUNT_BUTTON)
         except NoSuchElementException:
