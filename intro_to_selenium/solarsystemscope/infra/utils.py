@@ -4,6 +4,8 @@ import time
 
 class Utils:
     # This class manages strings and numbers generating functions.
+    # This class in infra because it can be used all around the world
+    # not only for a specific website or app.
 
     #------------------------------------------------------------------------------------------------------------
     # This function generate automatically a random string built
@@ -39,7 +41,3 @@ class Utils:
 
 
 
-
-
-# this class in infra because it can be used all around the world
-# not only for a specific website or app.

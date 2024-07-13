@@ -35,7 +35,7 @@ class TestEretzMuseumPage(unittest.TestCase):
         astronomy_places.click_on_eretz_museum_button()
         eretz_museum = EretzMuseumPage(self._driver)
         self.assertNotEqual(eretz_museum.get_page_url(), "https://www.eretzmuseum.org.il/en/")
-        print("--------------------------------------------")
+        print("---------------------------------------------")
 
 
 if __name__ == '__main__':
