@@ -3,17 +3,29 @@ import string
 import time
 
 class Utils:
+    # This class manages strings and numbers generating functions.
 
+    #------------------------------------------------------------------------------------------------------------
+    # This function generate automatically a random string built
+    # from letters, digits and punctuations.
+    # It requires a"length" as an input.
     @staticmethod
     def generate_random_string(length) -> str:
         letters = string.ascii_letters + string.digits + string.punctuation
         return ''.join((random.choice(letters) for i in range(length)))
+
+    #------------------------------------------------------------------------------------------------------------
+    # This function generate automatically a random number
+    # It requires a"length" as an input.
 
     @staticmethod
     def generate_random_number(length) -> str:
         numbers = string.digits
         return ''.join((random.choice(numbers) for i in range(length)))
 
+    #------------------------------------------------------------------------------------------------------------
+    # This function can bea added in any test step as a time waiting
+    # together with retries to submit a specific action.
     @staticmethod
     def wait_for_action(action, sleep_time, retries):
         result = action
