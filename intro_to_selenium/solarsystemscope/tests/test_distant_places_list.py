@@ -18,7 +18,6 @@ class TestDistantPlacesList(unittest.TestCase):
         self.home_page = HomePage(self._driver)
         # self.home_page.valid_log_in_flow()
     # ------------------------------------------------------------------------------------------------------------
-    # This function closes the website after all tests.
 
     def tearDown(self):
         self._driver.close()

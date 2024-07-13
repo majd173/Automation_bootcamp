@@ -18,7 +18,6 @@ class TestEretzMuseumPage(unittest.TestCase):
         self.config = ConfigProvider.load_from_file('../solar_config.json')
         self._driver = BrowserWrapper().get_driver()
         self.home_page = HomePage(self._driver)
-        # self.home_page.valid_log_in_flow()
 
     # ------------------------------------------------------------------------------------------------------------
     # This function closes the website after all tests.
