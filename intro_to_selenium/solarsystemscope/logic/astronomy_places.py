@@ -71,7 +71,7 @@ class AstronomyPlacesPage(BasePage):
         try:
             self._eretz_museum_button = WebDriverWait(self._driver, 20).until(
                 EC.element_to_be_clickable((By.XPATH, self.ERETZ_MUSEUM_BUTTON)))
-            self._driver.execute_script("arguments[0].scrollIntoView();", self._eretz_museum_button)
+            # self._driver.execute_script("arguments[0].scrollIntoView();", self._eretz_museum_button)
             self._driver.save_screenshot('Before clicking on Eretz Museum button.png')
             self._eretz_museum_button.click()
             logging.info("ERETZ MUSEUM BUTTON WAS CLICKED.")
