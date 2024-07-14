@@ -1,4 +1,5 @@
 import json
+import logging
 from selenium import webdriver
 from intro_to_selenium.saucedemo_website.pom.infra.config_provider import ConfigProvider
 
@@ -25,4 +26,5 @@ class BrowserWrapper:
 
         self._driver.get(url)
         self._driver.maximize_window()
+        logging.info(f'Opens: {self.config["browser"]} browser')
         return self._driver

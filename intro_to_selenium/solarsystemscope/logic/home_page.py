@@ -1,3 +1,5 @@
+import os.path
+
 from intro_to_selenium.solarsystemscope.infra.utils import Utils
 from selenium.webdriver.support import expected_conditions as EC
 from intro_to_selenium.solarsystemscope.infra.base_page import BasePage
@@ -24,6 +26,7 @@ class HomePage(BasePage):
     LIKE_BUTTON = "//a[@class='panel-type-10-semi-black-bg like']"
     LIKE_COUNT_BOX = "//span[@class='like-count']"
 
+
     def __init__(self, driver):
         super().__init__(driver)
         self._config = ConfigProvider.load_from_file("../solar_config.json")
@@ -46,6 +49,7 @@ class HomePage(BasePage):
             self._explore = self._driver.find_element(By.XPATH, self.EXPLORE_BUTTON)
         except NoSuchElementException:
             logging.error("EXPLORE ELEMENT CAN NOT BE FOUND")
+
 
     # ------------------------------------------------------------------------------------------------------------
     # This function clicks on the "Account" button.
@@ -81,8 +85,7 @@ class HomePage(BasePage):
     # ------------------------------------------------------------------------------------------------------------
     # This function submits a full valid login process.
     def valid_log_in_flow(self):
-        self._driver.save_screenshot('Before clicking Account button.png')
-        self._account_button.click()
+        self.click_account_button()
         self.insert_email(self._config["valid_email"])
         self.insert_password(self._config["valid_password"])
         self._driver.save_screenshot('After clicking account button and inserting valid account details.png')
