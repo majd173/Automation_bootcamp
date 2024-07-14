@@ -22,7 +22,7 @@ class BrowserWrapper:
         elif self.config["browser"] == "Edge":
             self._driver = webdriver.Edge()
         else:
-            print("browser is not exist")
+            logging.error("")
 
         self._driver.get(url)
         self._driver.maximize_window()
