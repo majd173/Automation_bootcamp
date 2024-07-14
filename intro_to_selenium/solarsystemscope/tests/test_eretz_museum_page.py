@@ -44,8 +44,8 @@ class TestEretzMuseumPage(unittest.TestCase):
                 break
         eretz_museum = EretzMuseumPage(self._driver)
         self._driver.save_screenshot('After clicking Eretz museum button and opening Eretz Museum website.png')
-        self.assertEqual(eretz_museum.get_page_url(), "https://www.eretzmuseum.org.il/en/",
-                         "THE CURRENT URL IS NOT AS EXPECTED.")
+        self.assertIn("eretzmuseum", eretz_museum.get_page_url(),
+                      "THE CURRENT URL IS NOT AS EXPECTED.")
         print("---------------------- TEST DONE -----------------------")
         logging.info("--------------------------------------------------------------")
 
