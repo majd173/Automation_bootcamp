@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions as EC
 # tests ---------------------------------infra----------------------------------------files
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
+from intro_to_selenium.solarsystemscope.infra.window_switch import WindowSwitch
 # tests ---------------------------------logic----------------------------------------files
 from intro_to_selenium.solarsystemscope.logic.home_page import HomePage
 from intro_to_selenium.solarsystemscope.logic.astronomy_places import AstronomyPlacesPage
@@ -32,21 +33,15 @@ class TestEretzMuseumPage(unittest.TestCase):
 
     def test_eretz_museum_page(self):
         logging.info("ERETZ MUSEUM URL MATCH TESTING BEGAN...")
-        original_window = self._driver.current_window_handle
+        current_window = self._driver.current_window_handle
         self.home_page.click_on_explore()
         self.home_page.click_on_astronomy_places()
         astronomy_places = AstronomyPlacesPage(self._driver)
         astronomy_places.click_on_load_places()
-        assert len(self._driver.window_handles) == 1
-        astronomy_places.click_on_eretz_museum_button()
-        WebDriverWait(self._driver, 10).until(EC.number_of_windows_to_be(2))
-        for window_handle in self._driver.window_handles:
-            if window_handle != original_window:
-                self._driver.switch_to.window(window_handle)
-                break
+        astronomy_places.window_switch(current_window)
         eretz_museum = EretzMuseumPage(self._driver)
         self._driver.save_screenshot('After clicking Eretz museum button and opening Eretz Museum website.png')
-        self.assertIn("eretzmuseum", eretz_museum.get_page_url(),
+        self.assertIn("eretzmuseum", eretz_museum.get_current_url(),
                       "THE CURRENT URL IS NOT AS EXPECTED.")
         print("---------------------- TEST DONE -----------------------")
 

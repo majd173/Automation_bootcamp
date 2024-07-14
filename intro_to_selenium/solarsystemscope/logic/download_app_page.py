@@ -61,4 +61,5 @@ class DownloadAppPage(BasePage):
             self._driver.save_screenshot('After opening Purchase steps list.png')
             return True
         logging.info("PURCHASE STEPS WERE NOT OPENED.")
+
     #------------------------------------------------------------------------------------------------------------

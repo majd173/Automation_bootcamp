@@ -25,3 +25,5 @@ class OnlineAppsPage(BasePage):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._day_light_map)
         self._day_light_map.click()
         logging.info("DAY LIGHT MAP BUTTON WAS CLICKED.")
+
+    #------------------------------------------------------------------------------------------------------------

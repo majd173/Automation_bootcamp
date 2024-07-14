@@ -1,4 +1,6 @@
+import logging
 from intro_to_selenium.solarsystemscope.infra.base_page import BasePage
+
 
 
 class EretzMuseumPage(BasePage):
@@ -10,6 +12,4 @@ class EretzMuseumPage(BasePage):
 
     #------------------------------------------------------------------------------------------------------------
 
-    # This function returns the website's URL.
-    def get_page_url(self):
-        return self._driver.current_url
+

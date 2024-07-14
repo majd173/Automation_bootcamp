@@ -204,4 +204,5 @@ class HomePage(BasePage):
             return False
         except NoSuchElementException:
             logging.error("LIKE ACCOUNT BOX ELEMENT CAN NOT BE FOUND.")
+
     #------------------------------------------------------------------------------------------------------------
