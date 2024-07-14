@@ -5,5 +5,5 @@ class LoggingSetup:
     # important scenarios during tests running.
 
     logging.basicConfig(filename="../solar_logfile.log",
-                level=logging.INFO, format='%(asctime)s,%(levelname)s:%(message)s:',
+                level=logging.INFO, format='%(asctime)s:%(levelname)s:%(message)s:',
                 force=True)

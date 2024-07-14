@@ -22,6 +22,8 @@ class TestDistantPlacesList(unittest.TestCase):
 
     def tearDown(self):
         self._driver.close()
+        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
+
 
     # ------------------------------------------------------------------------------------------------------------
 
@@ -33,7 +35,6 @@ class TestDistantPlacesList(unittest.TestCase):
         astronomy_places.click_on_load_places()
         self.assertTrue(astronomy_places.display_added_box(), "ADDED BOX CAN NOT BE DISPLAYED.")
         print("---------------------- TEST DONE -----------------------")
-        logging.info("--------------------------------------------------------------")
 
 
 if __name__ == '__main__':

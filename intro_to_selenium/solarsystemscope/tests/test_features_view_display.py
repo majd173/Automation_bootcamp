@@ -22,6 +22,8 @@ class TestAppFeaturesPreview(unittest.TestCase):
     # This function closes the website after all tests.
     def tearDown(self):
         self._driver.close()
+        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
+
 
     # ------------------------------------------------------------------------------------------------------------
 
@@ -32,7 +34,6 @@ class TestAppFeaturesPreview(unittest.TestCase):
         download.click_preview_button()
         self.assertTrue(download.earth_image_display(),"APP FEATURES DISPLAY ERROR.")
         print("---------------------- TEST DONE -----------------------")
-        logging.info("--------------------------------------------------------------")
 
 
 if __name__ == '__main__':

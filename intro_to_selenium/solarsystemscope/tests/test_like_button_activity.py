@@ -19,7 +19,8 @@ class TestLikeButtonActivity(unittest.TestCase):
     # This function closes the website after all tests.
     def tearDown(self):
         self._driver.close()
-    # closing the website after all tests
+        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
+
 
     # ------------------------------------------------------------------------------------------------------------
 
@@ -28,7 +29,6 @@ class TestLikeButtonActivity(unittest.TestCase):
         self.home_page.click_on_like_button()
         self.assertTrue(self.home_page.check_like_button_activity())
         print("---------------------- TEST DONE -----------------------")
-        logging.info("--------------------------------------------------------------")
 
 
 

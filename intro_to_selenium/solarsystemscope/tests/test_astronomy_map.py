@@ -23,6 +23,8 @@ class TestAstronomyPlacesMap(unittest.TestCase):
 
     def tearDown(self):
         self._driver.close()
+        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
+
     # ------------------------------------------------------------------------------------------------------------
 
     def test_astronomy_places_map_display(self):
@@ -32,7 +34,6 @@ class TestAstronomyPlacesMap(unittest.TestCase):
         map = AstronomyPlacesPage(self._driver)
         self.assertTrue(map.map_display(), "ASTRONOMY PLACES MAP DISPLAY ERROR.")
         print("---------------------- TEST DONE -----------------------")
-        logging.info("--------------------------------------------------------------")
 
 if __name__ == '__main__':
     unittest.main()

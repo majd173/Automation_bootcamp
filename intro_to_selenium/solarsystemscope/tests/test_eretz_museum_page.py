@@ -25,6 +25,8 @@ class TestEretzMuseumPage(unittest.TestCase):
     # This function closes the website after all tests.
     def tearDown(self):
         self._driver.close()
+        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
+
 
     # ------------------------------------------------------------------------------------------------------------
 
@@ -47,7 +49,6 @@ class TestEretzMuseumPage(unittest.TestCase):
         self.assertIn("eretzmuseum", eretz_museum.get_page_url(),
                       "THE CURRENT URL IS NOT AS EXPECTED.")
         print("---------------------- TEST DONE -----------------------")
-        logging.info("--------------------------------------------------------------")
 
 
 if __name__ == '__main__':

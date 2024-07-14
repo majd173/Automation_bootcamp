@@ -23,6 +23,7 @@ class TestDayLightMap(unittest.TestCase):
 
     def tearDown(self):
         self._driver.close()
+        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
 
     # ------------------------------------------------------------------------------------------------------------
 
@@ -34,10 +35,9 @@ class TestDayLightMap(unittest.TestCase):
         online_apps_page.click_on_day_light_map_button()
         day_light_map_page = DayLightMapPage(self._driver)
         self.assertEqual("Adobe Flash", day_light_map_page.adobe_request_message_display(),
-                      "ADOBE REQUEST IS NOT DISPLAYED.")
+                         "ADOBE REQUEST IS NOT DISPLAYED.")
         self._driver.save_screenshot('Adobe request message.png')
         print("---------------------- TEST DONE -----------------------")
-        logging.info("--------------------------------------------------------------")
 
 
 if __name__ == '__main__':
