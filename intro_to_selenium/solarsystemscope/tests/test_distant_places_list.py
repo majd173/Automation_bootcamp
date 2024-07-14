@@ -22,13 +22,15 @@ class TestDistantPlacesList(unittest.TestCase):
 
     def tearDown(self):
         self._driver.close()
-        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
+        logging.info(f'{self.config["browser"]} browser was closed.'
+                     f'\n--------------------------------------------')
 
 
     # ------------------------------------------------------------------------------------------------------------
-
+    # Testing activity of opening distant places list.
+    # Test case no: 6 - To ensure that a customer can open the Distant Places list.
     def test_open_distant_places_list(self):
-        logging.info("OPEN DISTANT PLACES LIST TESTING BEGAN...")
+        logging.info("_____OPEN DISTANT PLACES LIST TESTING BEGAN_____")
         self.home_page.click_on_explore()
         self.home_page.click_on_astronomy_places()
         astronomy_places = AstronomyPlacesPage(self._driver)

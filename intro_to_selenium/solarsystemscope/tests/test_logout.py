@@ -22,13 +22,16 @@ class TestLogout(unittest.TestCase):
 
     def tearDown(self):
         self._driver.close()
-        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
+        logging.info(f'{self.config["browser"]} browser was closed.'
+                     f'\n--------------------------------------------')
 
 
     # ------------------------------------------------------------------------------------------------------------
+    # Testing logging out successfully.
+    # Test case no: 8 - To ensure that a customer can log out successfully after being logged in.
 
     def test_logout_successfully(self):
-        logging.info("LOGOUT SUCCESSFULLY TESTING BEGAN...")
+        logging.info("_____LOGOUT SUCCESSFULLY TESTING BEGAN_____")
         self.home_page.click_on_logout_button()
         self.assertTrue(self.home_page.logout_confirmation())
         self._driver.save_screenshot('After clicking logut button.png')

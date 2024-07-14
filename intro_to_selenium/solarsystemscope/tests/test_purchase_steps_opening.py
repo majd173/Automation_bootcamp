@@ -22,12 +22,15 @@ class TestPurchaseStepsOpening(unittest.TestCase):
     # This function closes the website after all tests.
     def tearDown(self):
         self._driver.close()
-        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
+        logging.info(f'{self.config["browser"]} browser was closed.'
+                     f'\n--------------------------------------------')
 
     # ------------------------------------------------------------------------------------------------------------
+    # Testing activity of opening purchase steps tab.
+    # Test case no: 9 - To ensure that a customer can open Purchase steps tab.
 
     def test_purchase_steps_opening(self):
-        logging.info("PURCHASE STEPS OPENING TESTING BEGAN...")
+        logging.info("_____PURCHASE STEPS OPENING TESTING BEGAN_____")
         self.home_page.click_on_download_app()
         download = DownloadAppPage(self._driver)
         download.click_on_show_button()

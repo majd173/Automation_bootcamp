@@ -1,11 +1,8 @@
 import unittest
 import logging
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
 # tests ---------------------------------infra----------------------------------------files
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
-from intro_to_selenium.solarsystemscope.infra.window_switch import WindowSwitch
 # tests ---------------------------------logic----------------------------------------files
 from intro_to_selenium.solarsystemscope.logic.home_page import HomePage
 from intro_to_selenium.solarsystemscope.logic.astronomy_places import AstronomyPlacesPage
@@ -26,13 +23,16 @@ class TestEretzMuseumPage(unittest.TestCase):
     # This function closes the website after all tests.
     def tearDown(self):
         self._driver.close()
-        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
+        logging.info(f'{self.config["browser"]} browser was closed.'
+                     f'\n--------------------------------------------')
 
 
     # ------------------------------------------------------------------------------------------------------------
+    # Testing integration and switching to Eretz Museum website.
+    # Test case no: 10 - To ensure that a customer can integrate with another website through SolarSystemScope website.
 
     def test_eretz_museum_page(self):
-        logging.info("ERETZ MUSEUM URL MATCH TESTING BEGAN...")
+        logging.info("_____ERETZ MUSEUM URL MATCH TESTING BEGAN_____")
         current_window = self._driver.current_window_handle
         self.home_page.click_on_explore()
         self.home_page.click_on_astronomy_places()

@@ -23,12 +23,16 @@ class TestAstronomyPlacesMap(unittest.TestCase):
 
     def tearDown(self):
         self._driver.close()
-        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
+        logging.info(f'{self.config["browser"]} browser was closed.'
+                     f'\n--------------------------------------------')
 
     # ------------------------------------------------------------------------------------------------------------
+    # Testing the display of astronomy places map.
+    # Test case no: 3 - To ensure that a customer can preview astronomy places map.
+
 
     def test_astronomy_places_map_display(self):
-        logging.info("ASTRONOMY PLACES MAP DISPLAY TESTING BEGAN...")
+        logging.info("_____ASTRONOMY PLACES MAP DISPLAY TESTING BEGAN_____")
         self.home_page.click_on_explore()
         self.home_page.click_on_astronomy_places()
         map = AstronomyPlacesPage(self._driver)

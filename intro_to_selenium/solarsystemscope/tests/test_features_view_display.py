@@ -22,13 +22,17 @@ class TestAppFeaturesPreview(unittest.TestCase):
     # This function closes the website after all tests.
     def tearDown(self):
         self._driver.close()
-        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
+        logging.info(f'{self.config["browser"]} browser was closed.'
+                     f'\n--------------------------------------------')
 
 
     # ------------------------------------------------------------------------------------------------------------
+    # Testing the preview of the app features.
+    # Test case no: 4 - To ensure that a customer can view features of desktop app.
+
 
     def test_app_features_preview(self):
-        logging.info("APP FEATURES PREVIEW TESTING BEGAN...")
+        logging.info("_____APP FEATURES PREVIEW TESTING BEGAN_____")
         self.home_page.click_on_download_app()
         download = DownloadAppPage(self._driver)
         download.click_preview_button()

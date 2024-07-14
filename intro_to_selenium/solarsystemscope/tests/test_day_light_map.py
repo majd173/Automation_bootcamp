@@ -23,12 +23,15 @@ class TestDayLightMap(unittest.TestCase):
 
     def tearDown(self):
         self._driver.close()
-        logging.info(f'{self.config["browser"]} browser was closed.\n--------------------------------------------')
+        logging.info(f'{self.config["browser"]} browser was closed.'
+                     f'\n--------------------------------------------')
 
     # ------------------------------------------------------------------------------------------------------------
+    # Testing display of Adobe request message.
+    # Test case no: 5 - To ensure that a customer can not run online maps without Adobe flash exist.
 
     def test_adobe_request_message(self):
-        print("ADOBE FLASH REQUEST MESSAGE DISPLAY TESTING BEGAN...")
+        print("_____ADOBE FLASH REQUEST MESSAGE DISPLAY TESTING BEGAN_____")
         self.home_page.click_on_explore()
         self.home_page.click_on_online_apps_button()
         online_apps_page = OnlineAppsPage(self._driver)
