@@ -6,7 +6,6 @@ from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrap
 # tests ---------------------------------logic----------------------------------------files
 from intro_to_selenium.solarsystemscope.logic.home_page import HomePage
 from intro_to_selenium.solarsystemscope.logic.astronomy_places import AstronomyPlacesPage
-from intro_to_selenium.solarsystemscope.logic.eretz_museum_page import EretzMuseumPage
 
 
 class TestEretzMuseumPage(unittest.TestCase):
@@ -40,9 +39,10 @@ class TestEretzMuseumPage(unittest.TestCase):
         astronomy_places = AstronomyPlacesPage(self._driver)
         astronomy_places.click_on_load_places()
         astronomy_places.window_switch(current_window)
-        eretz_museum = EretzMuseumPage(self._driver)
-        self.assertIn("eretzmuseum", eretz_museum.get_current_url(),
-        "The current url is not as expected.")
+        self.assertIn("eretzmuseum", self._driver.current_url,
+                      "The current url is not as expected.")
+        self.assertEqual("Home - Eretz Israel Museum", self._driver.title,
+                      "The current title is not as expected.")
 
 
 if __name__ == '__main__':

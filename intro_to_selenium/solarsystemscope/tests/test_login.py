@@ -47,7 +47,8 @@ class LogInTest(unittest.TestCase):
         logging.info("_____INVALID LOGIN TESTING BEGAN_____")
         self.home_page.invalid_log_in_flow()
         self.assertEqual("Error:Email or password does not exist.",
-            self.home_page.error_login_message_display(), "Wrong invalid login message.")
+            self.home_page.error_login_message_display(),
+                         "Wrong invalid login message.")
 
 
 if __name__ == '__main__':

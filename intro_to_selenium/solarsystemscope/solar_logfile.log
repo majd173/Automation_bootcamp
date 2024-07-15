@@ -22,3 +22,51 @@
 2024-07-15 16:09:35,120:INFO:Chrome browser was closed.:
 2024-07-15 16:09:35,120:INFO:----------------- TEST DONE ------------------
 ---------------------------------------------------------------------------:
+2024-07-15 16:58:37,602:INFO:_____VALID LOGIN TESTING BEGAN_____:
+2024-07-15 16:58:37,603:INFO:Chrome browser was opened:
+2024-07-15 16:58:42,436:INFO:Valid account details were inserted and log in button was clicked.:
+2024-07-15 16:58:53,620:INFO:LOGOUT button is displayed, you are logged in.:
+2024-07-15 16:58:53,772:INFO:Chrome browser was closed.:
+2024-07-15 16:58:53,772:INFO:----------------- TEST DONE ------------------
+---------------------------------------------------------------------------:
+2024-07-15 17:05:25,053:INFO:_____ASTRONOMY PLACES MAP DISPLAY TESTING BEGAN_____:
+2024-07-15 17:05:25,054:INFO:Chrome browser was opened:
+2024-07-15 17:05:36,856:INFO:MAP is displayed.:
+2024-07-15 17:05:36,979:INFO:Chrome browser was closed.:
+2024-07-15 17:05:36,979:INFO:----------------- TEST DONE ------------------
+---------------------------------------------------------------------------:
+2024-07-15 17:08:34,131:INFO:_____ERETZ MUSEUM URL MATCH TESTING BEGAN_____:
+2024-07-15 17:08:34,131:INFO:Chrome browser was opened:
+2024-07-15 17:08:47,588:INFO:Chrome browser was closed.:
+2024-07-15 17:08:47,588:INFO:----------------- TEST DONE ------------------:
+2024-07-15 17:08:47,588:INFO:---------------------------------------------------------------------------:
+2024-07-15 17:09:22,136:INFO:_____ERETZ MUSEUM URL MATCH TESTING BEGAN_____:
+2024-07-15 17:09:22,137:INFO:Chrome browser was opened:
+2024-07-15 17:09:30,094:INFO:Chrome browser was closed.:
+2024-07-15 17:09:30,094:INFO:----------------- TEST DONE ------------------:
+2024-07-15 17:09:30,094:INFO:---------------------------------------------------------------------------:
+2024-07-15 17:10:54,612:INFO:_____ERETZ MUSEUM URL MATCH TESTING BEGAN_____:
+2024-07-15 17:10:54,613:INFO:Chrome browser was opened:
+2024-07-15 17:11:10,299:INFO:Chrome browser was closed.:
+2024-07-15 17:11:10,299:INFO:----------------- TEST DONE ------------------:
+2024-07-15 17:11:10,299:INFO:---------------------------------------------------------------------------:
+2024-07-15 17:11:39,367:INFO:_____ERETZ MUSEUM URL MATCH TESTING BEGAN_____:
+2024-07-15 17:11:39,368:INFO:Chrome browser was opened:
+2024-07-15 17:11:58,375:INFO:Chrome browser was closed.:
+2024-07-15 17:11:58,375:INFO:----------------- TEST DONE ------------------:
+2024-07-15 17:11:58,375:INFO:---------------------------------------------------------------------------:
+2024-07-15 17:12:40,602:INFO:_____ERETZ MUSEUM URL MATCH TESTING BEGAN_____:
+2024-07-15 17:12:40,603:INFO:Chrome browser was opened:
+2024-07-15 17:12:54,864:INFO:Chrome browser was closed.:
+2024-07-15 17:12:54,864:INFO:----------------- TEST DONE ------------------:
+2024-07-15 17:12:54,864:INFO:---------------------------------------------------------------------------:
+2024-07-15 17:13:41,169:INFO:_____ERETZ MUSEUM URL MATCH TESTING BEGAN_____:
+2024-07-15 17:13:41,169:INFO:Chrome browser was opened:
+2024-07-15 17:13:57,972:INFO:Chrome browser was closed.:
+2024-07-15 17:13:57,972:INFO:----------------- TEST DONE ------------------:
+2024-07-15 17:13:57,972:INFO:---------------------------------------------------------------------------:
+2024-07-15 17:14:41,995:INFO:_____ERETZ MUSEUM URL MATCH TESTING BEGAN_____:
+2024-07-15 17:14:41,996:INFO:Chrome browser was opened:
+2024-07-15 17:14:51,098:INFO:Chrome browser was closed.:
+2024-07-15 17:14:51,098:INFO:----------------- TEST DONE ------------------:
+2024-07-15 17:14:51,098:INFO:---------------------------------------------------------------------------:
