@@ -21,8 +21,9 @@ class LogInTest(unittest.TestCase):
     # This function closes the website after all tests.
     def tearDown(self):
         self._driver.close()
-        logging.info(f'{self.config["browser"]} browser was closed.'
-                     f'\n--------------------------------------------')
+        logging.info(f'{self.config["browser"]} browser was closed.')
+        logging.info("----------------- TEST DONE ------------------\n"
+        "----------------------------------------------------------------")
 
 
     # ------------------------------------------------------------------------------------------------------------
@@ -32,9 +33,9 @@ class LogInTest(unittest.TestCase):
 
     def test_valid_login(self):
         logging.info("_____VALID LOGIN TESTING BEGAN_____")
+        logging.info(f'{self.config["browser"]} browser was opened')
         self.home_page.valid_log_in_flow()
         self.assertEqual(True, self.home_page.logout_button_display(), "WRONG LOGIN PROCESS.")
-        print("---------------------- TEST DONE -----------------------")
 
     # ------------------------------------------------------------------------------------------------------------
     # Testing invalid logging in - invalid username and invalid password.
@@ -45,7 +46,6 @@ class LogInTest(unittest.TestCase):
         logging.info("_____INVALID LOGIN TESTING BEGAN_____")
         self.home_page.invalid_log_in_flow()
         self.assertEqual("Error:Email or password does not exist.", self.home_page.error_login_message_display(), "WRONG LOGIN MESSAGE.")
-        print("---------------------- TEST DONE -----------------------")
 
 
 if __name__ == '__main__':

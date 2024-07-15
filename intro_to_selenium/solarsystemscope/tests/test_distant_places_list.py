@@ -22,8 +22,9 @@ class TestDistantPlacesList(unittest.TestCase):
 
     def tearDown(self):
         self._driver.close()
-        logging.info(f'{self.config["browser"]} browser was closed.'
-                     f'\n--------------------------------------------')
+        logging.info(f'{self.config["browser"]} browser was closed.')
+        logging.info("----------------- TEST DONE ------------------\n"
+                     "----------------------------------------------------------------")
 
 
     # ------------------------------------------------------------------------------------------------------------
@@ -31,12 +32,12 @@ class TestDistantPlacesList(unittest.TestCase):
     # Test case no: 6 - To ensure that a customer can open the Distant Places list.
     def test_open_distant_places_list(self):
         logging.info("_____OPEN DISTANT PLACES LIST TESTING BEGAN_____")
+        logging.info(f'{self.config["browser"]} browser was opened')
         self.home_page.click_on_explore()
         self.home_page.click_on_astronomy_places()
         astronomy_places = AstronomyPlacesPage(self._driver)
         astronomy_places.click_on_load_places()
         self.assertTrue(astronomy_places.display_added_box(), "ADDED BOX CAN NOT BE DISPLAYED.")
-        print("---------------------- TEST DONE -----------------------")
 
 
 if __name__ == '__main__':

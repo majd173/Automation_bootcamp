@@ -43,6 +43,11 @@ class HomePage(BasePage):
         except NoSuchElementException:
             logging.error("DOWNLOAD ELEMENT CAN NOT BE FOUND")
 
+        try:
+            self._explore_button = self._driver.find_element(By.XPATH, self.EXPLORE_BUTTON)
+        except NoSuchElementException:
+            logging.error("EXPLORE ELEMENT CAN NOT BE FOUND")
+
 
     # ------------------------------------------------------------------------------------------------------------
     # This function clicks on the "Account" button.
@@ -143,9 +148,7 @@ class HomePage(BasePage):
     # ------------------------------------------------------------------------------------------------------------
     # This function clicks on the "Explore" button.
     def click_on_explore(self):
-        self._explore = WebDriverWait(self._driver, 10).until(
-            EC.visibility_of_element_located((By.XPATH, self.EXPLORE_BUTTON)))
-        self._explore.click()
+        self._explore_button.click()
         logging.info("EXPLORE BUTTON WAS CLICKED.")
 
     # ------------------------------------------------------------------------------------------------------------

@@ -38,7 +38,6 @@ class DownloadAppPage(BasePage):
             EC.visibility_of_element_located((By.XPATH, self.EARTH_IMAGE)))
         if self._earth_image.is_displayed():
             logging.info("FEATURES VIEW IS DISPLAYED.")
-            self._driver.save_screenshot('Features view display.png')
             return True
         logging.error("FEATURES VIEW IS NOT DISPLAYED")
 

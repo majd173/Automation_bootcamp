@@ -3,7 +3,7 @@ solar system scope online website automation tests.
                     V
                     V
 # Infra folder contains files and codes that can be used in each type of application or website
-testing process.
+testing process on a global scale..
 -----------------------------------------------------------------------------------------------------------------------
 # Logic folder contains the main pages in the website itself where main functions and scenarios
 are being occurred.
@@ -12,5 +12,5 @@ are being occurred.
 -----------------------------------------------------------------------------------------------------------------------
 # solar_logfile stores necessary steps are being done during tests running.
 -----------------------------------------------------------------------------------------------------------------------
-# sola_config stores necessary information are being used in tests like deriver name
+# solar_config stores necessary information are being used in tests like deriver name
 and user details (username and password).

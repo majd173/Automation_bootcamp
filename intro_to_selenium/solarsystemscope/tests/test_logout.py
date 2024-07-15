@@ -22,8 +22,9 @@ class TestLogout(unittest.TestCase):
 
     def tearDown(self):
         self._driver.close()
-        logging.info(f'{self.config["browser"]} browser was closed.'
-                     f'\n--------------------------------------------')
+        logging.info(f'{self.config["browser"]} browser was closed.')
+        logging.info("----------------- TEST DONE ------------------\n"
+        "----------------------------------------------------------------")
 
 
     # ------------------------------------------------------------------------------------------------------------
@@ -32,10 +33,10 @@ class TestLogout(unittest.TestCase):
 
     def test_logout_successfully(self):
         logging.info("_____LOGOUT SUCCESSFULLY TESTING BEGAN_____")
+        logging.info(f'{self.config["browser"]} browser was opened')
         self.home_page.click_on_logout_button()
         self.assertTrue(self.home_page.logout_confirmation())
         self._driver.save_screenshot('After clicking logut button.png')
-        print("---------------------- TEST DONE -----------------------")
 
 
 if __name__ == '__main__':
