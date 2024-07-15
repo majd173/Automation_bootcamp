@@ -1,15 +1,24 @@
-2024-07-15 13:09:23,524:INFO:_____ASTRONOMY PLACES MAP DISPLAY TESTING BEGAN_____:
-2024-07-15 13:09:23,526:INFO:Chrome browser was opened:
-2024-07-15 13:09:23,586:INFO:EXPLORE BUTTON WAS CLICKED.:
-2024-07-15 13:09:27,722:INFO:ASTRONOMY PLACES BUTTON WAS CLICKED.:
-2024-07-15 13:09:27,831:INFO:MAP IS DISPLAYED.:
-2024-07-15 13:09:27,971:INFO:Chrome browser was closed.:
-2024-07-15 13:09:27,971:INFO:----------------- TEST DONE ------------------
-----------------------------------------------------------------:
-2024-07-15 15:00:43,101:INFO:_____LIKE BUTTON ACTIVITY TESTING BEGAN_____:
-2024-07-15 15:00:43,101:INFO:Chrome browser was opened:
-2024-07-15 15:00:43,148:INFO:LIKE BUTTON WAS CLICKED.:
-2024-07-15 15:00:43,174:INFO:LIKE BUTTON IS NOT DISPLAYED AND CLICKABLE MORE.:
-2024-07-15 15:00:43,275:INFO:Chrome browser was closed.:
-2024-07-15 15:00:43,275:INFO:----------------- TEST DONE ------------------
-----------------------------------------------------------------:
+2024-07-15 15:56:18,150:INFO:Chrome browser was opened:
+2024-07-15 15:56:34,544:INFO:REQUEST MESSAGE IS DISPLAYED.:
+2024-07-15 15:56:34,703:INFO:Chrome browser was closed.:
+2024-07-15 15:56:34,703:INFO:----------------- TEST DONE ------------------
+---------------------------------------------------------------------------:
+2024-07-15 15:57:10,043:INFO:_____OPEN DISTANT PLACES LIST TESTING BEGAN_____:
+2024-07-15 15:57:10,043:INFO:Chrome browser was opened:
+2024-07-15 15:57:23,242:INFO:ADDED BOX IS DISPLAYED.:
+2024-07-15 15:57:23,365:INFO:Chrome browser was closed.:
+2024-07-15 15:57:23,365:INFO:----------------- TEST DONE ------------------
+---------------------------------------------------------------------------:
+2024-07-15 15:58:20,504:INFO:_____VALID LOGIN TESTING BEGAN_____:
+2024-07-15 15:58:20,505:INFO:FireFox browser was opened:
+2024-07-15 15:58:23,803:INFO:VALID ACCOUNT DETAILS WERE INSERTED AND LOG IN BUTTON WAS CLICKED.:
+2024-07-15 15:58:33,030:INFO:LOG OUT BUTTON IS DISPLAYED, YOU ARE LOGGED IN.:
+2024-07-15 15:58:34,429:INFO:FireFox browser was closed.:
+2024-07-15 15:58:34,429:INFO:----------------- TEST DONE ------------------
+---------------------------------------------------------------------------:
+2024-07-15 16:09:28,376:INFO:_____PURCHASE STEPS OPENING TESTING BEGAN_____:
+2024-07-15 16:09:28,376:INFO:Chrome browser was opened:
+2024-07-15 16:09:34,979:INFO:PURCHASE STEPS were opened.:
+2024-07-15 16:09:35,120:INFO:Chrome browser was closed.:
+2024-07-15 16:09:35,120:INFO:----------------- TEST DONE ------------------
+---------------------------------------------------------------------------:

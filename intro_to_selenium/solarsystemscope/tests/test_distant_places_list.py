@@ -24,7 +24,7 @@ class TestDistantPlacesList(unittest.TestCase):
         self._driver.close()
         logging.info(f'{self.config["browser"]} browser was closed.')
         logging.info("----------------- TEST DONE ------------------\n"
-                     "----------------------------------------------------------------")
+                     "---------------------------------------------------------------------------")
 
 
     # ------------------------------------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ class TestDistantPlacesList(unittest.TestCase):
         self.home_page.click_on_astronomy_places()
         astronomy_places = AstronomyPlacesPage(self._driver)
         astronomy_places.click_on_load_places()
-        self.assertTrue(astronomy_places.display_added_box(), "ADDED BOX CAN NOT BE DISPLAYED.")
+        self.assertTrue(astronomy_places.display_added_box(), "ADDED BOX can not be displayed.")
 
 
 if __name__ == '__main__':

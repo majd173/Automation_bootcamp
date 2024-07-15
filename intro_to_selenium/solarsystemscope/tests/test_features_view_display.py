@@ -24,7 +24,7 @@ class TestAppFeaturesPreview(unittest.TestCase):
         self._driver.close()
         logging.info(f'{self.config["browser"]} browser was closed.')
         logging.info("----------------- TEST DONE ------------------\n"
-                     "----------------------------------------------------------------")
+                     "---------------------------------------------------------------------------")
 
 
     # ------------------------------------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ class TestAppFeaturesPreview(unittest.TestCase):
         self.home_page.click_on_download_app()
         download = DownloadAppPage(self._driver)
         download.click_preview_button()
-        self.assertTrue(download.earth_image_display(),"APP FEATURES DISPLAY ERROR.")
+        self.assertTrue(download.earth_image_display(),"APP FEATURES display error.")
 
 
 if __name__ == '__main__':

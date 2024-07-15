@@ -25,14 +25,14 @@ class TestDayLightMap(unittest.TestCase):
         self._driver.close()
         logging.info(f'{self.config["browser"]} browser was closed.')
         logging.info("----------------- TEST DONE ------------------\n"
-                     "----------------------------------------------------------------")
+                     "---------------------------------------------------------------------------")
 
     # ------------------------------------------------------------------------------------------------------------
     # Testing display of Adobe request message.
     # Test case no: 5 - To ensure that a customer can not run online maps without Adobe flash exist.
 
     def test_adobe_request_message(self):
-        print("_____ADOBE FLASH REQUEST MESSAGE DISPLAY TESTING BEGAN_____")
+        logging.info("_____ADOBE FLASH REQUEST MESSAGE DISPLAY TESTING BEGAN_____")
         logging.info(f'{self.config["browser"]} browser was opened')
         self.home_page.click_on_explore()
         self.home_page.click_on_online_apps_button()
@@ -40,7 +40,7 @@ class TestDayLightMap(unittest.TestCase):
         online_apps_page.click_on_day_light_map_button()
         day_light_map_page = DayLightMapPage(self._driver)
         self.assertEqual("Adobe Flash", day_light_map_page.adobe_request_message_display(),
-        "ADOBE REQUEST IS NOT DISPLAYED.")
+        "ADOBE REQUEST is not displayed.")
 
 
 if __name__ == '__main__':

@@ -25,7 +25,7 @@ class TestAstronomyPlacesMap(unittest.TestCase):
         self._driver.close()
         logging.info(f'{self.config["browser"]} browser was closed.')
         logging.info("----------------- TEST DONE ------------------\n"
-                     "----------------------------------------------------------------")
+                     "---------------------------------------------------------------------------")
 
     # ------------------------------------------------------------------------------------------------------------
     # Testing the display of astronomy places map.
@@ -38,7 +38,7 @@ class TestAstronomyPlacesMap(unittest.TestCase):
         self.home_page.click_on_explore()
         self.home_page.click_on_astronomy_places()
         map = AstronomyPlacesPage(self._driver)
-        self.assertTrue(map.map_display(), "ASTRONOMY PLACES MAP DISPLAY ERROR.")
+        self.assertTrue(map.map_display(), "ASTRONOMY PLACES MAP display error.")
 
 if __name__ == '__main__':
     unittest.main()

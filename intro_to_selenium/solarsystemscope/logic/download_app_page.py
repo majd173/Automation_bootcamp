@@ -20,11 +20,11 @@ class DownloadAppPage(BasePage):
         try:
             self._preview_button = self._driver.find_element(By.XPATH, self.PREVIEW_BUTTON)
         except NoSuchElementException:
-            logging.error("PREVIEW BUTTON CAN NOT BE FOUND.")
+            logging.error("PREVIEW button can not be found.")
         try:
             self._show_button = self._driver.find_element(By.XPATH, self.SHOW_PURCHASE_STEPS_BUTTON)
         except NoSuchElementException:
-            logging.error("SHOW BUTTON CAN NOT BE FOUND.")
+            logging.error("SHOW button can not be found.")
 
     #------------------------------------------------------------------------------------------------------------
     # This function clicks on the preview button.
@@ -37,17 +37,15 @@ class DownloadAppPage(BasePage):
         self._earth_image = WebDriverWait(self._driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, self.EARTH_IMAGE)))
         if self._earth_image.is_displayed():
-            logging.info("FEATURES VIEW IS DISPLAYED.")
+            logging.info("FEATURES VIEW is displayed.")
             return True
-        logging.error("FEATURES VIEW IS NOT DISPLAYED")
+        logging.error("FEATURES VIEW is not displayed")
 
     #------------------------------------------------------------------------------------------------------------
     # This function clicks on the "Show" button in the home page.
     def click_on_show_button(self):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._show_button)
-        self._driver.save_screenshot('Before clicking Show button.png')
         self._show_button.click()
-        logging.info("SHOW BUTTON WAS CLICKED.")
 
     #------------------------------------------------------------------------------------------------------------
     # This function returns if the "Purchases steps tab" opens.
@@ -56,8 +54,8 @@ class DownloadAppPage(BasePage):
             EC.visibility_of_element_located((By.XPATH, self.OPENED_STEPS)))
         self._driver.execute_script("arguments[0].scrollIntoView();", self._purchase_steps)
         if self._purchase_steps.is_displayed():
-            logging.info("PURCHASE STEPS WERE OPENED.")
+            logging.info("PURCHASE STEPS were opened.")
             return True
-        logging.info("PURCHASE STEPS WERE NOT OPENED.")
+        logging.info("PURCHASE STEPS were not opened.")
 
     #------------------------------------------------------------------------------------------------------------

@@ -24,7 +24,7 @@ class TestLogout(unittest.TestCase):
         self._driver.close()
         logging.info(f'{self.config["browser"]} browser was closed.')
         logging.info("----------------- TEST DONE ------------------\n"
-        "----------------------------------------------------------------")
+        "---------------------------------------------------------------------------")
 
 
     # ------------------------------------------------------------------------------------------------------------
@@ -36,7 +36,7 @@ class TestLogout(unittest.TestCase):
         logging.info(f'{self.config["browser"]} browser was opened')
         self.home_page.click_on_logout_button()
         self.assertTrue(self.home_page.logout_confirmation())
-        self._driver.save_screenshot('After clicking logut button.png')
+        self._driver.save_screenshot('After clicking logout button.png')
 
 
 if __name__ == '__main__':

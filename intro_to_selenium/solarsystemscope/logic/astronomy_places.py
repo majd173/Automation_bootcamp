@@ -7,10 +7,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.expected_conditions import *
 
 
-# logging.basicConfig(
-#     filename="solar_logfile.log",
-#     format='%(asctime)s: %(levelname)s: %(message)s', datefmt='%d-%b-%y %H:%M:%S', filemode='w')
-
 
 class AstronomyPlacesPage(BasePage):
     # This class manages the Astronomy Places page in the website.
@@ -25,11 +21,11 @@ class AstronomyPlacesPage(BasePage):
         try:
             self._map = self._driver.find_element(By.XPATH, self.MAP)
         except NoSuchElementException:
-            logging.error("MAP ELEMENT CAN NOT BE FOUND.")
+            logging.error("MAP ELEMENT can not be found.")
         try:
             self._load_places = self._driver.find_element(By.XPATH, self.LOAD_PLACES_BUTTON)
         except NoSuchElementException:
-            logging.error("LOAD PLACES ELEMENT CAN NOT BE FOUND.")
+            logging.error("LOAD PLACES element can not be found.")
 
     # This function returns if the map is displayed.
     def map_display(self):
@@ -37,16 +33,15 @@ class AstronomyPlacesPage(BasePage):
             EC.visibility_of_element_located((By.XPATH, self.MAP)))
         self._driver.execute_script("arguments[0].scrollIntoView();", self._map)
         if self._map.is_displayed():
-            logging.info("MAP IS DISPLAYED.")
+            logging.info("MAP is displayed.")
             return True
-        logging.error("MAP IS NOT DISPLAYED.")
+        logging.error("MAP is not displayed.")
 
     #------------------------------------------------------------------------------------------------------------
     # This function click on "load Places" button.
     def click_on_load_places(self):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._load_places)
         self._load_places.click()
-        logging.info("LOAD PLACES BUTTON WAS CLICKED.")
 
     #------------------------------------------------------------------------------------------------------------
     # This function returns if the new distant places were have been added after running the previous function.
@@ -56,11 +51,11 @@ class AstronomyPlacesPage(BasePage):
                 EC.visibility_of_element_located((By.XPATH, self.ADDED_BOX)))
             self._driver.execute_script("arguments[0].scrollIntoView();", self._added_box)
             if self._added_box.is_displayed():
-                logging.info("ADDED BOX IS DISPLAYED.")
+                logging.info("ADDED BOX is displayed.")
                 return True
-            logging.info("ADDED BOX IS NOT DISPLAYED.")
+            logging.info("ADDED BOX is not displayed.")
         except NoSuchElementException:
-            logging.error("ADDED BOX ELEMENT CAN NOT BE FOUND.")
+            logging.error("ADDED BOX element can not be found.")
 
     #------------------------------------------------------------------------------------------------------------
     # This function clicks on the link of "Eretz Museum" and transfers to an external website.
@@ -69,11 +64,10 @@ class AstronomyPlacesPage(BasePage):
             self._eretz_museum_button = WebDriverWait(self._driver, 20).until(
                 EC.element_to_be_clickable((By.XPATH, self.ERETZ_MUSEUM_BUTTON)))
             self._eretz_museum_button.click()
-            logging.info("ERETZ MUSEUM BUTTON WAS CLICKED.")
         except TimeoutException:
-            logging.error("ERETZ MUSEUM BUTTON CAN NOT BE FOUND OR PAGE DID NOT LOAD IN TIME.")
+            logging.error("ERETZ MUSEUM button can not be found or page did not load in time.")
         except NoSuchElementException:
-            logging.error("ERETZ MUSEUM BUTTON CAN NOT BE FOUND.")
+            logging.error("ERETZ MUSEUM button can not be found.")
 
     #------------------------------------------------------------------------------------------------------------
     # This function switches from an opened window to another one by inserting the current window.
@@ -87,6 +81,6 @@ class AstronomyPlacesPage(BasePage):
                     self._driver.switch_to.window(window_handle)
                     break
         except WebDriverException:
-            logging.error("CAN NOT SWITCH TO THE ERETZ MUSEUM WINDOW.")
+            logging.error("Can not switch to the eretz museum window.")
 
     #------------------------------------------------------------------------------------------------------------

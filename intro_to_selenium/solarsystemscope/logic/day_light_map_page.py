@@ -18,7 +18,7 @@ class DayLightMapPage(BasePage):
         try:
             self._adobe_request_message = self._driver.find_element(By.XPATH, self.ADOBE_REQUEST_MESSAGE)
         except NoSuchElementException:
-            logging.error("ERROR MESSAGE ELEMENT CAN NOT BE FOUND.")
+            logging.error("ERROR MESSAGE element can not be found.")
 
     #------------------------------------------------------------------------------------------------------------
     # This function returns if the "Adobe Flash" request message is displayed.
@@ -26,7 +26,7 @@ class DayLightMapPage(BasePage):
         WebDriverWait(self._driver, 10).until(
             EC.visibility_of_element_located((By.XPATH, self.ADOBE_REQUEST_MESSAGE)))
         if self._adobe_request_message.is_displayed():
-            logging.info("REQUEST MESSAGE IS DISPLAYED.")
+            logging.info("REQUEST MESSAGE is displayed.")
             return self._adobe_request_message.text
-        logging.error("REQUEST MESSAGE IS NOT DISPLAYED.")
+        logging.error("REQUEST MESSAGE is not displayed.")
     #------------------------------------------------------------------------------------------------------------
