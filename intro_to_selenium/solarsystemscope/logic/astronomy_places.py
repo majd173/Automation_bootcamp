@@ -38,7 +38,6 @@ class AstronomyPlacesPage(BasePage):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._map)
         if self._map.is_displayed():
             logging.info("MAP IS DISPLAYED.")
-            self._driver.save_screenshot('Astronomy places map display.png')
             return True
         logging.error("MAP IS NOT DISPLAYED.")
 
@@ -46,7 +45,6 @@ class AstronomyPlacesPage(BasePage):
     # This function click on "load Places" button.
     def click_on_load_places(self):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._load_places)
-        self._driver.save_screenshot('Before opening Distant places list.png')
         self._load_places.click()
         logging.info("LOAD PLACES BUTTON WAS CLICKED.")
 
@@ -59,7 +57,6 @@ class AstronomyPlacesPage(BasePage):
             self._driver.execute_script("arguments[0].scrollIntoView();", self._added_box)
             if self._added_box.is_displayed():
                 logging.info("ADDED BOX IS DISPLAYED.")
-                self._driver.save_screenshot('After opening Distant places list.png')
                 return True
             logging.info("ADDED BOX IS NOT DISPLAYED.")
         except NoSuchElementException:
@@ -71,7 +68,6 @@ class AstronomyPlacesPage(BasePage):
         try:
             self._eretz_museum_button = WebDriverWait(self._driver, 20).until(
                 EC.element_to_be_clickable((By.XPATH, self.ERETZ_MUSEUM_BUTTON)))
-            self._driver.save_screenshot('Before clicking on Eretz Museum button.png')
             self._eretz_museum_button.click()
             logging.info("ERETZ MUSEUM BUTTON WAS CLICKED.")
         except TimeoutException:

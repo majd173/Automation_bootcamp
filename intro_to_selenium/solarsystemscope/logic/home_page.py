@@ -43,16 +43,10 @@ class HomePage(BasePage):
         except NoSuchElementException:
             logging.error("DOWNLOAD ELEMENT CAN NOT BE FOUND")
 
-        try:
-            self._explore = self._driver.find_element(By.XPATH, self.EXPLORE_BUTTON)
-        except NoSuchElementException:
-            logging.error("EXPLORE ELEMENT CAN NOT BE FOUND")
-
 
     # ------------------------------------------------------------------------------------------------------------
     # This function clicks on the "Account" button.
     def click_account_button(self):
-        self._driver.save_screenshot('Before clicking Account button.png')
         self._account_button.click()
         logging.info("ACCOUNT BUTTON WAS CLICKED.")
 
@@ -86,18 +80,14 @@ class HomePage(BasePage):
         self.click_account_button()
         self.insert_email(self._config["valid_email"])
         self.insert_password(self._config["valid_password"])
-        self._driver.save_screenshot('After clicking account button and inserting valid account details.png')
         self.click_log_in_button()
-        self._driver.save_screenshot('After inserting valid account details and clicking Login button.png')
 
     # ------------------------------------------------------------------------------------------------------------
     # This function submits a full invalid "Login" process.
     def invalid_log_in_flow(self):
-        self._driver.save_screenshot('Before clicking Account button.png')
         self._account_button.click()
         self.insert_email(self._config["invalid_email"])
         self.insert_password(Utils.generate_random_number(7))
-        self._driver.save_screenshot('After clicking account button and inserting invalid account details.png')
         self.click_log_in_button()
 
     # ------------------------------------------------------------------------------------------------------------
@@ -107,7 +97,6 @@ class HomePage(BasePage):
             EC.visibility_of_element_located((By.XPATH, self.LOGOUT_BUTTON)))
         if self._logout_button.is_displayed():
             logging.info("YOU ARE LOGGED IN.")
-            self._driver.save_screenshot('After being logged in.png')
             return True
         else:
             logging.error("YOU ARE STILL LOGGED IN.")
@@ -119,7 +108,6 @@ class HomePage(BasePage):
             EC.visibility_of_element_located((By.XPATH, self.ERROR_LOGIN_MESSAGE)))
         if self._error_message.is_displayed():
             logging.info("INVALID LOGIN DETAILS WERE INSERTED.")
-            self._driver.save_screenshot('After inserting invalid account details and clicking Login button.png')
             return self._error_message.text
         else:
             logging.error("AN ERROR OCCUERRED, INVALID ERROR MESSAGE MUST APPEAR.")
@@ -130,7 +118,6 @@ class HomePage(BasePage):
         try:
             self._logout_button = WebDriverWait(self._driver, 10).until(
                 EC.visibility_of_element_located((By.XPATH, self.LOGOUT_BUTTON)))
-            self._driver.save_screenshot('Before clicking Logout button.png')
             self._logout_button.click()
             logging.info("LOGOUT BUTTON WAS CLICKED.")
         except NoSuchElementException:
@@ -156,6 +143,8 @@ class HomePage(BasePage):
     # ------------------------------------------------------------------------------------------------------------
     # This function clicks on the "Explore" button.
     def click_on_explore(self):
+        self._explore = WebDriverWait(self._driver, 10).until(
+            EC.visibility_of_element_located((By.XPATH, self.EXPLORE_BUTTON)))
         self._explore.click()
         logging.info("EXPLORE BUTTON WAS CLICKED.")
 
@@ -185,7 +174,6 @@ class HomePage(BasePage):
     # This function clicks on the "Like" button.
     def click_on_like_button(self):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._like_button)
-        self._driver.save_screenshot('Before clicking Like button.png')
         self._like_button.click()
         logging.info("LIKE BUTTON WAS CLICKED.")
 
@@ -196,7 +184,6 @@ class HomePage(BasePage):
         try:
             self._like_count_box = WebDriverWait(self._driver, 10).until(
                 EC.visibility_of_element_located((By.XPATH, self.LIKE_COUNT_BOX)))
-            self._driver.save_screenshot('After clicking Like button.png')
             if self._like_count_box.is_displayed():
                 logging.info("LIKE BUTTON IS NOT DISPLAYED AND CLICKABLE MORE.")
                 return True

@@ -58,7 +58,6 @@ class DownloadAppPage(BasePage):
         self._driver.execute_script("arguments[0].scrollIntoView();", self._purchase_steps)
         if self._purchase_steps.is_displayed():
             logging.info("PURCHASE STEPS WERE OPENED.")
-            self._driver.save_screenshot('After opening Purchase steps list.png')
             return True
         logging.info("PURCHASE STEPS WERE NOT OPENED.")
 
