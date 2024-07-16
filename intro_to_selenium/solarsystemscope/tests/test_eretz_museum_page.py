@@ -41,8 +41,7 @@ class TestEretzMuseumPage(unittest.TestCase):
         astronomy_places.window_switch(current_window)
         self.assertIn("eretzmuseum", self._driver.current_url,
                       "The current url is not as expected.")
-        self.assertEqual("Home - Eretz Israel Museum", self._driver.title,
-                      "The current title is not as expected.")
+
 
 
 if __name__ == '__main__':

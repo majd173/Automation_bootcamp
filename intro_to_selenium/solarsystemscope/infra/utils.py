@@ -1,6 +1,10 @@
 import random
 import string
 import time
+import logging
+from selenium.common import WebDriverException
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 class Utils:
     # This class manages strings and numbers generating functions.
@@ -38,6 +42,20 @@ class Utils:
             time.sleep(sleep_time)
             retries -= retries
         return False
+    #------------------------------------------------------------------------------------------------------------
+
+
+    def window_switch(self, current_window):
+        try:
+            assert len(self._driver.window_handles) == 1
+            self.click_on_eretz_museum_button()
+            WebDriverWait(self._driver, 10).until(EC.number_of_windows_to_be(2))
+            for window_handle in self._driver.window_handles:
+                if window_handle != current_window:
+                    self._driver.switch_to.window(window_handle)
+                    break
+        except WebDriverException:
+            logging.error("Can not switch to the eretz museum window.")
 
 
 
