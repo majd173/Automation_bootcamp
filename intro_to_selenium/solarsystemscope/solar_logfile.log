@@ -234,3 +234,9 @@
 2024-07-17 10:02:19,548:INFO:Chrome browser was closed.:
 2024-07-17 10:02:19,549:INFO:----------------- TEST DONE ------------------
 :
+2024-07-18 00:36:58,622:INFO:_____LIKE BUTTON ACTIVITY TESTING BEGAN_____:
+2024-07-18 00:36:58,624:INFO:Chrome browser was opened:
+2024-07-18 00:36:58,823:INFO:LIKE button is not displayed and clickable more.:
+2024-07-18 00:36:59,022:INFO:Chrome browser was closed.:
+2024-07-18 00:36:59,022:INFO:----------------- TEST DONE ------------------
+:

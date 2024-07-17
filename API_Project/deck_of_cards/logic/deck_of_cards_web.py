@@ -9,60 +9,58 @@ class APIDecksOfCards:
         self._api = APIWrapper()
         self._config = ConfigProvider().load_from_file("../cards_config.json")
 
-
-    def get_back_of_card(self, url):
+    # --------------------------------------------------------------------------------------
+    # GET REQUEST
+    def get_back_of_card(self):
         return self._request.get_request(
-            f'{url}/static/img/back.png')
+            f'{self._config['base_url']}/static/img/back.png')
 
-    def get_back_of_card_get_status(self, url):
-        get_back_of_card_status = self.get_back_of_card(url).status_code
+    def get_back_of_card_get_status(self):
+        get_back_of_card_status = self.get_back_of_card().status_code
         return get_back_of_card_status
 
     #--------------------------------------------------------------------------------------
-
-    def shuffle_the_cards(self, url, count=1):
+    # GET REQUEST
+    def shuffle_the_cards(self):
         return self._request.get_request(
-            f'{url}/api/deck/new/shuffle/?deck_count={count}')
+            f'{self._config['base_url']}/api/deck/new/shuffle/?deck_count=1')
 
-    def shuffle_the_cards_get_json(self, url, i):
-        shuffle_the_cards_json = self.shuffle_the_cards(
-            f'{url}/api/deck/new/shuffle/?deck_count={i}').json()
-        return shuffle_the_cards_json
+    def shuffle_the_cards_get_json(self):
+        shuffle_the_cards_json = self.shuffle_the_cards().json()
+        data = shuffle_the_cards_json
+        return data['remaining']
 
-    def shuffle_the_cards_get_status(self, url, i):
-        shuffle_the_cards_status = self.shuffle_the_cards(
-            f'{url}/api/deck/new/shuffle/?deck_count={i}').status_code
+    def shuffle_the_cards_get_status(self):
+        shuffle_the_cards_status = self.shuffle_the_cards().status_code
         return shuffle_the_cards_status
+
     #--------------------------------------------------------------------------------------
-    def draw_a_card(self, url):
+    # POST REQUEST
+    def draw_a_card(self):
         return self._request.post_request(
-            f'{url}/api/deck/new/draw/?count=2')
+            f'{self._config['base_url']}/api/deck/new/draw/?count=2')
 
-    def draw_a_card_get_json(self, url):
-        draw_a_card_json = self.draw_a_card(
-            f'{url}/api/deck/new/draw/?count=2').json()
-        return draw_a_card_json
+    def draw_a_card_get_json(self):
+        draw_a_card_json = self.draw_a_card().json()
+        data = draw_a_card_json
+        return data['remaining']
 
-    def draw_a_card_get_status(self, url):
-        draw_a_card_status = self.draw_a_card(
-            f'{url}/api/deck/new/draw/?count=2').status_code
+    def draw_a_card_get_status(self):
+        draw_a_card_status = self.draw_a_card().status_code
         return draw_a_card_status
+
     #--------------------------------------------------------------------------------------
-
-
-    def a_partial_deck(self, url):
+    # GET REQUEST
+    def a_partial_deck(self):
         return self._request.get_request(
-            f'{url}/api/deck/new/shuffle/?cards={self._config["cards"]}')
+            f'{self._config['base_url']}/api/deck/new/shuffle/?cards={self._config["cards"]}')
 
-    def a_partial_deck_get_json(self, url):
-        a_partial_deck_json = self.a_partial_deck(
-            f'{url}/api/deck/new/shuffle/?cards={self._config["cards"]}').json()
-        return a_partial_deck_json['remaining']
+    def a_partial_deck_get_json(self):
+        a_partial_deck_json = self.a_partial_deck().json()
+        data = a_partial_deck_json
+        return data['remaining']
 
-
-    def a_partial_deck_get_status(self, url):
-        a_partial_deck_status = self.a_partial_deck(
-            f'{url}/api/deck/new/shuffle/?cards={self._config["cards"]}').status_code
+    def a_partial_deck_get_status(self):
+        a_partial_deck_status = self.a_partial_deck().status_code
         return a_partial_deck_status
-
-
+    #--------------------------------------------------------------------------------------

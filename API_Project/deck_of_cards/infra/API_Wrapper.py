@@ -18,5 +18,5 @@ class APIWrapper:
     def get_status_code(self):
         return requests.get().status_code
 
-    # def get_ok(self):
-    #     return requests.get().ok
+    def get_ok(self):
+        return requests.get().ok
