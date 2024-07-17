@@ -45,17 +45,6 @@ class Utils:
     #------------------------------------------------------------------------------------------------------------
 
 
-    def window_switch(self, current_window):
-        try:
-            assert len(self._driver.window_handles) == 1
-            self.click_on_eretz_museum_button()
-            WebDriverWait(self._driver, 10).until(EC.number_of_windows_to_be(2))
-            for window_handle in self._driver.window_handles:
-                if window_handle != current_window:
-                    self._driver.switch_to.window(window_handle)
-                    break
-        except WebDriverException:
-            logging.error("Can not switch to the eretz museum window.")
 
 
 

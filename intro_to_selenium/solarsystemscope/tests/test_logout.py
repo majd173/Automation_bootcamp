@@ -23,8 +23,7 @@ class TestLogout(unittest.TestCase):
     def tearDown(self):
         self._driver.close()
         logging.info(f'{self.config["browser"]} browser was closed.')
-        logging.info("----------------- TEST DONE ------------------\n"
-        "---------------------------------------------------------------------------")
+        logging.info("----------------- TEST DONE ------------------\n")
 
 
     # ------------------------------------------------------------------------------------------------------------

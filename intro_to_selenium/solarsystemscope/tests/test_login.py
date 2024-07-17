@@ -22,9 +22,7 @@ class LogInTest(unittest.TestCase):
     def tearDown(self):
         self._driver.close()
         logging.info(f'{self.config["browser"]} browser was closed.')
-        logging.info("----------------- TEST DONE ------------------\n"
-        "---------------------------------------------------------------------------")
-
+        logging.info("----------------- TEST DONE ------------------\n")
 
     # ------------------------------------------------------------------------------------------------------------
     # Testing valid logging in - valid username and valid password.

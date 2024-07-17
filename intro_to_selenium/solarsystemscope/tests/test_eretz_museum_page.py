@@ -3,6 +3,7 @@ import logging
 # tests ---------------------------------infra----------------------------------------files
 from intro_to_selenium.solarsystemscope.infra.config_provider import ConfigProvider
 from intro_to_selenium.solarsystemscope.infra.browser_wrapper import BrowserWrapper
+from intro_to_selenium.solarsystemscope.infra.window_switch import WindowSwitch
 # tests ---------------------------------logic----------------------------------------files
 from intro_to_selenium.solarsystemscope.logic.home_page import HomePage
 from intro_to_selenium.solarsystemscope.logic.astronomy_places import AstronomyPlacesPage
@@ -22,8 +23,7 @@ class TestEretzMuseumPage(unittest.TestCase):
     def tearDown(self):
         self._driver.close()
         logging.info(f'{self.config["browser"]} browser was closed.')
-        logging.info("----------------- TEST DONE ------------------")
-        logging.info("---------------------------------------------------------------------------")
+        logging.info("----------------- TEST DONE ------------------\n")
 
     # ------------------------------------------------------------------------------------------------------------
     # Testing integration and switching to Eretz Museum website.

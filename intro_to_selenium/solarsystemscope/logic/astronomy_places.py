@@ -79,6 +79,7 @@ class AstronomyPlacesPage(BasePage):
             for window_handle in self._driver.window_handles:
                 if window_handle != current_window:
                     self._driver.switch_to.window(window_handle)
+                    logging.info("Window was switched successfully.")
                     break
         except WebDriverException:
             logging.error("Can not switch to the eretz museum window.")

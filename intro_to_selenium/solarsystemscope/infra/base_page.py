@@ -1,4 +1,4 @@
-from intro_to_selenium.solarsystemscope.infra.logging_setup import LoggingSetup
+from intro_to_selenium.solarsystemscope.infra.logger_setup import LoggingSetup
 
 class BasePage:
     # This class manages common functions can be used

@@ -1,4 +1,4 @@
-from intro_to_selenium.solarsystemscope.infra.utils import Utils
+from intro_to_selenium.solarsystemscope.infra.utilities import Utils
 from selenium.webdriver.support import expected_conditions as EC
 from intro_to_selenium.solarsystemscope.infra.base_page import BasePage
 from selenium.webdriver.common.by import By
