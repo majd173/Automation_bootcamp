@@ -1,6 +1,7 @@
 
 {
     "base_url": "https://www.deckofcardsapi.com",
-    "browser" : "Chrome"
+    "browser" : "Chrome",
+    "cards" : "AS,2S,KS,AD,2D,KD,AC,2C"
 
 }
