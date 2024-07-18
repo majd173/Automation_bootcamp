@@ -1,4 +1,5 @@
 import requests
+import logging
 from API_Project.deck_of_cards.infra.logger_setup import LoggingSetup
 
 class APIWrapper:
@@ -10,7 +11,7 @@ class APIWrapper:
         return requests.get(url, json=body)
 
     def post_request(self, url, body=None):
-        return requests.post(url, data=body)
+        return requests.post(url, json=body)
 
     def delete_request(self, url, data=None):
         return requests.delete(url, json=data)
