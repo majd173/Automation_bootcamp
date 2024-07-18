@@ -1,7 +1,5 @@
 import unittest
-import pytest
 import logging
-from API_Project.deck_of_cards.infra.logger_setup import LoggingSetup
 from API_Project.deck_of_cards.infra.config_provider import ConfigProvider
 from API_Project.deck_of_cards.logic.deck_of_cards_web import APIDecksOfCards
 from API_Project.deck_of_cards.infra.API_Wrapper import APIWrapper

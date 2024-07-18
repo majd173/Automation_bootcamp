@@ -10,8 +10,9 @@ class APIWrapper:
         return requests.get(url, json=body)
 
     def post_request(self, url, body=None):
-        return requests.post(url, json=body)
+        return requests.post(url, data=body)
 
     def delete_request(self, url, data=None):
         return requests.delete(url, json=data)
+
 
