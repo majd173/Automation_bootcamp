@@ -42,7 +42,6 @@ class StorePage:
             f'{self._url}/v2/store/order', new_body)
         if post:
             logging.info("Post request has been sent.")
-            print(post)
             return post
         logging.error("Post request has not been sent.")
 

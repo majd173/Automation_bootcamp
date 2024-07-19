@@ -8,6 +8,10 @@
     "pet_by_status_value" : "available",
 
 
+    "add_pet_id" : 1,
+    "add_pet_name" : "doggy",
+
+
     "pet_store_inventory_key" : "sold",
     "pet_store_inventory_value" : 20,
 

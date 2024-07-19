@@ -18,18 +18,6 @@ class PetPage:
 
 # --------------------------------------------------------------------------------------
     # GET REQUEST
-    def pet_by_status(self, endpoint):
-        try:
-            logging.info("Sending get request to the server.")
-            response = self._request.get_request(
-                f'{self._url}/v2/pet/findByStatus?status={endpoint}')
-            if response:
-                logging.info(f'Response status code is: {response.status_code}')
-                logging.info(f'Response is ok: {response.ok}')
-                return response
-            logging.error("Cannot get a request.")
-        except Exception as e:
-            logging.error(f'Cannot send a request: {e}')
 
     def pet_by_status_get_json(self, key, endpoint):
         try:
@@ -50,3 +38,13 @@ class PetPage:
 
 # --------------------------------------------------------------------------------------
 
+    # POST REQUEST
+
+    def add_pet(self, new_body):
+        logging.info("Sending post request.")
+        post = self._request.post_request(
+            f'{self._config['base_url']}/v2/pet', new_body)
+        if post:
+            logging.info("Post request has been sent.")
+            return post
+        logging.error("Post request has not been sent.")
