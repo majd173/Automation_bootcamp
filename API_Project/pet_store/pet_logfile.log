@@ -1,79 +1,102 @@
-2024-07-19 16:36:07,194:INFO:_______TEST (2) BEGAN_______:
-2024-07-19 16:36:07,194:INFO:Sending post request.:
-2024-07-19 16:36:08,270:INFO:Post request has been sent.:
-2024-07-19 16:37:55,774:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 16:37:55,774:INFO:Sending delete request to the server.:
-2024-07-19 16:37:55,777:ERROR:Cannot send a request: No connection adapters were found for "{'base_url': 'https://petstore.swagger.io', 'browser': 'Chrome', 'pet_by_status_endpoint': 'available', 'pet_by_status_key': 'status', 'pet_by_status_value': 'available', 'add_pet_id': 1, 'add_pet_name': 'doggy', 'pet_store_inventory_key': 'sold', 'pet_store_inventory_value': 20, 'store_order_add_id': 6, 'store_order_add_pet_id': 3, 'store_order_add_quantity': 4, 'store_order_by_id_endpoint': 2, 'store_order_by_id_key': 'status', 'store_order_by_id_value': 'placed', 'username_get_by_key_value_key': 'userStatus', 'username_get_by_key_value_name': 'string', 'username_get_by_key_value_value': 0, 'login_user_name': 'positive', 'login_user_password': 123, 'login_user_key': 'code', 'login_user_value': 200}/v2/user/string":
-2024-07-19 16:40:29,243:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 16:40:29,243:INFO:Sending delete request to the server.:
-2024-07-19 16:40:29,245:ERROR:Cannot send a request: No connection adapters were found for "{'base_url': 'https://petstore.swagger.io', 'browser': 'Chrome', 'pet_by_status_endpoint': 'available', 'pet_by_status_key': 'status', 'pet_by_status_value': 'available', 'add_pet_id': 1, 'add_pet_name': 'doggy', 'pet_store_inventory_key': 'sold', 'pet_store_inventory_value': 20, 'store_order_add_id': 6, 'store_order_add_pet_id': 3, 'store_order_add_quantity': 4, 'store_order_by_id_endpoint': 2, 'store_order_by_id_key': 'status', 'store_order_by_id_value': 'placed', 'username_get_by_key_value_key': 'userStatus', 'username_get_by_key_value_name': 'string', 'username_get_by_key_value_value': 0, 'login_user_name': 'positive', 'login_user_password': 123, 'login_user_key': 'code', 'login_user_value': 200}/v2/user/string":
-2024-07-19 17:05:40,504:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:05:40,505:INFO:Sending get request to the server.:
-2024-07-19 17:05:42,993:INFO:Response has been received.:
-2024-07-19 17:05:42,993:INFO:_______TEST (3) COMPLETED_______
+2024-07-19 21:31:07,388:INFO:_______TEST (2) BEGAN_______:
+2024-07-19 21:31:07,388:INFO:Sending post request.:
+2024-07-19 21:31:09,749:INFO:Post request has been sent.:
+2024-07-19 21:31:09,750:INFO:_______TEST (2) COMPLETED_______
 :
-2024-07-19 17:11:54,268:INFO:_______TEST (4) BEGAN_______:
-2024-07-19 17:11:54,268:INFO:Sending JSON request.:
-2024-07-19 17:11:56,142:INFO:JSON response has been received.:
-2024-07-19 17:11:56,143:INFO:_______TEST (4) COMPLETED_______
+2024-07-19 21:31:09,752:INFO:_______TEST (3) BEGAN_______:
+2024-07-19 21:31:09,752:INFO:Sending post request.:
+2024-07-19 21:31:10,561:INFO:Post request has been sent.:
+2024-07-19 21:31:11,380:INFO:Delete request has been sent.:
+2024-07-19 21:31:11,380:INFO:Delete request completed successfully.:
+2024-07-19 21:31:11,381:INFO:_______TEST (3) COMPLETED_______
 :
-2024-07-19 17:31:03,207:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:31:03,208:INFO:Sending post request.:
-2024-07-19 17:31:04,688:INFO:Post request has been sent.:
-2024-07-19 17:34:35,565:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:34:35,565:INFO:Sending post request.:
-2024-07-19 17:34:38,088:INFO:Post request has been sent.:
-2024-07-19 17:34:38,088:ERROR:Post request has not been sent.:
-2024-07-19 17:37:13,644:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:37:13,644:INFO:Sending post request.:
-2024-07-19 17:37:14,271:INFO:Post request has been sent.:
-2024-07-19 17:37:14,271:ERROR:Post request has not been sent.:
-2024-07-19 17:41:04,464:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:41:04,464:INFO:Sending post request.:
-2024-07-19 17:41:08,777:INFO:Post request has been sent.:
-2024-07-19 17:41:08,777:ERROR:Post request has not been sent.:
-2024-07-19 17:41:27,473:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:41:27,473:INFO:Sending post request.:
-2024-07-19 17:41:28,135:INFO:Post request has been sent.:
-2024-07-19 17:41:28,135:ERROR:Post request has not been sent.:
-2024-07-19 17:43:19,539:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:43:19,540:INFO:Sending post request.:
-2024-07-19 17:43:20,529:INFO:Post request has been sent.:
-2024-07-19 17:44:24,677:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:44:24,677:INFO:Sending post request.:
-2024-07-19 17:44:25,491:INFO:Post request has been sent.:
-2024-07-19 17:44:53,974:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:44:53,974:INFO:Sending post request.:
-2024-07-19 17:44:54,622:INFO:Post request has been sent.:
-2024-07-19 17:46:22,304:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:46:22,304:INFO:Sending post request.:
-2024-07-19 17:46:24,041:INFO:Post request has been sent.:
-2024-07-19 17:46:24,629:ERROR:Delete request has not been sent.:
-2024-07-19 17:48:21,074:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:48:21,074:INFO:Sending post request.:
-2024-07-19 17:48:21,800:INFO:Post request has been sent.:
-2024-07-19 17:48:22,454:ERROR:Delete request has not been sent.:
-2024-07-19 17:50:47,337:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:50:47,337:INFO:Sending post request.:
-2024-07-19 17:50:47,958:INFO:Post request has been sent.:
-2024-07-19 17:50:48,557:ERROR:Delete request has been sent.:
-2024-07-19 17:50:48,557:INFO:Delete request completed successfully.:
-2024-07-19 17:51:14,409:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:51:14,409:INFO:Sending post request.:
-2024-07-19 17:51:15,215:INFO:Post request has been sent.:
-2024-07-19 17:51:15,832:ERROR:Delete request has not been sent.:
-2024-07-19 17:54:07,110:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:54:07,110:INFO:Sending post request.:
-2024-07-19 17:54:08,729:INFO:Post request has been sent.:
-2024-07-19 17:54:09,317:ERROR:Delete request has been sent.:
-2024-07-19 17:54:09,317:INFO:Delete request completed successfully.:
-2024-07-19 17:54:44,539:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:54:44,539:INFO:Sending post request.:
-2024-07-19 17:54:45,133:INFO:Post request has been sent.:
-2024-07-19 17:54:45,758:INFO:Delete request has been sent.:
-2024-07-19 17:54:45,759:INFO:Delete request completed successfully.:
-2024-07-19 17:55:22,787:INFO:_______TEST (3) BEGAN_______:
-2024-07-19 17:55:22,788:INFO:Sending post request.:
-2024-07-19 17:55:23,505:INFO:Post request has been sent.:
-2024-07-19 17:55:24,138:INFO:Delete request has been sent.:
-2024-07-19 17:55:24,138:INFO:Delete request completed successfully.:
+2024-07-19 21:31:11,382:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 21:31:11,384:INFO:Sending get request to the server.:
+2024-07-19 21:31:12,622:INFO:Response status code is: 200:
+2024-07-19 21:31:12,622:INFO:Response is ok: True:
+2024-07-19 21:31:12,622:INFO:Sending JSON request to the server.:
+2024-07-19 21:31:12,625:INFO:JSON request has been received.:
+2024-07-19 21:31:12,626:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 21:36:11,900:INFO:8_______TEST (USER) BEGAN_______8:
+2024-07-19 21:36:11,900:INFO:Sending get request to the server.:
+2024-07-19 21:36:13,875:INFO:Response status code: 200:
+2024-07-19 21:36:13,875:INFO:Response is ok: True:
+2024-07-19 21:36:13,875:INFO:Sending JSON request to the server.:
+2024-07-19 21:36:13,875:INFO:JSON request has been received.:
+2024-07-19 21:36:13,876:INFO:8_______TEST (USER) COMPLETED_______8
+:
+2024-07-19 21:36:13,883:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-19 21:36:13,884:INFO:Sending get request to the server.:
+2024-07-19 21:36:14,709:INFO:Response has been received.:
+2024-07-19 21:36:14,709:INFO:9_______TEST (USER) COMPLETED_______9
+:
+2024-07-19 21:36:14,711:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-19 21:36:14,712:INFO:Sending JSON request.:
+2024-07-19 21:36:15,630:INFO:JSON response has been received.:
+2024-07-19 21:36:15,630:INFO:10_______TEST (USER) COMPLETED_______10
+:
+2024-07-19 21:36:15,631:INFO:7_______TEST (USER) BEGAN_______7:
+2024-07-19 21:36:15,631:INFO:Sending get request to the server.:
+2024-07-19 21:36:16,477:INFO:Response status code: 200:
+2024-07-19 21:36:16,477:INFO:Response is ok: True:
+2024-07-19 21:36:16,478:INFO:Sending JSON request to the server.:
+2024-07-19 21:36:16,478:INFO:JSON request has been received.:
+2024-07-19 21:36:16,479:INFO:7_______TEST (USER) COMPLETED_______7
+:
+2024-07-19 21:36:37,715:INFO:4_______TEST (STORE) BEGAN_______4:
+2024-07-19 21:36:37,716:INFO:Sending get request to the server.:
+2024-07-19 21:36:38,332:INFO:Response status code: 200:
+2024-07-19 21:36:38,332:INFO:Response is ok: True:
+2024-07-19 21:36:38,332:INFO:Sending JSON request to the server.:
+2024-07-19 21:36:38,333:INFO:JSON request has been received.:
+2024-07-19 21:36:38,341:INFO:5_______TEST (STORE) BEGAN_______5:
+2024-07-19 21:36:38,341:INFO:Sending post request.:
+2024-07-19 21:36:39,697:INFO:Post request has been sent.:
+2024-07-19 21:36:39,698:INFO:5_______TEST (STORE) COMPLETED_______5
+:
+2024-07-19 21:36:39,702:INFO:6_______TEST (STORE) BEGAN_______6:
+2024-07-19 21:36:39,703:INFO:Sending get request to the server.:
+2024-07-19 21:36:40,720:INFO:Response status code: 404:
+2024-07-19 21:36:40,720:INFO:Response is ok: False:
+2024-07-19 21:36:40,720:INFO:Sending JSON request to the server.:
+2024-07-19 21:36:40,720:INFO:JSON request has been received.:
+2024-07-19 21:36:40,720:ERROR:Can not get a request: 'status':
+2024-07-19 21:37:31,661:INFO:4_______TEST (STORE) BEGAN_______4:
+2024-07-19 21:37:31,662:INFO:Sending get request to the server.:
+2024-07-19 21:37:32,937:INFO:Response status code: 200:
+2024-07-19 21:37:32,937:INFO:Response is ok: True:
+2024-07-19 21:37:32,937:INFO:Sending JSON request to the server.:
+2024-07-19 21:37:32,937:INFO:JSON request has been received.:
+2024-07-19 21:37:32,947:INFO:5_______TEST (STORE) BEGAN_______5:
+2024-07-19 21:37:32,948:INFO:Sending post request.:
+2024-07-19 21:37:34,045:INFO:Post request has been sent.:
+2024-07-19 21:37:34,045:INFO:5_______TEST (STORE) COMPLETED_______5
+:
+2024-07-19 21:37:34,047:INFO:6_______TEST (STORE) BEGAN_______6:
+2024-07-19 21:37:34,047:INFO:Sending get request to the server.:
+2024-07-19 21:37:35,282:INFO:Response status code: 404:
+2024-07-19 21:37:35,282:INFO:Response is ok: False:
+2024-07-19 21:37:35,282:INFO:Sending JSON request to the server.:
+2024-07-19 21:37:35,282:INFO:JSON request has been received.:
+2024-07-19 21:37:35,282:ERROR:Can not get a request: 'status':
+2024-07-19 21:38:45,524:INFO:4_______TEST (STORE) BEGAN_______4:
+2024-07-19 21:38:45,524:INFO:Sending get request to the server.:
+2024-07-19 21:38:46,978:INFO:Response status code: 200:
+2024-07-19 21:38:46,978:INFO:Response is ok: True:
+2024-07-19 21:38:46,978:INFO:Sending JSON request to the server.:
+2024-07-19 21:38:46,979:INFO:JSON request has been received.:
+2024-07-19 21:38:46,979:INFO:4_______TEST (STORE) COMPLETED_______4
+:
+2024-07-19 21:38:46,981:INFO:5_______TEST (STORE) BEGAN_______5:
+2024-07-19 21:38:46,982:INFO:Sending post request.:
+2024-07-19 21:38:47,801:INFO:Post request has been sent.:
+2024-07-19 21:38:47,802:INFO:5_______TEST (STORE) COMPLETED_______5
+:
+2024-07-19 21:38:47,803:INFO:6_______TEST (STORE) BEGAN_______6:
+2024-07-19 21:38:47,803:INFO:Sending get request to the server.:
+2024-07-19 21:38:48,636:INFO:Response status code: 404:
+2024-07-19 21:38:48,636:INFO:Response is ok: False:
+2024-07-19 21:38:48,636:INFO:Sending JSON request to the server.:
+2024-07-19 21:38:48,637:INFO:JSON request has been received.:
+2024-07-19 21:38:48,637:ERROR:Can not get a request: 'status':

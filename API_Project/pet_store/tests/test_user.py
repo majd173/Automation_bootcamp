@@ -14,45 +14,45 @@ class TestUser(unittest.TestCase):
     # --------------------------------------------------------------------------------------
 
     def test_username_get_by_key_value(self):
-        logging.info("_______TEST (1) BEGAN_______")
+        logging.info("7_______TEST (USER) BEGAN_______7")
         pet_store = UserPage(self._api)
         result = pet_store.username_get_by_key_value(
             self._config['username_get_by_key_value_key'],
             self._config['username_get_by_key_value_name'])
         self.assertEqual(result, self._config['username_get_by_key_value_value'])
-        logging.info("_______TEST (1) COMPLETED_______\n")
+        logging.info("7_______TEST (USER) COMPLETED_______7\n")
 
     # --------------------------------------------------------------------------------------
 
     def test_login_user(self):
-        logging.info("_______TEST (2) BEGAN_______")
+        logging.info("8_______TEST (USER) BEGAN_______8")
         pet_store = UserPage(self._api)
         result = pet_store.login_user(
             self._config['login_user_name'],
             self._config['login_user_password'],
             self._config['login_user_key'])
         self.assertEqual(result, self._config['login_user_value'])
-        logging.info("_______TEST (2) COMPLETED_______\n")
+        logging.info("8_______TEST (USER) COMPLETED_______8\n")
 
     # --------------------------------------------------------------------------------------
 
     def test_user_logout(self):
-        logging.info("_______TEST (3) BEGAN_______")
+        logging.info("9_______TEST (USER) BEGAN_______9")
         pet_store = UserPage(self._api)
         result = pet_store.user_logout()
         self.assertTrue(result.ok)
         self.assertEqual(result.status_code, 200)
-        logging.info("_______TEST (3) COMPLETED_______\n")
+        logging.info("9_______TEST (USER) COMPLETED_______9\n")
 
     # --------------------------------------------------------------------------------------
 
     def test_user_logout_message(self):
-        logging.info("_______TEST (4) BEGAN_______")
+        logging.info("10_______TEST (USER) BEGAN_______10")
         pet_store = UserPage(self._api)
         result = pet_store.user_logout_message(
             self._config['user_logout_message_key'])
         self.assertEqual(result, 'ok')
-        logging.info("_______TEST (4) COMPLETED_______\n")
+        logging.info("10_______TEST (USER) COMPLETED_______10\n")
 
 
 

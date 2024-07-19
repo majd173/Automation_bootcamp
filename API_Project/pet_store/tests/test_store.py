@@ -15,17 +15,17 @@ class TestStore(unittest.TestCase):
     # --------------------------------------------------------------------------------------
 
     def test_pet_store_inventory(self):
-        logging.info("_______TEST (1) BEGAN_______")
+        logging.info("4_______TEST (STORE) BEGAN_______4")
         pet_store = StorePage(self._api)
         result = pet_store.store_inventory_get_json(
             self._config['pet_store_inventory_key'])
         self.assertEqual(result, self._config['pet_store_inventory_value'])
-        logging.info("_______TEST (1) COMPLETED_______\n")
+        logging.info("4_______TEST (STORE) COMPLETED_______4\n")
 
     # --------------------------------------------------------------------------------------
 
     def test_store_order_add(self):
-        logging.info("_______TEST (2) BEGAN_______")
+        logging.info("5_______TEST (STORE) BEGAN_______5")
         pet_store = StorePage(self._api)
         my_order_details = OrderDetails(
             self._config['store_order_add_id'],
@@ -35,15 +35,21 @@ class TestStore(unittest.TestCase):
         result = pet_store.store_order_add(dictionary)
         self.assertTrue(result.ok)
         self.assertEqual(result.status_code, 200)
-        logging.info("_______TEST (2) COMPLETED_______\n")
+        logging.info("5_______TEST (STORE) COMPLETED_______5\n")
 
     # --------------------------------------------------------------------------------------
 
     def test_store_order_by_id(self):
-        logging.info("_______TEST (3) BEGAN_______")
+        logging.info("6_______TEST (STORE) BEGAN_______6")
         pet_store = StorePage(self._api)
         result = pet_store.store_order_by_id(
             self._config['store_order_by_id_endpoint'],
             self._config['store_order_by_id_key'])
         self.assertEqual(result, self._config['store_order_by_id_value'])
-        logging.info("_______TEST (3) COMPLETED_______\n")
+        logging.info("6_______TEST (STORE) COMPLETED_______6\n")
+
+
+
+
+if __name__ == '__main__':
+    unittest.main()

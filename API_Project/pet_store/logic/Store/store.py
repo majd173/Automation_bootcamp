@@ -28,7 +28,6 @@ class StorePage:
             if json_file:
                 logging.info("JSON request has been received.")
                 value = json_file[key]
-                print(json_file)
                 return value
             logging.error("JSON request has not been received.")
         except requests.RequestException as e:
@@ -59,7 +58,6 @@ class StorePage:
             json_file = response.json()
             if json_file:
                 logging.info("JSON request has been received.")
-                print(json_file)
                 value = json_file[key]
                 return value
             logging.error("JSON request has not been received.")

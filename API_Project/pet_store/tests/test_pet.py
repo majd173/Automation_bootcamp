@@ -16,18 +16,18 @@ class TestPet(unittest.TestCase):
     # --------------------------------------------------------------------------------------
 
     def test_pet_by_status(self):
-        logging.info("_______TEST (1) BEGAN_______")
+        logging.info("1_______TEST (PET]) BEGAN_______1")
         pet_store = PetPage(self._api)
         result = pet_store.pet_by_status_get_json(
             self._config['pet_by_status_key'],
             self._config['pet_by_status_endpoint'])
         self.assertEqual(result, self._config['pet_by_status_value'])
-        logging.info("_______TEST (1) COMPLETED_______\n")
+        logging.info("1_______TEST (PET) COMPLETED_______1\n")
 
     # --------------------------------------------------------------------------------------
 
     def test_add_pet(self):
-        logging.info("_______TEST (2) BEGAN_______")
+        logging.info("2_______TEST (PET) BEGAN_______2")
         pet_store = PetPage(self._api)
         pet_details = PetDetails(
             self._config['add_pet_id'],
@@ -36,11 +36,12 @@ class TestPet(unittest.TestCase):
         result = pet_store.add_pet(dictionary)
         self.assertTrue(result.ok)
         self.assertEqual(result.status_code, 200)
+        logging.info("2_______TEST (PET) COMPLETED_______2\n")
 
     # --------------------------------------------------------------------------------------
 
     def test_delete_pet(self):
-        logging.info("_______TEST (3) BEGAN_______")
+        logging.info("3_______TEST (PET) BEGAN_______3")
         pet_store = PetPage(self._api)
         pet_details = PetDetails(
             self._config['add_pet_id'],
@@ -49,6 +50,7 @@ class TestPet(unittest.TestCase):
         result = pet_store.delete_pet(
             dictionary, self._config['delete_user_key'])
         self.assertEqual(result, self._config['delete_user_value'])
+        logging.info("3_______TEST (PET) COMPLETED_______3\n")
 
 
 

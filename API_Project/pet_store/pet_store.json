@@ -13,7 +13,7 @@
 
 
     "pet_store_inventory_key" : "sold",
-    "pet_store_inventory_value" : 20,
+    "pet_store_inventory_value" : 35,
 
 
     "store_order_add_id" : 6,
@@ -23,7 +23,7 @@
 
     "store_order_by_id_endpoint" : 2,
     "store_order_by_id_key" : "status",
-    "store_order_by_id_value" : "placed",
+    "store_order_by_id_value" : "Order not found",
 
 
     "username_get_by_key_value_key" : "userStatus",
