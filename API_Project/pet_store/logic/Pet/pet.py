@@ -16,7 +16,7 @@ class PetPage:
             logging.error("Can not open pet_store.json file.")
 
 
-# --------------------------------------------------------------------------------------
+    # --------------------------------------------------------------------------------------
     # GET REQUEST
 
     def pet_by_status_get_json(self, key, endpoint):
@@ -36,8 +36,7 @@ class PetPage:
         except requests.RequestException as e:
             logging.error(f'Cannot send a request: {e}')
 
-# --------------------------------------------------------------------------------------
-
+    # --------------------------------------------------------------------------------------
     # POST REQUEST
 
     def add_pet(self, new_body):
@@ -48,3 +47,30 @@ class PetPage:
             logging.info("Post request has been sent.")
             return post
         logging.error("Post request has not been sent.")
+
+    # --------------------------------------------------------------------------------------
+    # DELETE REQUEST
+    def delete_pet(self, new_body, key):
+        logging.info("Sending post request.")
+        post = self._request.post_request(
+            f'{self._config['base_url']}/v2/pet', new_body)
+        if post:
+            logging.info("Post request has been sent.")
+            body = post.json()
+        else:
+            logging.error("Post request has not been sent.")
+            return
+        delete = self._request.delete_request(f'{self._url}/v2/pet/1', new_body)
+        if delete:
+            logging.info("Delete request has been sent.")
+            json_file = delete.json()
+            if json_file != body:
+                logging.info("Delete request completed successfully.")
+                value = json_file[key]
+                return value
+            logging.error("Delete request response matches post request response.")
+        else:
+            logging.error("Delete request has not been sent.")
+
+
+

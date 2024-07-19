@@ -13,6 +13,8 @@ class TestPet(unittest.TestCase):
         self._config = ConfigProvider().load_from_file("../pet_store.json")
         self._api = APIWrapper()
 
+    # --------------------------------------------------------------------------------------
+
     def test_pet_by_status(self):
         logging.info("_______TEST (1) BEGAN_______")
         pet_store = PetPage(self._api)
@@ -22,6 +24,7 @@ class TestPet(unittest.TestCase):
         self.assertEqual(result, self._config['pet_by_status_value'])
         logging.info("_______TEST (1) COMPLETED_______\n")
 
+    # --------------------------------------------------------------------------------------
 
     def test_add_pet(self):
         logging.info("_______TEST (2) BEGAN_______")
@@ -33,6 +36,19 @@ class TestPet(unittest.TestCase):
         result = pet_store.add_pet(dictionary)
         self.assertTrue(result.ok)
         self.assertEqual(result.status_code, 200)
+
+    # --------------------------------------------------------------------------------------
+
+    def test_delete_pet(self):
+        logging.info("_______TEST (3) BEGAN_______")
+        pet_store = PetPage(self._api)
+        pet_details = PetDetails(
+            self._config['add_pet_id'],
+            self._config['add_pet_name'])
+        dictionary = pet_details.to_dic()
+        result = pet_store.delete_pet(
+            dictionary, self._config['delete_user_key'])
+        self.assertEqual(result, self._config['delete_user_value'])
 
 
 

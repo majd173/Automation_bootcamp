@@ -34,12 +34,13 @@
     "login_user_name" : "positive",
     "login_user_password" : 123,
     "login_user_key" : "code",
-    "login_user_value" : 200
+    "login_user_value" : 200,
 
 
+    "user_logout_message_key" : "message",
 
-
-
+    "delete_user_key" : "message",
+    "delete_user_value" : "1"
 
 
 

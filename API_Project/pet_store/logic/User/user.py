@@ -15,8 +15,7 @@ class UserPage:
         except ImportError:
             logging.error("Can not open pet_store.json file.")
 
-# --------------------------------------------------------------------------------------
-
+    # --------------------------------------------------------------------------------------
     # GET REQUEST
     def username_get_by_key_value(self, key, name):
         try:
@@ -55,16 +54,34 @@ class UserPage:
             logging.error(f'Cannot send a request: {e}')
 
     # --------------------------------------------------------------------------------------
-    # DELETE REQUEST
+    # GET REQUEST
 
-    def delete_user_by_name(self, name):
+    def user_logout(self):
         try:
-            logging.info("Sending delete request to the server.")
-            response = self._request.delete_request(
-                f'{self._config}/v2/user/{name}')
+            logging.info("Sending get request to the server.")
+            response = self._request.get_request(
+                f'{self._url}/v2/user/logout')
             if response:
-                logging.info("Delete request has been received.")
+                logging.info("Response has been received.")
                 return response
-            logging.error("Delete request has not been received.")
+            logging.error("Response has not been received.")
         except requests.RequestException as e:
             logging.error(f'Cannot send a request: {e}')
+
+    def user_logout_message(self, key):
+        try:
+            logging.info("Sending JSON request.")
+            json_file = self._request.get_request(
+                f'{self._url}/v2/user/logout').json()
+            if json_file:
+                logging.info("JSON response has been received.")
+                value = json_file[key]
+                return value
+            logging.error("JSON response has not been received.")
+        except requests.RequestException as e:
+            logging.error(f'Cannot send a request: {e}')
+
+
+
+
+

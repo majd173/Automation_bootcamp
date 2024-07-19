@@ -12,6 +12,7 @@ class TestStore(unittest.TestCase):
         self._config = ConfigProvider().load_from_file("../pet_store.json")
         self._api = APIWrapper()
 
+    # --------------------------------------------------------------------------------------
 
     def test_pet_store_inventory(self):
         logging.info("_______TEST (1) BEGAN_______")
@@ -20,6 +21,8 @@ class TestStore(unittest.TestCase):
             self._config['pet_store_inventory_key'])
         self.assertEqual(result, self._config['pet_store_inventory_value'])
         logging.info("_______TEST (1) COMPLETED_______\n")
+
+    # --------------------------------------------------------------------------------------
 
     def test_store_order_add(self):
         logging.info("_______TEST (2) BEGAN_______")
@@ -33,6 +36,8 @@ class TestStore(unittest.TestCase):
         self.assertTrue(result.ok)
         self.assertEqual(result.status_code, 200)
         logging.info("_______TEST (2) COMPLETED_______\n")
+
+    # --------------------------------------------------------------------------------------
 
     def test_store_order_by_id(self):
         logging.info("_______TEST (3) BEGAN_______")

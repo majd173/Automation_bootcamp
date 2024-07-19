@@ -13,6 +13,10 @@ class APIWrapper:
         return requests.post(url, json=body)
 
     def delete_request(self, url, headers=None, data=None):
+        if headers is None:
+            headers = {}
+        # Ensure all header values are strings
+        headers = {k: str(v) for k, v in headers.items()}
         return requests.delete(url, headers=headers, json=data)
 
 

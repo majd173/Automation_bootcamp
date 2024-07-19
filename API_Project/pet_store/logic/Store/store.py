@@ -15,7 +15,7 @@ class StorePage:
         except ImportError:
             logging.error("Can not open pet_store.json file.")
 
-# --------------------------------------------------------------------------------------
+    # --------------------------------------------------------------------------------------
     # GET REQUEST
     def store_inventory_get_json(self, key):
         try:
@@ -46,7 +46,7 @@ class StorePage:
         logging.error("Post request has not been sent.")
 
 
-# --------------------------------------------------------------------------------------
+    # --------------------------------------------------------------------------------------
     # GET REQUEST
 
     def store_order_by_id(self, endpoint, key):
