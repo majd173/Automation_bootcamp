@@ -1,19 +1,20 @@
 import requests
-import logging
-from API_Project.deck_of_cards.infra.logger_setup import LoggingSetup
+from API_Project.pet_store.infra.logger_setup import LoggingSetup
 
 class APIWrapper:
 
     def __init__(self):
         self._request = None
 
-    def get_request(self, url, body=None):
-        return requests.get(url, json=body)
+    def get_request(self, url, headers=None, body=None):
+        return requests.get(url, headers=headers, json=body)
 
     def post_request(self, url, body=None):
         return requests.post(url, json=body)
 
-    def delete_request(self, url, data=None):
-        return requests.delete(url, json=data)
+    def delete_request(self, url, headers=None, data=None):
+        return requests.delete(url, headers=headers, json=data)
+
+
 
 

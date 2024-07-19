@@ -1,0 +1,210 @@
+2024-07-19 15:26:13,153:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:26:13,153:INFO:Sending JSON request to the server.:
+2024-07-19 15:26:13,758:ERROR:Response cannot be received.:
+2024-07-19 15:26:14,353:INFO:JSON request has been obtained.:
+2024-07-19 15:26:14,354:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 15:28:30,973:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:28:30,974:INFO:Sending JSON request to the server.:
+2024-07-19 15:28:31,624:INFO:Response status code: 200:
+2024-07-19 15:28:31,624:INFO:Response is ok: True:
+2024-07-19 15:28:31,624:ERROR:Response cannot be received.:
+2024-07-19 15:28:32,199:INFO:JSON request has been obtained.:
+2024-07-19 15:28:32,199:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 15:29:35,699:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:29:35,700:INFO:Sending JSON request to the server.:
+2024-07-19 15:29:36,591:INFO:Response status code: 200:
+2024-07-19 15:29:36,591:INFO:Response is ok: True:
+2024-07-19 15:29:37,255:INFO:JSON request has been received.:
+2024-07-19 15:29:37,256:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 15:30:25,951:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:30:25,952:INFO:Sending get request to the server.:
+2024-07-19 15:30:26,555:INFO:Response status code: 200:
+2024-07-19 15:30:26,555:INFO:Response is ok: True:
+2024-07-19 15:30:26,555:INFO:Sending JSON request to the server.:
+2024-07-19 15:30:27,146:INFO:JSON request has been received.:
+2024-07-19 15:30:27,146:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 15:30:53,354:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:30:53,354:INFO:Sending get request to the server.:
+2024-07-19 15:30:54,143:INFO:Response status code: 200:
+2024-07-19 15:30:54,143:INFO:Response is ok: True:
+2024-07-19 15:30:54,143:ERROR:Response cannot be received.:
+2024-07-19 15:30:54,143:INFO:Sending JSON request to the server.:
+2024-07-19 15:30:54,772:INFO:JSON request has been received.:
+2024-07-19 15:30:54,773:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 15:31:18,074:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:31:18,076:INFO:Sending get request to the server.:
+2024-07-19 15:31:18,790:INFO:Response status code: 200:
+2024-07-19 15:31:18,790:INFO:Response is ok: True:
+2024-07-19 15:31:18,790:INFO:Sending JSON request to the server.:
+2024-07-19 15:31:19,387:INFO:JSON request has been received.:
+2024-07-19 15:31:19,388:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 15:31:42,296:INFO:_______TEST (2) BEGAN_______:
+2024-07-19 15:31:42,297:INFO:Sending JSON request to the server.:
+2024-07-19 15:31:42,917:INFO:JSON request has been received.:
+2024-07-19 15:31:42,917:INFO:Value for key 'code': 200:
+2024-07-19 15:31:42,917:INFO:_______TEST (2) COMPLETED_______
+:
+2024-07-19 15:35:37,183:INFO:_______TEST (2) BEGAN_______:
+2024-07-19 15:35:37,183:INFO:Sending JSON request to the server.:
+2024-07-19 15:35:38,320:INFO:JSON request has been received.:
+2024-07-19 15:35:38,320:INFO:_______TEST (2) COMPLETED_______
+:
+2024-07-19 15:37:03,705:INFO:_______TEST (2) BEGAN_______:
+2024-07-19 15:37:03,705:INFO:Sending get request to the server.:
+2024-07-19 15:37:05,886:INFO:Response status code: 200:
+2024-07-19 15:37:05,886:INFO:Response is ok: True:
+2024-07-19 15:37:05,886:INFO:Sending JSON request to the server.:
+2024-07-19 15:37:06,588:INFO:JSON request has been received.:
+2024-07-19 15:37:06,588:INFO:_______TEST (2) COMPLETED_______
+:
+2024-07-19 15:37:39,406:INFO:_______TEST (2) BEGAN_______:
+2024-07-19 15:37:39,407:INFO:Sending get request to the server.:
+2024-07-19 15:37:40,297:INFO:Response status code: 200:
+2024-07-19 15:37:40,297:INFO:Response is ok: True:
+2024-07-19 15:37:40,297:INFO:Sending JSON request to the server.:
+2024-07-19 15:37:40,297:INFO:JSON request has been received.:
+2024-07-19 15:37:40,298:INFO:_______TEST (2) COMPLETED_______
+:
+2024-07-19 15:38:21,995:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:38:21,997:INFO:Sending get request to the server.:
+2024-07-19 15:38:23,117:INFO:Response status code: 200:
+2024-07-19 15:38:23,117:INFO:Response is ok: True:
+2024-07-19 15:38:23,117:INFO:Sending JSON request to the server.:
+2024-07-19 15:38:23,117:INFO:JSON request has been received.:
+2024-07-19 15:38:23,118:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 15:41:23,753:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:41:23,753:INFO:Sending get request to the server.:
+2024-07-19 15:41:25,021:INFO:Response status code: 404:
+2024-07-19 15:41:25,022:INFO:Response is ok: False:
+2024-07-19 15:41:25,022:INFO:Sending JSON request to the server.:
+2024-07-19 15:41:25,022:ERROR:Cannot get a request: Expecting value: line 1 column 1 (char 0):
+2024-07-19 15:43:07,724:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:43:07,724:INFO:Sending get request to the server.:
+2024-07-19 15:43:09,414:INFO:Response status code: 200:
+2024-07-19 15:43:09,414:INFO:Response is ok: True:
+2024-07-19 15:43:09,414:INFO:Sending JSON request to the server.:
+2024-07-19 15:43:09,414:INFO:JSON request has been received.:
+2024-07-19 15:43:36,875:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:43:36,875:INFO:Sending get request to the server.:
+2024-07-19 15:43:37,921:INFO:Response status code: 200:
+2024-07-19 15:43:37,921:INFO:Response is ok: True:
+2024-07-19 15:43:37,921:INFO:Sending JSON request to the server.:
+2024-07-19 15:43:37,921:INFO:JSON request has been received.:
+2024-07-19 15:43:37,921:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 15:45:38,462:INFO:_______TEST (3) BEGAN_______:
+2024-07-19 15:45:38,463:INFO:Sending get request to the server.:
+2024-07-19 15:45:39,429:INFO:Response status code: 200:
+2024-07-19 15:45:39,429:INFO:Response is ok: True:
+2024-07-19 15:45:39,430:INFO:Sending JSON request to the server.:
+2024-07-19 15:45:39,430:INFO:JSON request has been received.:
+2024-07-19 15:45:39,430:INFO:_______TEST (3) COMPLETED_______
+:
+2024-07-19 15:46:13,004:INFO:_______TEST (3) BEGAN_______:
+2024-07-19 15:46:13,005:INFO:Sending get request to the server.:
+2024-07-19 15:46:13,946:INFO:Response status code: 200:
+2024-07-19 15:46:13,946:INFO:Response is ok: True:
+2024-07-19 15:46:13,946:INFO:Sending JSON request to the server.:
+2024-07-19 15:46:13,946:INFO:JSON request has been received.:
+2024-07-19 15:46:13,947:INFO:_______TEST (3) COMPLETED_______
+:
+2024-07-19 15:47:01,443:INFO:_______TEST (2) BEGAN_______:
+2024-07-19 15:47:01,443:INFO:Sending post request.:
+2024-07-19 15:47:02,417:INFO:Post request has been sent.:
+2024-07-19 15:47:02,418:INFO:_______TEST (2) COMPLETED_______
+:
+2024-07-19 15:47:55,788:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:47:55,790:INFO:Sending get request to the server.:
+2024-07-19 15:47:57,162:INFO:Response status code: 200:
+2024-07-19 15:47:57,162:INFO:Response is ok: True:
+2024-07-19 15:47:57,162:INFO:Sending JSON request to the server.:
+2024-07-19 15:47:57,162:INFO:JSON request has been received.:
+2024-07-19 15:47:57,163:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 15:50:42,140:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:50:42,141:INFO:Sending get request to the server.:
+2024-07-19 15:50:44,911:INFO:Response status code is: 200:
+2024-07-19 15:50:44,911:INFO:Response is ok: True:
+2024-07-19 15:51:37,812:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:51:37,813:INFO:Sending get request to the server.:
+2024-07-19 15:51:39,642:INFO:Response status code is: 200:
+2024-07-19 15:51:39,642:INFO:Response is ok: True:
+2024-07-19 15:51:39,642:INFO:Sending JSON request to the server.:
+2024-07-19 15:51:39,642:INFO:Sending get request to the server.:
+2024-07-19 15:51:41,237:INFO:Response status code is: 200:
+2024-07-19 15:51:41,237:INFO:Response is ok: True:
+2024-07-19 15:51:41,240:INFO:JSON request has been received.:
+2024-07-19 15:52:07,479:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:52:07,480:INFO:Sending get request to the server.:
+2024-07-19 15:52:09,284:INFO:Response status code is: 200:
+2024-07-19 15:52:09,284:INFO:Response is ok: True:
+2024-07-19 15:52:09,284:INFO:Sending JSON request to the server.:
+2024-07-19 15:52:09,284:INFO:Sending get request to the server.:
+2024-07-19 15:52:11,020:INFO:Response status code is: 200:
+2024-07-19 15:52:11,020:INFO:Response is ok: True:
+2024-07-19 15:52:11,024:INFO:JSON request has been received.:
+2024-07-19 15:52:23,977:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:52:23,977:INFO:Sending get request to the server.:
+2024-07-19 15:52:26,274:INFO:Response status code is: 200:
+2024-07-19 15:52:26,274:INFO:Response is ok: True:
+2024-07-19 15:52:26,274:INFO:Sending JSON request to the server.:
+2024-07-19 15:52:26,274:INFO:Sending get request to the server.:
+2024-07-19 15:52:27,557:INFO:Response status code is: 200:
+2024-07-19 15:52:27,558:INFO:Response is ok: True:
+2024-07-19 15:52:27,561:INFO:JSON request has been received.:
+2024-07-19 15:52:27,561:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 15:52:47,871:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:52:47,871:INFO:Sending get request to the server.:
+2024-07-19 15:52:49,465:INFO:Response status code is: 200:
+2024-07-19 15:52:49,465:INFO:Response is ok: True:
+2024-07-19 15:52:49,465:ERROR:Cannot get a request.:
+2024-07-19 15:52:49,465:INFO:Sending JSON request to the server.:
+2024-07-19 15:52:49,466:INFO:Sending get request to the server.:
+2024-07-19 15:52:51,153:INFO:Response status code is: 200:
+2024-07-19 15:52:51,153:INFO:Response is ok: True:
+2024-07-19 15:52:51,156:INFO:JSON request has been received.:
+2024-07-19 15:52:51,157:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 15:53:16,032:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:53:16,033:INFO:Sending get request to the server.:
+2024-07-19 15:53:18,092:INFO:Response status code is: 200:
+2024-07-19 15:53:18,092:INFO:Response is ok: True:
+2024-07-19 15:53:18,092:ERROR:Cannot get a request.:
+2024-07-19 15:53:18,092:INFO:Sending JSON request to the server.:
+2024-07-19 15:53:18,095:INFO:JSON request has been received.:
+2024-07-19 15:53:18,095:INFO:_______TEST (1) COMPLETED_______
+:
+2024-07-19 15:53:50,641:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:53:50,641:INFO:Sending get request to the server.:
+2024-07-19 15:53:52,803:INFO:Response status code is: 200:
+2024-07-19 15:53:52,803:INFO:Response is ok: True:
+2024-07-19 15:53:52,803:INFO:Sending JSON request to the server.:
+2024-07-19 15:53:52,807:INFO:JSON request has been received.:
+2024-07-19 15:54:16,697:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:54:16,700:INFO:Sending get request to the server.:
+2024-07-19 15:54:18,401:INFO:Response status code is: 200:
+2024-07-19 15:54:18,401:INFO:Response is ok: True:
+2024-07-19 15:54:18,401:INFO:Sending JSON request to the server.:
+2024-07-19 15:54:18,403:INFO:JSON request has been received.:
+2024-07-19 15:56:08,675:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:56:08,676:INFO:Sending get request to the server.:
+2024-07-19 15:56:10,327:INFO:Response status code is: 200:
+2024-07-19 15:56:10,327:INFO:Response is ok: True:
+2024-07-19 15:56:10,327:INFO:Sending JSON request to the server.:
+2024-07-19 15:56:10,330:INFO:JSON request has been received.:
+2024-07-19 15:56:38,815:INFO:_______TEST (1) BEGAN_______:
+2024-07-19 15:56:38,815:INFO:Sending get request to the server.:
+2024-07-19 15:56:40,443:INFO:Response status code is: 200:
+2024-07-19 15:56:40,443:INFO:Response is ok: True:
+2024-07-19 15:56:40,443:INFO:Sending JSON request to the server.:
+2024-07-19 15:56:40,447:INFO:JSON request has been received.:
+2024-07-19 15:56:40,448:INFO:_______TEST (1) COMPLETED_______
+:

@@ -1,7 +1,47 @@
-
 {
     "base_url": "https://petstore.swagger.io",
-    "browser" : "Chrome"
+    "browser" : "Chrome",
+
+
+    "pet_by_status_endpoint" : "available",
+    "pet_by_status_key" : "status",
+    "pet_by_status_value" : "available",
+
+
+    "pet_store_inventory_key" : "sold",
+    "pet_store_inventory_value" : 20,
+
+
+    "store_order_add_id" : 6,
+    "store_order_add_pet_id" : 3,
+    "store_order_add_quantity" : 4,
+
+
+    "store_order_by_id_endpoint" : 2,
+    "store_order_by_id_key" : "status",
+    "store_order_by_id_value" : "placed",
+
+
+    "username_get_by_key_value_key" : "userStatus",
+    "username_get_by_key_value_name" : "string",
+    "username_get_by_key_value_value" : 0,
+
+
+    "login_user_name" : "positive",
+    "login_user_password" : 123,
+    "login_user_key" : "code",
+    "login_user_value" : 200
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
