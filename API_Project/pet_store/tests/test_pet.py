@@ -18,10 +18,14 @@ class TestPet(unittest.TestCase):
     def test_pet_by_status(self):
         logging.info("1_______TEST (PET]) BEGAN_______1")
         pet_store = PetPage(self._api)
-        result = pet_store.pet_by_status_get_json(
+        result_1 = pet_store.pet_by_status_check_st_ok(
+            self._config['pet_by_status_endpoint'])
+        result_2 = pet_store.pet_by_status_get_json(
             self._config['pet_by_status_key'],
             self._config['pet_by_status_endpoint'])
-        self.assertEqual(result, self._config['pet_by_status_value'])
+        self.assertTrue(result_1.ok)
+        self.assertEqual(result_1.status_code, 200)
+        self.assertEqual(result_2, self._config['pet_by_status_value'])
         logging.info("1_______TEST (PET) COMPLETED_______1\n")
 
     # --------------------------------------------------------------------------------------

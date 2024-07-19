@@ -1,0 +1,58 @@
+2024-07-19 23:54:09,840:INFO:2_______TEST (PET) BEGAN_______2:
+2024-07-19 23:54:09,840:INFO:Sending post request.:
+2024-07-19 23:54:10,639:INFO:Post request has been sent.:
+2024-07-19 23:54:10,639:INFO:2_______TEST (PET) COMPLETED_______2
+:
+2024-07-19 23:54:10,641:INFO:3_______TEST (PET) BEGAN_______3:
+2024-07-19 23:54:10,641:INFO:Sending post request.:
+2024-07-19 23:54:11,257:INFO:Post request has been sent.:
+2024-07-19 23:54:11,837:INFO:Delete request has been sent.:
+2024-07-19 23:54:11,837:INFO:Delete request completed successfully.:
+2024-07-19 23:54:11,838:INFO:3_______TEST (PET) COMPLETED_______3
+:
+2024-07-19 23:54:11,839:INFO:1_______TEST (PET]) BEGAN_______1:
+2024-07-19 23:54:11,839:INFO:Sending get request to the server.:
+2024-07-19 23:54:13,058:INFO:Response has been received.:
+2024-07-19 23:54:13,058:INFO:Sending JSON request to the server.:
+2024-07-19 23:54:14,224:INFO:JSON request has been received.:
+2024-07-19 23:54:14,224:INFO:1_______TEST (PET) COMPLETED_______1
+:
+2024-07-19 23:54:20,672:INFO:4_______TEST (STORE) BEGAN_______4:
+2024-07-19 23:54:20,672:INFO:Sending get request to the server.:
+2024-07-19 23:54:21,265:INFO:Response has been received.:
+2024-07-19 23:54:21,265:INFO:Sending JSON request to the server.:
+2024-07-19 23:54:21,872:INFO:JSON request has been received.:
+2024-07-19 23:54:21,904:INFO:6_______TEST (STORE) BEGAN_______6:
+2024-07-19 23:54:21,905:INFO:Sending JSON request to the server.:
+2024-07-19 23:54:22,519:INFO:JSON request has been received.:
+2024-07-19 23:54:22,519:INFO:6_______TEST (STORE) COMPLETED_______6
+:
+2024-07-19 23:54:22,520:INFO:5_______TEST (STORE) BEGAN_______5:
+2024-07-19 23:54:22,520:INFO:Sending post request.:
+2024-07-19 23:54:23,089:INFO:Post request has been sent.:
+2024-07-19 23:54:23,089:INFO:5_______TEST (STORE) COMPLETED_______5
+:
+2024-07-19 23:54:32,567:INFO:8_______TEST (USER) BEGAN_______8:
+2024-07-19 23:54:32,567:INFO:Sending get request to the server.:
+2024-07-19 23:54:33,163:INFO:Response has been received.:
+2024-07-19 23:54:33,163:INFO:Sending get request to the server.:
+2024-07-19 23:54:33,750:INFO:Response status code: 200:
+2024-07-19 23:54:33,750:INFO:Response is ok: True:
+2024-07-19 23:54:33,751:INFO:Sending JSON request to the server.:
+2024-07-19 23:54:33,751:INFO:JSON request has been received.:
+2024-07-19 23:54:33,751:INFO:8_______TEST (USER) COMPLETED_______8
+:
+2024-07-19 23:54:33,753:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-19 23:54:33,753:INFO:Sending get request to the server.:
+2024-07-19 23:54:34,338:INFO:Response has been received.:
+2024-07-19 23:54:34,338:INFO:Sending JSON request.:
+2024-07-19 23:54:34,933:INFO:JSON response has been received.:
+2024-07-19 23:54:34,934:INFO:9_______TEST (USER) COMPLETED_______9
+:
+2024-07-19 23:54:34,935:INFO:7_______TEST (USER) BEGAN_______7:
+2024-07-19 23:54:34,935:INFO:Sending get request to the server.:
+2024-07-19 23:54:35,708:INFO:Response has been received.:
+2024-07-19 23:54:35,708:INFO:Sending JSON request to the server.:
+2024-07-19 23:54:36,283:INFO:JSON request has been received.:
+2024-07-19 23:54:36,283:INFO:7_______TEST (USER) COMPLETED_______7
+:

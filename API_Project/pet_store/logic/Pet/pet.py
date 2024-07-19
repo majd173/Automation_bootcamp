@@ -18,16 +18,25 @@ class PetPage:
 
     # --------------------------------------------------------------------------------------
     # GET REQUEST
-
-    def pet_by_status_get_json(self, key, endpoint):
+    def pet_by_status_check_st_ok(self, endpoint):
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
                 f'{self._url}/v2/pet/findByStatus?status={endpoint}')
-            logging.info(f'Response status code is: {response.status_code}')
-            logging.info(f'Response is ok: {response.ok}')
+            if response:
+                logging.info("Response has been received.")
+                return response
+            else:
+                logging.error("Response has not been received.")
+        except requests.RequestException as e:
+            logging.error(f'Cannot senf a request: {e}')
+
+
+    def pet_by_status_get_json(self, key, endpoint):
+        try:
             logging.info("Sending JSON request to the server.")
-            json_file = response.json()
+            json_file = self._request.get_request(
+                f'{self._url}/v2/pet/findByStatus?status={endpoint}').json()
             if json_file:
                 logging.info("JSON request has been received.")
                 value = json_file[0][key]

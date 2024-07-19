@@ -17,14 +17,25 @@ class StorePage:
 
     # --------------------------------------------------------------------------------------
     # GET REQUEST
-    def store_inventory_get_json(self, key):
+    def store_inventory_check_st_ok(self):
         try:
             logging.info("Sending get request to the server.")
-            response = self._request.get_request(f'{self._url}/v2/store/inventory')
-            logging.info(f'Response status code: {response.status_code}')
-            logging.info(f'Response is ok: {response.ok}')
+            response = self._request.get_request(
+                f'{self._url}/v2/store/inventory')
+            if response:
+                logging.info("Response has been received.")
+                return response
+            else:
+                logging.error("Response has not been received.")
+        except requests.RequestException as e:
+            logging.error(f'Cannot senf a request: {e}')
+
+
+    def store_inventory(self, key):
+        try:
             logging.info("Sending JSON request to the server.")
-            json_file = response.json()
+            json_file = self._request.get_request(
+                f'{self._url}/v2/store/inventory').json()
             if json_file:
                 logging.info("JSON request has been received.")
                 value = json_file[key]
@@ -50,12 +61,9 @@ class StorePage:
 
     def store_order_by_id(self, endpoint, key):
         try:
-            logging.info("Sending get request to the server.")
-            response = self._request.get_request(f'{self._url}/v2/store/order/{endpoint}')
-            logging.info(f'Response status code: {response.status_code}')
-            logging.info(f'Response is ok: {response.ok}')
             logging.info("Sending JSON request to the server.")
-            json_file = response.json()
+            json_file = self._request.get_request(
+                f'{self._url}/v2/store/order/{endpoint}').json()
             if json_file:
                 logging.info("JSON request has been received.")
                 value = json_file[key]

@@ -16,14 +16,14 @@ class TestUser(unittest.TestCase):
     def test_username_get(self):
         logging.info("7_______TEST (USER) BEGAN_______7")
         pet_store = UserPage(self._api)
-        result_1 = pet_store.username_get_by_key_value(
+        result_1 = pet_store.username_get_by_key_value_check_st_ok(
+            self._config['username_get_by_key_value_name'])
+        result_2 = pet_store.username_get_by_key_value(
             self._config['username_get_by_key_value_key'],
             self._config['username_get_by_key_value_name'])
-        result_2 = pet_store.username_get_by_key_value_check_st_ok(
-            self._config['username_get_by_key_value_name'])
-        self.assertEqual(result_1, self._config['username_get_by_key_value_value'])
-        self.assertTrue(result_2.ok)
-        self.assertEqual(result_2.status_code, 200)
+        self.assertTrue(result_1.ok)
+        self.assertEqual(result_1.status_code, 200)
+        self.assertEqual(result_2, self._config['username_get_by_key_value_value'])
         logging.info("7_______TEST (USER) COMPLETED_______7\n")
 
     # --------------------------------------------------------------------------------------
@@ -31,16 +31,16 @@ class TestUser(unittest.TestCase):
     def test_user_login(self):
         logging.info("8_______TEST (USER) BEGAN_______8")
         pet_store = UserPage(self._api)
-        result_1 = pet_store.login_user(
+        result_1 = pet_store.login_user_check_st_ok(
+            self._config['login_user_name'],
+            self._config['login_user_password'])
+        result_2 = pet_store.login_user(
             self._config['login_user_name'],
             self._config['login_user_password'],
             self._config['login_user_key'])
-        result_2 = pet_store.login_user_check_st_ok(
-            self._config['login_user_name'],
-            self._config['login_user_password'])
-        self.assertTrue(result_2.ok)
-        self.assertEqual(result_2.status_code, 200)
-        self.assertEqual(result_1, self._config['login_user_value'])
+        self.assertTrue(result_1.ok)
+        self.assertEqual(result_1.status_code, 200)
+        self.assertEqual(result_2, self._config['login_user_value'])
         logging.info("8_______TEST (USER) COMPLETED_______8\n")
 
     # --------------------------------------------------------------------------------------

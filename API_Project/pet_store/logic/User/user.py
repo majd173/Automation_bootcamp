@@ -15,6 +15,7 @@ class UserPage:
         except ImportError:
             logging.error("Can not open pet_store.json file.")
 
+
     # --------------------------------------------------------------------------------------
     # GET REQUEST
 
@@ -66,13 +67,9 @@ class UserPage:
 
     def login_user(self, name, password, key):
         try:
-            logging.info("Sending get request to the server.")
-            response = self._request.get_request(
-                f'{self._url}/v2/user/login?username={name}&password={password}')
-            logging.info(f'Response status code: {response.status_code}')
-            logging.info(f'Response is ok: {response.ok}')
             logging.info("Sending JSON request to the server.")
-            json_file = response.json()
+            json_file = self._request.get_request(
+                f'{self._url}/v2/user/login?username={name}&password={password}').json()
             if json_file:
                 logging.info("JSON request has been received.")
                 value = json_file[key]

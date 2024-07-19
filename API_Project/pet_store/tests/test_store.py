@@ -17,9 +17,12 @@ class TestStore(unittest.TestCase):
     def test_pet_store_inventory(self):
         logging.info("4_______TEST (STORE) BEGAN_______4")
         pet_store = StorePage(self._api)
-        result = pet_store.store_inventory_get_json(
+        result_1 = pet_store.store_inventory_check_st_ok()
+        result_2 = pet_store.store_inventory(
             self._config['pet_store_inventory_key'])
-        self.assertEqual(result, self._config['pet_store_inventory_value'])
+        self.assertTrue(result_1.ok)
+        self.assertEqual(result_1.status_code, 200)
+        self.assertEqual(result_2, self._config['pet_store_inventory_value'])
         logging.info("4_______TEST (STORE) COMPLETED_______4\n")
 
     # --------------------------------------------------------------------------------------
@@ -39,7 +42,7 @@ class TestStore(unittest.TestCase):
 
     # --------------------------------------------------------------------------------------
 
-    def test_store_order_by_id(self):
+    def test_store_order(self):
         logging.info("6_______TEST (STORE) BEGAN_______6")
         pet_store = StorePage(self._api)
         result = pet_store.store_order_by_id(

@@ -22,7 +22,7 @@
 
 
     "store_order_by_id_endpoint" : 2,
-    "store_order_by_id_key" : "status",
+    "store_order_by_id_key" : "message",
     "store_order_by_id_value" : "Order not found",
 
 
