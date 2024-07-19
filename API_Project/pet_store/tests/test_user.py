@@ -16,10 +16,14 @@ class TestUser(unittest.TestCase):
     def test_username_get_by_key_value(self):
         logging.info("7_______TEST (USER) BEGAN_______7")
         pet_store = UserPage(self._api)
-        result = pet_store.username_get_by_key_value(
+        result_1 = pet_store.username_get_by_key_value(
             self._config['username_get_by_key_value_key'],
             self._config['username_get_by_key_value_name'])
-        self.assertEqual(result, self._config['username_get_by_key_value_value'])
+        result_2 = pet_store.username_get_by_key_value_check_st_ok(
+            self._config['username_get_by_key_value_name'])
+        self.assertEqual(result_1, self._config['username_get_by_key_value_value'])
+        self.assertTrue(result_2.ok)
+        self.assertEqual(result_2.status_code, 200)
         logging.info("7_______TEST (USER) COMPLETED_______7\n")
 
     # --------------------------------------------------------------------------------------
