@@ -17,18 +17,6 @@ class UserPage:
 
     # --------------------------------------------------------------------------------------
     # GET REQUEST
-    def username_get_by_key_value(self, key, name):
-        try:
-            logging.info("Sending JSON request to the server.")
-            json_file = self._request.get_request(
-                f'{self._url}/v2/user/{name}').json()
-            if json_file:
-                logging.info("JSON request has been received.")
-                value = json_file[key]
-                return value
-            logging.error("JSON request has not been obtained.")
-        except Exception as e:
-            logging.error(f'Can not get a request: {e}')
 
     def username_get_by_key_value_check_st_ok(self, name):
         try:
@@ -42,8 +30,40 @@ class UserPage:
         except requests.RequestException as e:
             logging.error(f'Cannot senf a request: {e}')
 
+
+
+    def username_get_by_key_value(self, key, name):
+        try:
+            logging.info("Sending JSON request to the server.")
+            json_file = self._request.get_request(
+                f'{self._url}/v2/user/{name}').json()
+            if json_file:
+                logging.info("JSON request has been received.")
+                value = json_file[key]
+                return value
+            logging.error("JSON request has not been obtained.")
+        except Exception as e:
+            logging.error(f'Can not get a request: {e}')
+
+
     # --------------------------------------------------------------------------------------
     # GET REQUEST
+
+    def login_user_check_st_ok(self, name, password):
+        try:
+            logging.info("Sending get request to the server.")
+            response = self._request.get_request(
+                f'{self._url}/v2/user/login?username={name}&password={password}')
+            if response:
+                logging.info("Response has been received.")
+                return response
+            else:
+                logging.error("Response has not been received.")
+        except requests.RequestException as e:
+            logging.error(f'Cannot senf a request: {e}')
+
+
+
     def login_user(self, name, password, key):
         try:
             logging.info("Sending get request to the server.")
@@ -55,17 +75,17 @@ class UserPage:
             json_file = response.json()
             if json_file:
                 logging.info("JSON request has been received.")
-                print(json_file)
                 value = json_file[key]
                 return value
             logging.error("JSON request has not been received.")
         except requests.RequestException as e:
             logging.error(f'Cannot send a request: {e}')
 
+
     # --------------------------------------------------------------------------------------
     # GET REQUEST
 
-    def user_logout(self):
+    def user_logout_check_st_ok(self):
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
