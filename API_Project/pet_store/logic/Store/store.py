@@ -37,10 +37,10 @@ class StorePage:
             json_file = self._request.get_request(
                 f'{self._url}/v2/store/inventory').json()
             if json_file:
-                logging.info("JSON request has been received.")
+                logging.info("JSON response has been received.")
                 value = json_file[key]
                 return value
-            logging.error("JSON request has not been received.")
+            logging.error("JSON response has not been received.")
         except requests.RequestException as e:
             logging.error(f'Cannot get a request: {e}')
 
@@ -65,9 +65,9 @@ class StorePage:
             json_file = self._request.get_request(
                 f'{self._url}/v2/store/order/{endpoint}').json()
             if json_file:
-                logging.info("JSON request has been received.")
+                logging.info("JSON response has been received.")
                 value = json_file[key]
                 return value
-            logging.error("JSON request has not been received.")
+            logging.error("JSON response has not been received.")
         except Exception as e:
             logging.error(f'Can not get a request: {e}')

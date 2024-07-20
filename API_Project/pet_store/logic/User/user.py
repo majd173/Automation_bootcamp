@@ -29,7 +29,7 @@ class UserPage:
             else:
                 logging.error("Response has not been received.")
         except requests.RequestException as e:
-            logging.error(f'Cannot senf a request: {e}')
+            logging.error(f'Cannot send a request: {e}')
 
 
 
@@ -39,10 +39,10 @@ class UserPage:
             json_file = self._request.get_request(
                 f'{self._url}/v2/user/{name}').json()
             if json_file:
-                logging.info("JSON request has been received.")
+                logging.info("JSON response has been received.")
                 value = json_file[key]
                 return value
-            logging.error("JSON request has not been obtained.")
+            logging.error("JSON response has not been received.")
         except Exception as e:
             logging.error(f'Can not get a request: {e}')
 
@@ -61,7 +61,7 @@ class UserPage:
             else:
                 logging.error("Response has not been received.")
         except requests.RequestException as e:
-            logging.error(f'Cannot senf a request: {e}')
+            logging.error(f'Cannot send a request: {e}')
 
 
 
@@ -71,10 +71,10 @@ class UserPage:
             json_file = self._request.get_request(
                 f'{self._url}/v2/user/login?username={name}&password={password}').json()
             if json_file:
-                logging.info("JSON request has been received.")
+                logging.info("JSON response has been received.")
                 value = json_file[key]
                 return value
-            logging.error("JSON request has not been received.")
+            logging.error("JSON response has not been received.")
         except requests.RequestException as e:
             logging.error(f'Cannot send a request: {e}')
 

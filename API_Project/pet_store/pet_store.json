@@ -12,8 +12,8 @@
     "add_pet_name" : "doggy",
 
 
-    "pet_store_inventory_key" : "sold",
-    "pet_store_inventory_value" : 35,
+    "pet_store_inventory_key" : "pending",
+    "pet_store_inventory_value" : 2,
 
 
     "store_order_add_id" : 6,
@@ -22,8 +22,8 @@
 
 
     "store_order_by_id_endpoint" : 2,
-    "store_order_by_id_key" : "message",
-    "store_order_by_id_value" : "Order not found",
+    "store_order_by_id_key" : "status",
+    "store_order_by_id_value" : "placed",
 
 
     "username_get_by_key_value_key" : "userStatus",

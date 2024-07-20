@@ -38,10 +38,10 @@ class PetPage:
             json_file = self._request.get_request(
                 f'{self._url}/v2/pet/findByStatus?status={endpoint}').json()
             if json_file:
-                logging.info("JSON request has been received.")
+                logging.info("JSON response has been received.")
                 value = json_file[0][key]
                 return value
-            logging.error("JSON request has not been receiver.")
+            logging.error("JSON response has not been received.")
         except requests.RequestException as e:
             logging.error(f'Cannot send a request: {e}')
 
