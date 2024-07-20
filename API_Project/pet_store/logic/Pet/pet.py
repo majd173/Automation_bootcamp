@@ -55,11 +55,11 @@ class PetPage:
     # This function post a request includes new pet details to be added.
     def add_pet(self, new_body):
         logging.info("Sending post request.")
-        post = self._request.post_request(
+        response = self._request.post_request(
             f'{self._config['base_url']}/v2/pet', new_body)
-        if post:
+        if response:
             logging.info("Post request has been sent.")
-            return post
+            return response
         logging.error("Post request has not been sent.")
 
     # --------------------------------------------------------------------------------------
@@ -88,6 +88,7 @@ class PetPage:
             logging.error("Delete request response matches post request response.")
         else:
             logging.error("Delete request has not been sent.")
+
 
 
 

@@ -1,12 +1,13 @@
 import requests
 
-url = "https://faceanalyzer-ai.p.rapidapi.com/"
+url = "https://chatgpt.com/backend-api/prompt_library/?limit=4&offset=0"
+#
+# headers = {
+# 	"Access-Control-Allow-Credentials:": "true",
+# 	"Content-Encoding:": "br"
+# }
 
-headers = {
-	"x-rapidapi-key": "fd1c8eb3eamshe5b076ef4fa1397p1b3ab5jsn4357cdabb360",
-	"x-rapidapi-host": "faceanalyzer-ai.p.rapidapi.com"
-}
+response = requests.post(url, headers=None)
 
-response = requests.get(url, headers=headers)
-
-print(response.json())
+# print(response.json())
+print(response.status_code)

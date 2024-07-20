@@ -42,7 +42,15 @@
 
 
     "delete_user_key" : "message",
-    "delete_user_value" : "1"
+    "delete_user_value" : "1",
+
+
+    "add_users_list_id" : 1,
+    "add_users_list_username" : "positive",
+    "add_users_list_firstname" : "good",
+    "add_users_list_lastname" : "man"
+
+
 
 
 

@@ -153,3 +153,60 @@
 2024-07-20 15:49:39,799:INFO:JSON response has been received.:
 2024-07-20 15:49:39,799:INFO:4_______TEST (STORE) COMPLETED_______4
 :
+2024-07-20 17:58:48,360:INFO:4_______TEST (STORE) BEGAN_______4:
+2024-07-20 17:58:48,361:INFO:Sending get request to the server.:
+2024-07-20 23:01:25,756:INFO:2_______TEST (PET) BEGAN_______2:
+2024-07-20 23:01:25,756:INFO:Sending post request.:
+2024-07-20 23:01:26,403:INFO:Post request has been sent.:
+2024-07-20 23:01:26,403:INFO:2_______TEST (PET) COMPLETED_______2
+:
+2024-07-20 23:01:40,434:INFO:2_______TEST (PET) BEGAN_______2:
+2024-07-20 23:01:40,434:INFO:Sending post request.:
+2024-07-20 23:01:41,367:INFO:Post request has been sent.:
+2024-07-20 23:01:41,367:INFO:2_______TEST (PET) COMPLETED_______2
+:
+2024-07-20 23:35:51,482:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:35:51,483:INFO:Sending post request.:
+2024-07-20 23:35:54,574:ERROR:Post request has not been sent.:
+2024-07-20 23:39:55,089:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:39:55,089:INFO:Sending post request.:
+2024-07-20 23:39:56,004:INFO:Post request has been sent.:
+2024-07-20 23:41:41,266:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:41:41,266:INFO:Sending post request.:
+2024-07-20 23:41:43,174:INFO:Post request has been sent.:
+2024-07-20 23:42:13,636:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:42:13,636:INFO:Sending post request.:
+2024-07-20 23:42:14,298:INFO:Post request has been sent.:
+2024-07-20 23:44:00,205:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:44:00,205:INFO:Sending post request.:
+2024-07-20 23:44:00,964:INFO:Post request has been sent.:
+2024-07-20 23:45:48,559:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:45:48,559:INFO:Sending post request.:
+2024-07-20 23:45:49,359:INFO:Post request has been sent.:
+2024-07-20 23:47:45,852:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:47:45,852:INFO:Sending post request.:
+2024-07-20 23:47:46,630:INFO:Post request has been sent.:
+2024-07-20 23:48:23,717:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:48:23,717:INFO:Sending post request.:
+2024-07-20 23:48:24,365:INFO:Post request has been sent.:
+2024-07-20 23:49:43,869:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:49:43,869:INFO:Sending post request.:
+2024-07-20 23:49:44,607:INFO:Post request has been sent.:
+2024-07-20 23:49:57,166:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:49:57,167:INFO:Sending post request.:
+2024-07-20 23:49:57,876:INFO:Post request has been sent.:
+2024-07-20 23:50:12,028:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:50:12,030:INFO:Sending post request.:
+2024-07-20 23:50:12,679:INFO:Post request has been sent.:
+2024-07-20 23:50:31,504:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:50:31,504:INFO:Sending post request.:
+2024-07-20 23:50:32,171:INFO:Post request has been sent.:
+2024-07-20 23:52:24,404:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:52:24,404:INFO:Sending post request.:
+2024-07-20 23:52:25,390:INFO:Post request has been sent.:
+2024-07-20 23:53:33,709:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:53:33,709:INFO:Sending post request.:
+2024-07-20 23:53:35,523:INFO:Post request has been sent.:
+2024-07-20 23:53:46,678:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-20 23:53:46,678:INFO:Sending post request.:
+2024-07-20 23:53:47,373:INFO:Post request has been sent.:

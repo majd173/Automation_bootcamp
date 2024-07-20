@@ -32,7 +32,6 @@ class UserPage:
         except requests.RequestException as e:
             logging.error(f'Cannot send a request: {e}')
 
-
     # This function receives a JSON file of a username buy its name and
     # returns a value by a specific key.
 
@@ -67,7 +66,6 @@ class UserPage:
         except requests.RequestException as e:
             logging.error(f'Cannot send a request: {e}')
 
-
     # This function receives a JSON file for a login by name and password
     # and returns a value by a specific key.
 
@@ -100,7 +98,6 @@ class UserPage:
         except requests.RequestException as e:
             logging.error(f'Cannot send a request: {e}')
 
-
     # This function receives a JSON file for a logout by name and password
 
     def user_logout_message(self, key):
@@ -115,3 +112,14 @@ class UserPage:
             logging.error("JSON response has not been received.")
         except requests.RequestException as e:
             logging.error(f'Cannot send a request: {e}')
+
+
+    # This function adds new user to the users list.
+    def create_users_list(self, new_body):
+        logging.info("Sending post request.")
+        response = self._request.post_request(
+            f'{self._config['base_url']}/v2/user/createWithList', new_body)
+        if response:
+            logging.info("Post request has been sent.")
+            return response
+        logging.error("Post request has not been sent.")
