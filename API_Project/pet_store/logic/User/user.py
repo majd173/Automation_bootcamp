@@ -5,6 +5,7 @@ from API_Project.pet_store.infra.config_provider import ConfigProvider
 
 
 class UserPage:
+    # This class manages the user page of the website and it's functionalities.
 
     def __init__(self, request: APIWrapper):
         try:
@@ -15,9 +16,9 @@ class UserPage:
         except ImportError:
             logging.error("Can not open pet_store.json file.")
 
-
     # --------------------------------------------------------------------------------------
     # GET REQUEST
+    # This function receives a get request of the username by its name.
 
     def username_get_by_key_value_check_st_ok(self, name):
         try:
@@ -32,6 +33,8 @@ class UserPage:
             logging.error(f'Cannot send a request: {e}')
 
 
+    # This function receives a JSON file of a username buy its name and
+    # returns a value by a specific key.
 
     def username_get_by_key_value(self, key, name):
         try:
@@ -46,9 +49,10 @@ class UserPage:
         except Exception as e:
             logging.error(f'Can not get a request: {e}')
 
-
     # --------------------------------------------------------------------------------------
     # GET REQUEST
+    # This function receives a get request of the login process by
+    # a user's name and password.
 
     def login_user_check_st_ok(self, name, password):
         try:
@@ -64,6 +68,8 @@ class UserPage:
             logging.error(f'Cannot send a request: {e}')
 
 
+    # This function receives a JSON file for a login by name and password
+    # and returns a value by a specific key.
 
     def login_user(self, name, password, key):
         try:
@@ -78,9 +84,9 @@ class UserPage:
         except requests.RequestException as e:
             logging.error(f'Cannot send a request: {e}')
 
-
     # --------------------------------------------------------------------------------------
     # GET REQUEST
+    # This function receives a get request of the logout process by
 
     def user_logout_check_st_ok(self):
         try:
@@ -94,6 +100,9 @@ class UserPage:
         except requests.RequestException as e:
             logging.error(f'Cannot send a request: {e}')
 
+
+    # This function receives a JSON file for a logout by name and password
+
     def user_logout_message(self, key):
         try:
             logging.info("Sending JSON request.")
@@ -106,8 +115,3 @@ class UserPage:
             logging.error("JSON response has not been received.")
         except requests.RequestException as e:
             logging.error(f'Cannot send a request: {e}')
-
-
-
-
-

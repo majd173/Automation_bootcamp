@@ -26,6 +26,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(result_2, self._config['username_get_by_key_value_value'])
         logging.info("7_______TEST (USER) COMPLETED_______7\n")
 
+    # Testing acceptance and status code of a request and a received body confirmation.
     # --------------------------------------------------------------------------------------
 
     def test_user_login(self):
@@ -43,6 +44,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(result_2, self._config['login_user_value'])
         logging.info("8_______TEST (USER) COMPLETED_______8\n")
 
+    # Testing acceptance and status code of a request and a received body confirmation.
     # --------------------------------------------------------------------------------------
 
     def test_user_logout(self):
@@ -55,6 +57,8 @@ class TestUser(unittest.TestCase):
         self.assertEqual(result_1.status_code, 200)
         self.assertEqual(result_2, self._config['user_logout_message_value'])
         logging.info("9_______TEST (USER) COMPLETED_______9\n")
+
+    # Testing acceptance and status code of a request and a received body confirmation.
 
 
 

@@ -5,6 +5,8 @@ from API_Project.pet_store.infra.config_provider import ConfigProvider
 
 
 class StorePage:
+    # This class manages store page of the website and it's functionalities.
+
 
     def __init__(self, request: APIWrapper):
         try:
@@ -17,6 +19,7 @@ class StorePage:
 
     # --------------------------------------------------------------------------------------
     # GET REQUEST
+    # This function receives a get request of the inventory of the store.
     def store_inventory_check_st_ok(self):
         try:
             logging.info("Sending get request to the server.")
@@ -31,6 +34,7 @@ class StorePage:
             logging.error(f'Cannot senf a request: {e}')
 
 
+    # This function receives a JSON file and return a value by a specific key.
     def store_inventory(self, key):
         try:
             logging.info("Sending JSON request to the server.")
@@ -46,6 +50,7 @@ class StorePage:
 
     # --------------------------------------------------------------------------------------
     # POST REQUEST
+    # This function post a request includes new order details to be added.
     def store_order_add(self, new_body):
         logging.info("Sending post request.")
         post = self._request.post_request(
@@ -58,6 +63,8 @@ class StorePage:
 
     # --------------------------------------------------------------------------------------
     # GET REQUEST
+    # This function receives a JSON file of an order by its endpoint
+    # and return a value by a specific key.
 
     def store_order_by_id(self, endpoint, key):
         try:

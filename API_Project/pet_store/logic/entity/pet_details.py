@@ -2,6 +2,7 @@
 
 class PetDetails:
 
+    # This class manages adding a new pet by adding its details.
     def __init__(self, pet_id, pet_name):
         self._pet_id = pet_id
         self._pet_name = pet_name

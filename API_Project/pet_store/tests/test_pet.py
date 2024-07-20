@@ -28,6 +28,8 @@ class TestPet(unittest.TestCase):
         self.assertEqual(result_2, self._config['pet_by_status_value'])
         logging.info("1_______TEST (PET) COMPLETED_______1\n")
 
+    # Testing acceptance and status code of a request and a received body confirmation.
+
     # --------------------------------------------------------------------------------------
 
     def test_add_pet(self):
@@ -41,6 +43,8 @@ class TestPet(unittest.TestCase):
         self.assertTrue(result.ok)
         self.assertEqual(result.status_code, 200)
         logging.info("2_______TEST (PET) COMPLETED_______2\n")
+
+    # Testing acceptance and status code of a request after submitting a post.
 
     # --------------------------------------------------------------------------------------
 
@@ -56,6 +60,8 @@ class TestPet(unittest.TestCase):
         self.assertEqual(result, self._config['delete_user_value'])
         logging.info("3_______TEST (PET) COMPLETED_______3\n")
 
+    # Testing request received body confirmation after submitting a post
+    # followed by a delete process.
 
 
 if __name__ == '__main__':

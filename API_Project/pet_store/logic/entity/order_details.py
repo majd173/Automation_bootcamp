@@ -1,5 +1,9 @@
 class OrderDetails:
 
+    """
+     This class manages adding a new order by adding its details.
+    """
+
     def __init__(self, order_id, pet_id, quantity):
         self._order_id = order_id
         self._pet_id = pet_id
@@ -33,9 +37,11 @@ class OrderDetails:
         self._quantity = value
 
     def to_dict(self):
+
         """
-        Converts the OrderDetails instance to a dictionary.
+         Converts the Order Details instance to a dictionary.
         """
+
         return {
             "id": self.order_id,
             "petId": self.pet_id,

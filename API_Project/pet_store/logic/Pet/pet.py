@@ -5,6 +5,8 @@ from API_Project.pet_store.infra.config_provider import ConfigProvider
 
 
 class PetPage:
+    # This class manages the pet's page and functionalities.
+
 
     def __init__(self, request: APIWrapper):
         try:
@@ -18,6 +20,7 @@ class PetPage:
 
     # --------------------------------------------------------------------------------------
     # GET REQUEST
+    # This functions receives a response of a pet by its status.
     def pet_by_status_check_st_ok(self, endpoint):
         try:
             logging.info("Sending get request to the server.")
@@ -32,6 +35,8 @@ class PetPage:
             logging.error(f'Cannot senf a request: {e}')
 
 
+    # This function receives a JSON file of a pet by its status
+    # and returns a value by a specific key.
     def pet_by_status_get_json(self, key, endpoint):
         try:
             logging.info("Sending JSON request to the server.")
@@ -47,7 +52,7 @@ class PetPage:
 
     # --------------------------------------------------------------------------------------
     # POST REQUEST
-
+    # This function post a request includes new pet details to be added.
     def add_pet(self, new_body):
         logging.info("Sending post request.")
         post = self._request.post_request(
@@ -59,6 +64,9 @@ class PetPage:
 
     # --------------------------------------------------------------------------------------
     # DELETE REQUEST
+    # This function receives a delete request after sending a post one.
+    # it verifies the deleting process.
+
     def delete_pet(self, new_body, key):
         logging.info("Sending post request.")
         post = self._request.post_request(

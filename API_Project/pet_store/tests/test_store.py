@@ -25,6 +25,8 @@ class TestStore(unittest.TestCase):
         self.assertEqual(result_2, self._config['pet_store_inventory_value'])
         logging.info("4_______TEST (STORE) COMPLETED_______4\n")
 
+    # Testing acceptance and status code of a request and a received body confirmation.
+
     # --------------------------------------------------------------------------------------
 
     def test_store_order_add(self):
@@ -40,6 +42,8 @@ class TestStore(unittest.TestCase):
         self.assertEqual(result.status_code, 200)
         logging.info("5_______TEST (STORE) COMPLETED_______5\n")
 
+    # Testing acceptance and status code of a request after submitting a post.
+
     # --------------------------------------------------------------------------------------
 
     def test_store_order(self):
@@ -50,6 +54,8 @@ class TestStore(unittest.TestCase):
             self._config['store_order_by_id_key'])
         self.assertEqual(result, self._config['store_order_by_id_value'])
         logging.info("6_______TEST (STORE) COMPLETED_______6\n")
+
+    # Testing request received body confirmation.
 
 
 

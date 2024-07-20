@@ -3,6 +3,9 @@ from API_Project.pet_store.infra.logger_setup import LoggingSetup
 
 class APIWrapper:
 
+    """
+    This class manages types of requests can be used in logic classes.
+    """
     def __init__(self):
         self._request = None
 
