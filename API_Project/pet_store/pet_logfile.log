@@ -56,3 +56,17 @@
 2024-07-19 23:54:36,283:INFO:JSON request has been received.:
 2024-07-19 23:54:36,283:INFO:7_______TEST (USER) COMPLETED_______7
 :
+2024-07-20 10:24:44,910:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-20 10:24:44,912:INFO:Sending get request to the server.:
+2024-07-20 10:24:46,858:INFO:Response has been received.:
+2024-07-20 10:24:46,859:INFO:Sending JSON request.:
+2024-07-20 10:24:47,708:INFO:JSON response has been received.:
+2024-07-20 10:24:47,708:INFO:9_______TEST (USER) COMPLETED_______9
+:
+2024-07-20 10:26:11,125:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-20 10:26:11,126:INFO:Sending get request to the server.:
+2024-07-20 10:26:12,057:INFO:Response has been received.:
+2024-07-20 10:26:12,057:INFO:Sending JSON request.:
+2024-07-20 10:26:12,774:INFO:JSON response has been received.:
+2024-07-20 10:26:12,774:INFO:9_______TEST (USER) COMPLETED_______9
+:

@@ -53,7 +53,7 @@ class TestUser(unittest.TestCase):
             self._config['user_logout_message_key'])
         self.assertTrue(result_1.ok)
         self.assertEqual(result_1.status_code, 200)
-        self.assertEqual(result_2, 'ok')
+        self.assertEqual(result_2, self._config['user_logout_message_value'])
         logging.info("9_______TEST (USER) COMPLETED_______9\n")
 
 
