@@ -4,6 +4,8 @@ from API_Project.pet_store.infra.config_provider import ConfigProvider
 from API_Project.pet_store.logic.Pet.pet import PetPage
 from API_Project.pet_store.infra.API_Wrapper import APIWrapper
 from API_Project.pet_store.logic.entity.pet_details import PetDetails
+from API_Project.pet_store.infra.utilities import Utils
+from API_Project.pet_store.logic.enums.enums import Enums
 
 
 
@@ -12,20 +14,22 @@ class TestPet(unittest.TestCase):
     def setUp(self):
         self._config = ConfigProvider().load_from_file("../pet_store.json")
         self._api = APIWrapper()
-
+        self._pet_store = PetPage(self._api)
+        self._pet_details = PetDetails(
+            Utils.generate_random_number(4),
+            Utils.generate_random_string_only_letters(6))
+    # Setting up URL and base details fot adding and getting a username.
     # --------------------------------------------------------------------------------------
 
     def test_pet_by_status(self):
         logging.info("1_______TEST (PET]) BEGAN_______1")
         pet_store = PetPage(self._api)
-        result_1 = pet_store.pet_by_status_check_st_ok(
-            self._config['pet_by_status_endpoint'])
-        result_2 = pet_store.pet_by_status_get_json(
-            self._config['pet_by_status_key'],
-            self._config['pet_by_status_endpoint'])
-        self.assertTrue(result_1.ok)
-        self.assertEqual(result_1.status_code, 200)
-        self.assertEqual(result_2, self._config['pet_by_status_value'])
+        status = Enums.generate_a_status()
+        result = pet_store.pet_by_status(status)
+        result_status = result.json()[1]['status']
+        self.assertTrue(result.ok)
+        self.assertEqual(200, result.status_code)
+        self.assertEqual(result_status, status)
         logging.info("1_______TEST (PET) COMPLETED_______1\n")
 
     # Testing acceptance and status code of a request and a received body confirmation.
@@ -34,14 +38,11 @@ class TestPet(unittest.TestCase):
 
     def test_add_pet(self):
         logging.info("2_______TEST (PET) BEGAN_______2")
-        pet_store = PetPage(self._api)
-        pet_details = PetDetails(
-            self._config['add_pet_id'],
-            self._config['add_pet_name'])
-        dictionary = pet_details.to_dic()
-        result = pet_store.add_pet(dictionary)
-        self.assertTrue(result.ok)
-        self.assertEqual(result.status_code, 200)
+        result_add_pet = self._pet_store.add_pet(self._pet_details)
+        result_get_pet = self._pet_store.get_pet_by_id(self._pet_details.pet_id)
+        self.assertTrue(result_add_pet.ok)
+        self.assertEqual(result_add_pet.status_code, 200)
+        self.assertEqual(result_get_pet.json()['id'], self._pet_details.pet_id)
         logging.info("2_______TEST (PET) COMPLETED_______2\n")
 
     # Testing acceptance and status code of a request after submitting a post.
@@ -50,14 +51,10 @@ class TestPet(unittest.TestCase):
 
     def test_delete_pet(self):
         logging.info("3_______TEST (PET) BEGAN_______3")
-        pet_store = PetPage(self._api)
-        pet_details = PetDetails(
-            self._config['add_pet_id'],
-            self._config['add_pet_name'])
-        dictionary = pet_details.to_dic()
-        result = pet_store.delete_pet(
-            dictionary, self._config['delete_user_key'])
-        self.assertEqual(result, self._config['delete_user_value'])
+        delete_result = self._pet_store.delete_pet(
+            self._pet_details,
+            self._pet_details.pet_id)
+        self.assertEqual(delete_result['code'], self._config['delete_pet_code_key'])
         logging.info("3_______TEST (PET) COMPLETED_______3\n")
 
     # Testing request received body confirmation after submitting a post

@@ -2,61 +2,13 @@
     "base_url": "https://petstore.swagger.io",
     "browser" : "Chrome",
 
+    "pet_store_inventory_value" : 4,
 
-    "pet_by_status_endpoint" : "available",
-    "pet_by_status_key" : "status",
-    "pet_by_status_value" : "available",
-
-
-    "add_pet_id" : 1,
-    "add_pet_name" : "doggy",
-
-
-    "pet_store_inventory_key" : "pending",
-    "pet_store_inventory_value" : 2,
-
-
-    "store_order_add_id" : 6,
-    "store_order_add_pet_id" : 3,
-    "store_order_add_quantity" : 4,
-
-
-    "store_order_by_id_endpoint" : 2,
-    "store_order_by_id_key" : "status",
-    "store_order_by_id_value" : "placed",
-
-
-    "username_get_by_key_value_key" : "userStatus",
-    "username_get_by_key_value_name" : "string",
-    "username_get_by_key_value_value" : 0,
-
-
-    "login_user_name" : "positive",
-    "login_user_password" : 123,
-    "login_user_key" : "code",
     "login_user_value" : 200,
 
-
-    "user_logout_message_key" : "message",
     "user_logout_message_value" : "ok",
 
-
-    "delete_user_key" : "message",
-    "delete_user_value" : "1",
-
-
-    "add_users_list_id" : 1,
-    "add_users_list_username" : "positive",
-    "add_users_list_firstname" : "good",
-    "add_users_list_lastname" : "man"
-
-
-
-
-
-
-
-
+    "delete_pet_code_key": 200
 
 
 }

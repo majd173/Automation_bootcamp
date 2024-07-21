@@ -16,7 +16,7 @@ class Utils:
     # from letters, digits and punctuations.
     # It requires a"length" as an input.
     @staticmethod
-    def generate_random_string(length) -> str:
+    def generate_random_string_with_punctuation(length) -> str:
         letters = string.ascii_letters + string.digits + string.punctuation
         return ''.join((random.choice(letters) for i in range(length)))
 
@@ -25,9 +25,19 @@ class Utils:
     # It requires a"length" as an input.
 
     @staticmethod
-    def generate_random_number(length) -> str:
-        numbers = string.digits
-        return ''.join((random.choice(numbers) for i in range(length)))
+    def generate_random_number(length):
+        return random.randint(1, 100)
+        # numbers = string.digits
+        # return ''.join((random.choice(numbers) for i in range(length))
+
+    #------------------------------------------------------------------------------------------------------------
+    # This function generate automatically a random string built
+    # from letters only, it requires a "length" as an input.
+
+    @staticmethod
+    def generate_random_string_only_letters(length) -> str:
+        letters = string.ascii_letters
+        return ''.join((random.choice(letters) for i in range(length)))
 
     #------------------------------------------------------------------------------------------------------------
     # This function can bea added in any test step as a time waiting
@@ -43,7 +53,6 @@ class Utils:
             retries -= retries
         return False
     #------------------------------------------------------------------------------------------------------------
-
 
 
 

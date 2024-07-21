@@ -1,6 +1,7 @@
 import unittest
 import logging
 from API_Project.pet_store.infra.config_provider import ConfigProvider
+from API_Project.pet_store.infra.utilities import Utils
 from API_Project.pet_store.logic.Store.store import StorePage
 from API_Project.pet_store.infra.API_Wrapper import APIWrapper
 from API_Project.pet_store.logic.entity.order_details import OrderDetails
@@ -11,18 +12,24 @@ class TestStore(unittest.TestCase):
     def setUp(self):
         self._config = ConfigProvider().load_from_file("../pet_store.json")
         self._api = APIWrapper()
+        self._pet_store = StorePage(self._api)
+        self._order_details = OrderDetails(
+            Utils.generate_random_number(2),
+            Utils.generate_random_number(2),
+            Utils.generate_random_number(6))
+        self._order_response = self._pet_store.store_order_add(self._order_details)
 
+    # Setting up URL and base details fot adding and getting a username.
     # --------------------------------------------------------------------------------------
 
     def test_pet_store_inventory(self):
         logging.info("4_______TEST (STORE) BEGAN_______4")
         pet_store = StorePage(self._api)
-        result_1 = pet_store.store_inventory_check_st_ok()
-        result_2 = pet_store.store_inventory(
-            self._config['pet_store_inventory_key'])
-        self.assertTrue(result_1.ok)
-        self.assertEqual(result_1.status_code, 200)
-        self.assertEqual(result_2, self._config['pet_store_inventory_value'])
+        result = pet_store.store_inventory()
+        result_key = result.json()['pending']
+        self.assertTrue(result.ok)
+        self.assertEqual(200, result.status_code)
+        self.assertEqual(result_key, self._config['pet_store_inventory_value'])
         logging.info("4_______TEST (STORE) COMPLETED_______4\n")
 
     # Testing acceptance and status code of a request and a received body confirmation.
@@ -31,31 +38,26 @@ class TestStore(unittest.TestCase):
 
     def test_store_order_add(self):
         logging.info("5_______TEST (STORE) BEGAN_______5")
-        pet_store = StorePage(self._api)
-        my_order_details = OrderDetails(
-            self._config['store_order_add_id'],
-            self._config['store_order_add_pet_id'],
-            self._config['store_order_add_quantity'])
-        dictionary = my_order_details.to_dict()
-        result = pet_store.store_order_add(dictionary)
-        self.assertTrue(result.ok)
-        self.assertEqual(result.status_code, 200)
+        self.assertTrue(self._order_response.ok)
+        self.assertEqual(200, self._order_response.status_code)
+        self.assertEqual(self._order_response.json()['id'], self._order_details.order_id)
+        self.assertEqual(self._order_response.json()['petId'], self._order_details.pet_id)
+        self.assertEqual(self._order_response.json()['quantity'], self._order_details.quantity)
         logging.info("5_______TEST (STORE) COMPLETED_______5\n")
 
-    # Testing acceptance and status code of a request after submitting a post.
+    # Testing acceptance and status and body information of a request after submitting a post.
 
     # --------------------------------------------------------------------------------------
 
-    def test_store_order(self):
+    def test_store_order_get(self):
         logging.info("6_______TEST (STORE) BEGAN_______6")
-        pet_store = StorePage(self._api)
-        result = pet_store.store_order_by_id(
-            self._config['store_order_by_id_endpoint'],
-            self._config['store_order_by_id_key'])
-        self.assertEqual(result, self._config['store_order_by_id_value'])
+        get_response = self._pet_store.store_order_by_id(self._order_details.order_id)
+        self.assertEqual(get_response.json()["id"], self._order_details.order_id)
+        self.assertEqual(get_response.json()["petId"], self._order_details.pet_id)
+        self.assertEqual(get_response.json()["quantity"], self._order_details.quantity)
         logging.info("6_______TEST (STORE) COMPLETED_______6\n")
 
-    # Testing request received body confirmation.
+    # Testing request received of an order by its id.
 
 
 
