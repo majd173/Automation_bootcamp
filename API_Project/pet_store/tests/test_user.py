@@ -30,7 +30,7 @@ class TestUser(unittest.TestCase):
 
     def test_user_login(self):
         """
-        Test Case: User login.
+        Test Case #7: User login.
         Testing acceptance and status code of a request and a received body confirmation.
         """
         logging.info("7_______TEST (USER) BEGAN_______7")
@@ -47,7 +47,7 @@ class TestUser(unittest.TestCase):
 
     def test_user_logout(self):
         """
-        Test Case: User logout.
+        Test Case #8: User logout.
         Testing acceptance and status code of a request and a received body confirmation.
         """
         logging.info("8_______TEST (USER) BEGAN_______8")
@@ -62,7 +62,7 @@ class TestUser(unittest.TestCase):
 
     def test_add_users_list(self):
         """
-        Test Case: Add user to the users list.
+        Test Case #9: Add user to the users list.
         Testing a response of adding a user + acceptance and status code.
         Pre_conditions (adding a new user) is being managed in the setUp function.
         """
@@ -78,7 +78,7 @@ class TestUser(unittest.TestCase):
 
     def test_get_user_by_username(self):
         """
-        Test Case: Get user nay username.
+        Test Case #10: Get user nay username.
         Testing username get details after adding one + acceptance and status code.
         Pre_conditions (adding a new user) is being managed in the setUp function.
         """

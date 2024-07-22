@@ -26,7 +26,7 @@ class TestStore(unittest.TestCase):
 
     def test_pet_store_inventory(self):
         """
-        Test Case: Store inventory.
+        Test Case #4: Store inventory.
         Testing acceptance and status code of a request and a received body confirmation.
         """
         logging.info("4_______TEST (STORE) BEGAN_______4")
@@ -44,7 +44,7 @@ class TestStore(unittest.TestCase):
 
     def test_store_order_add(self):
         """
-        Test Case: Add an order.
+        Test Case #5: Add an order.
         Testing acceptance and status and body information of a request after submitting a post.
         """
         logging.info("5_______TEST (STORE) BEGAN_______5")
@@ -59,7 +59,7 @@ class TestStore(unittest.TestCase):
 
     def test_store_order_get(self):
         """
-        Test Case: Store order.
+        Test Case #6: Store order.
         Testing request received of an order by its id.
         """
         logging.info("6_______TEST (STORE) BEGAN_______6")

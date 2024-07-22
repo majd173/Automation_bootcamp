@@ -21,9 +21,9 @@ class TestPet(unittest.TestCase):
     # Setting up URL and base details fot adding and getting a username.
     # --------------------------------------------------------------------------------------
 
-    def test_pet_by_status(self):
+    def test_get_pet_by_status(self):
         """
-        Test Case: Get pet by status.
+        Test Case #1: Get pet by status.
         Testing acceptance and status code of a request and a received body confirmation.
         """
         logging.info("1_______TEST (PET]) BEGAN_______1")
@@ -41,19 +41,29 @@ class TestPet(unittest.TestCase):
 
     def test_add_pet(self):
         """
-        Test Case: Add a pet.
+        Test Case #2: Add a pet.
         Testing acceptance and status code of a request after submitting a post.
         """
         logging.info("2_______TEST (PET) BEGAN_______2")
-        result_add_pet = self._pet_store.add_pet(self._pet_details)
-        result_get_pet = self._pet_store.get_pet_by_id(self._pet_details.pet_id)
-        self.assertTrue(result_add_pet.ok)
-        self.assertEqual(result_add_pet.status_code, self._config['status_code_passed'])
-        self.assertEqual(result_get_pet.data['id'], self._pet_details.pet_id)
+        response_add_pet = self._pet_store.add_pet(self._pet_details)
+        self.assertTrue(response_add_pet.ok)
+        self.assertEqual(response_add_pet.status_code, self._config['status_code_passed'])
         logging.info("2_______TEST (PET) COMPLETED_______2\n")
 
-
     # --------------------------------------------------------------------------------------
+
+    def test_get_pet_by_id(self):
+        """
+        Test Case #3: Get a pet by id.
+        Testing acceptance and status code of a request and a received body confirmation.
+         """
+        logging.info("3_______TEST (PET) BEGAN_______3")
+        response_get_pet = self._pet_store.get_pet_by_id(self._pet_details.pet_id)
+        id_value = response_get_pet.data['id']
+        self.assertTrue(response_get_pet.ok)
+        self.assertEqual(response_get_pet.status_code, self._config['status_code_passed'])
+        self.assertEqual(id_value, self._pet_details.pet_id)
+        logging.info("3_______TEST (PET) COMPLETED")
 
 
 
