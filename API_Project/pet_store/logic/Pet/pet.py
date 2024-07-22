@@ -63,30 +63,3 @@ class PetPage:
             logging.error(f'Get request has not been sent.: {e}')
 
     # --------------------------------------------------------------------------------------
-    # DELETE REQUEST
-    # This function receives a delete request after sending a post one.
-    # it verifies the deleting process.
-
-    # def delete_pet(self, pet: PetDetails, id):
-    #     try:
-    #         logging.info("Sending post request to the server.")
-    #         response = self._request.post_request(
-    #             f'{self._config['base_url']}{self._config['add_pet']}', pet.to_dic())
-    #         if response:
-    #             logging.info("Post response has been received.")
-    #         else:
-    #             logging.error("Post response has not been received.")
-    #         logging.info("Sending delete request to the server.")
-    #         delete = self._request.delete_request(f'{self._url}{self._config['pet_by_id']}{id}{self.DELETE_PET_HEADER}')
-    #         if delete:
-    #             logging.info("Delete response has been received.")
-    #             json_file = delete.json()
-    #             return json_file
-    #         else:
-    #             logging.error("Delete response has not been received.")
-    #     except requests.RequestException as e:
-    #         logging.error(f'Post request has not been sent.: {e}')
-
-
-
-

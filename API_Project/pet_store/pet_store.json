@@ -12,6 +12,13 @@
 
     "delete_pet_code_value" : 200,
 
-    "add_user_list_value" : 200
+    "add_user_list_value" : 200,
+
+    "inventory_alive" : "alive",
+    "inventory_sold" : "sold",
+    "inventory_available" : "available",
+    "inventory_Not_available" : "Not Available"
+
+
 
 }

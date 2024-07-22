@@ -1,4 +1,15 @@
 Pet Store website API testing.
+This project manages API automated tests based on an online Pet Store website.
+Get and Post request are being managed in order to test functionality of the website server.
+Actions are being done in the project:
+# Adding users.
+# Adding pets.
+# Adding orders.
+# Receiving users details.
+# Receiving pets details.
+# Receiving orders details.
+# Receiving store inventory details.
+This project is divided into many main folders which are described below:
                     V
                     V
                     V
@@ -13,3 +24,4 @@ are being occurred.
 # pet_logfile stores necessary steps are being done during tests running.
 -----------------------------------------------------------------------------------------------------------------------
 # pet_store.json stores necessary information are being used in tests.
+-----------------------------------------------------------------------------------------------------------------------

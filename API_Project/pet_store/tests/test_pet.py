@@ -5,7 +5,7 @@ from API_Project.pet_store.logic.Pet.pet import PetPage
 from API_Project.pet_store.infra.API_Wrapper import APIWrapper
 from API_Project.pet_store.logic.entity.pet_details import PetDetails
 from API_Project.pet_store.infra.utilities import Utils
-from API_Project.pet_store.logic.enums.enums import Enums, generate_a_status
+from API_Project.pet_store.logic.enums.enums_class import Enums
 
 
 class TestPet(unittest.TestCase):
@@ -28,7 +28,7 @@ class TestPet(unittest.TestCase):
         """
         logging.info("1_______TEST (PET]) BEGAN_______1")
         pet_store = PetPage(self._api)
-        status = generate_a_status()
+        status = Enums.generate_a_status()
         response = pet_store.pet_by_status(status)
         status_value = response.data[1]['status']
         self.assertTrue(response.ok)
@@ -55,16 +55,6 @@ class TestPet(unittest.TestCase):
 
     # --------------------------------------------------------------------------------------
 
-    # def test_delete_pet(self):
-    #     logging.info("3_______TEST (PET) BEGAN_______3")
-    #     delete_response = self._pet_store.delete_pet(
-    #         self._pet_details,
-    #         self._pet_details.pet_id)
-    #     self.assertEqual(delete_response['message'], self._pet_details.pet_id)
-    #     logging.info("3_______TEST (PET) COMPLETED_______3\n")
-
-    # Testing request received body confirmation after submitting a post
-    # followed by a delete process.
 
 
 if __name__ == '__main__':

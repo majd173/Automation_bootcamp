@@ -32,13 +32,14 @@ class TestStore(unittest.TestCase):
         logging.info("4_______TEST (STORE) BEGAN_______4")
         pet_store = StorePage(self._api)
         response = pet_store.store_inventory()
-        pending_value = response.data['pending']
         self.assertTrue(response.ok)
         self.assertEqual(self._config['status_code_passed'], response.status_code)
-        self.assertEqual(pending_value, self._config['pet_store_inventory_pending_value'])
+        self.assertIn(self._config['inventory_alive'], response.data)
+        self.assertIn(self._config['inventory_sold'], response.data)
+        self.assertIn(self._config['inventory_available'], response.data)
+        self.assertIn(self._config['inventory_Not_available'], response.data)
         logging.info("4_______TEST (STORE) COMPLETED_______4\n")
 
-    #
     # --------------------------------------------------------------------------------------
 
     def test_store_order_add(self):

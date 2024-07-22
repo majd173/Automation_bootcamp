@@ -64,6 +64,7 @@ class TestUser(unittest.TestCase):
         """
         Test Case: Add user to the users list.
         Testing a response of adding a user + acceptance and status code.
+        Pre_conditions (adding a new user) is being managed in the setUp function.
         """
         logging.info("9_______TEST (USER) BEGAN_______9")
         self.assertTrue(self._result_add_user.ok)
@@ -79,6 +80,7 @@ class TestUser(unittest.TestCase):
         """
         Test Case: Get user nay username.
         Testing username get details after adding one + acceptance and status code.
+        Pre_conditions (adding a new user) is being managed in the setUp function.
         """
         logging.info("10_______TEST (USER) BEGAN_______10")
         response = self._pet_store.get_user_by_username(self.user_details.username)
