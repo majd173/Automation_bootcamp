@@ -1,10 +1,10 @@
 class UserDetails:
-    def __init__(self, user_id, username, firstname, lastname, userStatus):
+    def __init__(self, user_id, username, firstname, lastname, user_status):
         self._user_id = user_id
         self._username = username
         self._firstname = firstname
         self._lastname = lastname
-        self._userStatus = userStatus
+        self._user_status = user_status
 
     @property
     def user_id(self):
@@ -24,28 +24,28 @@ class UserDetails:
 
     @property
     def firstname(self):
-        return self.firstname
+        return self._firstname
 
     @firstname.setter
     def firstname(self, value):
-        self.firstname = value
+        self._firstname = value
 
     @property
     def lastname(self):
-        return self.lastname
+        return self._lastname
 
     @lastname.setter
     def lastname(self, value):
-        self.lastname = value
+        self._lastname = value
 
 
     @property
-    def userstatus(self):
-        return self.userstatus
+    def user_status(self):
+        return self._user_status
 
-    @userstatus.setter
-    def userstatus(self, value):
-        self._userStatus = value
+    @user_status.setter
+    def user_status(self, value):
+        self._user_status = value
 
 
     def to_dict(self):
@@ -55,6 +55,6 @@ class UserDetails:
                     "username": self._username,
                     "firstName": self._firstname,
                     "lastName": self._lastname,
-                    "userStatus": self._userStatus
+                    "userStatus": self._user_status
 
                 }

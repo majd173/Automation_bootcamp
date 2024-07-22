@@ -8,6 +8,7 @@ from API_Project.pet_store.logic.entity.user_details import UserDetails
 class UserPage:
     # This class manages the user page of the website and it's functionalities.
 
+
     def __init__(self, request: APIWrapper):
         try:
             self._request = request
@@ -27,14 +28,15 @@ class UserPage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}/v2/user/login?username={name}&password={password}')
+                f'{self._url}{self._config['login_username']}'
+                f'{name}{self._config['login_password']}{password}')
             if response:
                 logging.info("Response has been received.")
                 return response
             else:
                 logging.error("Response has not been received.")
         except requests.RequestException as e:
-            logging.error(f'Cannot send a request: {e}')
+            logging.error(f'Get request has not been sent.: {e}')
 
     # --------------------------------------------------------------------------------------
     # GET REQUEST
@@ -44,26 +46,29 @@ class UserPage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}/v2/user/logout')
+                f'{self._url}{self._config['logout']}')
             if response:
                 logging.info("Response has been received.")
                 return response
             logging.error("Response has not been received.")
         except requests.RequestException as e:
-            logging.error(f'Cannot send a request: {e}')
+            logging.error(f'Get request has not been sent.: {e}')
 
     # --------------------------------------------------------------------------------------
     # POST REQUEST
     # This function adds new user to the users list.
     def create_users_list(self, user: UserDetails):
-        logging.info("Sending post request.")
-        response = self._request.post_request(
-            f'{self._config['base_url']}/v2/user/createWithList', [user.to_dict()])
-        if response:
-            logging.info("Post request has been sent.")
-            return response
-        logging.error("Post request has not been sent.")
-
+        try:
+            logging.info("Sending post request.")
+            response = self._request.post_request(
+                f'{self._config['base_url']}{self._config['user_list']}',
+                [user.to_dict()])
+            if response:
+                logging.info("Post request has been sent.")
+                return response
+            logging.error("Post request has not been sent.")
+        except requests.RequestException as e:
+            logging.error(f'Post request has not been sent.: {e}')
 
     # --------------------------------------------------------------------------------------
     # GET REQUEST
@@ -72,13 +77,13 @@ class UserPage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._config['base_url']}/v2/user/{username}')
+                f'{self._config['base_url']}{self._config['user_by_username']}{username}')
             if response:
                 logging.info("Response has been received.")
                 return response
             logging.error("Response has not been received.")
         except requests.RequestException as e:
-            logging.error(f'Cannot send a request: {e}')
+            logging.error(f'Get request has not been sent.: {e}')
 
     # --------------------------------------------------------------------------------------
 

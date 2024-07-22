@@ -25,27 +25,30 @@ class StorePage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}/v2/store/inventory')
+                f'{self._url}{self._config['store_inventory']}')
             if response:
-                logging.info("Response has been received.")
+                logging.info("Get response has been received.")
                 return response
             else:
-                logging.error("Response has not been received.")
+                logging.error("Get response has not been received.")
         except requests.RequestException as e:
-            logging.error(f'Cannot senf a request: {e}')
+            logging.error(f'Get request has not been sent.: {e}')
 
 
     # --------------------------------------------------------------------------------------
     # POST REQUEST
     # This function post a request includes new order details to be added.
     def store_order_add(self, order: OrderDetails):
-        logging.info("Sending post request.")
-        post = self._request.post_request(
-            f'{self._url}/v2/store/order', order.to_dict())
-        if post:
-            logging.info("Post request has been sent.")
-            return post
-        logging.error("Post request has not been sent.")
+        try:
+            logging.info("Sending post request to the server.")
+            post = self._request.post_request(
+                f'{self._url}{self._config['order_add']}', order.to_dict())
+            if post:
+                logging.info("Post response has been received.")
+                return post
+            logging.error("Post response has not been received.")
+        except requests.RequestException as e:
+            logging.error(f'Post request has not been sent.: {e}')
 
 
     # --------------------------------------------------------------------------------------
@@ -57,10 +60,10 @@ class StorePage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}/v2/store/order/{id}')
+                f'{self._url}{self._config['order_by_id']}{id}')
             if response:
                 logging.info("Get response has been received.")
                 return response
             logging.error("Get response has not been received.")
         except Exception as e:
-            logging.error(f'Can not send a request: {e}')
+            logging.error(f'Get request has not been sent.: {e}')

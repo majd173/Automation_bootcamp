@@ -25,11 +25,11 @@ class TestStore(unittest.TestCase):
     def test_pet_store_inventory(self):
         logging.info("4_______TEST (STORE) BEGAN_______4")
         pet_store = StorePage(self._api)
-        result = pet_store.store_inventory()
-        result_key = result.json()['pending']
-        self.assertTrue(result.ok)
-        self.assertEqual(200, result.status_code)
-        self.assertEqual(result_key, self._config['pet_store_inventory_value'])
+        response = pet_store.store_inventory()
+        pending_value = response.json()['pending']
+        self.assertTrue(response.ok)
+        self.assertEqual(200, response.status_code)
+        self.assertEqual(pending_value, self._config['pet_store_inventory_value'])
         logging.info("4_______TEST (STORE) COMPLETED_______4\n")
 
     # Testing acceptance and status code of a request and a received body confirmation.

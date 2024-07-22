@@ -1,10 +1,7 @@
 import random
 import string
 import time
-import logging
-from selenium.common import WebDriverException
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.wait import WebDriverWait
+
 
 class Utils:
     # This class manages strings and numbers generating functions.
@@ -27,8 +24,6 @@ class Utils:
     @staticmethod
     def generate_random_number(length):
         return random.randint(1, 100)
-        # numbers = string.digits
-        # return ''.join((random.choice(numbers) for i in range(length))
 
     #------------------------------------------------------------------------------------------------------------
     # This function generate automatically a random string built
