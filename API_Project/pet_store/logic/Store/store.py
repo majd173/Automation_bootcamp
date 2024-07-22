@@ -2,6 +2,7 @@ import logging
 import requests
 from API_Project.pet_store.infra.API_Wrapper import APIWrapper
 from API_Project.pet_store.infra.config_provider import ConfigProvider
+from API_Project.pet_store.infra.response_wrapper import ResponseWrapper
 from API_Project.pet_store.logic.entity.order_details import OrderDetails
 
 
@@ -25,10 +26,10 @@ class StorePage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}{self._config['store_inventory']}')
+                f'{self._url}store/inventory')
             if response:
                 logging.info("Get response has been received.")
-                return response
+                return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
             else:
                 logging.error("Get response has not been received.")
         except requests.RequestException as e:
@@ -41,11 +42,11 @@ class StorePage:
     def store_order_add(self, order: OrderDetails):
         try:
             logging.info("Sending post request to the server.")
-            post = self._request.post_request(
-                f'{self._url}{self._config['order_add']}', order.to_dict())
-            if post:
+            response = self._request.post_request(
+                f'{self._url}store/order', order.to_dict())
+            if response:
                 logging.info("Post response has been received.")
-                return post
+                return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
             logging.error("Post response has not been received.")
         except requests.RequestException as e:
             logging.error(f'Post request has not been sent.: {e}')
@@ -60,10 +61,10 @@ class StorePage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}{self._config['order_by_id']}{id}')
+                f'{self._url}store/order/{id}')
             if response:
                 logging.info("Get response has been received.")
-                return response
+                return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
             logging.error("Get response has not been received.")
         except Exception as e:
             logging.error(f'Get request has not been sent.: {e}')

@@ -2,6 +2,7 @@ import logging
 import requests
 from API_Project.pet_store.infra.API_Wrapper import APIWrapper
 from API_Project.pet_store.infra.config_provider import ConfigProvider
+from API_Project.pet_store.infra.response_wrapper import ResponseWrapper
 from API_Project.pet_store.logic.entity.pet_details import PetDetails
 
 
@@ -27,10 +28,10 @@ class PetPage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}{self._config['pet_by_status']}{status}')
+                f'{self._url}pet/findByStatus?status={status}')
             if response:
                 logging.info("Get response has been received.")
-                return response
+                return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
             else:
                 logging.error("Get response has not been received.")
         except requests.RequestException as e:
@@ -42,20 +43,20 @@ class PetPage:
     def add_pet(self, pet: PetDetails):
         logging.info("Sending post request to the server.")
         response = self._request.post_request(
-            f'{self._config['base_url']}{self._config['add_pet']}', pet.to_dic())
+            f'{self._config['base_url']}pet', pet.to_dic())
         if response:
             logging.info("Post response has been received.")
-            return response
+            return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
         logging.error("Post response has not been received.")
 
     def get_pet_by_id(self, id):
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}{self._config['pet_by_id']}{id}')
+                f'{self._url}pet/{id}')
             if response:
                 logging.info("Get response has been received.")
-                return response
+                return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
             else:
                 logging.error("Get response has not been received.")
         except requests.RequestException as e:
@@ -66,25 +67,25 @@ class PetPage:
     # This function receives a delete request after sending a post one.
     # it verifies the deleting process.
 
-    def delete_pet(self, pet: PetDetails, id):
-        try:
-            logging.info("Sending post request to the server.")
-            response = self._request.post_request(
-                f'{self._config['base_url']}{self._config['add_pet']}', pet.to_dic())
-            if response:
-                logging.info("Post response has been received.")
-            else:
-                logging.error("Post response has not been received.")
-            logging.info("Sending delete request to the server.")
-            delete = self._request.delete_request(f'{self._url}{self._config['pet_by_id']}{id}{self.DELETE_PET_HEADER}')
-            if delete:
-                logging.info("Delete response has been received.")
-                json_file = delete.json()
-                return json_file
-            else:
-                logging.error("Delete response has not been received.")
-        except requests.RequestException as e:
-            logging.error(f'Post request has not been sent.: {e}')
+    # def delete_pet(self, pet: PetDetails, id):
+    #     try:
+    #         logging.info("Sending post request to the server.")
+    #         response = self._request.post_request(
+    #             f'{self._config['base_url']}{self._config['add_pet']}', pet.to_dic())
+    #         if response:
+    #             logging.info("Post response has been received.")
+    #         else:
+    #             logging.error("Post response has not been received.")
+    #         logging.info("Sending delete request to the server.")
+    #         delete = self._request.delete_request(f'{self._url}{self._config['pet_by_id']}{id}{self.DELETE_PET_HEADER}')
+    #         if delete:
+    #             logging.info("Delete response has been received.")
+    #             json_file = delete.json()
+    #             return json_file
+    #         else:
+    #             logging.error("Delete response has not been received.")
+    #     except requests.RequestException as e:
+    #         logging.error(f'Post request has not been sent.: {e}')
 
 
 
