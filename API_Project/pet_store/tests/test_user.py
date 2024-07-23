@@ -36,15 +36,14 @@ class TestUser(unittest.TestCase):
         Testing acceptance and status code of a request and a received body confirmation.
         """
         logging.info("7_______TEST (USER) BEGAN_______7")
-        pet_store = UserPage(self._api)
         # ACT
-        response = pet_store.login_user(
+        login_response = self._pet_store.login_user(
             Utils.generate_random_string_only_letters(7),
             Utils.generate_random_number(7),)
         # ASSERT
-        self.assertTrue(response.ok)
-        self.assertEqual(self._config['status_code_passed'], response.status_code)
-        self.assertEqual(response.data['code'], self._config['login_user_code_value'])
+        self.assertTrue(login_response.ok)
+        self.assertEqual(self._config['status_code_passed'], login_response.status_code)
+        self.assertEqual(login_response.data['code'], self._config['login_user_code_value'])
         logging.info("7_______TEST (USER) COMPLETED_______7\n")
 
     # --------------------------------------------------------------------------------------
@@ -56,11 +55,11 @@ class TestUser(unittest.TestCase):
         """
         logging.info("8_______TEST (USER) BEGAN_______8")
         # ACT
-        response = self._pet_store.user_logout()
+        log_out_response = self._pet_store.user_logout()
         # ASSERT
-        self.assertTrue(response.ok)
-        self.assertEqual(response.status_code, self._config['status_code_passed'])
-        self.assertEqual(response.data['message'], self._config['user_logout_message_value'])
+        self.assertTrue(log_out_response.ok)
+        self.assertEqual(log_out_response.status_code, self._config['status_code_passed'])
+        self.assertEqual(log_out_response.data['message'], self._config['user_logout_message_value'])
 
 
     # --------------------------------------------------------------------------------------
@@ -89,15 +88,15 @@ class TestUser(unittest.TestCase):
         Pre_conditions (adding a new user) is being managed in the setUp function.
         """
         logging.info("10_______TEST (USER) BEGAN_______10")
-        response = self._pet_store.get_user_by_username(self.user_details.username)
+        get_user_response = self._pet_store.get_user_by_username(self.user_details.username)
         # ASSERT
-        self.assertTrue(response.ok)
-        self.assertEqual(self._config['status_code_passed'], response.status_code)
-        self.assertEqual(response.data['id'], self.user_details.user_id)
-        self.assertEqual(response.data['username'], self.user_details.username)
-        self.assertEqual(response.data['firstName'], self.user_details.firstname)
-        self.assertEqual(response.data['lastName'], self.user_details.lastname)
-        self.assertEqual(response.data['userStatus'], self.user_details.user_status)
+        self.assertTrue(get_user_response.ok)
+        self.assertEqual(self._config['status_code_passed'], get_user_response.status_code)
+        self.assertEqual(get_user_response.data['id'], self.user_details.user_id)
+        self.assertEqual(get_user_response.data['username'], self.user_details.username)
+        self.assertEqual(get_user_response.data['firstName'], self.user_details.firstname)
+        self.assertEqual(get_user_response.data['lastName'], self.user_details.lastname)
+        self.assertEqual(get_user_response.data['userStatus'], self.user_details.user_status)
 
 
 

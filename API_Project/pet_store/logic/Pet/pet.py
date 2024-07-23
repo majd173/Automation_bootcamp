@@ -33,7 +33,7 @@ class PetPage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}{self.PET_BY_ID}{status}')
+                f'{self._url}{self.PET_BY_STATUS}{status}')
             if response:
                 logging.info("Get response has been received.")
                 return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())

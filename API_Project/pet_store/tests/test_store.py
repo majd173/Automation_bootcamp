@@ -31,14 +31,13 @@ class TestStore(unittest.TestCase):
         Testing acceptance and status code of a request and a received body confirmation.
         """
         logging.info("4_______TEST (STORE) BEGAN_______4")
-        pet_store = StorePage(self._api)
         # ACT
-        response = pet_store.store_inventory()
+        inventory_response = self._pet_store.store_inventory()
         # ASSERT
-        self.assertTrue(response.ok)
-        self.assertEqual(self._config['status_code_passed'], response.status_code)
-        self.assertIn(self._config['inventory_sold'], response.data)
-        self.assertIn(self._config['inventory_available'], response.data)
+        self.assertTrue(inventory_response.ok)
+        self.assertEqual(self._config['status_code_passed'], inventory_response.status_code)
+        self.assertIn(self._config['inventory_sold'], inventory_response.data)
+        self.assertIn(self._config['inventory_available'], inventory_response.data)
 
 
     # --------------------------------------------------------------------------------------
@@ -66,11 +65,11 @@ class TestStore(unittest.TestCase):
         """
         logging.info("6_______TEST (STORE) BEGAN_______6")
         # ACT
-        get_response = self._pet_store.store_order_by_id(self._order_details.order_id)
+        get_order_response = self._pet_store.store_order_by_id(self._order_details.order_id)
         # ASSERT
-        self.assertEqual(get_response.data["id"], self._order_details.order_id)
-        self.assertEqual(get_response.data["petId"], self._order_details.pet_id)
-        self.assertEqual(get_response.data["quantity"], self._order_details.quantity)
+        self.assertEqual(get_order_response.data["id"], self._order_details.order_id)
+        self.assertEqual(get_order_response.data["petId"], self._order_details.pet_id)
+        self.assertEqual(get_order_response.data["quantity"], self._order_details.quantity)
 
 
 
