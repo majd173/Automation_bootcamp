@@ -30,13 +30,8 @@ class StorePage:
     def store_inventory(self):
         try:
             logging.info("Sending get request to the server.")
-            response = self._request.get_request(
+            return self._request.get_request(
                 f'{self._url}{self.STORE_INVENTORY}')
-            if response:
-                logging.info("Get response has been received.")
-                return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
-            else:
-                logging.error("Get response has not been received.")
         except requests.RequestException as e:
             logging.error(f'Get request has not been sent.: {e}')
 
@@ -47,12 +42,8 @@ class StorePage:
     def store_order_add(self, order: OrderDetails):
         try:
             logging.info("Sending post request to the server.")
-            response = self._request.post_request(
+            return self._request.post_request(
                 f'{self._url}{self.ADD_ORDER}', order.to_dict())
-            if response:
-                logging.info("Post response has been received.")
-                return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
-            logging.error("Post response has not been received.")
         except requests.RequestException as e:
             logging.error(f'Post request has not been sent.: {e}')
 
@@ -64,12 +55,8 @@ class StorePage:
 
     def store_order_by_id(self, id):
         try:
-            logging.info("Sending get request to the server.")
-            response = self._request.get_request(
+             logging.info("Sending get request to the server.")
+             return self._request.get_request(
                 f'{self._url}{self.ORDER_BY_ID}{id}')
-            if response:
-                logging.info("Get response has been received.")
-                return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
-            logging.error("Get response has not been received.")
         except Exception as e:
             logging.error(f'Get request has not been sent.: {e}')

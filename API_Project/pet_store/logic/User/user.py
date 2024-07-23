@@ -33,14 +33,9 @@ class UserPage:
     def login_user(self, name, password):
         try:
             logging.info("Sending get request to the server.")
-            response = self._request.get_request(
+            return self._request.get_request(
                 f'{self._url}{self.USER_NAME}'
                 f'{name}{self.USE_PASSWORD}{password}')
-            if response:
-                logging.info("Response has been received.")
-                return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
-            else:
-                logging.error("Response has not been received.")
         except requests.RequestException as e:
             logging.error(f'Get request has not been sent.: {e}')
 
@@ -51,12 +46,8 @@ class UserPage:
     def user_logout(self):
         try:
             logging.info("Sending get request to the server.")
-            response = self._request.get_request(
+            return self._request.get_request(
                 f'{self._url}{self.USER_LOGOUT}')
-            if response:
-                logging.info("Response has been received.")
-                return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
-            logging.error("Response has not been received.")
         except requests.RequestException as e:
             logging.error(f'Get request has not been sent.: {e}')
 
@@ -66,13 +57,9 @@ class UserPage:
     def create_users_list(self, user: UserDetails):
         try:
             logging.info("Sending post request.")
-            response = self._request.post_request(
+            return self._request.post_request(
                 f'{self._config['base_url']}{self.USER_CREATE}',
                 [user.to_dict()])
-            if response:
-                logging.info("Post request has been sent.")
-                return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
-            logging.error("Post request has not been sent.")
         except requests.RequestException as e:
             logging.error(f'Post request has not been sent.: {e}')
 
@@ -82,12 +69,8 @@ class UserPage:
     def get_user_by_username(self, username):
         try:
             logging.info("Sending get request to the server.")
-            response = self._request.get_request(
+            return self._request.get_request(
                 f'{self._config['base_url']}{self.USER_GET}{username}')
-            if response:
-                logging.info("Response has been received.")
-                return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
-            logging.error("Response has not been received.")
         except requests.RequestException as e:
             logging.error(f'Get request has not been sent.: {e}')
 
