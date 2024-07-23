@@ -29,5 +29,5 @@ pet_logfile stores necessary steps are being done during tests running.
 -----------------------------------------------------------------------------------------------------------------------
 pet_store.json stores necessary information are being used in tests.
 -----------------------------------------------------------------------------------------------------------------------
-## Required softwares for running this project's tests:
+Required softwares for running this project's tests:
 Pycharm - python coding software.
