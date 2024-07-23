@@ -38,7 +38,6 @@ class TestPet(unittest.TestCase):
         self.assertTrue(response.ok)
         self.assertEqual(self._config['status_code_passed'], response.status_code)
         self.assertEqual(status_value, status)
-        logging.info("1_______TEST (PET) COMPLETED_______1\n")
 
 
     # --------------------------------------------------------------------------------------
@@ -55,7 +54,6 @@ class TestPet(unittest.TestCase):
         self.assertTrue(response_add_pet.ok)
         self.assertEqual(response_add_pet.status_code, self._config['status_code_passed'])
         self.assertDictEqual(response_add_pet.data, self._pet_details.to_dic())
-        logging.info("2_______TEST (PET) COMPLETED_______2\n")
 
     # --------------------------------------------------------------------------------------
 
@@ -72,7 +70,6 @@ class TestPet(unittest.TestCase):
         self.assertTrue(response_get_pet.ok)
         self.assertEqual(response_get_pet.status_code, self._config['status_code_passed'])
         self.assertEqual(status_value, self._config['get_pet_by_id_status_value'])
-        logging.info("3_______TEST (PET) COMPLETED")
 
 
 

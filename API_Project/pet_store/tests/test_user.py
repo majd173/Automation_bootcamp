@@ -62,7 +62,7 @@ class TestUser(unittest.TestCase):
         self.assertTrue(response.ok)
         self.assertEqual(response.status_code, self._config['status_code_passed'])
         self.assertEqual(response.data['message'], self._config['user_logout_message_value'])
-        logging.info("8_______TEST (USER) COMPLETED_______8\n")
+
 
     # --------------------------------------------------------------------------------------
 
@@ -79,7 +79,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self._result_add_user.data['code'], self._config['add_user_list_value'])
         self.assertEqual(self._result_add_user.data['type'], "unknown")
         self.assertEqual(self._result_add_user.data['message'], "ok")
-        logging.info("9_______TEST (USER) COMPLETED_______9\n")
+
 
     # --------------------------------------------------------------------------------------
 
@@ -99,7 +99,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(response.data['firstName'], self.user_details.firstname)
         self.assertEqual(response.data['lastName'], self.user_details.lastname)
         self.assertEqual(response.data['userStatus'], self.user_details.user_status)
-        logging.info("10_______TEST (USER) COMPLETED_______10\n")
+
 
 
 

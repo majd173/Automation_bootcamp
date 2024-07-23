@@ -39,7 +39,7 @@ class TestStore(unittest.TestCase):
         self.assertEqual(self._config['status_code_passed'], response.status_code)
         self.assertIn(self._config['inventory_sold'], response.data)
         self.assertIn(self._config['inventory_available'], response.data)
-        logging.info("4_______TEST (STORE) COMPLETED_______4\n")
+
 
     # --------------------------------------------------------------------------------------
 
@@ -55,7 +55,7 @@ class TestStore(unittest.TestCase):
         self.assertEqual(self._order_response.data['id'], self._order_details.order_id)
         self.assertEqual(self._order_response.data['petId'], self._order_details.pet_id)
         self.assertEqual(self._order_response.data['quantity'], self._order_details.quantity)
-        logging.info("5_______TEST (STORE) COMPLETED_______5\n")
+
 
     # --------------------------------------------------------------------------------------
 
@@ -71,7 +71,7 @@ class TestStore(unittest.TestCase):
         self.assertEqual(get_response.data["id"], self._order_details.order_id)
         self.assertEqual(get_response.data["petId"], self._order_details.pet_id)
         self.assertEqual(get_response.data["quantity"], self._order_details.quantity)
-        logging.info("6_______TEST (STORE) COMPLETED_______6\n")
+
 
 
 
