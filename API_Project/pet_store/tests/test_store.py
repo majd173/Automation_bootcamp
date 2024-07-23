@@ -9,6 +9,7 @@ from API_Project.pet_store.logic.entity.order_details import OrderDetails
 class TestStore(unittest.TestCase):
 
     def setUp(self):
+        # ARRANGE
         """
         Setting up URL and base details fot adding and getting a username.
         """
@@ -31,7 +32,9 @@ class TestStore(unittest.TestCase):
         """
         logging.info("4_______TEST (STORE) BEGAN_______4")
         pet_store = StorePage(self._api)
+        # ACT
         response = pet_store.store_inventory()
+        # ASSERT
         self.assertTrue(response.ok)
         self.assertEqual(self._config['status_code_passed'], response.status_code)
         self.assertIn(self._config['inventory_sold'], response.data)
@@ -46,6 +49,7 @@ class TestStore(unittest.TestCase):
         Testing acceptance and status and body information of a request after submitting a post.
         """
         logging.info("5_______TEST (STORE) BEGAN_______5")
+        # ASSERT
         self.assertTrue(self._order_response.ok)
         self.assertEqual(self._config['status_code_passed'], self._order_response.status_code)
         self.assertEqual(self._order_response.data['id'], self._order_details.order_id)
@@ -61,7 +65,9 @@ class TestStore(unittest.TestCase):
         Testing request received of an order by its id.
         """
         logging.info("6_______TEST (STORE) BEGAN_______6")
+        # ACT
         get_response = self._pet_store.store_order_by_id(self._order_details.order_id)
+        # ASSERT
         self.assertEqual(get_response.data["id"], self._order_details.order_id)
         self.assertEqual(get_response.data["petId"], self._order_details.pet_id)
         self.assertEqual(get_response.data["quantity"], self._order_details.quantity)

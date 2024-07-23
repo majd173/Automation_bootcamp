@@ -11,6 +11,7 @@ from API_Project.pet_store.logic.enums.enums_class import Enums
 class TestPet(unittest.TestCase):
 
     def setUp(self):
+        # ARRANGE
         self._config = ConfigProvider().load_from_file("../pet_store.json")
         self._api = APIWrapper()
         self._pet_store = PetPage(self._api)
@@ -30,8 +31,10 @@ class TestPet(unittest.TestCase):
         pet_store = PetPage(self._api)
         status = Enums.generate_a_status()
         print(status)
+        # ACT
         response = pet_store.pet_by_status(status)
         status_value = response.data[1]['status']
+        # ASSERT
         self.assertTrue(response.ok)
         self.assertEqual(self._config['status_code_passed'], response.status_code)
         self.assertEqual(status_value, status)
@@ -46,7 +49,9 @@ class TestPet(unittest.TestCase):
         Testing acceptance and status code of a request after submitting a post.
         """
         logging.info("2_______TEST (PET) BEGAN_______2")
+        # ACT
         response_add_pet = self._pet_store.add_pet(self._pet_details)
+        # ASSERT
         self.assertTrue(response_add_pet.ok)
         self.assertEqual(response_add_pet.status_code, self._config['status_code_passed'])
         logging.info("2_______TEST (PET) COMPLETED_______2\n")
@@ -59,8 +64,10 @@ class TestPet(unittest.TestCase):
         Testing acceptance and status code of a request and a received body confirmation.
          """
         logging.info("3_______TEST (PET) BEGAN_______3")
-        response_get_pet = self._pet_store.get_pet_by_id(2)
+        # ACT
+        response_get_pet = self._pet_store.get_pet_by_id(self._config['get_pet_by_id'])
         status_value = response_get_pet.data['status']
+        # ASSERT
         self.assertTrue(response_get_pet.ok)
         self.assertEqual(response_get_pet.status_code, self._config['status_code_passed'])
         self.assertEqual(status_value, self._config['get_pet_by_id_status_value'])

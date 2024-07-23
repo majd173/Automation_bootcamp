@@ -17,7 +17,9 @@
     "inventory_sold" : "sold",
     "inventory_available" : "available",
 
-    "get_pet_by_id_status_value" : "available"
+    "get_pet_by_id_status_value" : "available",
+
+    "get_pet_by_id" : 2
 
 
 

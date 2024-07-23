@@ -12,6 +12,7 @@ class TestUser(unittest.TestCase):
     sys.setrecursionlimit(1500)
 
     def setUp(self):
+        # ARRANGE
         """
         Setting up URL and base details fot adding and getting a username.
         """
@@ -24,6 +25,7 @@ class TestUser(unittest.TestCase):
             Utils.generate_random_string_only_letters(5),
             Utils.generate_random_string_only_letters(3),
             Utils.generate_random_number(3))
+        # ACT
         self._result_add_user = self._pet_store.create_users_list(self.user_details)
 
     # --------------------------------------------------------------------------------------
@@ -35,9 +37,11 @@ class TestUser(unittest.TestCase):
         """
         logging.info("7_______TEST (USER) BEGAN_______7")
         pet_store = UserPage(self._api)
+        # ACT
         response = pet_store.login_user(
             Utils.generate_random_string_only_letters(7),
             Utils.generate_random_number(7),)
+        # ASSERT
         self.assertTrue(response.ok)
         self.assertEqual(self._config['status_code_passed'], response.status_code)
         self.assertEqual(response.data['code'], self._config['login_user_code_value'])
@@ -52,7 +56,9 @@ class TestUser(unittest.TestCase):
         """
         logging.info("8_______TEST (USER) BEGAN_______8")
         pet_store = UserPage(self._api)
+        # ACT
         response = pet_store.user_logout()
+        # ASSERT
         self.assertTrue(response.ok)
         self.assertEqual(response.status_code, self._config['status_code_passed'])
         self.assertEqual(response.data['message'], self._config['user_logout_message_value'])
@@ -67,6 +73,7 @@ class TestUser(unittest.TestCase):
         Pre_conditions (adding a new user) is being managed in the setUp function.
         """
         logging.info("9_______TEST (USER) BEGAN_______9")
+        # ASSERT
         self.assertTrue(self._result_add_user.ok)
         self.assertEqual(self._config['status_code_passed'], self._result_add_user.status_code)
         self.assertEqual(self._result_add_user.data['code'], self._config['add_user_list_value'])
@@ -84,6 +91,7 @@ class TestUser(unittest.TestCase):
         """
         logging.info("10_______TEST (USER) BEGAN_______10")
         response = self._pet_store.get_user_by_username(self.user_details.username)
+        # ASSERT
         self.assertTrue(response.ok)
         self.assertEqual(self._config['status_code_passed'], response.status_code)
         self.assertEqual(response.data['id'], self.user_details.user_id)
