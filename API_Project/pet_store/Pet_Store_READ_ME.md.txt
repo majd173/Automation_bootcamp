@@ -1,4 +1,5 @@
 Pet Store website API testing.
+https://petstore.swagger.io/
 This project manages API automated tests based on an online Pet Store website.
 Get and Post request are being managed in order to test functionality of the website server.
 Actions are being done in the project:
