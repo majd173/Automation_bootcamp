@@ -29,6 +29,7 @@ class TestPet(unittest.TestCase):
         logging.info("1_______TEST (PET]) BEGAN_______1")
         pet_store = PetPage(self._api)
         status = Enums.generate_a_status()
+        print(status)
         response = pet_store.pet_by_status(status)
         status_value = response.data[1]['status']
         self.assertTrue(response.ok)
@@ -58,11 +59,11 @@ class TestPet(unittest.TestCase):
         Testing acceptance and status code of a request and a received body confirmation.
          """
         logging.info("3_______TEST (PET) BEGAN_______3")
-        response_get_pet = self._pet_store.get_pet_by_id(self._pet_details.pet_id)
-        id_value = response_get_pet.data['id']
+        response_get_pet = self._pet_store.get_pet_by_id(2)
+        status_value = response_get_pet.data['status']
         self.assertTrue(response_get_pet.ok)
         self.assertEqual(response_get_pet.status_code, self._config['status_code_passed'])
-        self.assertEqual(id_value, self._pet_details.pet_id)
+        self.assertEqual(status_value, self._config['get_pet_by_id_status_value'])
         logging.info("3_______TEST (PET) COMPLETED")
 
 

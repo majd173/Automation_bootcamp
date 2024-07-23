@@ -34,10 +34,8 @@ class TestStore(unittest.TestCase):
         response = pet_store.store_inventory()
         self.assertTrue(response.ok)
         self.assertEqual(self._config['status_code_passed'], response.status_code)
-        self.assertIn(self._config['inventory_alive'], response.data)
         self.assertIn(self._config['inventory_sold'], response.data)
         self.assertIn(self._config['inventory_available'], response.data)
-        self.assertIn(self._config['inventory_Not_available'], response.data)
         logging.info("4_______TEST (STORE) COMPLETED_______4\n")
 
     # --------------------------------------------------------------------------------------

@@ -14,10 +14,10 @@
 
     "add_user_list_value" : 200,
 
-    "inventory_alive" : "alive",
     "inventory_sold" : "sold",
     "inventory_available" : "available",
-    "inventory_Not_available" : "Not Available"
+
+    "get_pet_by_id_status_value" : "available"
 
 
 
