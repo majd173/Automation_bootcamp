@@ -54,6 +54,7 @@ class TestPet(unittest.TestCase):
         # ASSERT
         self.assertTrue(response_add_pet.ok)
         self.assertEqual(response_add_pet.status_code, self._config['status_code_passed'])
+        self.assertDictEqual(response_add_pet.data, self._pet_details.to_dic())
         logging.info("2_______TEST (PET) COMPLETED_______2\n")
 
     # --------------------------------------------------------------------------------------
