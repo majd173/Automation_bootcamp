@@ -2,10 +2,10 @@ import unittest
 import logging
 from API_Project.pet_store.infra.config_provider import ConfigProvider
 from API_Project.pet_store.logic.Pet.pet import PetPage
-from API_Project.pet_store.infra.API_Wrapper import APIWrapper
+from API_Project.pet_store.infra.api_wrapper import ApiWrapper
 from API_Project.pet_store.logic.entity.pet_details import PetDetails
 from API_Project.pet_store.infra.utilities import Utils
-from API_Project.pet_store.logic.enums.enums_class import Enums
+from API_Project.pet_store.logic.status_generate.status_generate import StatusGenerate
 
 
 class TestPet(unittest.TestCase):
@@ -13,7 +13,7 @@ class TestPet(unittest.TestCase):
     def setUp(self):
         # ARRANGE
         self._config = ConfigProvider().load_from_file("../pet_store.json")
-        self._api = APIWrapper()
+        self._api = ApiWrapper()
         self._pet_store = PetPage(self._api)
         self._pet_details = PetDetails(
             Utils.generate_random_number(4),
@@ -28,11 +28,9 @@ class TestPet(unittest.TestCase):
         Testing acceptance and status code of a request and a received body confirmation.
         """
         logging.info("1_______TEST (PET]) BEGAN_______1")
-        pet_store = PetPage(self._api)
-        status = Enums.generate_a_status()
-        print(status)
+        status = StatusGenerate.generate_a_status()
         # ACT
-        response = pet_store.pet_by_status(status)
+        response = self._pet_store.pet_by_status(status)
         status_value = response.data[1]['status']
         # ASSERT
         self.assertTrue(response.ok)

@@ -1,6 +1,6 @@
 import random
 
-class Enums:
+class StatusGenerate:
 
     @staticmethod
     def generate_a_status():

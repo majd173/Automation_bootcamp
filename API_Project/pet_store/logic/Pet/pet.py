@@ -1,6 +1,6 @@
 import logging
 import requests
-from API_Project.pet_store.infra.API_Wrapper import APIWrapper
+from API_Project.pet_store.infra.api_wrapper import ApiWrapper
 from API_Project.pet_store.infra.config_provider import ConfigProvider
 from API_Project.pet_store.infra.response_wrapper import ResponseWrapper
 from API_Project.pet_store.logic.entity.pet_details import PetDetails
@@ -9,12 +9,17 @@ from API_Project.pet_store.logic.entity.pet_details import PetDetails
 class PetPage:
     # This class manages the pet's page and functionalities.
 
+    PET_BY_STATUS = "pet/findByStatus?status="
+    ADD_PET = "pet"
+    PET_BY_ID = "pet/"
 
 
-    def __init__(self, request: APIWrapper):
+
+
+    def __init__(self, request: ApiWrapper):
         try:
             self._request = request
-            self._api = APIWrapper()
+            self._api = ApiWrapper()
             self._config = ConfigProvider().load_from_file("../pet_store.json")
             self._url = self._config['base_url']
         except ImportError:
@@ -28,7 +33,7 @@ class PetPage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}pet/findByStatus?status={status}')
+                f'{self._url}{self.PET_BY_ID}{status}')
             if response:
                 logging.info("Get response has been received.")
                 return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
@@ -43,7 +48,7 @@ class PetPage:
     def add_pet(self, pet: PetDetails):
         logging.info("Sending post request to the server.")
         response = self._request.post_request(
-            f'{self._config['base_url']}pet', pet.to_dic())
+            f'{self._config['base_url']}{self.ADD_PET}', pet.to_dic())
         if response:
             logging.info("Post response has been received.")
             return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
@@ -53,7 +58,7 @@ class PetPage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}pet/{id}')
+                f'{self._url}{self.PET_BY_ID}{id}')
             if response:
                 logging.info("Get response has been received.")
                 return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())

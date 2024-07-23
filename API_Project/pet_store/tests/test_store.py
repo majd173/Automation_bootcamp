@@ -3,7 +3,7 @@ import logging
 from API_Project.pet_store.infra.config_provider import ConfigProvider
 from API_Project.pet_store.infra.utilities import Utils
 from API_Project.pet_store.logic.Store.store import StorePage
-from API_Project.pet_store.infra.API_Wrapper import APIWrapper
+from API_Project.pet_store.infra.api_wrapper import ApiWrapper
 from API_Project.pet_store.logic.entity.order_details import OrderDetails
 
 class TestStore(unittest.TestCase):
@@ -14,7 +14,7 @@ class TestStore(unittest.TestCase):
         Setting up URL and base details fot adding and getting a username.
         """
         self._config = ConfigProvider().load_from_file("../pet_store.json")
-        self._api = APIWrapper()
+        self._api = ApiWrapper()
         self._pet_store = StorePage(self._api)
         self._order_details = OrderDetails(
             Utils.generate_random_number(2),

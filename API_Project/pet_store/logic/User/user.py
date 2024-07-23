@@ -1,6 +1,6 @@
 import logging
 import requests
-from API_Project.pet_store.infra.API_Wrapper import APIWrapper
+from API_Project.pet_store.infra.api_wrapper import ApiWrapper
 from API_Project.pet_store.infra.config_provider import ConfigProvider
 from API_Project.pet_store.infra.response_wrapper import ResponseWrapper
 from API_Project.pet_store.logic.entity.user_details import UserDetails
@@ -9,11 +9,16 @@ from API_Project.pet_store.logic.entity.user_details import UserDetails
 class UserPage:
     # This class manages the user page of the website and it's functionalities.
 
+    USER_NAME = "user/login?username="
+    USE_PASSWORD = "&password="
+    USER_LOGOUT = "user/logout"
+    USER_CREATE = "user/createWithList"
+    USER_GET = "user/"
 
-    def __init__(self, request: APIWrapper):
+    def __init__(self, request: ApiWrapper):
         try:
             self._request = request
-            self._api = APIWrapper()
+            self._api = ApiWrapper()
             self._config = ConfigProvider().load_from_file("../pet_store.json")
             self._url = self._config['base_url']
         except ImportError:
@@ -29,8 +34,8 @@ class UserPage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}user/login?username='
-                f'{name}&password={password}')
+                f'{self._url}{self.USER_NAME}'
+                f'{name}{self.USE_PASSWORD}{password}')
             if response:
                 logging.info("Response has been received.")
                 return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
@@ -47,7 +52,7 @@ class UserPage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}user/logout')
+                f'{self._url}{self.USER_LOGOUT}')
             if response:
                 logging.info("Response has been received.")
                 return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
@@ -62,7 +67,7 @@ class UserPage:
         try:
             logging.info("Sending post request.")
             response = self._request.post_request(
-                f'{self._config['base_url']}user/createWithList',
+                f'{self._config['base_url']}{self.USER_CREATE}',
                 [user.to_dict()])
             if response:
                 logging.info("Post request has been sent.")
@@ -78,7 +83,7 @@ class UserPage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._config['base_url']}user/{username}')
+                f'{self._config['base_url']}{self.USER_GET}{username}')
             if response:
                 logging.info("Response has been received.")
                 return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())

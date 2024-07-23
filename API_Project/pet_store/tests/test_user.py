@@ -3,7 +3,7 @@ import logging
 import unittest
 from API_Project.pet_store.infra.config_provider import ConfigProvider
 from API_Project.pet_store.logic.User.user import UserPage
-from API_Project.pet_store.infra.API_Wrapper import APIWrapper
+from API_Project.pet_store.infra.api_wrapper import ApiWrapper
 from API_Project.pet_store.logic.entity.user_details import UserDetails
 from API_Project.pet_store.infra.utilities import Utils
 
@@ -17,7 +17,7 @@ class TestUser(unittest.TestCase):
         Setting up URL and base details fot adding and getting a username.
         """
         self._config = ConfigProvider().load_from_file("../pet_store.json")
-        self._api = APIWrapper()
+        self._api = ApiWrapper()
         self._pet_store = UserPage(self._api)
         self.user_details = UserDetails(
             Utils.generate_random_number(7),
@@ -55,9 +55,8 @@ class TestUser(unittest.TestCase):
         Testing acceptance and status code of a request and a received body confirmation.
         """
         logging.info("8_______TEST (USER) BEGAN_______8")
-        pet_store = UserPage(self._api)
         # ACT
-        response = pet_store.user_logout()
+        response = self._pet_store.user_logout()
         # ASSERT
         self.assertTrue(response.ok)
         self.assertEqual(response.status_code, self._config['status_code_passed'])

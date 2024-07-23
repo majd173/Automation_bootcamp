@@ -1,6 +1,6 @@
 import logging
 import requests
-from API_Project.pet_store.infra.API_Wrapper import APIWrapper
+from API_Project.pet_store.infra.api_wrapper import ApiWrapper
 from API_Project.pet_store.infra.config_provider import ConfigProvider
 from API_Project.pet_store.infra.response_wrapper import ResponseWrapper
 from API_Project.pet_store.logic.entity.order_details import OrderDetails
@@ -9,11 +9,16 @@ from API_Project.pet_store.logic.entity.order_details import OrderDetails
 class StorePage:
     # This class manages store page of the website and it's functionalities.
 
+    STORE_INVENTORY = "store/inventory"
+    ADD_ORDER = "store/order"
+    ORDER_BY_ID = "store/order/"
 
-    def __init__(self, request: APIWrapper):
+
+
+    def __init__(self, request: ApiWrapper):
         try:
             self._request = request
-            self._api = APIWrapper()
+            self._api = ApiWrapper()
             self._config = ConfigProvider().load_from_file("../pet_store.json")
             self._url = self._config['base_url']
         except ImportError:
@@ -26,7 +31,7 @@ class StorePage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}store/inventory')
+                f'{self._url}{self.STORE_INVENTORY}')
             if response:
                 logging.info("Get response has been received.")
                 return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
@@ -43,7 +48,7 @@ class StorePage:
         try:
             logging.info("Sending post request to the server.")
             response = self._request.post_request(
-                f'{self._url}store/order', order.to_dict())
+                f'{self._url}{self.ADD_ORDER}', order.to_dict())
             if response:
                 logging.info("Post response has been received.")
                 return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())
@@ -61,7 +66,7 @@ class StorePage:
         try:
             logging.info("Sending get request to the server.")
             response = self._request.get_request(
-                f'{self._url}store/order/{id}')
+                f'{self._url}{self.ORDER_BY_ID}{id}')
             if response:
                 logging.info("Get response has been received.")
                 return ResponseWrapper(ok=response.ok, status_code=response.status_code, data=response.json())

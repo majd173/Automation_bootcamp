@@ -1,7 +1,7 @@
 import requests
 from API_Project.pet_store.infra.logger_setup import LoggingSetup
 
-class APIWrapper:
+class ApiWrapper:
 
     """
     This class manages types of requests can be used in logic classes.
