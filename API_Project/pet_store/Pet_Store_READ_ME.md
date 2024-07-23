@@ -17,17 +17,17 @@ Get and Post request are being managed in order to test functionality of the web
                                                    V
                                                    V
                                                    V
- Infra folder contains files and codes that can be used in each type of application or website
+Infra folder contains files and codes that can be used in each type of application or website
 testing process on a global scale..
 -----------------------------------------------------------------------------------------------------------------------
- Logic folder contains the main pages in the website itself where main functions and scenarios
+Logic folder contains the main pages in the website itself where main functions and scenarios
 are being occurred.
 -----------------------------------------------------------------------------------------------------------------------
- Tests folder contains the automated tests that cover test cases.
+Tests folder contains the automated tests that cover test cases.
 -----------------------------------------------------------------------------------------------------------------------
- pet_logfile stores necessary steps are being done during tests running.
+pet_logfile stores necessary steps are being done during tests running.
 -----------------------------------------------------------------------------------------------------------------------
- pet_store.json stores necessary information are being used in tests.
+pet_store.json stores necessary information are being used in tests.
 -----------------------------------------------------------------------------------------------------------------------
 ## Required softwares for running this project's tests:
 Pycharm - python coding software.
