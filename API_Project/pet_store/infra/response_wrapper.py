@@ -4,3 +4,4 @@ class ResponseWrapper:
         self.ok = ok
         self.status_code = status_code
         self.data = data
+
