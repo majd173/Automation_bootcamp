@@ -114,6 +114,7 @@ class UserDataBase():
         self.close_connection()
 
 
+
 if __name__ == '__main__':
     user = UserDataBase(1, 'admin', 'admin', 'admin', 1)
     user.create_users_table()
