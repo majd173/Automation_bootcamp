@@ -1,5 +1,5 @@
 import requests
-from API_Project.deck_of_cards.infra.logger_setup import LoggingSetup
+from api_project.deck_of_cards.infra.logger_setup import LoggingSetup
 
 class APIWrapper:
 

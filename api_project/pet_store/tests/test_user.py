@@ -1,11 +1,11 @@
 import logging
 import unittest
-from API_Project.pet_store.pet_store_data_base.users_data_base import UserDataBase
-from API_Project.pet_store.infra.config_provider import ConfigProvider
-from API_Project.pet_store.logic.User.user import UserPage
-from API_Project.pet_store.infra.api_wrapper import ApiWrapper
-from API_Project.pet_store.logic.entity.user_details import UserDetails
-from API_Project.pet_store.infra.utilities import Utils
+from api_project.pet_store.pet_store_data_base.users_data_base import UserDataBase
+from api_project.pet_store.infra.config_provider import ConfigProvider
+from api_project.pet_store.logic.User.user import UserPage
+from api_project.pet_store.infra.api_wrapper import ApiWrapper
+from api_project.pet_store.logic.entity.user_details import UserDetails
+from api_project.pet_store.infra.utilities import Utils
 
 
 class TestUser(unittest.TestCase):

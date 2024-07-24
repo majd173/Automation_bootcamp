@@ -1,11 +1,11 @@
 import unittest
 import logging
-from API_Project.pet_store.infra.config_provider import ConfigProvider
-from API_Project.pet_store.logic.Pet.pet import PetPage
-from API_Project.pet_store.infra.api_wrapper import ApiWrapper
-from API_Project.pet_store.logic.entity.pet_details import PetDetails
-from API_Project.pet_store.infra.utilities import Utils
-from API_Project.pet_store.logic.status_generate.status_generate import StatusGenerate
+from api_project.pet_store.infra.config_provider import ConfigProvider
+from api_project.pet_store.logic.Pet.pet import PetPage
+from api_project.pet_store.infra.api_wrapper import ApiWrapper
+from api_project.pet_store.logic.entity.pet_details import PetDetails
+from api_project.pet_store.infra.utilities import Utils
+from api_project.pet_store.logic.status_generate.status_generate import StatusGenerate
 
 
 class TestPet(unittest.TestCase):

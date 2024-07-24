@@ -1,7 +1,7 @@
 import logging
-from API_Project.deck_of_cards.infra.API_Wrapper import APIWrapper
-from API_Project.deck_of_cards.infra.config_provider import ConfigProvider
-from API_Project.deck_of_cards.infra.logger_setup import LoggingSetup
+from api_project.deck_of_cards.infra.API_Wrapper import APIWrapper
+from api_project.deck_of_cards.infra.config_provider import ConfigProvider
+from api_project.deck_of_cards.infra.logger_setup import LoggingSetup
 
 
 class APIDecksOfCards:

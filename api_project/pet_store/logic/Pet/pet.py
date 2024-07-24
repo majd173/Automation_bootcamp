@@ -1,8 +1,8 @@
 import logging
 import requests
-from API_Project.pet_store.infra.api_wrapper import ApiWrapper
-from API_Project.pet_store.infra.config_provider import ConfigProvider
-from API_Project.pet_store.logic.entity.pet_details import PetDetails
+from api_project.pet_store.infra.api_wrapper import ApiWrapper
+from api_project.pet_store.infra.config_provider import ConfigProvider
+from api_project.pet_store.logic.entity.pet_details import PetDetails
 
 
 class PetPage:

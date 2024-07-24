@@ -1,10 +1,10 @@
 import unittest
 import logging
-from API_Project.pet_store.infra.config_provider import ConfigProvider
-from API_Project.pet_store.infra.utilities import Utils
-from API_Project.pet_store.logic.Store.store import StorePage
-from API_Project.pet_store.infra.api_wrapper import ApiWrapper
-from API_Project.pet_store.logic.entity.order_details import OrderDetails
+from api_project.pet_store.infra.config_provider import ConfigProvider
+from api_project.pet_store.infra.utilities import Utils
+from api_project.pet_store.logic.Store.store import StorePage
+from api_project.pet_store.infra.api_wrapper import ApiWrapper
+from api_project.pet_store.logic.entity.order_details import OrderDetails
 
 class TestStore(unittest.TestCase):
 

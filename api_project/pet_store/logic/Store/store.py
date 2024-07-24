@@ -1,9 +1,9 @@
 import logging
 import requests
-from API_Project.pet_store.infra.api_wrapper import ApiWrapper
-from API_Project.pet_store.infra.config_provider import ConfigProvider
-from API_Project.pet_store.infra.response_wrapper import ResponseWrapper
-from API_Project.pet_store.logic.entity.order_details import OrderDetails
+from api_project.pet_store.infra.api_wrapper import ApiWrapper
+from api_project.pet_store.infra.config_provider import ConfigProvider
+from api_project.pet_store.infra.response_wrapper import ResponseWrapper
+from api_project.pet_store.logic.entity.order_details import OrderDetails
 
 
 class StorePage:
