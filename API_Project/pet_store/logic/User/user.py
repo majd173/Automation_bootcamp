@@ -2,7 +2,6 @@ import logging
 import requests
 from API_Project.pet_store.infra.api_wrapper import ApiWrapper
 from API_Project.pet_store.infra.config_provider import ConfigProvider
-from API_Project.pet_store.infra.response_wrapper import ResponseWrapper
 from API_Project.pet_store.logic.entity.user_details import UserDetails
 
 
@@ -75,5 +74,6 @@ class UserPage:
             logging.error(f'Get request has not been sent.: {e}')
 
     # --------------------------------------------------------------------------------------
+
 
 

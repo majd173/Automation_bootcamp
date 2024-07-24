@@ -1,6 +1,6 @@
-import sys
 import logging
 import unittest
+from API_Project.pet_store.pet_store_data_base.users_data_base import UserDataBase
 from API_Project.pet_store.infra.config_provider import ConfigProvider
 from API_Project.pet_store.logic.User.user import UserPage
 from API_Project.pet_store.infra.api_wrapper import ApiWrapper
@@ -9,7 +9,6 @@ from API_Project.pet_store.infra.utilities import Utils
 
 
 class TestUser(unittest.TestCase):
-    sys.setrecursionlimit(1500)
 
     def setUp(self):
         # ARRANGE
@@ -25,9 +24,17 @@ class TestUser(unittest.TestCase):
             Utils.generate_random_string_only_letters(5),
             Utils.generate_random_string_only_letters(3),
             Utils.generate_random_number(3))
+        # self._user_data_base = UserDataBase(
+        #     self.user_details.user_id,
+        #     self.user_details.username,
+        #     self.user_details.firstname,
+        #     self.user_details.lastname,
+        #     self.user_details.user_status)
+        # self._user_data_base.create_add_user_table()
+        # self._user_data_base.fetch_users()
+        # self._user_data_base.close()
         # ACT
         self._result_add_user = self._pet_store.create_users_list(self.user_details)
-
     # --------------------------------------------------------------------------------------
 
     def test_user_login(self):

@@ -46,3 +46,37 @@
 2024-07-24 09:56:55,786:INFO:Sending post request to the server.:
 2024-07-24 09:56:57,804:INFO:4_______TEST (STORE) BEGAN_______4:
 2024-07-24 09:56:57,804:INFO:Sending get request to the server.:
+2024-07-24 13:29:15,868:INFO:1_______TEST (PET]) BEGAN_______1:
+2024-07-24 13:29:15,868:INFO:Sending get request to the server.:
+2024-07-24 13:31:39,071:INFO:1_______TEST (PET]) BEGAN_______1:
+2024-07-24 13:31:39,071:INFO:Sending get request to the server.:
+2024-07-24 13:32:55,518:INFO:1_______TEST (PET]) BEGAN_______1:
+2024-07-24 13:32:55,518:INFO:Sending get request to the server.:
+2024-07-24 13:33:39,136:INFO:1_______TEST (PET]) BEGAN_______1:
+2024-07-24 13:33:39,136:INFO:Sending get request to the server.:
+2024-07-24 13:34:00,903:INFO:1_______TEST (PET]) BEGAN_______1:
+2024-07-24 13:34:00,903:INFO:Sending get request to the server.:
+2024-07-24 13:39:05,894:INFO:2_______TEST (PET) BEGAN_______2:
+2024-07-24 13:39:05,894:INFO:Sending post request to the server.:
+2024-07-24 13:40:07,635:INFO:Sending post request.:
+2024-07-24 13:40:09,110:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-24 13:40:09,110:INFO:Sending get request to the server.:
+2024-07-24 13:49:44,297:INFO:Sending post request.:
+2024-07-24 13:49:45,810:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-24 13:49:45,810:INFO:Sending get request to the server.:
+2024-07-24 13:50:04,684:INFO:Sending post request.:
+2024-07-24 13:50:05,293:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-24 13:50:05,293:INFO:Sending get request to the server.:
+2024-07-24 14:51:40,464:INFO:Sending post request.:
+2024-07-24 14:51:41,437:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-24 14:51:41,438:INFO:Sending post request.:
+2024-07-24 14:51:42,258:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-24 14:51:42,259:INFO:Sending get request to the server.:
+2024-07-24 14:51:42,970:INFO:Sending post request.:
+2024-07-24 14:51:43,689:INFO:7_______TEST (USER) BEGAN_______7:
+2024-07-24 14:51:43,689:INFO:Sending get request to the server.:
+2024-07-24 14:51:44,407:INFO:7_______TEST (USER) COMPLETED_______7
+:
+2024-07-24 14:51:44,408:INFO:Sending post request.:
+2024-07-24 14:51:45,226:INFO:8_______TEST (USER) BEGAN_______8:
+2024-07-24 14:51:45,227:INFO:Sending get request to the server.:

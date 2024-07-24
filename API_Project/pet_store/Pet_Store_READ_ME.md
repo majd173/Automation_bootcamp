@@ -34,9 +34,6 @@ Contains necessary information used in the tests.
 ## Prerequisites
 To run the tests in this project, you will need the following software:
 
-## Setup Instructions
-### 1. Clone the repository
-![Repository](C:\Users\Admin\Pictures\Screenshots\Screenshot 2024-07-24 105944.png)
 
 ## Additional Information
 For more detailed information about the API endpoints and their usage, refer to the Swagger Petstore API documentation.
