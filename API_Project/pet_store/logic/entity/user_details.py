@@ -1,4 +1,8 @@
 class UserDetails:
+
+    """
+    This class manages generating new user details and returning a dictionary of these details.
+    """
     def __init__(self, user_id, username, firstname, lastname, user_status):
         self._user_id = user_id
         self._username = username
@@ -49,6 +53,9 @@ class UserDetails:
 
 
     def to_dict(self):
+        """
+        This function returns a dictionary of user details.
+        """
         return {
 
                     "id": self._user_id,

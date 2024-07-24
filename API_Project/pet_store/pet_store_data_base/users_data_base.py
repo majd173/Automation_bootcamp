@@ -1,11 +1,18 @@
 import sqlite3
-from pet_store_data_base import PetStoreDataBase
+# from pet_store_data_base import PetStoreDataBase
 
 
-class UserDataBase(PetStoreDataBase):
 
+class UserDataBase():
+
+    """
+    This class manages initiating new users database by creating new tables and adding
+    new users to these tables.
+    """
     def __init__(self, user_id, username, firstname, lastname, user_status, db_name='pet_store.db'):
-        super().__init__(db_name)
+        # super().__init__(db_name)
+        self.conn = sqlite3.connect(db_name)
+        self.cur = self.conn.cursor()
         self._user_id = user_id
         self._username = username
         self._firstname = firstname
@@ -79,8 +86,11 @@ class UserDataBase(PetStoreDataBase):
         rows = self.cur.fetchall()
         for row in rows:
             print(row)
-        # self.conn.commit()
         print("User was added successfully")
+
+    def close(self):
+        self.conn.close()
+
 
 # if __name__ == '__main__':
 #     user = UserDataBase(1, 'admin', 'admin', 'admin', 1)

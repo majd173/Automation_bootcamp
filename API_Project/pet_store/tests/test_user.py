@@ -14,6 +14,8 @@ class TestUser(unittest.TestCase):
         # ARRANGE
         """
         Setting up URL and base details fot adding and getting a username.
+        Setting up user details for adding a new user to the list.
+        Setting up user details for adding to users data base table.
         """
         self._config = ConfigProvider().load_from_file("../pet_store.json")
         self._api = ApiWrapper()
@@ -24,19 +26,20 @@ class TestUser(unittest.TestCase):
             Utils.generate_random_string_only_letters(5),
             Utils.generate_random_string_only_letters(3),
             Utils.generate_random_number(3))
-        # self._user_data_base = UserDataBase(
-        #     self.user_details.user_id,
-        #     self.user_details.username,
-        #     self.user_details.firstname,
-        #     self.user_details.lastname,
-        #     self.user_details.user_status)
-        # self._user_data_base.create_add_user_table()
-        # self._user_data_base.fetch_users()
-        # self._user_data_base.close()
+        self._user_data_base = UserDataBase(
+            self.user_details.user_id,
+            self.user_details.username,
+            self.user_details.firstname,
+            self.user_details.lastname,
+            self.user_details.user_status)
         # ACT
         self._result_add_user = self._pet_store.create_users_list(self.user_details)
+        self._user_data_base.create_add_user_table()
     # --------------------------------------------------------------------------------------
 
+    def TearDown(self):
+        self._user_data_base.close()
+        logging.info("_______TESTS COMPLETED_______")
     def test_user_login(self):
         """
         Test Case #7: User login.
@@ -79,11 +82,13 @@ class TestUser(unittest.TestCase):
         """
         logging.info("9_______TEST (USER) BEGAN_______9")
         # ASSERT
+        self._user_data_base.fetch_users()
         self.assertTrue(self._result_add_user.ok)
         self.assertEqual(self._config['status_code_passed'], self._result_add_user.status_code)
         self.assertEqual(self._result_add_user.data['code'], self._config['add_user_list_value'])
         self.assertEqual(self._result_add_user.data['type'], "unknown")
         self.assertEqual(self._result_add_user.data['message'], "ok")
+        self.assertEqual(self._user_data_base.user_id, self.user_details.user_id)
 
 
     # --------------------------------------------------------------------------------------
