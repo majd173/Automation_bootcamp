@@ -40,3 +40,9 @@
 2024-07-23 18:15:38,601:INFO:Sending post request.:
 2024-07-23 18:15:39,516:INFO:8_______TEST (USER) BEGAN_______8:
 2024-07-23 18:15:39,516:INFO:Sending get request to the server.:
+2024-07-24 09:50:26,500:INFO:Sending post request to the server.:
+2024-07-24 09:50:28,388:INFO:4_______TEST (STORE) BEGAN_______4:
+2024-07-24 09:50:28,388:INFO:Sending get request to the server.:
+2024-07-24 09:56:55,786:INFO:Sending post request to the server.:
+2024-07-24 09:56:57,804:INFO:4_______TEST (STORE) BEGAN_______4:
+2024-07-24 09:56:57,804:INFO:Sending get request to the server.:

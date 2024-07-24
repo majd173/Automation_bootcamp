@@ -1,32 +1,43 @@
-#                                    Pet Store website API testing.
-#                                    https://petstore.swagger.io/
+# Pet Store Website API Testing
+## Overview
+This project focuses on automated API testing for the online Pet Store website available at Swagger Petstore.
+The tests include GET and POST requests to ensure the functionality and reliability of the website's server.
 
-## This project manages API automated tests based on an online Pet Store website.
-* Get and Post request are being managed in order to test functionality of the website server.
+## Features
+* User Management
+* Adding users
+* Retrieving user details
+* Pet Management
+* Adding pets
+* Retrieving pet details
+* Order Management
+* Adding orders
+* Retrieving order details
+* Store Management
+* Retrieving store inventory details
+## Project Structure
+### infra Folder 
+Contains reusable files and code that support application or website testing processes on a global scale.
 
-### Actions are being done in the project:
+### logic Folder 
+Houses the core functionality and scenarios related to the website, including primary functions for interacting with the Pet Store API.
 
-* Adding users.
-* Adding pets.
-* Adding orders.
-* Receiving users details.
-* Receiving pets details.
-* Receiving orders details.
-* Receiving store inventory details.
+### tests Folder 
+Includes the automated tests covering various test cases for the Pet Store API.
 
-### This project is divided into many main folders which are described below:
-                                                 
-* Infra folder contains files and codes that can be used in each type of application or website
-testing process on a global scale..
------------------------------------------------------------------------------------------------------------------------
-* Logic folder contains the main pages in the website itself where main functions and scenarios
-are being occurred.
------------------------------------------------------------------------------------------------------------------------
-* Tests folder contains the automated tests that cover test cases.
------------------------------------------------------------------------------------------------------------------------
-* pet_logfile stores necessary steps are being done during tests running.
------------------------------------------------------------------------------------------------------------------------
-* pet_store.json stores necessary information are being used in tests.
------------------------------------------------------------------------------------------------------------------------
-### Required softwares for running this project's tests:
-* Pycharm - python coding software.
+### pet_logfile 
+Stores logs of the necessary steps performed during test runs.
+
+### pet_store.json 
+Contains necessary information used in the tests.
+
+## Prerequisites
+To run the tests in this project, you will need the following software:
+
+## Setup Instructions
+### 1. Clone the repository
+![Repository](C:\Users\Admin\Pictures\Screenshots\Screenshot 2024-07-24 105944.png)
+
+## Additional Information
+For more detailed information about the API endpoints and their usage, refer to the Swagger Petstore API documentation.
+https://petstore.swagger.io/
