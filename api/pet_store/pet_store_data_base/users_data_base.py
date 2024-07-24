@@ -1,3 +1,4 @@
+import logging
 import sqlite3
 # from pet_store_data_base import PetStoreDataBase
 
@@ -59,41 +60,63 @@ class UserDataBase():
     def user_status(self, value):
         self._user_status = value
 
-    def create_add_user_table(self):
-        # Drop the users table if it exists
-        self.cur.execute('DROP TABLE IF EXISTS users')
+    # --------------------------------------------------------------------------------------
 
-        # Create the users table with the correct schema
-        self.cur.execute('''CREATE TABLE IF NOT EXISTS users (
-                         id INTEGER PRIMARY KEY,
-                         username TEXT,
-                         firstname TEXT,
-                         lastname TEXT,
-                         userStatus INTEGER)''')
+    def create_users_table(self):
+        try:
+            logging.info("Creating table in process.")
+            # Drop the users table if it exists
+            self.cur.execute('DROP TABLE IF EXISTS users')
+            # Create the users table with the correct schema
+            self.cur.execute('''CREATE TABLE IF NOT EXISTS users (
+                             id INTEGER PRIMARY KEY,
+                             username TEXT,
+                             firstname TEXT,
+                             lastname TEXT,
+                             userStatus INTEGER)''')
+        except sqlite3.Error as error:
+            logging.error(f'Creating table failed: {error}')
 
-        self.cur.execute('''
-            INSERT INTO users (id, username, firstname, lastname, userStatus)
-                         VALUES (?, ?, ?, ?, ?)''',
-                         (self._user_id, self._username, self._firstname, self._lastname, self._user_status))
+    # --------------------------------------------------------------------------------------
+
+    def add_user_to_table(self):
+        try:
+            logging.info("Adding new user to the table in process.")
+            self.cur.execute('''
+                INSERT INTO users (id, username, firstname, lastname, userStatus)
+                             VALUES (?, ?, ?, ?, ?)''',
+                             (self._user_id, self._username, self._firstname, self._lastname, self._user_status))
+        except sqlite3.Error as error:
+            logging.error(f'Adding user failed: {error}')
 
         # Commit the transaction
         self.conn.commit()
 
+    # --------------------------------------------------------------------------------------
+
     def fetch_users(self):
-        print("start")
         # Read data from the users table
         self.cur.execute("SELECT * FROM users")
         rows = self.cur.fetchall()
         for row in rows:
-            print(row)
-        print("User was added successfully")
+            logging.info(f'Added user: {row}')
+    # --------------------------------------------------------------------------------------
 
-    def close(self):
+    def close_connection(self):
         self.conn.close()
 
+    # --------------------------------------------------------------------------------------
 
-# if __name__ == '__main__':
-#     user = UserDataBase(1, 'admin', 'admin', 'admin', 1)
-#     user.create_add_user_table()
-#     user.fetch_users()
-#     user.close()
+    def creating_full_process(self):
+        self.create_users_table()
+        self.add_user_to_table()
+        self.fetch_users()
+        self.close_connection()
+
+
+if __name__ == '__main__':
+    user = UserDataBase(1, 'admin', 'admin', 'admin', 1)
+    user.create_users_table()
+    user.add_user_to_table()
+    user.fetch_users()
+    user.close_connection()

@@ -1,5 +1,7 @@
 import logging
 import requests
+import sqlite3
+from api.pet_store.logic.entity.user_details import UserDetails
 from api.pet_store.pet_store_data_base.users_data_base import UserDataBase
 from api.pet_store.infra.api_wrapper import ApiWrapper
 from api.pet_store.infra.config_provider import ConfigProvider

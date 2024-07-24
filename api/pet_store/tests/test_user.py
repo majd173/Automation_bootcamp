@@ -34,12 +34,15 @@ class TestUser(unittest.TestCase):
             self.user_details.user_status)
         # ACT
         self._result_add_user = self._pet_store.create_users_list(self.user_details)
-        self._user_data_base.create_add_user_table()
+        self._user_data_base.creating_full_process()
     # --------------------------------------------------------------------------------------
 
     def TearDown(self):
-        self._user_data_base.close()
+        self._user_data_base.close_connection()
         logging.info("_______TESTS COMPLETED_______")
+
+    # --------------------------------------------------------------------------------------
+
     def test_user_login(self):
         """
         Test Case #7: User login.
@@ -82,7 +85,6 @@ class TestUser(unittest.TestCase):
         """
         logging.info("9_______TEST (USER) BEGAN_______9")
         # ASSERT
-        self._user_data_base.fetch_users()
         self.assertTrue(self._result_add_user.ok)
         self.assertEqual(self._config['status_code_passed'], self._result_add_user.status_code)
         self.assertEqual(self._result_add_user.data['code'], self._config['add_user_list_value'])
