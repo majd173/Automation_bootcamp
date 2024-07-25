@@ -69,6 +69,7 @@ class UserPage:
             self._user_database.execute_query("INSERT INTO users("
                             "username,firstname,lastname,userStatus) VALUES(?,?,?,?)",
                     (user.username, user.firstname, user.lastname, user.user_status))
+            self._user_database.execute_read_query("SELECT * FROM users")
             return response
         except requests.RequestException as e:
             logging.error(f'Post request has not been sent.: {e}')
