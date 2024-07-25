@@ -1,0 +1,2 @@
+[32mINFO    [0m root:user.py:63 Sending post request.
+[32mINFO    [0m root:test_user.py:87 9_______TEST (USER) BEGAN_______9

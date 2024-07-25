@@ -1,6 +1,7 @@
 import logging
 import unittest
 from api.pet_store.infra.config_provider import ConfigProvider
+from api.pet_store.infra.jira_handler import JiraHandler
 from api.pet_store.logic.User.user import UserPage
 from api.pet_store.infra.api_wrapper import ApiWrapper
 from api.pet_store.logic.entity.user_details import UserDetails
@@ -35,12 +36,18 @@ class TestUser(unittest.TestCase):
         #     self.user_details.user_status)
         # ACT
         self._result_add_user = self._pet_store.create_users_list(self.user_details)
-        # self._user_data_base.creating_full_process()
     # --------------------------------------------------------------------------------------
 
-    def TearDown(self):
-        # self._user_data_base.close_connection()
-        logging.info("_______TESTS COMPLETED_______")
+    def tearDown(self):
+        jira_flag = JiraHandler()
+        try:
+            jira_flag.create_issue(
+                'AABB', 'self.test_user_login()',
+                'There is a bug, True Not False.', issuetype='Bug')
+        except Exception as e:
+            logging.error(f'Jira issue not created: {e}')
+
+        logging.info("_______TEST COMPLETED_______")
 
     # --------------------------------------------------------------------------------------
 
@@ -58,7 +65,6 @@ class TestUser(unittest.TestCase):
         self.assertTrue(login_response.ok)
         self.assertEqual(self._config['status_code_passed'], login_response.status_code)
         self.assertEqual(login_response.data['code'], self._config['login_user_code_value'])
-        logging.info("7_______TEST (USER) COMPLETED_______7\n")
 
     # --------------------------------------------------------------------------------------
 
@@ -91,7 +97,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self._result_add_user.data['code'], self._config['add_user_list_value'])
         self.assertEqual(self._result_add_user.data['type'], "unknown")
         self.assertEqual(self._result_add_user.data['message'], "ok")
-        # self.assertEqual(self._user_data_base.user_id, self.user_details.user_id)
 
 
     # --------------------------------------------------------------------------------------
@@ -112,8 +117,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(get_user_response.data['firstName'], self.user_details.firstname)
         self.assertEqual(get_user_response.data['lastName'], self.user_details.lastname)
         self.assertEqual(get_user_response.data['userStatus'], self.user_details.user_status)
-
-
 
 
 

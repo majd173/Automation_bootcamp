@@ -19,8 +19,11 @@ class TestPet(unittest.TestCase):
         self._pet_details = PetDetails(
             Utils.generate_random_number(4),
             Utils.generate_random_string_only_letters(6))
-
     # Setting up URL and base details fot adding and getting a username.
+
+    def tearDown(self):
+        logging.info("_______TEST COMPLETED_______")
+
     # --------------------------------------------------------------------------------------
 
     def test_get_pet_by_status(self):

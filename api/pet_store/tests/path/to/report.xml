@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="10" time="9.649" timestamp="2024-07-25T12:17:10.803387" hostname="DESKTOP-DB3BQ5K"><testcase classname="test_pet.TestPet" name="test_add_pet" time="0.753" /><testcase classname="test_pet.TestPet" name="test_get_pet_by_id" time="0.574"><failure message="KeyError: 'status'">self = &lt;api.pet_store.tests.test_pet.TestPet testMethod=test_get_pet_by_id&gt;
+
+    def test_get_pet_by_id(self):
+        """
+        Test Case #3: Get a pet by id.
+        Testing acceptance and status code of a request and a received body confirmation.
+         """
+        logging.info("3_______TEST (PET) BEGAN_______3")
+        # ACT
+        get_pet_response = self._pet_store.get_pet_by_id(self._config['get_pet_by_id'])
+&gt;       status_value = get_pet_response.data['status']
+E       KeyError: 'status'
+
+test_pet.py:68: KeyError</failure></testcase><testcase classname="test_pet.TestPet" name="test_get_pet_by_status" time="0.596" /><testcase classname="test_store.TestStore" name="test_pet_store_inventory" time="1.169" /><testcase classname="test_store.TestStore" name="test_store_order_add" time="0.593" /><testcase classname="test_store.TestStore" name="test_store_order_get" time="1.218" /><testcase classname="test_user.TestUser" name="test_add_users_list" time="0.611" /><testcase classname="test_user.TestUser" name="test_get_user_by_username" time="1.213" /><testcase classname="test_user.TestUser" name="test_user_login" time="1.184" /><testcase classname="test_user.TestUser" name="test_user_logout" time="1.197" /></testsuite></testsuites>

@@ -23,10 +23,12 @@ class UserPage:
             self._config = ConfigProvider().load_from_file(
                 r"C:\Users\Admin\Desktop\Automation_bootcamp\api\pet_store\pet_store.json")
             self._url = self._config['base_url']
-            # self._database = UserDataBase(self._config['database'])
-            # self._database.create_users_table()
+            self._user_database = UserDataBase(self._config['user_database'])
+            self._user_database.create_connection()
+            self._user_database.create_users_table(self._config['user_details'])
+            self._user_database.execute_query('DELETE FROM users')
         except ImportError:
-            logging.error("Can not open pet_store.json file.")
+            logging.error(f'Import error: {ImportError}')
 
 
     # --------------------------------------------------------------------------------------
@@ -61,9 +63,13 @@ class UserPage:
     def create_users_list(self, user: UserDetails):
         try:
             logging.info("Sending post request.")
-            return self._request.post_request(
+            response = self._request.post_request(
                 f'{self._config['base_url']}{self.USER_CREATE}',
                 [user.to_dict()])
+            self._user_database.execute_query("INSERT INTO users("
+                            "username,firstname,lastname,userStatus) VALUES(?,?,?,?)",
+                    (user.username, user.firstname, user.lastname, user.user_status))
+            return response
         except requests.RequestException as e:
             logging.error(f'Post request has not been sent.: {e}')
 

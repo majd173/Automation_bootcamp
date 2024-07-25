@@ -6,6 +6,7 @@ from api.pet_store.logic.Store.store import StorePage
 from api.pet_store.infra.api_wrapper import ApiWrapper
 from api.pet_store.logic.entity.order_details import OrderDetails
 
+
 class TestStore(unittest.TestCase):
 
     def setUp(self):
@@ -23,6 +24,8 @@ class TestStore(unittest.TestCase):
             Utils.generate_random_number(6))
         self._order_response = self._pet_store.store_order_add(self._order_details)
 
+    def tearDown(self):
+        logging.info("_______TEST COMPLETED_______")
 
     # --------------------------------------------------------------------------------------
 
@@ -40,7 +43,6 @@ class TestStore(unittest.TestCase):
         self.assertIn(self._config['inventory_sold'], inventory_response.data)
         self.assertIn(self._config['inventory_available'], inventory_response.data)
 
-
     # --------------------------------------------------------------------------------------
 
     def test_store_order_add(self):
@@ -56,7 +58,6 @@ class TestStore(unittest.TestCase):
         self.assertEqual(self._order_response.data['petId'], self._order_details.pet_id)
         self.assertEqual(self._order_response.data['quantity'], self._order_details.quantity)
 
-
     # --------------------------------------------------------------------------------------
 
     def test_store_order_get(self):
@@ -71,8 +72,6 @@ class TestStore(unittest.TestCase):
         self.assertEqual(get_order_response.data["id"], self._order_details.order_id)
         self.assertEqual(get_order_response.data["petId"], self._order_details.pet_id)
         self.assertEqual(get_order_response.data["quantity"], self._order_details.quantity)
-
-
 
 
 if __name__ == '__main__':

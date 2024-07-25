@@ -29,6 +29,41 @@ class UserDataBase():
         except sqlite3.Error as error:
             logging.error(f'Creating connection failed: {error}')
 
+    def close_connection(self):
+        if self.connection:
+            logging.info("Closing connection in process.")
+            self.connection.close()
+
+
+    def execute_query(self, query, params=None):
+        try:
+            cursor = self.connection.cursor()
+            if params:
+                cursor.execute(query, params)
+            else:
+                cursor.execute(query)
+            self.connection.commit()
+        except sqlite3.Error as error:
+            logging.error(f'Executing query failed: {error}')
+
+    def execute_read_query(self, query, params=None):
+        try:
+            cursor = self.connection.cursor()
+            if params:
+                cursor.execute(query, params)
+            else:
+                cursor.execute(query)
+            return cursor.fetchall()
+        except sqlite3.Error as error:
+            logging.error(f'Executing query failed: {error}')
+            return None
+
+    def create_users_table(self, create_table_sql):
+        self.execute_query(create_table_sql)
+
+
+
+
     # @property
     # def user_id(self):
     #     return self._user_id
@@ -71,30 +106,7 @@ class UserDataBase():
 
     # --------------------------------------------------------------------------------------
 
-    def execute_query(self, query, params=None):
-        try:
-            cursor = self.connection.cursor()
-            if params:
-                cursor.execute(query, params)
-            else:
-                cursor.execute(query)
-            self.connection.commit()
-        except sqlite3.Error as error:
-            logging.error(f'Executing query failed: {error}')
 
-    def execute_read_query(self, query, params=None):
-        try:
-            cursor = self.connection.cursor()
-            if params:
-                cursor.execute(query, params)
-            else:
-                cursor.execute(query)
-            return cursor.fetchall()
-        except sqlite3.Error as error:
-            logging.error(f'Executing query failed: {error}')
-
-    def create_users_table(self, create_table_sql):
-        self.execute_query(create_table_sql)
         # try:
         #     logging.info("Creating table in process.")
         #     # Drop the users table if it exists
@@ -135,10 +147,7 @@ class UserDataBase():
     #         logging.info(f'Added user: {row}')
     # --------------------------------------------------------------------------------------
 
-    def close_connection(self):
-        if self.connection:
-            logging.info("Closing connection in process.")
-            self.connection.close()
+
 
     # --------------------------------------------------------------------------------------
 

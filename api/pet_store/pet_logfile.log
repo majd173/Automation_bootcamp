@@ -1,166 +1,43 @@
-2024-07-24 23:53:09,510:INFO:Sending post request.:
-2024-07-24 23:53:11,261:INFO:Creating table in process.:
-2024-07-24 23:53:11,306:INFO:Adding new user to the table in process.:
-2024-07-24 23:53:11,312:INFO:Added user: (87, 'PfZIk', 'OretR', 'ShL', 89):
-2024-07-24 23:53:11,313:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-25 08:28:59,450:INFO:Sending post request.:
-2024-07-25 08:29:01,359:INFO:Creating table in process.:
-2024-07-25 08:29:01,372:INFO:Adding new user to the table in process.:
-2024-07-25 08:29:01,376:INFO:Added user: (82, 'Xrpwp', 'iwfKP', 'ylB', 28):
-2024-07-25 08:29:01,377:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-25 08:30:23,465:INFO:Sending post request.:
-2024-07-25 08:30:24,871:INFO:Creating table in process.:
-2024-07-25 08:30:24,887:INFO:Adding new user to the table in process.:
-2024-07-25 08:30:24,892:INFO:Added user: (44, 'AYESk', 'GsQQZ', 'cVU', 3):
-2024-07-25 08:30:24,892:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-25 09:46:20,318:INFO:Sending post request.:
-2024-07-25 09:46:21,948:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-25 10:10:28,856:INFO:1_______TEST (PET]) BEGAN_______1:
-2024-07-25 10:10:28,856:INFO:Sending get request to the server.:
-2024-07-25 10:10:40,052:INFO:1_______TEST (PET]) BEGAN_______1:
-2024-07-25 10:10:40,053:INFO:Sending get request to the server.:
-2024-07-25 11:53:08,497:INFO:Sending post request.:
-2024-07-25 11:53:09,448:INFO:7_______TEST (USER) BEGAN_______7:
-2024-07-25 11:53:09,448:INFO:Sending get request to the server.:
-2024-07-25 11:53:10,043:INFO:7_______TEST (USER) COMPLETED_______7
-:
-2024-07-25 12:09:44,344:INFO:2_______TEST (PET) BEGAN_______2:
-2024-07-25 12:09:44,344:INFO:Sending post request to the server.:
-2024-07-25 12:09:45,092:INFO:3_______TEST (PET) BEGAN_______3:
-2024-07-25 12:09:45,092:INFO:Sending get request to the server.:
-2024-07-25 12:09:45,706:INFO:1_______TEST (PET]) BEGAN_______1:
-2024-07-25 12:09:45,706:INFO:Sending get request to the server.:
-2024-07-25 12:09:46,299:INFO:Sending post request to the server.:
-2024-07-25 12:09:46,914:INFO:4_______TEST (STORE) BEGAN_______4:
-2024-07-25 12:09:46,914:INFO:Sending get request to the server.:
-2024-07-25 12:09:47,501:INFO:Sending post request to the server.:
-2024-07-25 12:09:48,102:INFO:5_______TEST (STORE) BEGAN_______5:
-2024-07-25 12:09:48,105:INFO:Sending post request to the server.:
-2024-07-25 12:09:48,704:INFO:6_______TEST (STORE) BEGAN_______6:
-2024-07-25 12:09:48,704:INFO:Sending get request to the server.:
-2024-07-25 12:09:49,309:INFO:Sending post request.:
-2024-07-25 12:09:49,910:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-25 12:09:49,913:INFO:Sending post request.:
-2024-07-25 12:09:50,512:INFO:10_______TEST (USER) BEGAN_______10:
-2024-07-25 12:09:50,512:INFO:Sending get request to the server.:
-2024-07-25 12:09:51,114:INFO:Sending post request.:
-2024-07-25 12:09:51,736:INFO:7_______TEST (USER) BEGAN_______7:
-2024-07-25 12:09:51,736:INFO:Sending get request to the server.:
-2024-07-25 12:09:52,341:INFO:7_______TEST (USER) COMPLETED_______7
-:
-2024-07-25 12:09:52,344:INFO:Sending post request.:
-2024-07-25 12:09:52,943:INFO:8_______TEST (USER) BEGAN_______8:
-2024-07-25 12:09:52,943:INFO:Sending get request to the server.:
-2024-07-25 12:12:25,609:INFO:2_______TEST (PET) BEGAN_______2:
-2024-07-25 12:12:25,609:INFO:Sending post request to the server.:
-2024-07-25 12:12:26,305:INFO:3_______TEST (PET) BEGAN_______3:
-2024-07-25 12:12:26,305:INFO:Sending get request to the server.:
-2024-07-25 12:12:26,881:INFO:1_______TEST (PET]) BEGAN_______1:
-2024-07-25 12:12:26,881:INFO:Sending get request to the server.:
-2024-07-25 12:12:27,500:INFO:Sending post request to the server.:
-2024-07-25 12:12:28,072:INFO:4_______TEST (STORE) BEGAN_______4:
-2024-07-25 12:12:28,073:INFO:Sending get request to the server.:
-2024-07-25 12:12:28,676:INFO:Sending post request to the server.:
-2024-07-25 12:12:29,264:INFO:5_______TEST (STORE) BEGAN_______5:
-2024-07-25 12:12:29,268:INFO:Sending post request to the server.:
-2024-07-25 12:12:29,855:INFO:6_______TEST (STORE) BEGAN_______6:
-2024-07-25 12:12:29,855:INFO:Sending get request to the server.:
-2024-07-25 12:12:30,436:INFO:Sending post request.:
-2024-07-25 12:12:31,021:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-25 12:12:31,024:INFO:Sending post request.:
-2024-07-25 12:12:31,637:INFO:10_______TEST (USER) BEGAN_______10:
-2024-07-25 12:12:31,637:INFO:Sending get request to the server.:
-2024-07-25 12:12:32,215:INFO:Sending post request.:
-2024-07-25 12:12:32,810:INFO:7_______TEST (USER) BEGAN_______7:
-2024-07-25 12:12:32,811:INFO:Sending get request to the server.:
-2024-07-25 12:12:33,382:INFO:7_______TEST (USER) COMPLETED_______7
-:
-2024-07-25 12:12:33,387:INFO:Sending post request.:
-2024-07-25 12:12:33,986:INFO:8_______TEST (USER) BEGAN_______8:
-2024-07-25 12:12:33,986:INFO:Sending get request to the server.:
-2024-07-25 12:17:11,257:INFO:2_______TEST (PET) BEGAN_______2:
-2024-07-25 12:17:11,257:INFO:Sending post request to the server.:
-2024-07-25 12:17:12,020:INFO:3_______TEST (PET) BEGAN_______3:
-2024-07-25 12:17:12,020:INFO:Sending get request to the server.:
-2024-07-25 12:17:12,659:INFO:1_______TEST (PET]) BEGAN_______1:
-2024-07-25 12:17:12,659:INFO:Sending get request to the server.:
-2024-07-25 12:17:13,257:INFO:Sending post request to the server.:
-2024-07-25 12:17:13,829:INFO:4_______TEST (STORE) BEGAN_______4:
-2024-07-25 12:17:13,829:INFO:Sending get request to the server.:
-2024-07-25 12:17:14,427:INFO:Sending post request to the server.:
-2024-07-25 12:17:15,018:INFO:5_______TEST (STORE) BEGAN_______5:
-2024-07-25 12:17:15,022:INFO:Sending post request to the server.:
-2024-07-25 12:17:15,625:INFO:6_______TEST (STORE) BEGAN_______6:
-2024-07-25 12:17:15,626:INFO:Sending get request to the server.:
-2024-07-25 12:17:16,242:INFO:Sending post request.:
-2024-07-25 12:17:16,852:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-25 12:17:16,856:INFO:Sending post request.:
-2024-07-25 12:17:17,445:INFO:10_______TEST (USER) BEGAN_______10:
-2024-07-25 12:17:17,445:INFO:Sending get request to the server.:
-2024-07-25 12:17:18,069:INFO:Sending post request.:
-2024-07-25 12:17:18,650:INFO:7_______TEST (USER) BEGAN_______7:
-2024-07-25 12:17:18,650:INFO:Sending get request to the server.:
-2024-07-25 12:17:19,251:INFO:7_______TEST (USER) COMPLETED_______7
-:
-2024-07-25 12:17:19,255:INFO:Sending post request.:
-2024-07-25 12:17:19,852:INFO:8_______TEST (USER) BEGAN_______8:
-2024-07-25 12:17:19,852:INFO:Sending get request to the server.:
-2024-07-25 12:45:13,344:INFO:Sending post request.:
-2024-07-25 12:45:15,262:INFO:7_______TEST (USER) BEGAN_______7:
-2024-07-25 12:45:15,262:INFO:Sending get request to the server.:
-2024-07-25 12:45:15,866:INFO:7_______TEST (USER) COMPLETED_______7
-:
-2024-07-25 13:08:54,038:INFO:2_______TEST (PET) BEGAN_______2:
-2024-07-25 13:08:54,038:INFO:Sending post request to the server.:
-2024-07-25 13:08:54,845:INFO:3_______TEST (PET) BEGAN_______3:
-2024-07-25 13:08:54,845:INFO:Sending get request to the server.:
-2024-07-25 13:08:55,536:INFO:1_______TEST (PET]) BEGAN_______1:
-2024-07-25 13:08:55,536:INFO:Sending get request to the server.:
-2024-07-25 13:08:56,143:INFO:Sending post request to the server.:
-2024-07-25 13:08:56,743:INFO:4_______TEST (STORE) BEGAN_______4:
-2024-07-25 13:08:56,744:INFO:Sending get request to the server.:
-2024-07-25 13:08:57,345:INFO:Sending post request to the server.:
-2024-07-25 13:08:57,937:INFO:5_______TEST (STORE) BEGAN_______5:
-2024-07-25 13:08:57,945:INFO:Sending post request to the server.:
-2024-07-25 13:08:58,539:INFO:6_______TEST (STORE) BEGAN_______6:
-2024-07-25 13:08:58,540:INFO:Sending get request to the server.:
-2024-07-25 13:08:59,173:INFO:Sending post request.:
-2024-07-25 13:08:59,756:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-25 13:08:59,765:INFO:Sending post request.:
-2024-07-25 13:09:00,383:INFO:10_______TEST (USER) BEGAN_______10:
-2024-07-25 13:09:00,383:INFO:Sending get request to the server.:
-2024-07-25 13:09:00,975:INFO:Sending post request.:
-2024-07-25 13:09:01,574:INFO:7_______TEST (USER) BEGAN_______7:
-2024-07-25 13:09:01,574:INFO:Sending get request to the server.:
-2024-07-25 13:09:02,150:INFO:7_______TEST (USER) COMPLETED_______7
-:
-2024-07-25 13:09:02,190:INFO:Sending post request.:
-2024-07-25 13:09:02,787:INFO:8_______TEST (USER) BEGAN_______8:
-2024-07-25 13:09:02,788:INFO:Sending get request to the server.:
-2024-07-25 13:10:22,535:INFO:2_______TEST (PET) BEGAN_______2:
-2024-07-25 13:10:22,535:INFO:Sending post request to the server.:
-2024-07-25 13:10:23,426:INFO:3_______TEST (PET) BEGAN_______3:
-2024-07-25 13:10:23,426:INFO:Sending get request to the server.:
-2024-07-25 13:10:24,282:INFO:1_______TEST (PET]) BEGAN_______1:
-2024-07-25 13:10:24,282:INFO:Sending get request to the server.:
-2024-07-25 13:10:25,074:INFO:Sending post request to the server.:
-2024-07-25 13:10:25,663:INFO:4_______TEST (STORE) BEGAN_______4:
-2024-07-25 13:10:25,663:INFO:Sending get request to the server.:
-2024-07-25 13:10:26,280:INFO:Sending post request to the server.:
-2024-07-25 13:10:26,888:INFO:5_______TEST (STORE) BEGAN_______5:
-2024-07-25 13:10:26,897:INFO:Sending post request to the server.:
-2024-07-25 13:10:27,516:INFO:6_______TEST (STORE) BEGAN_______6:
-2024-07-25 13:10:27,516:INFO:Sending get request to the server.:
-2024-07-25 13:10:28,151:INFO:Sending post request.:
-2024-07-25 13:10:28,770:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-25 13:10:28,780:INFO:Sending post request.:
-2024-07-25 13:10:29,407:INFO:10_______TEST (USER) BEGAN_______10:
-2024-07-25 13:10:29,407:INFO:Sending get request to the server.:
-2024-07-25 13:10:30,013:INFO:Sending post request.:
-2024-07-25 13:10:30,632:INFO:7_______TEST (USER) BEGAN_______7:
-2024-07-25 13:10:30,632:INFO:Sending get request to the server.:
-2024-07-25 13:10:31,236:INFO:7_______TEST (USER) COMPLETED_______7
-:
-2024-07-25 13:10:31,244:INFO:Sending post request.:
-2024-07-25 13:10:31,847:INFO:8_______TEST (USER) BEGAN_______8:
-2024-07-25 13:10:31,848:INFO:Sending get request to the server.:
+2024-07-25 22:02:59,911:INFO:Creating connection in process.:
+2024-07-25 22:02:59,921:INFO:Sending post request.:
+2024-07-25 22:03:01,793:INFO:7_______TEST (USER) BEGAN_______7:
+2024-07-25 22:03:01,793:INFO:Sending get request to the server.:
+2024-07-25 22:03:02,890:ERROR:Jira issue not created: JiraError HTTP 401 url: https://majd173.atlassian.net/rest/api/2/issue
+	text: You do not have permission to create issues in this project.
+	
+	response headers = {'Date': 'Thu, 25 Jul 2024 19:03:02 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Server': 'AtlassianEdge', 'Timing-Allow-Origin': '*', 'X-Arequestid': '85279de421f528d4893b74861dc47e6b', 'X-Seraph-Loginreason': 'AUTHENTICATED_FAILED', 'Cache-Control': 'no-cache, no-store, no-transform', 'Www-Authenticate': 'OAuth realm="https%3A%2F%2Fmajd173.atlassian.net", OAuth realm="https%3A%2F%2Fmajd173.atlassian.net"', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': 'a5bfada0eeae4e1799c7b3ea36b67c2c', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}', 'Transfer-Encoding': 'chunked'}
+	response text = {"errorMessages":["You do not have permission to create issues in this project."],"errors":{}}:
+2024-07-25 22:03:02,890:INFO:_______TEST COMPLETED_______:
+2024-07-25 22:13:24,954:INFO:Creating connection in process.:
+2024-07-25 22:13:24,960:INFO:Sending post request.:
+2024-07-25 22:13:27,257:INFO:7_______TEST (USER) BEGAN_______7:
+2024-07-25 22:13:27,258:INFO:Sending get request to the server.:
+2024-07-25 22:13:28,377:ERROR:Jira issue not created: JiraError HTTP 401 url: https://majd173.atlassian.net/rest/api/2/issue
+	text: You do not have permission to create issues in this project.
+	
+	response headers = {'Date': 'Thu, 25 Jul 2024 19:13:28 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Server': 'AtlassianEdge', 'Timing-Allow-Origin': '*', 'X-Arequestid': '557c53ffa77309c5fce5db2e3457c846', 'X-Seraph-Loginreason': 'AUTHENTICATED_FAILED', 'Cache-Control': 'no-cache, no-store, no-transform', 'Www-Authenticate': 'OAuth realm="https%3A%2F%2Fmajd173.atlassian.net", OAuth realm="https%3A%2F%2Fmajd173.atlassian.net"', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': 'c269ab9a8e52486cbe659e75d90691bf', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}', 'Transfer-Encoding': 'chunked'}
+	response text = {"errorMessages":["You do not have permission to create issues in this project."],"errors":{}}:
+2024-07-25 22:13:28,377:INFO:_______TEST COMPLETED_______:
+2024-07-25 22:14:06,336:INFO:Creating connection in process.:
+2024-07-25 22:14:06,343:INFO:Sending post request.:
+2024-07-25 22:14:06,970:INFO:7_______TEST (USER) BEGAN_______7:
+2024-07-25 22:14:06,970:INFO:Sending get request to the server.:
+2024-07-25 22:14:08,086:ERROR:Jira issue not created: JiraError HTTP 401 url: https://majd173.atlassian.net/rest/api/2/issue
+	text: You do not have permission to create issues in this project.
+	
+	response headers = {'Date': 'Thu, 25 Jul 2024 19:14:07 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Server': 'AtlassianEdge', 'Timing-Allow-Origin': '*', 'X-Arequestid': '14519d89371d7cc95d2e2af29d60dbe8', 'X-Seraph-Loginreason': 'AUTHENTICATED_FAILED', 'Cache-Control': 'no-cache, no-store, no-transform', 'Www-Authenticate': 'OAuth realm="https%3A%2F%2Fmajd173.atlassian.net", OAuth realm="https%3A%2F%2Fmajd173.atlassian.net"', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': '17ec7399fac544f2aae9a5fc01c0fac8', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}', 'Transfer-Encoding': 'chunked'}
+	response text = {"errorMessages":["You do not have permission to create issues in this project."],"errors":{}}:
+2024-07-25 22:14:08,086:INFO:_______TEST COMPLETED_______:
+2024-07-25 22:18:11,069:INFO:Creating connection in process.:
+2024-07-25 22:18:11,075:INFO:Sending post request.:
+2024-07-25 22:18:13,308:INFO:7_______TEST (USER) BEGAN_______7:
+2024-07-25 22:18:13,308:INFO:Sending get request to the server.:
+2024-07-25 22:18:15,183:INFO:_______TEST COMPLETED_______:
+2024-07-25 22:18:24,814:INFO:Creating connection in process.:
+2024-07-25 22:18:24,823:INFO:Sending post request.:
+2024-07-25 22:18:25,442:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-25 22:18:26,733:INFO:_______TEST COMPLETED_______:
+2024-07-25 22:18:36,695:INFO:Creating connection in process.:
+2024-07-25 22:18:36,708:INFO:Sending post request.:
+2024-07-25 22:18:37,302:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-25 22:18:38,454:INFO:_______TEST COMPLETED_______:
