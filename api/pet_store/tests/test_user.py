@@ -47,8 +47,7 @@ class TestUser(unittest.TestCase):
         except Exception as e:
             logging.error(f'Jira issue not created: {e}')
 
-        logging.info("_______TEST COMPLETED_______")
-
+        logging.info("_______TEST COMPLETED________")
     # --------------------------------------------------------------------------------------
 
     def test_user_login(self):
