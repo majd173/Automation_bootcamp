@@ -19,7 +19,8 @@ class StorePage:
         try:
             self._request = request
             self._api = ApiWrapper()
-            self._config = ConfigProvider().load_from_file("../pet_store.json")
+            self._config = ConfigProvider().load_from_file(
+                r"C:\Users\Admin\Desktop\Automation_bootcamp\api\pet_store\pet_store.json")
             self._url = self._config['base_url']
         except ImportError:
             logging.error("Can not open pet_store.json file.")

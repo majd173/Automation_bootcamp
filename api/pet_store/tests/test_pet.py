@@ -12,7 +12,8 @@ class TestPet(unittest.TestCase):
 
     def setUp(self):
         # ARRANGE
-        self._config = ConfigProvider().load_from_file("../pet_store.json")
+        self._config = ConfigProvider().load_from_file(
+            r"C:\Users\Admin\Desktop\Automation_bootcamp\api\pet_store\pet_store.json")
         self._api = ApiWrapper()
         self._pet_store = PetPage(self._api)
         self._pet_details = PetDetails(

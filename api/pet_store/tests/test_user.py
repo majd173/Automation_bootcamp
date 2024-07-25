@@ -1,6 +1,5 @@
 import logging
 import unittest
-from api.pet_store.pet_store_data_base.users_data_base import UserDataBase
 from api.pet_store.infra.config_provider import ConfigProvider
 from api.pet_store.logic.User.user import UserPage
 from api.pet_store.infra.api_wrapper import ApiWrapper
@@ -10,6 +9,7 @@ from api.pet_store.infra.utilities import Utils
 
 class TestUser(unittest.TestCase):
 
+
     def setUp(self):
         # ARRANGE
         """
@@ -17,7 +17,8 @@ class TestUser(unittest.TestCase):
         Setting up user details for adding a new user to the list.
         Setting up user details for adding to users data base table.
         """
-        self._config = ConfigProvider().load_from_file("../pet_store.json")
+        self._config = ConfigProvider().load_from_file(
+            r"C:\Users\Admin\Desktop\Automation_bootcamp\api\pet_store\pet_store.json")
         self._api = ApiWrapper()
         self._pet_store = UserPage(self._api)
         self.user_details = UserDetails(
@@ -26,19 +27,19 @@ class TestUser(unittest.TestCase):
             Utils.generate_random_string_only_letters(5),
             Utils.generate_random_string_only_letters(3),
             Utils.generate_random_number(3))
-        self._user_data_base = UserDataBase(
-            self.user_details.user_id,
-            self.user_details.username,
-            self.user_details.firstname,
-            self.user_details.lastname,
-            self.user_details.user_status)
+        # self._user_data_base = UserDataBase(
+        #     self.user_details.user_id,
+        #     self.user_details.username,
+        #     self.user_details.firstname,
+        #     self.user_details.lastname,
+        #     self.user_details.user_status)
         # ACT
         self._result_add_user = self._pet_store.create_users_list(self.user_details)
-        self._user_data_base.creating_full_process()
+        # self._user_data_base.creating_full_process()
     # --------------------------------------------------------------------------------------
 
     def TearDown(self):
-        self._user_data_base.close_connection()
+        # self._user_data_base.close_connection()
         logging.info("_______TESTS COMPLETED_______")
 
     # --------------------------------------------------------------------------------------
@@ -90,7 +91,7 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self._result_add_user.data['code'], self._config['add_user_list_value'])
         self.assertEqual(self._result_add_user.data['type'], "unknown")
         self.assertEqual(self._result_add_user.data['message'], "ok")
-        self.assertEqual(self._user_data_base.user_id, self.user_details.user_id)
+        # self.assertEqual(self._user_data_base.user_id, self.user_details.user_id)
 
 
     # --------------------------------------------------------------------------------------

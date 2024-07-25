@@ -13,7 +13,8 @@ class TestStore(unittest.TestCase):
         """
         Setting up URL and base details fot adding and getting a username.
         """
-        self._config = ConfigProvider().load_from_file("../pet_store.json")
+        self._config = ConfigProvider().load_from_file(
+            r"C:\Users\Admin\Desktop\Automation_bootcamp\api\pet_store\pet_store.json")
         self._api = ApiWrapper()
         self._pet_store = StorePage(self._api)
         self._order_details = OrderDetails(

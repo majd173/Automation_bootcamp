@@ -17,8 +17,9 @@
     "inventory_sold" : "sold",
     "inventory_available" : "available",
 
-    "get_pet_by_id" : 1
+    "get_pet_by_id" : 1,
 
+    "database" : "pet_store_database.db",
 
-
+    "jira_url" : "https://majd173.atlassian.net/"
 }

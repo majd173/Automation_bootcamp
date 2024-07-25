@@ -1,14 +1,15 @@
 import json
 import logging
 from selenium import webdriver
-from selenium.saucedemo_website.pom.infra.config_provider import ConfigProvider
+from api.pet_store.infra.config_provider import ConfigProvider
 
 
 class BrowserWrapper:
     # This class manages choosing a browser.
     def __init__(self):
         self._driver = None # because I still don't know which driver to choose.
-        self.config = ConfigProvider.load_from_file('../pet_store.json')
+        self.config = ConfigProvider.load_from_file(
+            r'C:\Users\Admin\Desktop\Automation_bootcamp\api\pet_store\pet_store.json')
     # ------------------------------------------------------------------------------------------------------------
     # This function determines which browser to open and also opens it.
     def get_driver(self):
