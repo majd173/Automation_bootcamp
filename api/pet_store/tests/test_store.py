@@ -1,6 +1,7 @@
 import unittest
 import logging
 from api.pet_store.infra.config_provider import ConfigProvider
+from api.pet_store.infra.jira_handler import JiraHandler
 from api.pet_store.infra.utilities import Utils
 from api.pet_store.logic.Store.store import StorePage
 from api.pet_store.infra.api_wrapper import ApiWrapper
@@ -18,6 +19,7 @@ class TestStore(unittest.TestCase):
             r"C:\Users\Admin\Desktop\Automation_bootcamp\api\pet_store\pet_store.json")
         self._api = ApiWrapper()
         self._pet_store = StorePage(self._api)
+        self._jira_flag = JiraHandler()
         self._order_details = OrderDetails(
             Utils.generate_random_number(2),
             Utils.generate_random_number(2),
@@ -25,6 +27,9 @@ class TestStore(unittest.TestCase):
         self._order_response = self._pet_store.store_order_add(self._order_details)
 
     def tearDown(self):
+        self._jira_flag.create_jira_issue_teardown(
+            'AABB', 'test_store_order_add',
+            'Make sure to add order to the database', 'Task')
         logging.info("_______TEST COMPLETED_______")
 
     # --------------------------------------------------------------------------------------

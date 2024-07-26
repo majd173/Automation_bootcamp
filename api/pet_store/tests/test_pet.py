@@ -1,6 +1,7 @@
 import unittest
 import logging
 from api.pet_store.infra.config_provider import ConfigProvider
+from api.pet_store.infra.jira_handler import JiraHandler
 from api.pet_store.logic.Pet.pet import PetPage
 from api.pet_store.infra.api_wrapper import ApiWrapper
 from api.pet_store.logic.entity.pet_details import PetDetails
@@ -11,17 +12,25 @@ from api.pet_store.logic.status_generate.status_generate import StatusGenerate
 class TestPet(unittest.TestCase):
 
     def setUp(self):
-        # ARRANGE
+        """
+        Arrange: Setting up an url.
+                 Setting up a jira handler.
+                 Setting up pet details.
+        """
         self._config = ConfigProvider().load_from_file(
             r"C:\Users\Admin\Desktop\Automation_bootcamp\api\pet_store\pet_store.json")
         self._api = ApiWrapper()
         self._pet_store = PetPage(self._api)
+        self._jira_flag = JiraHandler()
         self._pet_details = PetDetails(
             Utils.generate_random_number(4),
             Utils.generate_random_string_only_letters(6))
     # Setting up URL and base details fot adding and getting a username.
 
     def tearDown(self):
+        self._jira_flag.create_issue(
+            'AABB', 'test_add_pet',
+            'Make sure to add pet to the database.', 'Task')
         logging.info("_______TEST COMPLETED_______")
 
     # --------------------------------------------------------------------------------------
