@@ -1,0 +1,3 @@
+[32mINFO    [0m root:store.py:45 Sending post request to the server.
+[32mINFO    [0m root:test_store.py:53 5_______TEST (STORE) BEGAN_______5
+[32mINFO    [0m root:test_store.py:28 _______TEST COMPLETED_______
