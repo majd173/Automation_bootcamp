@@ -1,45 +1,40 @@
-2024-07-26 12:05:46,891:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-26 12:05:46,891:INFO:Sending post request.:
-2024-07-26 12:05:50,787:INFO:Creating database connection in process.:
-2024-07-26 12:05:50,788:INFO:Database connection created.:
-2024-07-26 12:05:50,788:INFO:Creating users table in process.:
-2024-07-26 12:05:50,788:INFO:Executing database query in process.:
-2024-07-26 12:05:50,826:ERROR:Users table not dropped.:
-2024-07-26 12:05:50,827:INFO:Executing database query in process.:
-2024-07-26 12:05:50,834:ERROR:Users table not created.:
-2024-07-26 12:05:50,835:INFO:Executing database query in process.:
-2024-07-26 12:05:50,842:INFO:Closing database connection in process.:
-2024-07-26 12:05:51,300:INFO:Creating Jira issue...:
-2024-07-26 12:05:52,439:INFO:Jira issue created: AABB-19:
-2024-07-26 12:05:52,439:INFO:_______TEST COMPLETED________
+2024-07-26 15:33:18,195:INFO:Creating database connection in process.:
+2024-07-26 15:33:18,196:INFO:Database connection created.:
+2024-07-26 15:33:18,196:INFO:Creating table in process.:
+2024-07-26 15:33:18,196:INFO:Executing database query in process.:
+2024-07-26 15:33:18,196:INFO:Database query executed.:
+2024-07-26 15:33:18,197:INFO:Table created.:
+2024-07-26 15:33:18,552:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-26 15:33:18,553:INFO:Sending post request.:
+2024-07-26 15:33:19,556:INFO:Executing database query in process.:
+2024-07-26 15:33:19,591:INFO:Executing database query in process.:
+2024-07-26 15:33:19,592:INFO:Database query executed.:
+2024-07-26 15:33:19,596:INFO:Closing database connection in process.:
+2024-07-26 15:33:19,597:INFO:_______TEST COMPLETED________
 :
-2024-07-26 12:06:23,248:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-26 12:06:23,249:INFO:Sending post request.:
-2024-07-26 12:06:23,965:INFO:Creating database connection in process.:
-2024-07-26 12:06:23,966:INFO:Database connection created.:
-2024-07-26 12:06:23,966:INFO:Creating users table in process.:
-2024-07-26 12:06:23,966:INFO:Executing database query in process.:
-2024-07-26 12:06:23,967:ERROR:Users table not dropped.:
-2024-07-26 12:06:23,968:INFO:Executing database query in process.:
-2024-07-26 12:06:23,977:ERROR:Users table not created.:
-2024-07-26 12:06:23,978:INFO:Executing database query in process.:
-2024-07-26 12:06:23,984:INFO:Closing database connection in process.:
-2024-07-26 12:06:24,367:INFO:Creating Jira issue...:
-2024-07-26 12:06:25,607:INFO:Jira issue created: AABB-20:
-2024-07-26 12:06:25,608:INFO:_______TEST COMPLETED________
+2024-07-26 15:35:51,273:INFO:Creating database connection in process.:
+2024-07-26 15:35:51,273:INFO:Database connection created.:
+2024-07-26 15:35:51,274:INFO:Creating table in process.:
+2024-07-26 15:35:51,274:INFO:Executing database query in process.:
+2024-07-26 15:35:51,274:INFO:Database query executed.:
+2024-07-26 15:35:51,274:INFO:Table created.:
+2024-07-26 15:35:51,773:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-26 15:35:51,774:INFO:Sending post request.:
+2024-07-26 15:35:52,699:INFO:Executing database query in process.:
+2024-07-26 15:35:52,735:INFO:_______TEST COMPLETED________
 :
-2024-07-26 12:11:14,723:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-26 12:11:14,724:INFO:Sending post request.:
-2024-07-26 12:11:17,240:INFO:Creating database connection in process.:
-2024-07-26 12:11:17,241:INFO:Database connection created.:
-2024-07-26 12:11:17,241:INFO:Creating users table in process.:
-2024-07-26 12:11:17,241:INFO:Executing database query in process.:
-2024-07-26 12:11:17,278:INFO:Users table dropped.:
-2024-07-26 12:11:17,278:INFO:Executing database query in process.:
-2024-07-26 12:11:17,285:ERROR:Users table not created.:
-2024-07-26 12:11:17,285:INFO:Executing database query in process.:
-2024-07-26 12:11:17,293:INFO:Closing database connection in process.:
-2024-07-26 12:11:17,651:INFO:Creating Jira issue...:
-2024-07-26 12:11:18,760:INFO:Jira issue created: AABB-21:
-2024-07-26 12:11:18,761:INFO:_______TEST COMPLETED________
+2024-07-26 15:36:53,378:INFO:Creating database connection in process.:
+2024-07-26 15:36:53,385:INFO:Database connection created.:
+2024-07-26 15:36:53,385:INFO:Creating table in process.:
+2024-07-26 15:36:53,385:INFO:Executing database query in process.:
+2024-07-26 15:36:53,387:INFO:Database query executed.:
+2024-07-26 15:36:53,387:INFO:Table created.:
+2024-07-26 15:36:53,827:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-26 15:36:53,827:INFO:Sending post request.:
+2024-07-26 15:36:54,849:INFO:Executing database query in process.:
+2024-07-26 15:36:54,855:INFO:Executing database query in process.:
+2024-07-26 15:36:54,856:INFO:Executing database query in process.:
+2024-07-26 15:36:54,857:INFO:Database query executed.:
+2024-07-26 15:36:54,861:INFO:Closing database connection in process.:
+2024-07-26 15:36:54,862:INFO:_______TEST COMPLETED________
 :

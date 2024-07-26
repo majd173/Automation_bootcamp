@@ -1,20 +1,20 @@
 import logging
 import sqlite3
+
+
 # from pet_store_data_base import PetStoreDataBase
 
 
-
-class UserDataBase():
-
+class UserDataBase:
     """
     This class manages initiating new users database by creating new tables and adding
     new users to these tables.
     """
+
     def __init__(self, db_file):
         self._db_file = db_file
         self.connection = None
         self.cur = None
-
 
     # --------------------------------------------------------------------------------------
 
@@ -42,27 +42,6 @@ class UserDataBase():
             logging.info("Closing database connection in process.")
             self.connection.close()
 
-
-    #---------------------------------------------------------------------------------------
-
-    def create_users_table(self, create_table_sql):
-        """
-        This function creates a table in the database.
-        It takes a string containing the SQL query to create the table.
-        """
-        try:
-            logging.info("Creating users table in process.")
-            self.execute_query("DROP TABLE IF EXISTS users")
-            logging.info("Users table dropped.")
-            table_creation = self.execute_query(create_table_sql)
-            if table_creation:
-                logging.info("Users table created.")
-            else:
-                logging.error("Users table not created.")
-            return table_creation
-        except sqlite3.Error as error:
-            logging.error("Creating users table failed: ", error)
-            return False
     # --------------------------------------------------------------------------------------
 
     def execute_query(self, query, params=None):
@@ -77,6 +56,7 @@ class UserDataBase():
                 cursor.execute(query, params)
             else:
                 cursor.execute(query)
+                logging.info("Database query executed.")
             self.connection.commit()
         except sqlite3.Error as error:
             logging.error(f'Executing database query failed: {error}')
@@ -102,6 +82,14 @@ class UserDataBase():
 
     # --------------------------------------------------------------------------------------
 
+    def create_table(self, create_table):
+
+        logging.info("Creating table in process.")
+        self.execute_query(create_table)
+        logging.info("Table created.")
+
+    # --------------------------------------------------------------------------------------
+
     def fetch_users(self):
         """
         This function fetches all users from the database.
@@ -112,6 +100,3 @@ class UserDataBase():
             print(row)
             logging.info(f'Added user to database: {row}')
     # --------------------------------------------------------------------------------------
-
-
-

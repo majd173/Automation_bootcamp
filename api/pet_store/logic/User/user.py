@@ -22,9 +22,11 @@ class UserPage:
             self._config = ConfigProvider().load_from_file(
                 r"C:\Users\Admin\Desktop\Automation_bootcamp\api\pet_store\pet_store.json")
             self._url = self._config['base_url']
+            self._user_database = UserDataBase(self._config['user_database'])
+            self._user_database.create_connection()
+            self._user_database.create_table(self._config['users_table'])
         except ImportError:
             logging.error(f'Import error: {ImportError}')
-
 
     # --------------------------------------------------------------------------------------
     # GET REQUEST
@@ -61,16 +63,13 @@ class UserPage:
             response = self._request.post_request(
                 f'{self._config['base_url']}{self.USER_CREATE}',
                 [user.to_dict()])
-            user_database = UserDataBase(self._config['user_database'])
-            user_database.create_connection()
-            user_database.create_users_table(self._config['users_table'])
-            user_database.execute_query(self._config['user_insertion'],
-                    (user.username, user.firstname, user.lastname, user.user_status))
-            user_database.close_connection()
+            self._user_database.execute_query(self._config['user_insertion'],
+                                        (user.user_id, user.username, user.firstname, user.lastname, user.user_status))
+            self._user_database.execute_query("DELETE FROM users")
+            self._user_database.close_connection()
             return response
         except requests.RequestException as e:
             logging.error(f'Post request has not been sent.: {e}')
-
 
     # --------------------------------------------------------------------------------------
     # GET REQUEST
@@ -84,6 +83,3 @@ class UserPage:
             logging.error(f'Get request has not been sent.: {e}')
 
     # --------------------------------------------------------------------------------------
-
-
-
