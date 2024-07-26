@@ -1,2 +1,0 @@
-[32mINFO    [0m root:test_pet.py:50 2_______TEST (PET) BEGAN_______2
-[32mINFO    [0m root:pet.py:45 Sending post request to the server.

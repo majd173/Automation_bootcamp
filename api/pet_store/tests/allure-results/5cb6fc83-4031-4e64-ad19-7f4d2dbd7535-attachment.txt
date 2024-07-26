@@ -1,4 +1,0 @@
-[32mINFO    [0m root:user.py:63 Sending post request.
-[32mINFO    [0m root:test_user.py:52 7_______TEST (USER) BEGAN_______7
-[32mINFO    [0m root:user.py:39 Sending get request to the server.
-[32mINFO    [0m root:test_user.py:61 7_______TEST (USER) COMPLETED_______7

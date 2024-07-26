@@ -1,3 +1,0 @@
-[32mINFO    [0m root:store.py:45 Sending post request to the server.
-[32mINFO    [0m root:test_store.py:67 6_______TEST (STORE) BEGAN_______6
-[32mINFO    [0m root:store.py:59 Sending get request to the server.

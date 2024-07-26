@@ -16,38 +16,25 @@ class TestUser(unittest.TestCase):
         """
         Setting up URL and base details fot adding and getting a username.
         Setting up user details for adding a new user to the list.
-        Setting up user details for adding to users data base table.
+        Setting up user details for adding to users database table.
         """
         self._config = ConfigProvider().load_from_file(
             r"C:\Users\Admin\Desktop\Automation_bootcamp\api\pet_store\pet_store.json")
         self._api = ApiWrapper()
         self._pet_store = UserPage(self._api)
+        self._jira_flag = JiraHandler()
         self.user_details = UserDetails(
             Utils.generate_random_number(7),
             Utils.generate_random_string_only_letters(5),
             Utils.generate_random_string_only_letters(5),
             Utils.generate_random_string_only_letters(3),
             Utils.generate_random_number(3))
-        # self._user_data_base = UserDataBase(
-        #     self.user_details.user_id,
-        #     self.user_details.username,
-        #     self.user_details.firstname,
-        #     self.user_details.lastname,
-        #     self.user_details.user_status)
-        # ACT
-        self._result_add_user = self._pet_store.create_users_list(self.user_details)
     # --------------------------------------------------------------------------------------
 
     def tearDown(self):
-        jira_flag = JiraHandler()
-        try:
-            jira_flag.create_issue(
-                'AABB', 'self.test_user_login()',
-                'There is a bug, True Not False.', issuetype='Bug')
-        except Exception as e:
-            logging.error(f'Jira issue not created: {e}')
-
-        logging.info("_______TEST COMPLETED________")
+        self._jira_flag.create_jira_issue_teardown(
+            'AABB', 'test_user_login', 'There is a bug, True Not False.', 'Bug')
+        logging.info("_______TEST COMPLETED________\n")
     # --------------------------------------------------------------------------------------
 
     def test_user_login(self):
@@ -90,6 +77,7 @@ class TestUser(unittest.TestCase):
         Pre_conditions (adding a new user) is being managed in the setUp function.
         """
         logging.info("9_______TEST (USER) BEGAN_______9")
+        self._result_add_user = self._pet_store.create_users_list(self.user_details)
         # ASSERT
         self.assertTrue(self._result_add_user.ok)
         self.assertEqual(self._config['status_code_passed'], self._result_add_user.status_code)

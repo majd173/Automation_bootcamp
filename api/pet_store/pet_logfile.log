@@ -1,51 +1,45 @@
-2024-07-25 22:02:59,911:INFO:Creating connection in process.:
-2024-07-25 22:02:59,921:INFO:Sending post request.:
-2024-07-25 22:03:01,793:INFO:7_______TEST (USER) BEGAN_______7:
-2024-07-25 22:03:01,793:INFO:Sending get request to the server.:
-2024-07-25 22:03:02,890:ERROR:Jira issue not created: JiraError HTTP 401 url: https://majd173.atlassian.net/rest/api/2/issue
-	text: You do not have permission to create issues in this project.
-	
-	response headers = {'Date': 'Thu, 25 Jul 2024 19:03:02 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Server': 'AtlassianEdge', 'Timing-Allow-Origin': '*', 'X-Arequestid': '85279de421f528d4893b74861dc47e6b', 'X-Seraph-Loginreason': 'AUTHENTICATED_FAILED', 'Cache-Control': 'no-cache, no-store, no-transform', 'Www-Authenticate': 'OAuth realm="https%3A%2F%2Fmajd173.atlassian.net", OAuth realm="https%3A%2F%2Fmajd173.atlassian.net"', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': 'a5bfada0eeae4e1799c7b3ea36b67c2c', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}', 'Transfer-Encoding': 'chunked'}
-	response text = {"errorMessages":["You do not have permission to create issues in this project."],"errors":{}}:
-2024-07-25 22:03:02,890:INFO:_______TEST COMPLETED_______:
-2024-07-25 22:13:24,954:INFO:Creating connection in process.:
-2024-07-25 22:13:24,960:INFO:Sending post request.:
-2024-07-25 22:13:27,257:INFO:7_______TEST (USER) BEGAN_______7:
-2024-07-25 22:13:27,258:INFO:Sending get request to the server.:
-2024-07-25 22:13:28,377:ERROR:Jira issue not created: JiraError HTTP 401 url: https://majd173.atlassian.net/rest/api/2/issue
-	text: You do not have permission to create issues in this project.
-	
-	response headers = {'Date': 'Thu, 25 Jul 2024 19:13:28 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Server': 'AtlassianEdge', 'Timing-Allow-Origin': '*', 'X-Arequestid': '557c53ffa77309c5fce5db2e3457c846', 'X-Seraph-Loginreason': 'AUTHENTICATED_FAILED', 'Cache-Control': 'no-cache, no-store, no-transform', 'Www-Authenticate': 'OAuth realm="https%3A%2F%2Fmajd173.atlassian.net", OAuth realm="https%3A%2F%2Fmajd173.atlassian.net"', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': 'c269ab9a8e52486cbe659e75d90691bf', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}', 'Transfer-Encoding': 'chunked'}
-	response text = {"errorMessages":["You do not have permission to create issues in this project."],"errors":{}}:
-2024-07-25 22:13:28,377:INFO:_______TEST COMPLETED_______:
-2024-07-25 22:14:06,336:INFO:Creating connection in process.:
-2024-07-25 22:14:06,343:INFO:Sending post request.:
-2024-07-25 22:14:06,970:INFO:7_______TEST (USER) BEGAN_______7:
-2024-07-25 22:14:06,970:INFO:Sending get request to the server.:
-2024-07-25 22:14:08,086:ERROR:Jira issue not created: JiraError HTTP 401 url: https://majd173.atlassian.net/rest/api/2/issue
-	text: You do not have permission to create issues in this project.
-	
-	response headers = {'Date': 'Thu, 25 Jul 2024 19:14:07 GMT', 'Content-Type': 'application/json;charset=UTF-8', 'Server': 'AtlassianEdge', 'Timing-Allow-Origin': '*', 'X-Arequestid': '14519d89371d7cc95d2e2af29d60dbe8', 'X-Seraph-Loginreason': 'AUTHENTICATED_FAILED', 'Cache-Control': 'no-cache, no-store, no-transform', 'Www-Authenticate': 'OAuth realm="https%3A%2F%2Fmajd173.atlassian.net", OAuth realm="https%3A%2F%2Fmajd173.atlassian.net"', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'Atl-Traceid': '17ec7399fac544f2aae9a5fc01c0fac8', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains; preload', 'Report-To': '{"endpoints": [{"url": "https://dz8aopenkvv6s.cloudfront.net"}], "group": "endpoint-1", "include_subdomains": true, "max_age": 600}', 'Nel': '{"failure_fraction": 0.001, "include_subdomains": true, "max_age": 600, "report_to": "endpoint-1"}', 'Transfer-Encoding': 'chunked'}
-	response text = {"errorMessages":["You do not have permission to create issues in this project."],"errors":{}}:
-2024-07-25 22:14:08,086:INFO:_______TEST COMPLETED_______:
-2024-07-25 22:18:11,069:INFO:Creating connection in process.:
-2024-07-25 22:18:11,075:INFO:Sending post request.:
-2024-07-25 22:18:13,308:INFO:7_______TEST (USER) BEGAN_______7:
-2024-07-25 22:18:13,308:INFO:Sending get request to the server.:
-2024-07-25 22:18:15,183:INFO:_______TEST COMPLETED_______:
-2024-07-25 22:18:24,814:INFO:Creating connection in process.:
-2024-07-25 22:18:24,823:INFO:Sending post request.:
-2024-07-25 22:18:25,442:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-25 22:18:26,733:INFO:_______TEST COMPLETED_______:
-2024-07-25 22:18:36,695:INFO:Creating connection in process.:
-2024-07-25 22:18:36,708:INFO:Sending post request.:
-2024-07-25 22:18:37,302:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-25 22:18:38,454:INFO:_______TEST COMPLETED_______:
-2024-07-26 00:38:18,950:INFO:Creating connection in process.:
-2024-07-26 00:38:18,954:INFO:Sending post request.:
-2024-07-26 00:38:21,501:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-26 00:38:22,848:INFO:_______TEST COMPLETED________:
-2024-07-26 00:40:11,956:INFO:Creating connection in process.:
-2024-07-26 00:40:11,991:INFO:Sending post request.:
-2024-07-26 00:40:13,915:INFO:9_______TEST (USER) BEGAN_______9:
-2024-07-26 00:40:15,280:INFO:_______TEST COMPLETED________:
+2024-07-26 12:05:46,891:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-26 12:05:46,891:INFO:Sending post request.:
+2024-07-26 12:05:50,787:INFO:Creating database connection in process.:
+2024-07-26 12:05:50,788:INFO:Database connection created.:
+2024-07-26 12:05:50,788:INFO:Creating users table in process.:
+2024-07-26 12:05:50,788:INFO:Executing database query in process.:
+2024-07-26 12:05:50,826:ERROR:Users table not dropped.:
+2024-07-26 12:05:50,827:INFO:Executing database query in process.:
+2024-07-26 12:05:50,834:ERROR:Users table not created.:
+2024-07-26 12:05:50,835:INFO:Executing database query in process.:
+2024-07-26 12:05:50,842:INFO:Closing database connection in process.:
+2024-07-26 12:05:51,300:INFO:Creating Jira issue...:
+2024-07-26 12:05:52,439:INFO:Jira issue created: AABB-19:
+2024-07-26 12:05:52,439:INFO:_______TEST COMPLETED________
+:
+2024-07-26 12:06:23,248:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-26 12:06:23,249:INFO:Sending post request.:
+2024-07-26 12:06:23,965:INFO:Creating database connection in process.:
+2024-07-26 12:06:23,966:INFO:Database connection created.:
+2024-07-26 12:06:23,966:INFO:Creating users table in process.:
+2024-07-26 12:06:23,966:INFO:Executing database query in process.:
+2024-07-26 12:06:23,967:ERROR:Users table not dropped.:
+2024-07-26 12:06:23,968:INFO:Executing database query in process.:
+2024-07-26 12:06:23,977:ERROR:Users table not created.:
+2024-07-26 12:06:23,978:INFO:Executing database query in process.:
+2024-07-26 12:06:23,984:INFO:Closing database connection in process.:
+2024-07-26 12:06:24,367:INFO:Creating Jira issue...:
+2024-07-26 12:06:25,607:INFO:Jira issue created: AABB-20:
+2024-07-26 12:06:25,608:INFO:_______TEST COMPLETED________
+:
+2024-07-26 12:11:14,723:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-26 12:11:14,724:INFO:Sending post request.:
+2024-07-26 12:11:17,240:INFO:Creating database connection in process.:
+2024-07-26 12:11:17,241:INFO:Database connection created.:
+2024-07-26 12:11:17,241:INFO:Creating users table in process.:
+2024-07-26 12:11:17,241:INFO:Executing database query in process.:
+2024-07-26 12:11:17,278:INFO:Users table dropped.:
+2024-07-26 12:11:17,278:INFO:Executing database query in process.:
+2024-07-26 12:11:17,285:ERROR:Users table not created.:
+2024-07-26 12:11:17,285:INFO:Executing database query in process.:
+2024-07-26 12:11:17,293:INFO:Closing database connection in process.:
+2024-07-26 12:11:17,651:INFO:Creating Jira issue...:
+2024-07-26 12:11:18,760:INFO:Jira issue created: AABB-21:
+2024-07-26 12:11:18,761:INFO:_______TEST COMPLETED________
+:

@@ -1,6 +1,5 @@
 import logging
 import requests
-from api.pet_store.logic.entity.user_details import UserDetails
 from api.pet_store.infra.api_wrapper import ApiWrapper
 from api.pet_store.infra.config_provider import ConfigProvider
 from api.pet_store.logic.entity.user_details import UserDetails
@@ -23,10 +22,6 @@ class UserPage:
             self._config = ConfigProvider().load_from_file(
                 r"C:\Users\Admin\Desktop\Automation_bootcamp\api\pet_store\pet_store.json")
             self._url = self._config['base_url']
-            self._user_database = UserDataBase(self._config['user_database'])
-            self._user_database.create_connection()
-            self._user_database.create_users_table(self._config['user_details'])
-            self._user_database.execute_query('DELETE FROM users')
         except ImportError:
             logging.error(f'Import error: {ImportError}')
 
@@ -66,10 +61,12 @@ class UserPage:
             response = self._request.post_request(
                 f'{self._config['base_url']}{self.USER_CREATE}',
                 [user.to_dict()])
-            self._user_database.execute_query("INSERT INTO users("
-                            "username,firstname,lastname,userStatus) VALUES(?,?,?,?)",
+            user_database = UserDataBase(self._config['user_database'])
+            user_database.create_connection()
+            user_database.create_users_table(self._config['users_table'])
+            user_database.execute_query(self._config['user_insertion'],
                     (user.username, user.firstname, user.lastname, user.user_status))
-            self._user_database.execute_read_query("SELECT * FROM users")
+            user_database.close_connection()
             return response
         except requests.RequestException as e:
             logging.error(f'Post request has not been sent.: {e}')

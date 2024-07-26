@@ -1,4 +1,5 @@
 from jira import JIRA
+import logging
 from api.pet_store.infra.config_provider import ConfigProvider
 
 
@@ -24,4 +25,18 @@ class JiraHandler:
         }
 
         return self._auth_jira.create_issue(fields=issue_dict)
+
+    def create_jira_issue_teardown(self, project_key, summary, description, issuetype):
+        jira_flag = JiraHandler()
+        try:
+            logging.info("Creating Jira issue...")
+            issue = jira_flag.create_issue(
+                project_key, summary,
+                description, issuetype)
+            if issue:
+                logging.info("Jira issue created: " + issue.key)
+            else:
+                logging.info("Jira issue not created")
+        except Exception as e:
+            logging.error(f'Jira issue not created: {e}')
 
