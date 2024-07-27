@@ -28,6 +28,9 @@ class TestPet(unittest.TestCase):
     # Setting up URL and base details fot adding and getting a username.
 
     def tearDown(self):
+        """
+        Logging that the test is completed and creating a jira issue.
+        """
         self._jira_flag.create_issue(
             'AABB', 'test_add_pet',
             'Make sure to add pet to the database.', 'Task')
