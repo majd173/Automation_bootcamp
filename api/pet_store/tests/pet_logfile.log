@@ -1,0 +1,73 @@
+2024-07-26 23:16:14,869:INFO:1_______TEST (PET]) BEGAN_______1:
+2024-07-26 23:16:14,869:INFO:Sending get request to the server.:
+2024-07-26 23:16:19,080:INFO:_______TEST COMPLETED_______:
+2024-07-27 00:05:44,150:INFO:2_______TEST (PET) BEGAN_______2:
+2024-07-27 00:05:44,150:INFO:Sending post request to the server.:
+2024-07-27 00:05:46,344:INFO:_______TEST COMPLETED_______:
+2024-07-27 00:05:46,756:INFO:3_______TEST (PET) BEGAN_______3:
+2024-07-27 00:05:46,756:INFO:Sending get request to the server.:
+2024-07-27 00:05:48,309:INFO:_______TEST COMPLETED_______:
+2024-07-27 00:05:48,785:INFO:1_______TEST (PET]) BEGAN_______1:
+2024-07-27 00:05:48,819:INFO:Sending get request to the server.:
+2024-07-27 00:05:50,639:INFO:_______TEST COMPLETED_______:
+2024-07-27 00:05:50,999:INFO:Sending post request to the server.:
+2024-07-27 00:05:51,620:INFO:4_______TEST (STORE) BEGAN_______4:
+2024-07-27 00:05:51,621:INFO:Sending get request to the server.:
+2024-07-27 00:05:52,694:INFO:Creating Jira issue...:
+2024-07-27 00:05:53,669:INFO:Jira issue created: AABB-39:
+2024-07-27 00:05:53,669:INFO:_______TEST COMPLETED_______:
+2024-07-27 00:05:54,004:INFO:Sending post request to the server.:
+2024-07-27 00:05:54,644:INFO:5_______TEST (STORE) BEGAN_______5:
+2024-07-27 00:05:55,051:INFO:Creating Jira issue...:
+2024-07-27 00:05:56,082:INFO:Jira issue created: AABB-40:
+2024-07-27 00:05:56,082:INFO:_______TEST COMPLETED_______:
+2024-07-27 00:05:56,444:INFO:Sending post request to the server.:
+2024-07-27 00:05:57,062:INFO:6_______TEST (STORE) BEGAN_______6:
+2024-07-27 00:05:57,062:INFO:Sending get request to the server.:
+2024-07-27 00:05:58,053:INFO:Creating Jira issue...:
+2024-07-27 00:05:59,101:INFO:Jira issue created: AABB-41:
+2024-07-27 00:05:59,102:INFO:_______TEST COMPLETED_______:
+2024-07-27 00:05:59,147:INFO:Creating database connection in process.:
+2024-07-27 00:05:59,147:INFO:Database connection created.:
+2024-07-27 00:05:59,147:INFO:Creating table in process.:
+2024-07-27 00:05:59,147:INFO:Executing database query in process.:
+2024-07-27 00:05:59,147:INFO:Database query executed.:
+2024-07-27 00:05:59,147:INFO:Table created.:
+2024-07-27 00:05:59,502:INFO:9_______TEST (USER) BEGAN_______9:
+2024-07-27 00:05:59,502:INFO:Sending post request.:
+2024-07-27 00:06:00,129:INFO:Executing database query in process.:
+2024-07-27 00:06:00,133:INFO:Executing database query in process.:
+2024-07-27 00:06:00,138:INFO:Database query executed.:
+2024-07-27 00:06:00,142:INFO:Closing database connection in process.:
+2024-07-27 00:06:00,143:INFO:_______TEST COMPLETED________
+:
+2024-07-27 00:06:00,151:INFO:Creating database connection in process.:
+2024-07-27 00:06:00,152:INFO:Database connection created.:
+2024-07-27 00:06:00,152:INFO:Creating table in process.:
+2024-07-27 00:06:00,152:INFO:Executing database query in process.:
+2024-07-27 00:06:00,153:INFO:Database query executed.:
+2024-07-27 00:06:00,153:INFO:Table created.:
+2024-07-27 00:06:00,474:INFO:10_______TEST (USER) BEGAN_______10:
+2024-07-27 00:06:00,490:INFO:Sending get request to the server.:
+2024-07-27 00:06:01,112:INFO:_______TEST COMPLETED________
+:
+2024-07-27 00:06:01,126:INFO:Creating database connection in process.:
+2024-07-27 00:06:01,127:INFO:Database connection created.:
+2024-07-27 00:06:01,127:INFO:Creating table in process.:
+2024-07-27 00:06:01,127:INFO:Executing database query in process.:
+2024-07-27 00:06:01,128:INFO:Database query executed.:
+2024-07-27 00:06:01,128:INFO:Table created.:
+2024-07-27 00:06:01,434:INFO:7_______TEST (USER) BEGAN_______7:
+2024-07-27 00:06:01,434:INFO:Sending get request to the server.:
+2024-07-27 00:06:02,049:INFO:_______TEST COMPLETED________
+:
+2024-07-27 00:06:02,091:INFO:Creating database connection in process.:
+2024-07-27 00:06:02,091:INFO:Database connection created.:
+2024-07-27 00:06:02,091:INFO:Creating table in process.:
+2024-07-27 00:06:02,092:INFO:Executing database query in process.:
+2024-07-27 00:06:02,092:INFO:Database query executed.:
+2024-07-27 00:06:02,092:INFO:Table created.:
+2024-07-27 00:06:02,453:INFO:8_______TEST (USER) BEGAN_______8:
+2024-07-27 00:06:02,453:INFO:Sending get request to the server.:
+2024-07-27 00:06:03,081:INFO:_______TEST COMPLETED________
+:

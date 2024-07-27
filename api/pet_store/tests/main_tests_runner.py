@@ -3,7 +3,7 @@ import unittest
 if __name__ == '__main__':
 
     test_loader = unittest.TestLoader()
-    test_suite = test_loader.discover(start_dir='tests', pattern='test*.py')
+    test_suite = test_loader.discover(start_dir='', pattern='test*.py')
 
 
     # Run the tet suite.
