@@ -27,9 +27,9 @@ class TestStore(unittest.TestCase):
         self._order_response = self._pet_store.store_order_add(self._order_details)
 
     def tearDown(self):
-        self._jira_flag.create_jira_issue_teardown(
-            'AABB', 'test_store_order_add',
-            'Make sure to add order to the database', 'Task')
+        # self._jira_flag.create_jira_issue_teardown(
+        #     self._config['jira_key'], 'test_store_order_add',
+        #     'Make sure to add order to the database', 'Task')
         logging.info("_______TEST COMPLETED_______")
 
     # --------------------------------------------------------------------------------------

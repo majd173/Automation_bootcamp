@@ -4,3 +4,17 @@
 2024-07-18 01:02:29,089:INFO:_______Test Began_______:
 2024-07-18 01:03:43,846:INFO:_______Test Began_______:
 2024-07-18 01:04:18,965:INFO:_______Test (test_back_of_cards) Began_______:
+2024-07-28 01:03:36,372:INFO:_______Test (test_a_partial_deck) Began_______:
+2024-07-28 01:03:38,128:INFO:Status request have ben got.:
+2024-07-28 01:03:38,855:INFO:json request have ben got.:
+2024-07-28 01:05:02,106:INFO:_______Test (test_a_partial_deck) Began_______:
+2024-07-28 01:05:03,644:INFO:Status request have ben got.:
+2024-07-28 01:05:04,354:INFO:json request have ben got.:
+2024-07-28 01:05:04,354:INFO:_______Test (test_back_of_cards) Began_______:
+2024-07-28 01:05:05,705:INFO:Status request have been got.:
+2024-07-28 01:05:05,736:INFO:_______Test (test_draw_a_card) Began_______:
+2024-07-28 01:05:07,225:INFO:Status request have been got.:
+2024-07-28 01:05:07,792:INFO:json request have been got.:
+2024-07-28 01:05:07,808:INFO:_______Test (test_shuffle_the_cards) Began_______:
+2024-07-28 01:05:09,035:INFO:Status request have been got.:
+2024-07-28 01:05:09,477:INFO:json request have been got.:

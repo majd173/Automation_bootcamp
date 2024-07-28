@@ -33,7 +33,7 @@ class TestUser(unittest.TestCase):
 
     def tearDown(self):
         # self._jira_flag.create_jira_issue_teardown(
-        #     'AABB', 'test_add_users_list', 'Make sure database was created', 'Task')
+        #     'self._config["jira_key"]', 'test_add_users_list', 'Make sure database was created', 'Task')
         logging.info("_______TEST COMPLETED________\n")
     # --------------------------------------------------------------------------------------
 

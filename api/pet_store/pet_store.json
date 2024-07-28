@@ -25,5 +25,6 @@
     "user_insertion" : "INSERT INTO users(id,username,firstname,lastname,userStatus) VALUES(?,?,?,?,?)",
 
     "jira_url" : "https://majd173.atlassian.net/",
-    "jira_mail" : "majdb173@gmail.com"
+    "jira_mail" : "majdb173@gmail.com",
+    "jira_key" : 'AABB'
 }

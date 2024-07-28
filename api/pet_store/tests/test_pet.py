@@ -31,9 +31,9 @@ class TestPet(unittest.TestCase):
         """
         Logging that the test is completed and creating a jira issue.
         """
-        self._jira_flag.create_issue(
-            'AABB', 'test_add_pet',
-            'Make sure to add pet to the database.', 'Task')
+        # self._jira_flag.create_issue(
+        #     self._config['jira_key'], 'test_add_pet',
+        #     'Make sure to add pet to the database.', 'Task')
         logging.info("_______TEST COMPLETED_______")
 
     # --------------------------------------------------------------------------------------
