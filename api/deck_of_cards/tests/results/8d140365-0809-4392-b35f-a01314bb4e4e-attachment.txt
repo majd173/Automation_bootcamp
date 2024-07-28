@@ -1,0 +1,3 @@
+[32mINFO    [0m root:test_deck_of_cards.py:38 _______Test (test_a_partial_deck) Began_______
+[32mINFO    [0m root:deck_of_cards_web.py:108 Status request have ben got.
+[32mINFO    [0m root:deck_of_cards_web.py:100 json request have ben got.

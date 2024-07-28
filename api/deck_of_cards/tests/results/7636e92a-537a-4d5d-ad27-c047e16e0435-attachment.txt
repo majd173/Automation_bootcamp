@@ -1,0 +1,3 @@
+[32mINFO    [0m root:test_deck_of_cards.py:23 _______Test (test_shuffle_the_cards) Began_______
+[32mINFO    [0m root:deck_of_cards_web.py:57 Status request have been got.
+[32mINFO    [0m root:deck_of_cards_web.py:49 json request have been got.

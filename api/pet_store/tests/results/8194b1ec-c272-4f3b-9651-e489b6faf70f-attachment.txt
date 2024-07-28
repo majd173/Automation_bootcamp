@@ -1,0 +1,3 @@
+[32mINFO    [0m root:test_pet.py:62 2_______TEST (PET) BEGAN_______2
+[32mINFO    [0m root:pet.py:45 Sending post request to the server.
+[32mINFO    [0m root:test_pet.py:34 _______TEST COMPLETED_______

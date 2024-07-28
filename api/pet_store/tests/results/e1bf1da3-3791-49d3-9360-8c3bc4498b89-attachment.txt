@@ -1,0 +1,9 @@
+[32mINFO    [0m root:users_data_base.py:26 Creating database connection in process.
+[32mINFO    [0m root:users_data_base.py:29 Database connection created.
+[32mINFO    [0m root:users_data_base.py:87 Creating table in process.
+[32mINFO    [0m root:users_data_base.py:53 Executing database query in process.
+[32mINFO    [0m root:users_data_base.py:59 Database query executed.
+[32mINFO    [0m root:users_data_base.py:89 Table created.
+[32mINFO    [0m root:test_user.py:62 8_______TEST (USER) BEGAN_______8
+[32mINFO    [0m root:user.py:51 Sending get request to the server.
+[32mINFO    [0m root:test_user.py:37 _______TEST COMPLETED________

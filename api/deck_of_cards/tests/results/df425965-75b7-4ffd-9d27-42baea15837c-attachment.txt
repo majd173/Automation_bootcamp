@@ -1,0 +1,2 @@
+[32mINFO    [0m root:test_deck_of_cards.py:17 _______Test (test_back_of_cards) Began_______
+[32mINFO    [0m root:deck_of_cards_web.py:32 Status request have been got.
