@@ -1,6 +1,8 @@
 import json
 import logging
 from object_oriented_programing.pet_management_system.infra.config_provider import ConfigProvider
+
+
 # from object_oriented_progrmaing.pet_management_system.owner import Owner
 
 
@@ -12,8 +14,8 @@ class Pet:
         self.age = age
         self.owner = owner
         self._vaccinated = vaccinated
-        self._config = ConfigProvider().load_from_file(
-            r'C:\Users\Admin\Desktop\Automation_bootcamp\object_oriented_programing\pet_management_system\pet_store_management.json')
+        self._config_path = r"C:\Users\Admin\Desktop\Automation_bootcamp\object_oriented_programing\pet_management_system\pet_store.json"
+        self._config = ConfigProvider().load_from_file(self._config_path)
 
     @property
     def name(self):
@@ -72,16 +74,6 @@ class Pet:
         except Exception as e:
             logging.error(f'Error checking if pets are equal: {e}')
 
-    def add_pet(self):
-        try:
-            logging.info("Adding a new pet")
-            pet_dict = {'name': self.name, 'species': self.species,
-                        'age': self.age, 'owner': self.owner,
-                        'vaccinated': self._vaccinated}
-            return pet_dict
-        except Exception as e:
-            logging.error(f"Error adding a new pet: {e}")
-
     def total_pets_count(self):
         try:
             logging.info("Counting total pets")
@@ -93,7 +85,10 @@ class Pet:
     def check_pet_is_vaccinated(self):
         try:
             logging.info("Checking pet is vaccinated")
-            return self._vaccinated
+            if self._vaccinated:
+                return True
+            else:
+                return False
         except Exception as e:
             logging.error(f"Error checking pet is vaccinated: {e}")
 
@@ -111,30 +106,33 @@ class Pet:
         except Exception as e:
             logging.error(f"Error retrieving pet age: {e}")
 
-    def save_store(self, pet_file_path):
-        try:
-            with open(pet_file_path, 'w') as file:
-                json.dump(
-                    self._config['owners']['pets'][self.add_pet()], file, indent=1)
-        except Exception as e:
-            print(f"Error saving pet: {e}")
-
-    def load_store(self, pet_file_path):
-        try:
-            with open(pet_file_path, 'r') as file:
-                data = json.load(file)
-                self.name = data['name']
-                self.species = data['species']
-                self.age = data['age']
-                self.owner = data['owner']
-                self._vaccinated = data['vaccinated']
-                return self
-        except FileNotFoundError:
-            return self
-        except Exception as e:
-            print(f"Error loading pet: {e}")
-            return self
+    def pet_to_dict(self):
+        return {
+            "name": self.name,
+            "species": self.species,
+            "age": self.age,
+            "owner": self.owner,
+            "vaccinated": self.vaccinated
+        }
 
 
-# hello = Pet('hello', 4, 9, 'kyle', True)
-# print(hello)
+
+pet_1 = Pet('rex', 'dog', 5, 'john', True)
+pet_2 = Pet('rex', 'dog', 9, 'mark', False)
+pet_3 = Pet('meow', 'cat', 10, 'marcus', True)
+
+print(pet_1 == pet_2)
+print(pet_3 == pet_1)
+
+pet_2.set_pet_vaccinated()
+print(pet_2)
+
+print(pet_1.check_pet_is_vaccinated())
+print(pet_2.check_pet_is_vaccinated())
+print(pet_3.check_pet_is_vaccinated())
+
+print(pet_1.age_retrieve())
+print(pet_2.age_retrieve())
+print(pet_3.age_retrieve())
+
+

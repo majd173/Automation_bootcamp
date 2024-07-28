@@ -1,5 +1,6 @@
 import json
 import logging
+from object_oriented_programing.pet_management_system.infra.logger_setup import LoggingSetup
 
 
 class ConfigProvider:

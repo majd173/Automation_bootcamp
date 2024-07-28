@@ -1,6 +1,7 @@
 import json
 import logging
 from object_oriented_programing.pet_management_system.infra.config_provider import ConfigProvider
+# from object_oriented_programing.pet_management_system.main import Main
 from object_oriented_programing.pet_management_system.pet import Pet
 
 
@@ -9,12 +10,12 @@ class Owner:
     Class for storing owner details
     """
 
-    def __init__(self, name, phone, pets):
+    def __init__(self, name, phone, pets=None):
         self.name = name
         self.phone = phone
-        self.pets = pets
-        self._config = ConfigProvider().load_from_file(
-            r'C:\Users\Admin\Desktop\Automation_bootcamp\object_oriented_programing\pet_management_system\pet_store_management.json')
+        self.pets = pets if pets is not None else []
+        self._config_path = r"C:\Users\Admin\Desktop\Automation_bootcamp\object_oriented_programing\pet_management_system\pet_store.json"
+        self._config = ConfigProvider().load_from_file(self._config_path)
 
     @property
     def name(self):
@@ -43,35 +44,44 @@ class Owner:
     def __str__(self):
         try:
             logging.info("Listing owner details")
-            return f' Owner: {self.name}, {self.phone}, {self.pets}'
+            return f' Owner: {self.name} is an owner with phone number: {self.phone}'
         except Exception as e:
             logging.error(f"Error listing owner details: {e}")
 
+    def owner_to_dict(self):
+        return {
+            "name": self.name,
+            "phone": self.phone,
+            "pets": [pet.pet_to_dict() for pet in self.pets]
+        }
+
     def add_owner(self):
         try:
-            logging.info("Adding a new owner")
-            owner_dict = {'name': self.name, 'phone': self.phone, 'pets': self.pets}
-            return owner_dict
+            logging.info("Adding new owner")
+            self._config["owners"].append(self.owner_to_dict())
+            with open(self._config_path, 'w') as file:
+                json.dump(self._config, file, indent=1)
+                logging.info(f"Owner was added and data saved to json")
         except Exception as e:
-            logging.error(f"Error adding owner: {e}")
+            logging.error(f"Error adding and saving owner: {e}")
 
-
-    def save_owner(self, owner_file_path):
+    def delete_owner(self, owner):
         try:
-            owner_data = self.add_owner()
-            if owner_data is not None:
-                with open(owner_file_path, 'w') as file:
-                    json.dump({'owners': [owner_data]}, file, indent=1)
-                    logging.info(f"Owner data saved to {owner_file_path}")
+            logging.info("Deleting owner")
+            if self._config["owner"][owner] in self._config["owners"]:
+                self._config["owners"].remove(owner)
+                with open(self._config_path, 'w') as file:
+                    json.dump(self._config, file, indent=1)
+                    logging.info(f"Owner was deleted and data saved to json")
             else:
-                logging.error("No owner data to save.")
+                logging.info(f"Owner not found")
+                raise Exception(f"Owner not found: {owner}")
         except Exception as e:
-            logging.error(f"Error saving owner: {e}")
+            logging.error(f"Error deleting owner: {e}")
 
-
-    def load_owner(self, owner_file_path):
+    def load_owner(self):
         try:
-            with open(owner_file_path, 'r') as file:
+            with open(self._config, 'r') as file:
                 data = json.load(file)
                 self.name = data['name']
                 self.phone = data['phone']
@@ -83,5 +93,15 @@ class Owner:
             print(f"Error loading owner: {e}")
             return self
 
-man = Owner('Man', '1234567890', [])
-man.save_owner(r'C:\Users\Admin\Desktop\Automation_bootcamp\object_oriented_programing\pet_management_system\pet_store_management.json')
+
+if __name__ == "__main__":
+    pet_1 = Pet('rex', 'dog', 5, 'john', True)
+    pet_2 = Pet('boby', 'dog', 9, 'john', False)
+    pet_3 = Pet('meow', 'cat', 10, 'mark', True)
+    owner_1 = Owner('john', '0523362356', (pet_1, pet_2))
+    owner_2 = Owner('mark', '0542253236', (pet_3, pet_2))
+    owner_2.add_owner()
+    owner_1.add_owner()
+    # print(owner_1)
+    print(owner_2)
+
