@@ -27,7 +27,7 @@ class TestFileHandling(unittest.TestCase):
         :return : a new created file .
         """
         # ACT
-        created_file = FileProcessingSystem().create_file_write(self.valid_file_name, self.content)
+        created_file = FileProcessingSystem().create_file_and_write(self.valid_file_name, self.content)
         # ASSERT
         self.assertEqual(created_file, self.content)
 
@@ -37,7 +37,7 @@ class TestFileHandling(unittest.TestCase):
         Test load from file.
         """
         # ACT
-        loaded_file = FileProcessingSystem().load_from_file_read(self.valid_file_name)
+        loaded_file = FileProcessingSystem().open_file_and_read(self.valid_file_name)
         # ASSERT
         self.assertEqual(loaded_file, self.content)
 
@@ -45,15 +45,12 @@ class TestFileHandling(unittest.TestCase):
 
     def test_load_from_file_invalid(self):
         """
-        Test load from not exists file.
-        :return:
+        Test load from file.
         """
         # ACT
-        with self.assertRaises(CustomException) as cm:
-            FileProcessingSystem().load_from_file_read(self.invalid_file_name)
-        # ASSERT
-        self.assertEqual(str(cm.exception), self._config['error_content'])
-
+        with self.assertRaises(CustomException) as ce:
+            FileProcessingSystem().open_file_and_read(self.invalid_file_name)
+        self.assertEqual(str(ce.exception), self._config['error_content'])
 
 
 if __name__ == '__main__':

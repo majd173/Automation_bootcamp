@@ -17,40 +17,57 @@ class FileProcessingSystem:
         """
         This function is used to open a file.
         """
-        file = None
         try:
             file = open(file_name, mode)
             yield file
+        except ValueError:
+            raise CustomException(f"Wrong input mode: {mode}.")
         except PermissionError:
             raise CustomException(f"There are no enough permissions.")
         except FileNotFoundError:
             raise CustomException(f"File {file_name} not found.")
+        except Exception:
+            raise CustomException("An error occurred while opening the file.")
+
+
+    #---------------------------------------------------------------------------------
+    def open_file_and_read(self, file):
+        """
+        This function is used to read from a file.
+
+        """
+
+        try:
+            with self.open_file(file, 'r') as file:
+                content = file.read()
+                print(f'File exists, reading the content of the file:\n{content}')
+                return content
+        except FileNotFoundError:
+            raise CustomException(f"File {file} not found.")
         except Exception:
             raise CustomException("An error occurred (maybe an invalid mode input)")
         finally:
             if file and not file.closed:
                 file.close()
 
-    #---------------------------------------------------------------------------------
-    def load_from_file_read(self, file_name):
-        """
-        This function is used to read from a file.
-        :param file_name:
-        :return:
-        """
-        with self.open_file(file_name, 'r') as file:
-            content = file.read()
-            print(f'File exists, reading the content of the file:\n{content}')
-            return content
 
     #---------------------------------------------------------------------------------
 
-    def create_file_write(self, file_name, text):
+    def create_file_and_write(self, file, text):
         """
         This function is used to write a file.
         """
-        with self.open_file(file_name, 'w') as file:
-            file.write(text)
-            print("File was written successfully.")
-            print(f'New written text: {text}')
-            return text
+
+        try:
+            with self.open_file(file, 'w') as file:
+                file.write(text)
+                print("File was written successfully.")
+                print(f'New written text: {text}')
+                return text
+        except FileNotFoundError:
+            raise CustomException(f"File {file} not found.")
+        except Exception:
+            raise CustomException("An error occurred (maybe an invalid mode input)")
+        finally:
+            if file and not file.closed:
+                file.close()
