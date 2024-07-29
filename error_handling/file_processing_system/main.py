@@ -3,6 +3,10 @@ from error_handling.file_processing_system.file_processing_system import FilePro
 
 
 def main():
+    """
+    This is the main function.
+    The customer can choose to read from a file or write to a file.
+    """
     try:
         print("Hello! please choose an option:\n"
               "r = Read from file\n"
@@ -16,10 +20,11 @@ def main():
         elif option == 'w':
             content = input("Content: ")
             FileProcessingSystem().create_file_write(file_name, content)
+
     except KeyboardInterrupt:
         raise CustomException("Invalid input.")
     except Exception:
-        raise CustomException("An error occurred.")
+        raise CustomException("An error occurred (maybe an invalid mode input)")
     finally:
         print("")
 

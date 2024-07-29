@@ -2,5 +2,6 @@
   "file_name" : "exists file",
   "content" : "try to smile even life ignores your smile",
 
-  "invalid_file_name" : "not-exists file"
+  "invalid_file_name" : "not-exists file",
+  "error_content" : "File not-exists file not found."
 }
