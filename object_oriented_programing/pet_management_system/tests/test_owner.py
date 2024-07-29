@@ -1,6 +1,6 @@
 import unittest
-from object_oriented_programing.pet_management_system.infra.config_provider import ConfigProvider
-from object_oriented_programing.pet_management_system.owner import Owner
+from object_oriented_programing.pet_management_system.src.utilities.config_provider import ConfigProvider
+from object_oriented_programing.pet_management_system.src.owner.owner import Owner
 
 
 

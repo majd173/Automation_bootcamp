@@ -1,7 +1,5 @@
-import argparse
-import logging  # Error handling and recording adding/editing/removing a book.
-from flask import Flask, render_template, request, redirect, url_for
-from pet import Pet
+from flask import Flask, render_template
+from object_oriented_programing.pet_management_system.src.pet.pet import Pet
 
 app = Flask(__name__)
 pet_file_path = 'pets.json'

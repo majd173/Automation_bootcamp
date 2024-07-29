@@ -1,6 +1,6 @@
 import logging
 
-from object_oriented_programing.pet_management_system.pet import Pet
+from object_oriented_programing.pet_management_system.src.pet.pet import Pet
 
 
 class Dog(Pet):

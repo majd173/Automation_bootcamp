@@ -1,14 +1,11 @@
-import json
 import logging
-from object_oriented_programing.pet_management_system.infra.config_provider import ConfigProvider
-
-
-# from object_oriented_progrmaing.pet_management_system.owner import Owner
+from object_oriented_programing.pet_management_system.src.classes.owner import Owner
+from object_oriented_programing.pet_management_system.src.utilities.config_provider import ConfigProvider
 
 
 class Pet:
 
-    def __init__(self, name, species, age, owner, vaccinated):
+    def __init__(self, name, species, age, owner: Owner, vaccinated):
         self.name = name
         self.species = species
         self.age = age
@@ -116,7 +113,6 @@ class Pet:
         }
 
 
-
 pet_1 = Pet('rex', 'dog', 5, 'john', True)
 pet_2 = Pet('rex', 'dog', 9, 'mark', False)
 pet_3 = Pet('meow', 'cat', 10, 'marcus', True)
@@ -134,5 +130,3 @@ print(pet_3.check_pet_is_vaccinated())
 print(pet_1.age_retrieve())
 print(pet_2.age_retrieve())
 print(pet_3.age_retrieve())
-
-

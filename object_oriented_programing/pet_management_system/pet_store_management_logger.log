@@ -598,3 +598,51 @@
 2024-07-29 00:14:21,650:INFO:Adding new owner:
 2024-07-29 00:14:21,651:INFO:Owner was added and data saved to json:
 2024-07-29 00:14:21,651:INFO:Listing owner details:
+2024-07-29 09:03:43,538:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:03:43,538:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:03:43,538:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:03:43,538:INFO:Checking if pets ar equal.:
+2024-07-29 09:03:43,539:INFO:Checking if pets ar equal.:
+2024-07-29 09:03:43,539:INFO:Setting pet as vaccinated:
+2024-07-29 09:03:43,539:INFO:listing pet details:
+2024-07-29 09:03:43,539:INFO:Checking pet is vaccinated:
+2024-07-29 09:03:43,539:INFO:Checking pet is vaccinated:
+2024-07-29 09:03:43,539:INFO:Checking pet is vaccinated:
+2024-07-29 09:03:43,539:INFO:Retrieving pet age:
+2024-07-29 09:03:43,539:INFO:Retrieving pet age:
+2024-07-29 09:03:43,539:INFO:Retrieving pet age:
+2024-07-29 09:03:43,539:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:03:43,539:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:03:43,539:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:03:43,539:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:03:43,539:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:03:43,539:INFO:Adding new owner:
+2024-07-29 09:03:43,539:ERROR:Error adding and saving owner: 'NoneType' object is not subscriptable:
+2024-07-29 09:03:43,539:INFO:Adding new owner:
+2024-07-29 09:03:43,539:ERROR:Error adding and saving owner: 'NoneType' object is not subscriptable:
+2024-07-29 09:03:43,540:INFO:Listing owner details:
+2024-07-29 09:03:43,540:INFO:Listing owner details:
+2024-07-29 09:07:51,879:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:07:51,880:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:07:51,880:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:07:51,880:INFO:Checking if pets ar equal.:
+2024-07-29 09:07:51,880:INFO:Checking if pets ar equal.:
+2024-07-29 09:07:51,880:INFO:Setting pet as vaccinated:
+2024-07-29 09:07:51,880:INFO:listing pet details:
+2024-07-29 09:07:51,880:INFO:Checking pet is vaccinated:
+2024-07-29 09:07:51,880:INFO:Checking pet is vaccinated:
+2024-07-29 09:07:51,880:INFO:Checking pet is vaccinated:
+2024-07-29 09:07:51,880:INFO:Retrieving pet age:
+2024-07-29 09:07:51,880:INFO:Retrieving pet age:
+2024-07-29 09:07:51,880:INFO:Retrieving pet age:
+2024-07-29 09:07:51,881:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:07:51,881:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:07:51,881:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:07:51,881:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:07:51,881:ERROR:File /object_oriented_programing/pet_management_system/pet_store.json not found. Starting with an empty library.:
+2024-07-29 09:07:51,881:INFO:Adding new owner:
+2024-07-29 09:07:51,881:ERROR:Error adding and saving owner: 'NoneType' object is not subscriptable:
+2024-07-29 09:07:51,881:INFO:Adding new owner:
+2024-07-29 09:07:51,881:ERROR:Error adding and saving owner: 'NoneType' object is not subscriptable:
+2024-07-29 09:07:51,881:INFO:Listing owner details:
+2024-07-29 09:07:51,881:INFO:Listing owner details:

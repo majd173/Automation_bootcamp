@@ -1,8 +1,6 @@
 import json
 import logging
-from object_oriented_programing.pet_management_system.infra.config_provider import ConfigProvider
-# from object_oriented_programing.pet_management_system.main import Main
-from object_oriented_programing.pet_management_system.pet import Pet
+from object_oriented_programing.pet_management_system.src.utilities.config_provider import ConfigProvider
 
 
 class Owner:
@@ -80,6 +78,7 @@ class Owner:
             logging.error(f"Error deleting owner: {e}")
 
     def load_owner(self):
+        from object_oriented_programing.pet_management_system.src.classes.pet import Pet
         try:
             with open(self._config, 'r') as file:
                 data = json.load(file)
@@ -95,13 +94,16 @@ class Owner:
 
 
 if __name__ == "__main__":
-    pet_1 = Pet('rex', 'dog', 5, 'john', True)
-    pet_2 = Pet('boby', 'dog', 9, 'john', False)
-    pet_3 = Pet('meow', 'cat', 10, 'mark', True)
+    from object_oriented_programing.pet_management_system.src.classes.pet import Pet
+    pet_1 = Pet('rex', 'dog', 5, '1', True)
+    pet_2 = Pet('boby', 'dog', 9, '1', False)
+    pet_3 = Pet('meow', 'cat', 10, '1', True)
+    pet_4 = Pet('adad', 'owl', 10, '1', True)
     owner_1 = Owner('john', '0523362356', (pet_1, pet_2))
     owner_2 = Owner('mark', '0542253236', (pet_3, pet_2))
+    owner_4 = Owner('marcus', '0542253236', (pet_4, pet_1))
     owner_2.add_owner()
     owner_1.add_owner()
-    # print(owner_1)
+    print(owner_1)
     print(owner_2)
 

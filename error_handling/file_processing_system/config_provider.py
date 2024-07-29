@@ -1,6 +1,4 @@
 import json
-import logging
-from object_oriented_programing.pet_management_system.infra.logger_setup import LoggingSetup
 
 
 class ConfigProvider:
@@ -12,4 +10,4 @@ class ConfigProvider:
             with open(filename, 'r') as f:
                 return json.load(f)
         except FileNotFoundError:
-            logging.error(f"File {filename} not found. Starting with an empty library.")
+            print(f"File {filename} not found. Starting with an empty library.")
