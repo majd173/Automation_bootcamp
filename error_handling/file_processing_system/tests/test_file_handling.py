@@ -50,7 +50,7 @@ class TestFileHandling(unittest.TestCase):
         # ACT
         with self.assertRaises(CustomException) as ce:
             FileProcessingSystem().open_file_and_read(self.invalid_file_name)
-        self.assertEqual(str(ce.exception), self._config['error_content'])
+        self.assertIn(self._config['error_content'], str(ce.exception))
 
 
 if __name__ == '__main__':

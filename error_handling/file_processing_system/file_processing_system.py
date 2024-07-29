@@ -42,14 +42,8 @@ class FileProcessingSystem:
                 content = file.read()
                 print(f'File exists, reading the content of the file:\n{content}')
                 return content
-        except FileNotFoundError:
-            raise CustomException(f"File {file} not found.")
-        except Exception:
-            raise CustomException("An error occurred (maybe an invalid mode input)")
-        finally:
-            if file and not file.closed:
-                file.close()
-
+        except CustomException as ce:
+            raise ce
 
     #---------------------------------------------------------------------------------
 
@@ -68,6 +62,4 @@ class FileProcessingSystem:
             raise CustomException(f"File {file} not found.")
         except Exception:
             raise CustomException("An error occurred (maybe an invalid mode input)")
-        finally:
-            if file and not file.closed:
-                file.close()
+
