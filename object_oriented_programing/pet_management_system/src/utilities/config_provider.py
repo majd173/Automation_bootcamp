@@ -16,7 +16,7 @@ class ConfigProvider:
     @staticmethod
     def create_a_file(filename):
         try:
-            with open(filename, 'x') as f:
+            with open(filename, 'w') as f:
                 return json.dump({"owners": []}, f)
         except Exception as e:
             logging.error(f"Error creating json file: {e}")

@@ -1,11 +1,11 @@
 import logging
 
-from object_oriented_programing.pet_management_system.src.pet.pet import Pet
+from object_oriented_programing.pet_management_system.src.classes.pet import Pet
 
 
 class Dog(Pet):
-    def __init__(self, breed):
-        super().__init__(self.name, self.species, self.age, self.owner, self._vaccinated)
+    def __init__(self, name, species, age, owner, vaccinated, breed):
+        super().__init__(name, species, age, owner, vaccinated)
         self.breed = breed
 
     @property

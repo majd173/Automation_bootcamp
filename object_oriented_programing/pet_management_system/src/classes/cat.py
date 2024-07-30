@@ -1,11 +1,11 @@
-from object_oriented_programing.pet_management_system.src.pet.pet import Pet
+from object_oriented_programing.pet_management_system.src.classes.pet import Pet
 import logging
 
 
 class Cat(Pet):
 
-    def __init__(self, indoor):
-        super().__init__(self.name, self.species, self.age, self.owner, self._vaccinated)
+    def __init__(self, name, species, age, owner, vaccinated, indoor):
+        super().__init__(name, species, age, owner, vaccinated)
         self.indoor = indoor
 
     @property

@@ -28,7 +28,8 @@ class FileProcessingSystem:
             raise CustomException(f"File {file_name} not found.")
         except Exception:
             raise CustomException("An error occurred while opening the file.")
-
+        finally:
+            file.close()
 
     #---------------------------------------------------------------------------------
     def open_file_and_read(self, file):
@@ -42,6 +43,8 @@ class FileProcessingSystem:
                 content = file.read()
                 print(f'File exists, reading the content of the file:\n{content}')
                 return content
+        except FileNotFoundError:
+            raise CustomException(f"File {file} not found.")
         except CustomException as ce:
             raise ce
 

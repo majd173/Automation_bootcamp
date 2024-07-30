@@ -1,0 +1,24 @@
+{
+ "owners": [
+  {
+   "name": "john",
+   "phone": "0523362356",
+   "pets": [
+    {
+     "name": "rex",
+     "species": "dog",
+     "age": 5,
+     "owner": "1",
+     "vaccinated": true
+    },
+    {
+     "name": "boby",
+     "species": "dog",
+     "age": 9,
+     "owner": "1",
+     "vaccinated": false
+    }
+   ]
+  }
+ ]
+}
