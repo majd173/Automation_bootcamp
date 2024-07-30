@@ -11,11 +11,12 @@ class Owner:
     def __init__(self, name, phone, pets=None):
         self.name = name
         self.phone = phone
-        self.pets = pets if pets is not None else []
-        self._load_config_path = "../../pet_store_management.json"
-        self._load_config = ConfigProvider().load_from_file(self._load_config_path)
-        # self._save_config_path = "../../pet_store_management.json"
-        # self._save_config = ConfigProvider().create_a_file(self._save_config_path)
+        if pets is None:
+            pets = []
+        self.pets = pets
+        self._config_path = "../../pet_store_management.json"
+        self._config = ConfigProvider().load_from_file(self._config_path)
+
 
     @property
     def name(self):
@@ -57,15 +58,39 @@ class Owner:
 
     def add_owner(self):
         try:
+            from object_oriented_programing.pet_management_system.src.classes.pet import Pet
             logging.info("Adding new owner")
-            with open(self._load_config_path, '+') as file:
-                json.dump({"owners": [self.owner_to_dict()]}, file, indent=1)
-                self._load_config.save_to_file(self._load_config_path)
-                logging.info(f"Owner was added and data saved to json")
+            with open(self._config_path, 'r') as file:
+                data = json.load(file)
+                # Ensure data structure
+                if "owners" not in data:
+                    data["owners"] = []
+                if "pets" not in data:
+                    data["pets"] = []
+
+                # Append new owner
+                added_owner = self.owner_to_dict()
+                if self.name not in [owner["name"] for owner in data["owners"]]:
+                    data["owners"].append(added_owner)
+                else:
+                    logging.error(f"Owner already exists: {self.name}")
+                    raise ValueError(f"Owner already exists: {self.name}")
+
+                # Append new pets if not already present
+                existing_pets = {pet["name"]: pet for pet in data["pets"]}
+                for pet in self.pets:
+                    pet_dict = pet.pet_to_dict()
+                    if pet.name not in existing_pets:
+                        data["pets"].append(pet_dict)
+                    else:
+                        logging.error(f"Pet already exists: {pet.name}")
+                        raise ValueError(f"Pet already exists: {pet.name}")
+            with open(self._config_path, 'w') as file:
+                json.dump(data, file, indent=1)
+                logging.info(f"Owner/s And Pet/s were added and data saved to json")
         except Exception as e:
             logging.error(f"Error adding and saving owner: {e}")
 
-    # Open delete and load functions.
     # def delete_owner(self, owner):
     #     try:
     #         logging.info("Deleting owner")
@@ -80,21 +105,6 @@ class Owner:
     #     except Exception as e:
     #         logging.error(f"Error deleting owner: {e}")
 
-    # def load_owner(self):
-    #     from object_oriented_programing.pet_management_system.src.classes.pet import Pet
-    #     try:
-    #         with open(self._load_config, 'r') as file:
-    #             data = json.load(file)
-    #             self.name = data['name']
-    #             self.phone = data['phone']
-    #             self.pets = [Pet(**pet_data) for pet_data in data['pets']]
-    #             return self
-    #     except FileNotFoundError:
-    #         raise 'File not found.'
-    #     except Exception as e:
-    #         print(f"Error loading owner: {e}")
-    #         return selfsdsd
-
 
 if __name__ == "__main__":
     from object_oriented_programing.pet_management_system.src.classes.pet import Pet
@@ -105,5 +115,3 @@ if __name__ == "__main__":
     owner_2 = Owner('mark', '2256523262', [pet_1])
     owner_2.add_owner()
     owner_1.add_owner()
-
-
