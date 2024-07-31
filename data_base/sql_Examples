@@ -1,0 +1,27 @@
+# An example of some functions.
+
+SELECT title, author FROM books
+INSERT INTO books (name, available_copies) VALUES ('The Greatest Gatsby', 5)
+UPDATE books SET available_copies = 8 WHERE name = 'The Greatest Gatsby'
+
+DELETE FROM books WHERE name = 'The Greatest Gatsby'
+
+
+SELECT customers.customername FROM customers WHERE customers.customerid IN(SELECT orders.customerid FROM orders WHERE orders.orderamount > 400)
+
+
+# 1
+SELECT SUM(amount) AS totalamount FROM sales;
+# 2
+select CUSTOMERID, count(*) AS totaltransactions from sales GROUP BY customerid;
+# 3
+SELECT MAX(amount) AS maxamount FROM sales;
+# 4
+SELECT customerid FROM sales GROUP BY customerid HAVING SUM(amount) > 300;
+
+
+CREATE TABLE IF NOT EXISITS products('productid INTEGER PRIMARY KEY, name VARCHAR(250), price DECIMAL(10,2))')
+CRETE TABLE IF NOT EXISTS orderdetails('orderdetailsid INTEGER PRIMARY KEY,'
+                                       ' quantity INTEGER, FOREIGN KEY(orderid) REFERENCES orders(orderid),'
+                                       ' FOREIGN KEY(productid) REFERENCES products(productid))
+
