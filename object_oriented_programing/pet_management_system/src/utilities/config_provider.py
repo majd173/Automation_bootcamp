@@ -13,6 +13,7 @@ class ConfigProvider:
         except FileNotFoundError:
             logging.error(f"File {filename} not found. Starting with an empty library.")
 
+
     @staticmethod
     def create_a_file(filename):
         try:

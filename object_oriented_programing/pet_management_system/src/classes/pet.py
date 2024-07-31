@@ -113,20 +113,3 @@ class Pet:
         }
 
 
-pet_1 = Pet('rex', 'dog', 5, 'john', True)
-pet_2 = Pet('rex', 'dog', 9, 'mark', False)
-pet_3 = Pet('meow', 'cat', 10, 'marcus', True)
-
-print(pet_1 == pet_2)
-print(pet_3 == pet_1)
-
-pet_2.set_pet_vaccinated()
-print(pet_2)
-
-print(pet_1.check_pet_is_vaccinated())
-print(pet_2.check_pet_is_vaccinated())
-print(pet_3.check_pet_is_vaccinated())
-
-print(pet_1.age_retrieve())
-print(pet_2.age_retrieve())
-print(pet_3.age_retrieve())

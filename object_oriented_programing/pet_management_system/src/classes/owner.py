@@ -14,7 +14,7 @@ class Owner:
         if pets is None:
             pets = []
         self.pets = pets
-        self._config_path = "../../pet_store_management.json"
+        self._config_path = "../../pet_store.json"
         self._config = ConfigProvider().load_from_file(self._config_path)
 
 
@@ -24,6 +24,10 @@ class Owner:
 
     @name.setter
     def name(self, value):
+        if not isinstance(value, str):  # Use isinstance() instead of checking type directly
+            raise TypeError("Name must be a string")
+        elif value is None:  # This check is redundant since isinstance will cover None
+            raise ValueError("Name cannot be None")
         self._name = value
 
     @property
@@ -109,7 +113,7 @@ class Owner:
 if __name__ == "__main__":
     from object_oriented_programing.pet_management_system.src.classes.pet import Pet
 
-    pet_1 = Pet('rex', 'dog', 5, '1', True)
+    pet_1 = Pet('aaa', 'dog', 5, '1', True)
     pet_2 = Pet('boby', 'dog', 9, '1', False)
     owner_1 = Owner('john', '0523362356', [pet_1, pet_2])
     owner_2 = Owner('mark', '2256523262', [pet_1])
