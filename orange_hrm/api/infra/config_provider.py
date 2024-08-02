@@ -1,4 +1,5 @@
 import json
+import logging
 
 
 class ConfigProvider:
@@ -10,4 +11,4 @@ class ConfigProvider:
             with open(filename, 'r') as f:
                 return json.load(f)
         except FileNotFoundError:
-            print(f"File {filename} not found. Starting with an empty library.")
+            logging.info(f"File {filename} not found. Starting with an empty library.")

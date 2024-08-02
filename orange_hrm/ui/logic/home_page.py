@@ -1,10 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from orange_hrm.ui.base_page import BasePage
 from selenium.webdriver.common.by import By
-import logging
-from selenium.webdriver.support.expected_conditions import *
-from orange_hrm.ui.base_page import BasePage
+from orange_hrm.ui.infra.base_page import BasePage
 
 class HomePage(BasePage):
 

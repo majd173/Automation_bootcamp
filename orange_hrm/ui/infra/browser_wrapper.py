@@ -1,7 +1,6 @@
-import json
 import logging
 from selenium import webdriver
-from orange_hrm.api.config_provider import ConfigProvider
+from orange_hrm.api.infra.config_provider import ConfigProvider
 
 
 class BrowserWrapper:

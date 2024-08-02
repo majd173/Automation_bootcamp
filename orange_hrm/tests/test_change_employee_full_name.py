@@ -1,19 +1,20 @@
 import unittest
+#-----------------------------API CLASSES----------------------------
 from orange_hrm.api.logic.my_info_page import ApiMyInfoPage
-from orange_hrm.api.api_wrapper import ApiWrapper
-from orange_hrm.api.config_provider import ConfigProvider
-
+from orange_hrm.api.infra.api_wrapper import ApiWrapper
+from orange_hrm.api.infra.config_provider import ConfigProvider
+#-----------------------------UI CLASSES-----------------------------
 from orange_hrm.ui.logic.log_in_page import LogInPage
 from orange_hrm.ui.logic.home_page import HomePage
 from orange_hrm.ui.logic.my_info_page import UiMyInfoPage
-from orange_hrm.ui.config_provider import ConfigProvider
-from orange_hrm.ui.browser_wrapper import BrowserWrapper
+from orange_hrm.ui.infra.config_provider import ConfigProvider
+from orange_hrm.ui.infra.browser_wrapper import BrowserWrapper
 
 
 class TestOrangeHrm(unittest.TestCase):
 
     def setUp(self):
-        self._config = ConfigProvider().load_from_file(r'C:\Users\Admin\Desktop\Automation_bootcamp\orange_hrm\orange_hrm.json')
+        self._config = ConfigProvider().load_from_file(r'/orange_hrm/orange_hrm.json')
         self._api = ApiWrapper()
         self._api_info_page = ApiMyInfoPage(self._api)
         self._driver = BrowserWrapper().get_driver()
@@ -31,7 +32,7 @@ class TestOrangeHrm(unittest.TestCase):
     def test_changing_employee_fullname(self):
         self._home_page.click_on_my_info()
         self._response = self._api_info_page.change_employee_full_name()
-        self._ui_info_page.refresh_page()
+        self._ui_info_page.return_page()
         self.assertEqual(200, self._response.status_code)
         self.assertTrue(self._ui_info_page.check_employee_full_name())
 

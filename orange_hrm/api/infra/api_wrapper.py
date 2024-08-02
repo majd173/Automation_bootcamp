@@ -1,7 +1,5 @@
 import requests
-
-from orange_hrm.api.response_wrapper import ResponseWrapper
-
+from orange_hrm.api.infra.logger_setup import LoggingSetup
 
 class ApiWrapper:
     """

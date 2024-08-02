@@ -1,4 +1,4 @@
-
+from orange_hrm.ui.infra.logger_setup import LoggingSetup
 class BasePage:
     # This class manages common functions can be used
     #by any user in any type of testing project.
