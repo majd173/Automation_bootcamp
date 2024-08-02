@@ -11,21 +11,18 @@ class ApiWrapper:
     def __init__(self):
         self._request = None
 
-    def get_request(self, url, headers=None, body=None):
-        response = requests.get(url, headers=headers, json=body)
-        return ResponseWrapper(response.ok, response.status_code, response.json())
+
+    def get_request(self, url, body=None):
+        return requests.get(url, json=body)
 
     def post_request(self, url, headers=None, body=None):
-        respnse = requests.post(url, headers=headers, json=body)
-        return ResponseWrapper(respnse.ok, respnse.status_code, respnse.json())
+        return requests.post(url, headers=headers, json=body)
 
-    def put_request(self, url, headers=None, body=None):
-        respnse = requests.put(url, headers=headers, json=body)
-        return ResponseWrapper(respnse.ok, respnse.status_code, respnse.json())
+    def put_request(self, url, headers=None,  body=None):
+        return requests.put(url, headers=headers, json=body)
 
-    def delete_request(self, url, headers=None, body=None):
-        if headers is None:
-            headers = {}
-        # Ensure all header values are strings.
-        headers = {k: str(v) for k, v in headers.items()}
-        return requests.delete(url, headers=headers, json=body)
+    def delete_request(self, url, data=None):
+        return requests.delete(url, json=data)
+
+
+

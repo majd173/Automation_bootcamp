@@ -24,7 +24,7 @@ class TestOrangeHrm(unittest.TestCase):
         self._login_page.login_flow()
 
     def tearDown(self):
-
+        self._api_info_page.retrieve_employee_full_name()
         self._driver.close()
 
 

@@ -20,14 +20,22 @@ class ApiMyInfoPage:
 
     def change_employee_full_name(self):
         try:
-            response = requests.request("PUT",
-                                        self._url + self.CHANGE_EMPLOYEE_INFO,
-                                        headers=self._config['employee_full_name_headers'],
-                                        json=self._config['employee_full_name_body'])
+            response = self._request.put_request(
+                f'{self._url}{self.CHANGE_EMPLOYEE_INFO}',
+                self._config['employee_new_name_headers'],
+                self._config['employee_new_name_body'])
             return response
 
         except requests.RequestException as e:
-            raise ValueError(f'Put request has not been sent.: {e}')
+            raise Exception(f'Put request has not been sent.: {e}')
 
 
-
+    def retrieve_employee_full_name(self):
+        try:
+            response = self._request.put_request(
+                f'{self._url}{self.CHANGE_EMPLOYEE_INFO}',
+                self._config['employee_retrieve_name_headers'],
+                self._config['employee_retrieve_name_body'])
+            return response
+        except requests.RequestException as e:
+            raise Exception(f'Put request has not been sent.: {e}')
