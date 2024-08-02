@@ -24,13 +24,15 @@ class TestOrangeHrm(unittest.TestCase):
         self._login_page.login_flow()
 
     def tearDown(self):
+
         self._driver.close()
 
 
     def test_changing_employee_fullname(self):
         self._home_page.click_on_my_info()
-        self._api_info_page.change_employee_full_name()
+        self._response = self._api_info_page.change_employee_full_name()
         self._ui_info_page.refresh_page()
+        self.assertEqual(200, self._response.status_code)
         self.assertTrue(self._ui_info_page.check_employee_full_name())
 
 

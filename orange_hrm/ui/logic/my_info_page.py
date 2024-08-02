@@ -1,3 +1,4 @@
+import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -8,7 +9,7 @@ from selenium.webdriver.support.expected_conditions import *
 
 class UiMyInfoPage(BasePage):
 
-    EMPLOYEE_NAME_BAR = "//p[contains(text(), 'smile man')]"
+    EMPLOYEE_NAME_BAR = "//p[contains(text(), 'positive man')]"
 
 
 
@@ -17,7 +18,8 @@ class UiMyInfoPage(BasePage):
 
 
     def refresh_page(self):
-        self._driver.navigate().refresh()
+        time.sleep(5)
+        self._driver.refresh()
 
     def check_employee_full_name(self):
         try:

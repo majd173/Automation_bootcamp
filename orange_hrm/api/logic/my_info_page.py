@@ -1,3 +1,5 @@
+import json
+
 import requests
 from orange_hrm.api.config_provider import ConfigProvider
 from orange_hrm.api.api_wrapper import ApiWrapper
@@ -18,10 +20,12 @@ class ApiMyInfoPage:
 
     def change_employee_full_name(self):
         try:
-            return self._request.put_request(
-                f'{self._url}{self.CHANGE_EMPLOYEE_INFO},'
-                f'{self._config['employee_full_name_headers']},'
-                f'{self._config['employee_full_name_body']}')
+            response = requests.request("PUT",
+                                        self._url + self.CHANGE_EMPLOYEE_INFO,
+                                        headers=self._config['employee_full_name_headers'],
+                                        json=self._config['employee_full_name_body'])
+            return response
+
         except requests.RequestException as e:
             raise ValueError(f'Put request has not been sent.: {e}')
 
