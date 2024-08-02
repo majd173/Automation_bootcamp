@@ -1,8 +1,48 @@
 {
-  "home_url": "https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index",
-  "browser" : "chrome",
+  "api_base_url": "https://opensource-demo.orangehrmlive.com/web/index.php/",
+  "browser" : "Chrome",
 
-  "log-in_url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+  "login_url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
   "username": "Admin",
-  "password": "admin123"
+  "password": "admin123",
+
+  "employee_full_name_headers": {
+    "authority": "opensource-demo.orangehrmlive.com",
+    "method": "PUT",
+    "path": "/web/index.php/api/v2/pim/employees/7/personal-details",
+    "scheme": "https",
+    "accept": "application/json, text/plain, */*",
+    "accept-encoding": "gzip, deflate, br, zstd",
+    "accept-language": "en-US,en;q=0.9,he-IL;q=0.8,he;q=0.7,ar;q=0.6",
+    "content-length": "257",
+    "content-type": "application/json",
+    "cookie": "orangehrm=d089fc3177b4aceaec0d02a8bb0237b4",
+    "origin": "https://opensource-demo.orangehrmlive.com",
+    "priority": "u=1, i",
+    "referer": "https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewPersonalDetails/empNumber/7",
+    "sec-ch-ua": "\"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Windows\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
+    "Enhanced 'Never pause here'": "The 'Never pause here' option can now 'cancel' DOM, XHR/fetch, CSP violation breakpoints, exceptions and promise rejections from built-in functions, and more.",
+    "New scroll snap event listeners": "The list of event listener breakpoints gets scroll snap events.",
+    "Updated network throttling presets": "The network throttling presets are updated with fast and slow 4G."
+  },
+
+  "employee_full_name_body": {
+    "birthday": "2023-10-21",
+    "drivingLicenseExpiredDate": "2023-10-18",
+    "drivingLicenseNo": "5678856789",
+    "employeeId": "muser12345",
+    "firstName": "smile",
+    "gender": 2,
+    "lastName": "man",
+    "maritalStatus": "Single",
+    "middleName": "always",
+    "nationalityId": 4,
+    "otherId": "4957589"
+  }
 }

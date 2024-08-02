@@ -1,6 +1,6 @@
 import requests
 from api.pet_store.infra.response_wrapper import ResponseWrapper
-from api.pet_store.infra.logger_setup import LoggingSetup
+
 
 
 class ApiWrapper:

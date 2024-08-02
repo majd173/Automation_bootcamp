@@ -1,5 +1,7 @@
 import requests
 
+from orange_hrm.api.response_wrapper import ResponseWrapper
+
 
 class ApiWrapper:
     """
@@ -13,8 +15,12 @@ class ApiWrapper:
         response = requests.get(url, headers=headers, json=body)
         return ResponseWrapper(response.ok, response.status_code, response.json())
 
-    def post_request(self, url, body=None):
-        respnse = requests.post(url, json=body)
+    def post_request(self, url, headers=None, body=None):
+        respnse = requests.post(url, headers=headers, json=body)
+        return ResponseWrapper(respnse.ok, respnse.status_code, respnse.json())
+
+    def put_request(self, url, headers=None, body=None):
+        respnse = requests.put(url, headers=headers, json=body)
         return ResponseWrapper(respnse.ok, respnse.status_code, respnse.json())
 
     def delete_request(self, url, headers=None, body=None):
