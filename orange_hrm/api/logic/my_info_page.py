@@ -3,6 +3,8 @@ import logging
 #-----------------------------API CLASSES----------------------------
 from orange_hrm.api.infra.config_provider import ConfigProvider
 from orange_hrm.api.infra.api_wrapper import ApiWrapper
+from orange_hrm.preson_object import PersonObject
+from orange_hrm.ui.logic.log_in_page import LogInPage
 
 
 class ApiMyInfoPage:
@@ -24,16 +26,20 @@ class ApiMyInfoPage:
 
     #--------------------------------------------------------------------------------
 
-    def change_employee_full_name(self):
+    def change_employee_full_name(self, token, person_object: PersonObject):
         """
         This function is used to change employee full name.
         """
         try:
-            logging.info("Sending a put request to change employee full name.")
+            headers = {
+                "Cookie": f"{token}; orangehrm=310117ea4ee2d44c107548c3b65124f6",
+                # "Content-Type": "application/json"
+            }
+
             response = self._request.put_request(
                 f'{self._url}{self.CHANGE_EMPLOYEE_INFO}',
-                self._config['employee_new_name_headers'],
-                self._config['employee_new_name_body'])
+                headers,
+                person_object.to_dict())
             return response
 
         except requests.RequestException as e:

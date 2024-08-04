@@ -3,6 +3,8 @@ import unittest
 from orange_hrm.api.logic.my_info_page import ApiMyInfoPage
 from orange_hrm.api.infra.api_wrapper import ApiWrapper
 from orange_hrm.api.infra.config_provider import ConfigProvider
+from orange_hrm.api.infra.utilities import Utils
+from orange_hrm.preson_object import PersonObject
 #-----------------------------UI CLASSES-----------------------------
 from orange_hrm.ui.logic.log_in_page import LogInPage
 from orange_hrm.ui.logic.home_page import HomePage
@@ -13,29 +15,25 @@ from orange_hrm.ui.infra.browser_wrapper import BrowserWrapper
 
 class TestOrangeHrm(unittest.TestCase):
 
-    def setUp(self):
-        self._config = ConfigProvider().load_from_file(r'/orange_hrm/orange_hrm.json')
-        self._api = ApiWrapper()
-        self._api_info_page = ApiMyInfoPage(self._api)
-        self._driver = BrowserWrapper().get_driver()
-        self._login_page = LogInPage(self._driver)
-        self._home_page = HomePage(self._driver)
-        self._ui_info_page = UiMyInfoPage(self._driver)
-        # ACT
-        self._login_page.login_flow()
-
     def tearDown(self):
-        self._api_info_page.retrieve_employee_full_name()
+        # self._api_info_page.retrieve_employee_full_name()
         self._driver.close()
 
-
     def test_changing_employee_fullname(self):
-        self._home_page.click_on_my_info()
-        self._response = self._api_info_page.change_employee_full_name()
-        self._ui_info_page.return_page()
-        self.assertEqual(200, self._response.status_code)
-        self.assertTrue(self._ui_info_page.check_employee_full_name())
-
+        self._config = ConfigProvider().load_from_file(r'/orange_hrm/orange_hrm.json')
+        self._driver = BrowserWrapper().get_driver()
+        self._login_page = LogInPage(self._driver)
+        token = self._login_page.login_flow()
+        self._api = ApiWrapper()
+        self._api_info_page = ApiMyInfoPage(self._api)
+        person_object = PersonObject(Utils.generate_random_string_only_letters(5).lower(),
+                                     Utils.generate_random_string_only_letters(5).lower(),
+                                     Utils.generate_random_string_only_letters(5).lower())
+        self._api_info_page.change_employee_full_name(token, person_object)
+        home_page = HomePage(self._driver)
+        home_page.refresh_page()
+        self.assertEqual(home_page.get_full_name()[0], person_object.first_name)
+        self.assertEqual(home_page.get_full_name()[1], person_object.last_name)
 
 
 

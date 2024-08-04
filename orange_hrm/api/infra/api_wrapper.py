@@ -1,3 +1,5 @@
+import json
+
 import requests
 from orange_hrm.api.infra.logger_setup import LoggingSetup
 
@@ -16,8 +18,12 @@ class ApiWrapper:
     def post_request(self, url, headers=None, body=None):
         return requests.post(url, headers=headers, json=body)
 
-    def put_request(self, url, headers=None,  body=None):
-        return requests.put(url, headers=headers, json=body)
+    def put_request(self, url, headers=None, body=None):
+        try:
+            return requests.put(url, headers=headers, json=body)
+        except requests.exceptions.RequestException as e:
+            print(e)
+
 
     def delete_request(self, url, data=None):
         return requests.delete(url, json=data)
