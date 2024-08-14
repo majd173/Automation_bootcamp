@@ -1,6 +1,6 @@
 import logging
-from object_oriented_programing.pet_management_system.src.classes.owner import Owner
-from object_oriented_programing.pet_management_system.src.utilities.config_provider import ConfigProvider
+from pet_management_system.src.classes.owner import Owner
+from pet_management_system.src.utilities.config_provider import ConfigProvider
 
 
 class Pet:

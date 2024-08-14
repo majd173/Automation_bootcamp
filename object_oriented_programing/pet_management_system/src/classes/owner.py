@@ -1,6 +1,6 @@
 import json
 import logging
-from object_oriented_programing.pet_management_system.src.utilities.config_provider import ConfigProvider
+from pet_management_system.src.utilities.config_provider import ConfigProvider
 
 
 class Owner:
@@ -16,7 +16,6 @@ class Owner:
         self.pets = pets
         self._config_path = "../../pet_store.json"
         self._config = ConfigProvider().load_from_file(self._config_path)
-
 
     @property
     def name(self):
@@ -62,7 +61,7 @@ class Owner:
 
     def add_owner(self):
         try:
-            from object_oriented_programing.pet_management_system.src.classes.pet import Pet
+            from pet_management_system.src.classes.pet import Pet
             logging.info("Adding new owner")
             with open(self._config_path, 'r') as file:
                 data = json.load(file)
@@ -111,7 +110,7 @@ class Owner:
 
 
 if __name__ == "__main__":
-    from object_oriented_programing.pet_management_system.src.classes.pet import Pet
+    from pet_management_system.src.classes.pet import Pet
 
     pet_1 = Pet('aaa', 'dog', 5, '1', True)
     pet_2 = Pet('boby', 'dog', 9, '1', False)

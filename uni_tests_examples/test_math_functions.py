@@ -1,11 +1,11 @@
 import unittest
-from math_function import is_even
-from math_function import sum_function
-from math_function import sub_function
-from math_function import mul_function
-from math_function import div_function2
-from math_function import modulo_func
-from math_function import is_odd
+from math_functions import is_even
+from math_functions import sum_function
+from math_functions import sub_function
+from math_functions import mul_function
+from math_functions import div_function2
+from math_functions import modulo_func
+from math_functions import is_odd
 
 
 class TestMathFunctions(unittest.TestCase):
