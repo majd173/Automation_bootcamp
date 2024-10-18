@@ -19,7 +19,7 @@ class TestUser(unittest.TestCase):
         Setting up user details for adding to users database table.
         """
         self._config = ConfigProvider().load_from_file(
-            r"/api_automated_testing\pet_store\pet_store.json")
+            r"/api_automated_projects\pet_store\pet_store.json")
         self._api = ApiWrapper()
         self._pet_store = UserPage(self._api)
         self._jira_flag = JiraHandler()

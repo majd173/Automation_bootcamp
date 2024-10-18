@@ -14,7 +14,7 @@ class LogInUnsuccessfully(BasePage):
         super().__init__(driver)
         try:
             self._error_message = self._driver.find_element(By.XPATH, self.ERROR_MESSAGE)
-        except NoSuchElementException:
+        except NoSuchElementException as e:
             logging.error(f'ELEMENT NOT FOUND: {e}')
         # an exception of not found element
 

@@ -20,7 +20,7 @@ class UserPage:
             self._request = request
             self._api = ApiWrapper()
             self._config = ConfigProvider().load_from_file(
-                r"/api_automated_testing\pet_store\pet_store.json")
+                r"/api_automated_projects\pet_store\pet_store.json")
             self._url = self._config['base_url']
             self._user_database = UserDataBase(self._config['user_database'])
             self._user_database.create_connection()

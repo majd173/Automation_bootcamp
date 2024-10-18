@@ -1,11 +1,11 @@
 import logging
 import unittest
 import time
-from selenium.Youtube.infra.config_provider import ConfigProvider
-from selenium.Youtube.infra.browser_wrapper import BrowserWrapper
+from selenium_ui_projects.Youtube.infra.config_provider import ConfigProvider
+from selenium_ui_projects.Youtube.infra.browser_wrapper import BrowserWrapper
 # tests ---------------------------------logic----------------------------------------files
-from selenium.Youtube.logic.home_page import HomePage
-from selenium.Youtube.logic.languages import LanguageList
+from selenium_ui_projects.Youtube.logic.home_page import HomePage
+from selenium_ui_projects.Youtube.logic.languages import LanguageList
 
 
 class TestLanguagesList(unittest.TestCase):

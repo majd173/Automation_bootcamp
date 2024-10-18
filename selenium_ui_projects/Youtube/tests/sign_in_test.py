@@ -1,11 +1,11 @@
 import time
 import unittest
-from selenium.Youtube.infra.config_provider import ConfigProvider
-from selenium.Youtube.infra.browser_wrapper import BrowserWrapper
+from selenium_ui_projects.Youtube.infra.config_provider import ConfigProvider
+from selenium_ui_projects.Youtube.infra.browser_wrapper import BrowserWrapper
 # tests ---------------------------------logic----------------------------------------files
-from selenium.Youtube.logic.home_page import HomePage
-from selenium.Youtube.logic.sign_in import SignIn
-from selenium.Youtube.logic.invalid_sign_in import InvalidLogIn
+from selenium_ui_projects.Youtube.logic.home_page import HomePage
+from selenium_ui_projects.Youtube.logic.sign_in import SignIn
+from selenium_ui_projects.Youtube.logic.invalid_sign_in import InvalidLogIn
 
 
 

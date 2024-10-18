@@ -1,7 +1,7 @@
 
 {
     "base_url": "https://parabank.parasoft.com/",
-    "browser" : "Chrome",
+    "browser" : "FireFox",
     "username": "example",
     "correct password": "correct password",
     "incorrect password": "incorrect password"

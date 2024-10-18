@@ -2,7 +2,6 @@ import requests
 from api_automation_projects.pet_store.infra.response_wrapper import ResponseWrapper
 
 
-
 class ApiWrapper:
     """
     This class manages types of requests can be used in logic classes.

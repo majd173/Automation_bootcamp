@@ -2,6 +2,7 @@ import argparse
 import logging  # Error handling and recording adding/editing/removing a book.
 from flask import Flask, render_template, request, redirect, url_for
 from Personal_Library_Manager import MyLibrary, Book
+
 #
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
@@ -34,12 +35,12 @@ def check_positive_int(value):
 
 @app.route('/')  # Home page
 def home():
-    return render_template('home.html_projects')
+    return render_template('home.html')
 
 
 @app.route('/library')  # Libary page
 def show_library():
-    return render_template('library.html_projects', library=library)
+    return render_template('library.html', library=library)
 
 
 @app.route('/add', methods=['GET', 'POST'])  # Addig a book, handling get and post requests.
@@ -63,8 +64,8 @@ def add_book():
             return redirect(url_for('show_library'))
         except Exception as e:
             logging.error(f"Error adding book: {e}")
-            return render_template('add_book.html_projects', error=str(e))
-    return render_template('add_book.html_projects')
+            return render_template('add_book.html', error=str(e))
+    return render_template('add_book.html')
 
 
 @app.route('/edit/<string:book_name>', methods=['GET', 'POST'])  # Editing a book's details
@@ -89,8 +90,8 @@ def edit_book(book_name):
             return redirect(url_for('show_library'))
         except Exception as e:
             logging.error(f"Error editing book: {e}")
-            return render_template('edit_book.html_projects', book=book, error=str(e))
-    return render_template('edit_book.html_projects', book=book)
+            return render_template('edit_book.html', book=book, error=str(e))
+    return render_template('edit_book.html', book=book)
 
 
 @app.route('/delete/<string:book_name>', methods=['POST'])  # Deleting a book from the library
@@ -107,13 +108,12 @@ def delete_book(book_name):
 
 @app.route('/contact')  # contact and get help page
 def contact():
-    return render_template('contact.html_projects')
+    return render_template('contact.html')
 
 
 @app.route('/about')  # About us page
 def about():
-    return render_template('about.html_projects')
-
+    return render_template('about.html')
 
 
 if __name__ == '__main__':

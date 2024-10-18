@@ -1,11 +1,11 @@
 import logging
 import unittest
 import time
-from selenium.Youtube.infra.config_provider import ConfigProvider
-from selenium.Youtube.infra.browser_wrapper import BrowserWrapper
+from selenium_ui_projects.Youtube.infra.config_provider import ConfigProvider
+from selenium_ui_projects.Youtube.infra.browser_wrapper import BrowserWrapper
 # tests ---------------------------------logic----------------------------------------files
-from selenium.Youtube.logic.home_page import HomePage
-from selenium.Youtube.logic.view_history import ViewHistoryAsCustomer
+from selenium_ui_projects.Youtube.logic.home_page import HomePage
+from selenium_ui_projects.Youtube.logic.view_history import ViewHistoryAsCustomer
 
 
 class TestViewHistory(unittest.TestCase):
@@ -26,6 +26,6 @@ class TestViewHistory(unittest.TestCase):
         self.home_page.go_to_history()
         history = ViewHistoryAsCustomer(self._driver)
         history.return_error_message()
-        self.assertTrue("Watch history isn't viewable when you're signed out.", history.return_error_message(), "Expected result is not correct")
+        self.assertEqual("Watch history isn't viewable when signed out.", history.return_error_message(), "Expected result is not correct")
         time.sleep(2)
         print("--------------------------------------------")

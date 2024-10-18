@@ -2,7 +2,7 @@ import json
 
 from selenium import webdriver
 
-from selenium.saucedemo_website.pom.infra .config_provider import ConfigProvider
+from selenium_ui_projects.saucedemo_website.pom.infra .config_provider import ConfigProvider
 
 
 class BrowserWrapper:

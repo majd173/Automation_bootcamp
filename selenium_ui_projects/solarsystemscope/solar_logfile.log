@@ -248,3 +248,22 @@
 2024-07-28 12:14:23,944:INFO:Chrome browser was closed.:
 2024-07-28 12:14:23,944:INFO:----------------- TEST DONE ------------------
 :
+2024-09-14 17:12:12,496:WARNING:The chromedriver version (127.0.6533.88) detected in PATH at C:\Users\Admin\Desktop\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (128.0.6613.138); currently, chromedriver 128.0.6613.137 is recommended for chrome 128.*, so it is advised to delete the driver in PATH and retry:
+2024-09-14 17:12:17,017:INFO:_____ADOBE FLASH REQUEST MESSAGE DISPLAY TESTING BEGAN_____:
+2024-09-14 17:12:17,017:INFO:Chrome browser was opened:
+2024-09-14 17:12:22,849:INFO:REQUEST MESSAGE is displayed.:
+2024-09-14 17:12:22,976:INFO:Chrome browser was closed.:
+2024-09-14 17:12:22,976:INFO:----------------- TEST DONE ------------------
+:
+2024-10-17 17:33:11,019:INFO:_____ASTRONOMY PLACES MAP DISPLAY TESTING BEGAN_____:
+2024-10-17 17:33:11,020:INFO:Chrome browser was opened:
+2024-10-17 17:33:15,416:INFO:MAP is displayed.:
+2024-10-17 17:33:15,581:INFO:Chrome browser was closed.:
+2024-10-17 17:33:15,581:INFO:----------------- TEST DONE ------------------
+:
+2024-10-17 17:33:27,181:INFO:_____LIKE BUTTON ACTIVITY TESTING BEGAN_____:
+2024-10-17 17:33:27,181:INFO:Chrome browser was opened:
+2024-10-17 17:33:27,287:INFO:LIKE button is not displayed and clickable more.:
+2024-10-17 17:33:27,394:INFO:Chrome browser was closed.:
+2024-10-17 17:33:27,394:INFO:----------------- TEST DONE ------------------
+:

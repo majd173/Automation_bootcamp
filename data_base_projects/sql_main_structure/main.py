@@ -15,6 +15,8 @@ name = 'positive'
 age = 31
 location = 'horfiesh'
 
+
+
 # Insert some data
 cursor.execute("INSERT INTO users (name, age, location) VALUES (?, ?, ?)",
                (name, age, location))
