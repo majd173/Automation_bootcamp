@@ -20,7 +20,7 @@ class PetPage:
             self._request = request
             self._api = ApiWrapper()
             self._config = ConfigProvider().load_from_file(
-                r"/api_automated_testing\pet_store\pet_store.json")
+                r"/api_automation_projects\pet_store\pet_store.json")
             self._url = self._config['base_url']
         except ImportError:
             logging.error("Can not open pet_store.json file.")

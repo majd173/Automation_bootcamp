@@ -16,7 +16,7 @@ class TestStore(unittest.TestCase):
         Setting up URL and base details fot adding and getting a username.
         """
         self._config = ConfigProvider().load_from_file(
-            r"/api_automated_projects\pet_store\pet_store.json")
+            r"\api_automation_projects\pet_store\pet_store.json")
         self._api = ApiWrapper()
         self._pet_store = StorePage(self._api)
         self._jira_flag = JiraHandler()

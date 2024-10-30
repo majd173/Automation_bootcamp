@@ -6,10 +6,10 @@ from api_automation_projects.pet_store.infra.config_provider import ConfigProvid
 class JiraHandler:
 
     config = ConfigProvider.load_from_file(
-        r'/api_automated_testing\pet_store\pet_store.json')
+        r'\api_automation_projects\pet_store\pet_store.json')
 
     jira_token = ConfigProvider.load_from_file(
-        r'/api_automated_testing\pet_store\secret.json')
+        r'\api_automation_projects\pet_store\secret.json')
     def __init__(self):
         self._jira_url = self.config['jira_url']
         self._auth_jira = JIRA(

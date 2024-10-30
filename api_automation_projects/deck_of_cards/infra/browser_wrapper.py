@@ -1,7 +1,7 @@
 import json
 import logging
 from selenium import webdriver
-from selenium.saucedemo_website.pom.infra.config_provider import ConfigProvider
+from api_automation_projects.deck_of_cards.infra.config_provider import ConfigProvider
 
 
 class BrowserWrapper:

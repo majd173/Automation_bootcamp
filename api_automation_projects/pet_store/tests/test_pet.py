@@ -18,7 +18,7 @@ class TestPet(unittest.TestCase):
                  Setting up pet details.
         """
         self._config = ConfigProvider().load_from_file(
-            r"/api_automated_testing\pet_store\pet_store.json")
+            r"/api_automation_projects\pet_store\pet_store.json")
         self._api = ApiWrapper()
         self._pet_store = PetPage(self._api)
         self._jira_flag = JiraHandler()

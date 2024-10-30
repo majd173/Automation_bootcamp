@@ -9,7 +9,7 @@ class BrowserWrapper:
     def __init__(self):
         self._driver = None # because I still don't know which driver to choose.
         self.config = ConfigProvider.load_from_file(
-            r'/api_automated_testing\pet_store\pet_store.json')
+            r'\api_automation_projects\pet_store\pet_store.json')
     # ------------------------------------------------------------------------------------------------------------
     # This function determines which browser to open and also opens it.
     def get_driver(self):
